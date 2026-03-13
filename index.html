@@ -390,36 +390,58 @@
     }
 
     function getPosterForItem(item, posters) {
-      return posters[item.id] || item.fallbackImage || null;
+      const tmdbPoster = posters[item.id];
+      if (tmdbPoster && typeof tmdbPoster === "string" && tmdbPoster.trim()) {
+        return tmdbPoster;
+      }
+      return null;
+    }
+
+    function createTextFallback(item) {
+      const yearText = item.year ? item.year : "Unknown year";
+      const typeText = item.type ? item.type.toUpperCase() : "TITLE";
+      const safeTitle = escapeHtml(item.title);
+      const safeDuration = escapeHtml(item.duration || "Full Movie");
+      const safeRating = escapeHtml(item.rating || "NR");
+
+      return `
+        <div class="poster-fallback" style="display:${item.image ? "none" : "flex"};">
+          <div class="poster-fallback-title">${safeTitle}</div>
+          <div class="poster-fallback-meta">
+            ${yearText} • ${typeText}<br>
+            ${safeDuration} • ${safeRating}
+          </div>
+        </div>
+      `;
     }
 
     function createCard(item, posters) {
       const yearText = item.year ? item.year : "Unknown year";
-      const typeText = item.type ? item.type : "Title";
       const safeTitle = escapeHtml(item.title);
-      const safeId = escapeHtml(item.id);
-      const finalPoster = getPosterForItem(item, posters);
-      const safeImage = escapeHtml(finalPoster || "");
       const safeDuration = escapeHtml(item.duration || "Full Movie");
       const safeRating = escapeHtml(item.rating || "NR");
+      const poster = getPosterForItem(item, posters);
 
       return `
         <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
           <div class="poster-wrap">
             ${
-              safeImage
+              poster
                 ? `<img
                     class="poster"
-                    src="${safeImage}"
+                    src="${escapeHtml(poster)}"
                     alt="${safeTitle}"
                     loading="lazy"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                   >`
                 : ""
             }
-            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
+            <div class="poster-fallback" style="${poster ? "" : "display:flex;"}">
               <div class="poster-fallback-title">${safeTitle}</div>
-              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
+              <div class="poster-fallback-meta">
+                ${yearText} • ${escapeHtml((item.type || "title").toUpperCase())}<br>
+                ${safeDuration} • ${safeRating}
+              </div>
             </div>
           </div>
 
@@ -434,10 +456,12 @@
     function renderRow(rowId, items, posters) {
       const row = document.getElementById(rowId);
       if (!row) return;
+
       if (!items.length) {
         row.innerHTML = `<div class="loading">Nothing here yet.</div>`;
         return;
       }
+
       row.innerHTML = items.map(item => createCard(item, posters)).join("");
     }
 
@@ -489,6 +513,10 @@
       }
     }
 
+    function isMovie(item) {
+      return item && item.type === "movie";
+    }
+
     async function renderHome() {
       let posters = {};
       try {
@@ -498,15 +526,17 @@
         console.warn("Could not load posters.json", err);
       }
 
-      const allTitles = Array.isArray(CATALOG) ? CATALOG : [];
-      const movies = allTitles.filter(item => item.type === "movie");
-      const myListIds = getMyList();
-      const myListItems = movies.filter(item => myListIds.includes(item.id));
+      const allTitles = Array.isArray(window.CATALOG) ? window.CATALOG : [];
+      const movies = allTitles.filter(isMovie);
 
-      const heroPool = movies.length ? movies : allTitles;
+      const myListIds = getMyList();
+      const myListItems = allTitles.filter(item => myListIds.includes(item.id));
+
       const heroItem =
-        heroPool.find(item => item.id === "fantastic-planet__1973") ||
-        heroPool[0];
+        allTitles.find(item => item.id === "fantastic-planet__1973") ||
+        movies.find(item => /fantastic planet/i.test(item.title || "")) ||
+        movies[0] ||
+        allTitles[0];
 
       if (heroItem) {
         renderHero(heroItem, posters);
@@ -515,11 +545,12 @@
       renderRow("featured-row", movies.slice(0, 8), posters);
       renderRow("scifi-row", movies.filter(item => item.row === "Sci-Fi"), posters);
       renderRow("horror-row", movies.filter(item => item.row === "Horror"), posters);
-      renderRow("animation-row", movies.filter(item => item.row === "Animation"), posters);
+      renderRow("animation-row", allTitles.filter(item => item.row === "Animation").slice(0, 18), posters);
       renderRow("my-list-row", myListItems, posters);
     }
 
     renderHome();
+    window.addEventListener("storage", renderHome);
   </script>
 </body>
 </html>
