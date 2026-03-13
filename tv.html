@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TV Shows • Plueto TV</title>
   <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -17,13 +18,17 @@
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
+
     body{
       background:var(--bg);
       color:var(--text);
       font-family:Arial,Helvetica,sans-serif;
     }
 
-    a{text-decoration:none;color:inherit}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
     .navbar{
       padding:20px 32px;
@@ -147,17 +152,42 @@
       line-height:1.35;
     }
 
-    .card-body{padding:10px 4px 0}
+    .card-body{
+      padding:10px 4px 0;
+    }
+
     .card-title{
       font-weight:800;
       margin-bottom:5px;
       font-size:.96rem;
       line-height:1.25;
     }
+
     .meta{
       font-size:13px;
       color:var(--muted);
       line-height:1.4;
+    }
+
+    .card-actions{
+      padding:10px 4px 0;
+    }
+
+    .my-list-btn{
+      width:100%;
+      border:none;
+      border-radius:12px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .my-list-btn:hover{
+      transform:translateY(-1px);
+      background:rgba(122,92,255,.18);
     }
 
     .empty-state{
@@ -186,19 +216,19 @@
   <div class="navbar">
     <a href="index.html" class="logo">PLUETO TV</a>
     <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="movies.html">Movies</a>
-  <a href="tv.html">TV Shows</a>
-  <a href="new.html">Recently Added</a>
-  <a href="my-list.html">My List</a>
-</div>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">Recently Added</a>
+      <a href="my-list.html">My List</a>
+    </div>
   </div>
 
   <div class="page">
     <div class="signal-tag">Transmission Queue</div>
     <h1>TV Shows</h1>
     <div class="sub">
-      Series, blocks, and long-form content live here. Right now your repo doesn’t have TV entries yet, so this page is set up and ready for them.
+      Series, blocks, and long-form content live here.
     </div>
 
     <div class="grid" id="tv-grid">
@@ -206,8 +236,7 @@
     </div>
 
     <div class="empty-state" id="tv-empty" style="display:none;">
-      No TV entries yet. Once you add titles with <strong>type: "tv"</strong> to your catalog or future auto-pull data,
-      they’ll show up here with the same TMDB poster system.
+      No TV entries yet. Once you add titles with <strong>type: "tv"</strong> to your catalog, they’ll appear here automatically.
     </div>
   </div>
 
@@ -226,9 +255,10 @@
       const typeText = item.type ? item.type : "Title";
       const safeTitle = escapeHtml(item.title);
       const safeId = escapeHtml(item.id);
-      const safeImage = escapeHtml(posterUrl || "");
+      const safeImage = escapeHtml(posterUrl || item.image || item.fallbackImage || "");
       const safeDuration = escapeHtml(item.duration || "Series");
       const safeRating = escapeHtml(item.rating || "NR");
+      const buttonLabel = escapeHtml(getMyListButtonLabel(item.id));
 
       return `
         <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
@@ -253,9 +283,26 @@
           <div class="card-body">
             <div class="card-title">${safeTitle}</div>
             <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+            <div class="card-actions">
+              <button class="my-list-btn" type="button" data-id="${safeId}">${buttonLabel}</button>
+            </div>
           </div>
         </a>
       `;
+    }
+
+    function wireMyListButtons(root = document) {
+      root.querySelectorAll(".my-list-btn").forEach(button => {
+        const id = button.dataset.id;
+
+        button.onclick = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const added = toggleMyList(id);
+          button.textContent = added ? "✓ In My List" : "+ My List";
+        };
+      });
     }
 
     async function renderTV() {
@@ -270,7 +317,8 @@
         console.warn("Could not load posters.json", err);
       }
 
-      const tv = (Array.isArray(CATALOG) ? CATALOG : []).filter(item => item.type === "tv");
+      const tv = (Array.isArray(window.CATALOG) ? window.CATALOG : [])
+        .filter(item => item.type === "tv");
 
       if (!tv.length) {
         grid.innerHTML = "";
@@ -278,7 +326,11 @@
         return;
       }
 
-      grid.innerHTML = tv.map(item => createCard(item, posters[item.id] || null)).join("");
+      grid.innerHTML = tv
+        .map(item => createCard(item, posters[item.id] || null))
+        .join("");
+
+      wireMyListButtons(grid);
     }
 
     renderTV();
