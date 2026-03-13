@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plueto TV</title>
   <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -388,10 +389,6 @@
         .replaceAll("'", "&#39;");
     }
 
-    function getMyList() {
-      return JSON.parse(localStorage.getItem("plueto_my_list") || "[]");
-    }
-
     function getPosterForItem(item, posters) {
       return posters[item.id] || item.fallbackImage || null;
     }
@@ -460,6 +457,7 @@
         labels[Math.floor(Math.random() * labels.length)];
 
       const heroPoster = getPosterForItem(item, posters);
+      const myListLabel = escapeHtml(getMyListButtonLabel(item.id));
 
       document.getElementById("hero-bg").innerHTML = heroPoster
         ? `<img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">`
@@ -477,9 +475,18 @@
         <div class="hero-desc">${escapeHtml(item.description || "")}</div>
         <div class="hero-actions">
           <a class="hero-btn hero-btn-primary" href="watch.html?id=${encodeURIComponent(item.id)}">▶ Play</a>
-          <button class="hero-btn hero-btn-secondary" onclick="toggleMyList('${item.id}')">+ My List</button>
+          <button class="hero-btn hero-btn-secondary" id="hero-my-list-btn" type="button">${myListLabel}</button>
         </div>
       `;
+
+      const heroMyListBtn = document.getElementById("hero-my-list-btn");
+      if (heroMyListBtn) {
+        heroMyListBtn.addEventListener("click", () => {
+          toggleMyList(item.id);
+          heroMyListBtn.textContent = getMyListButtonLabel(item.id);
+          renderHome();
+        });
+      }
     }
 
     async function renderHome() {
