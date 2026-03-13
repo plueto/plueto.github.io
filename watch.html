@@ -121,19 +121,33 @@
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
-    const item = CATALOG.find(movie => movie.id === id);
-    const app = document.getElementById("watch-app");
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+      const app = document.getElementById("watch-app");
 
-    if (!item) {
-      app.innerHTML = `
-        <div class="error">
-          <h2>Movie not found</h2>
-          <p>That title is not in the catalog yet.</p>
-        </div>
-      `;
-    } else {
+      if (!window.CATALOG || !Array.isArray(CATALOG)) {
+        app.innerHTML = `
+          <div class="error">
+            <h2>Catalog failed to load</h2>
+            <p>catalog.js did not load correctly.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const item = CATALOG.find(movie => movie.id === id);
+
+      if (!item) {
+        app.innerHTML = `
+          <div class="error">
+            <h2>Movie not found</h2>
+            <p>That title is not in the catalog yet.</p>
+          </div>
+        `;
+        return;
+      }
+
       app.innerHTML = `
         <div class="player-shell">
           <iframe
@@ -162,7 +176,7 @@
           </div>
         </div>
       `;
-    }
+    });
   </script>
 </body>
 </html>
