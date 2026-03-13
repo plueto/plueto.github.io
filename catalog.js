@@ -39,7 +39,7 @@ window.CATALOG = [
     preview: "https://archive.org/embed/nosferatu_201907"
   },
   {
-    id: "phantom_of_the_opera",
+    id: "ThePhantomOfTheOpera_201612",
     title: "The Phantom of the Opera",
     type: "movie",
     row: "Horror",
@@ -48,8 +48,8 @@ window.CATALOG = [
     rating: "PG",
     description: "A mysterious phantom haunts the Paris Opera House.",
     image: "https://upload.wikimedia.org/wikipedia/commons/3/35/Phantom_of_the_Opera_poster_1925.jpg",
-    fallbackImage: "https://archive.org/services/img/phantom_of_the_opera",
-    preview: "https://archive.org/embed/phantom_of_the_opera"
+    fallbackImage: "https://archive.org/services/img/ThePhantomOfTheOpera_201612",
+    preview: "https://archive.org/embed/ThePhantomOfTheOpera_201612"
   },
   {
     id: "fantastic-planet__1973",
