@@ -6,277 +6,466 @@
   <title>Plueto TV</title>
   <script src="catalog.js"></script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#141414;color:#fff;font-family:Arial,Helvetica,sans-serif}
-    a{text-decoration:none;color:#fff}
-    .navbar{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:linear-gradient(to bottom,rgba(0,0,0,.85),rgba(0,0,0,.25));z-index:100}
-    .nav-left{display:flex;align-items:center;gap:28px}
-    .logo{font-size:24px;font-weight:700;color:#e50914;letter-spacing:1px}
-    .nav-links{display:flex;gap:18px;font-size:14px;color:#ddd}
-    .nav-links a:hover{color:#fff}
-    .search-box{width:240px;max-width:40vw;padding:10px 14px;border:none;border-radius:6px;outline:none;background:rgba(255,255,255,.12);color:#fff}
-    .hero{position:relative;height:78vh;overflow:hidden;display:flex;align-items:flex-end;padding:60px 50px;background:#000}
-    .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
-    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#141414 4%,rgba(20,20,20,.2) 40%),linear-gradient(to right,rgba(0,0,0,.82) 18%,rgba(0,0,0,.25) 60%);z-index:1}
-    .hero-content{position:relative;z-index:2;max-width:560px}
-    .hero h1{font-size:54px;margin-bottom:16px}
-    .hero p{color:#e5e5e5;line-height:1.6;margin-bottom:22px;font-size:17px}
-    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:700;font-size:16px;transition:.2s;border:none;cursor:pointer}
-    .hero-btn.play{background:#fff;color:#000}
-    .hero-btn.play:hover{background:#ddd}
-    .hero-btn.info,.hero-btn.list{background:rgba(109,109,110,.7);color:#fff}
-    .hero-btn.info:hover,.hero-btn.list:hover{background:rgba(109,109,110,.9)}
-    .content{padding:20px 40px 50px;margin-top:-70px;position:relative;z-index:5}
-    .row{margin-bottom:34px}
-    .row.hidden-row{display:none}
-    .row h2{margin-bottom:12px;font-size:22px}
-    .row-wrap{position:relative}
-    .row-posters{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;padding:8px 36px;scrollbar-width:none}
-    .row-posters::-webkit-scrollbar{display:none}
-    .row-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:72px;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:24px;cursor:pointer;z-index:20;border-radius:8px}
-    .row-arrow:hover{background:rgba(0,0,0,.8)}
-    .row-arrow.left{left:0}
-    .row-arrow.right{right:0}
-    .poster{min-width:220px;height:125px;border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;display:block;transition:transform .25s ease,box-shadow .25s ease;background:#222}
-    .poster img,.poster video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-    .poster video{opacity:0;transition:.25s;pointer-events:none}
-    .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92),transparent 60%);opacity:0;transition:.25s}
-    .poster:hover{transform:scale(1.12);box-shadow:0 20px 40px rgba(0,0,0,.7);z-index:10}
-    .poster:hover video{opacity:1}
-    .poster:hover::after{opacity:1}
-    .poster-title{position:absolute;left:12px;bottom:10px;z-index:3;font-size:15px;font-weight:700;opacity:.92;transition:.25s}
-    .poster:hover .poster-title{transform:translateY(-3px);opacity:1}
-    .poster-badge{position:absolute;top:10px;left:10px;z-index:3;background:rgba(229,9,20,.95);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700}
-    .footer{margin-top:40px;padding:30px 0 10px;color:#999;font-size:13px}
-    .hidden{display:none !important}
-    @media (max-width:900px){
-      .navbar{padding:16px 20px;gap:12px}
-      .nav-links{display:none}
-      .search-box{width:180px}
-      .hero{padding:30px 20px;height:72vh}
-      .hero h1{font-size:36px}
-      .hero p{font-size:15px}
-      .content{padding:20px 20px 40px}
-      .poster{min-width:180px;height:102px}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #141414;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      background: rgba(17,17,17,0.88);
+      backdrop-filter: blur(8px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #e50914;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: end;
+      overflow: hidden;
+      background: #0f0f0f;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-media iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      opacity: 0.34;
+      transform: scale(1.2);
+      filter: saturate(0.9) contrast(1.05);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(20,20,20,1) 0%, rgba(20,20,20,0.75) 30%, rgba(20,20,20,0.18) 60%, rgba(20,20,20,0.08) 100%),
+        linear-gradient(to right, rgba(20,20,20,0.88) 0%, rgba(20,20,20,0.5) 35%, rgba(20,20,20,0.15) 65%, rgba(20,20,20,0.1) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      padding: 0 32px 46px;
+    }
+
+    .hero-kicker {
+      color: #bdbdbd;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 6vw, 4.8rem);
+      line-height: 0.95;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: #d3d3d3;
+      font-size: 0.95rem;
+    }
+
+    .hero-pill {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero-desc {
+      color: #e4e4e4;
+      line-height: 1.6;
+      font-size: 1rem;
+      max-width: 650px;
+      margin-bottom: 22px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 0;
+      cursor: pointer;
+    }
+
+    .hero-btn-primary {
+      background: #fff;
+      color: #000;
+    }
+
+    .hero-btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .content {
+      padding: 26px 32px 50px;
+    }
+
+    .row-section {
+      margin-bottom: 34px;
+    }
+
+    .row-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .row-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(170px, 190px);
+      gap: 18px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-behavior: smooth;
+    }
+
+    .row-track::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    .row-track::-webkit-scrollbar-thumb {
+      background: #333;
+      border-radius: 999px;
+    }
+
+    .card {
+      display: block;
+      transition: transform 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .poster-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1b1b1b;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    }
+
+    .poster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #111;
+    }
+
+    .poster-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.18)),
+        linear-gradient(135deg, #1a1a1a, #2b2b2b);
+    }
+
+    .poster-fallback-title {
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .poster-fallback-meta {
+      font-size: 0.82rem;
+      color: #d0d0d0;
+      line-height: 1.35;
+    }
+
+    .card-body {
+      padding: 10px 4px 0;
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.95rem;
+      line-height: 1.25;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.4;
+    }
+
+    .loading {
+      color: #bbb;
+      font-size: 16px;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        padding: 18px;
+      }
+
+      .hero-content,
+      .content {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .row-track {
+        grid-auto-columns: minmax(145px, 160px);
+      }
+
+      .hero {
+        min-height: 72vh;
+      }
+
+      .hero-media iframe {
+        opacity: 0.25;
+      }
     }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <div class="nav-left">
-      <div class="logo">PLUETO TV</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="movies.html">Movies</a>
-        <a href="tv.html">TV Shows</a>
-        <a href="new.html">New</a>
-        <a href="#my-list-row">My List</a>
-      </div>
+    <div class="logo">PLUETO TV</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">New</a>
+      <a href="#my-list">My List</a>
     </div>
-    <input type="text" id="searchInput" class="search-box" placeholder="Search titles..." />
   </div>
 
-  <section class="hero" id="heroSection"></section>
+  <section class="hero" id="hero">
+    <div class="hero-media" id="hero-media"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" id="hero-content">
+      <div class="loading">Loading featured title...</div>
+    </div>
+  </section>
 
   <main class="content">
-    <section class="row" id="continue-row">
-      <h2>Continue Watching</h2>
-      <div class="row-wrap">
-        <button class="row-arrow left" type="button">‹</button>
-        <div class="row-posters" id="continue-posters"></div>
-        <button class="row-arrow right" type="button">›</button>
+    <section class="row-section">
+      <div class="row-title">Continue Watching</div>
+      <div class="row-track" id="continue-row">
+        <div class="loading">Loading...</div>
       </div>
     </section>
 
-    <section class="row" id="my-list-row">
-      <h2>My List</h2>
-      <div class="row-wrap">
-        <button class="row-arrow left" type="button">‹</button>
-        <div class="row-posters" id="my-list-posters"></div>
-        <button class="row-arrow right" type="button">›</button>
+    <section class="row-section" id="my-list">
+      <div class="row-title">My List</div>
+      <div class="row-track" id="my-list-row">
+        <div class="loading">Loading...</div>
       </div>
     </section>
 
-    <div id="catalogRows"></div>
+    <section class="row-section">
+      <div class="row-title">Featured Movies</div>
+      <div class="row-track" id="featured-row">
+        <div class="loading">Loading...</div>
+      </div>
+    </section>
 
-    <div class="footer">Plueto TV • streaming prototype</div>
+    <section class="row-section">
+      <div class="row-title">Horror</div>
+      <div class="row-track" id="horror-row">
+        <div class="loading">Loading...</div>
+      </div>
+    </section>
+
+    <section class="row-section">
+      <div class="row-title">Sci-Fi</div>
+      <div class="row-track" id="scifi-row">
+        <div class="loading">Loading...</div>
+      </div>
+    </section>
   </main>
 
   <script>
-    const getItemById = (id) => CATALOG.find(item => item.id === id);
-
-    function getStoredIds(key) {
-      return JSON.parse(localStorage.getItem(key) || "[]");
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
     }
 
-    function setStoredIds(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
+    function getMyList() {
+      return JSON.parse(localStorage.getItem("pluetoMyList") || "[]");
     }
 
-    function isInMyList(id) {
-      return getStoredIds("myList").includes(id);
-    }
+    function createMovieCard(item, posterUrl) {
+      const yearText = item.year ? item.year : "Unknown year";
+      const typeText = item.type ? item.type : "Title";
+      const safeTitle = escapeHtml(item.title);
+      const safeId = escapeHtml(item.id);
+      const safeImage = escapeHtml(posterUrl || "");
+      const safeDuration = escapeHtml(item.duration || "Full Movie");
+      const safeRating = escapeHtml(item.rating || "NR");
 
-    function toggleMyList(id) {
-      const current = getStoredIds("myList");
-      const updated = current.includes(id)
-        ? current.filter(x => x !== id)
-        : [id, ...current];
-      setStoredIds("myList", updated);
-      renderHero();
-      renderMyList();
-    }
-
-    function cardHtml(item) {
       return `
-        <a class="poster" data-title="${item.title.toLowerCase()}" href="watch.html?id=${item.id}">
-          <img src="${item.image}" alt="${item.title}">
-          <video muted loop playsinline>
-            <source src="${item.preview}" type="video/mp4">
-          </video>
-          ${item.isNew ? '<div class="poster-badge">NEW</div>' : ''}
-          <div class="poster-title">${item.title}</div>
+        <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
+          <div class="poster-wrap">
+            ${
+              safeImage
+                ? `<img
+                    class="poster"
+                    src="${safeImage}"
+                    alt="${safeTitle}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  >`
+                : ""
+            }
+            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
+              <div class="poster-fallback-title">${safeTitle}</div>
+              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">${safeTitle}</div>
+            <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+          </div>
         </a>
       `;
     }
 
-    function renderHero() {
-      const heroItem = CATALOG.find(item => item.hero) || CATALOG[0];
-      const listText = isInMyList(heroItem.id) ? "✓ In My List" : "+ My List";
+    function renderRow(rowId, items, posters) {
+      const row = document.getElementById(rowId);
+      if (!row) return;
 
-      document.getElementById("heroSection").innerHTML = `
-        <video autoplay muted loop playsinline>
-          <source src="${heroItem.preview}" type="video/mp4">
-        </video>
-        <div class="hero-content">
-          <h1>${heroItem.title}</h1>
-          <p>${heroItem.description}</p>
-          <div class="hero-buttons">
-            <a class="hero-btn play" href="watch.html?id=${heroItem.id}">▶ Play</a>
-            <a class="hero-btn info" href="watch.html?id=${heroItem.id}">More Info</a>
-            <button class="hero-btn list" type="button" onclick="toggleMyList('${heroItem.id}')">${listText}</button>
-          </div>
+      if (!items.length) {
+        row.innerHTML = `<div class="loading">Nothing here yet.</div>`;
+        return;
+      }
+
+      row.innerHTML = items
+        .map(item => createMovieCard(item, posters[item.id] || null))
+        .join("");
+    }
+
+    function renderHero(item) {
+      const heroMedia = document.getElementById("hero-media");
+      const heroContent = document.getElementById("hero-content");
+
+      heroMedia.innerHTML = `
+        <iframe
+          src="${item.preview}?autoplay=1&muted=1"
+          title="${escapeHtml(item.title)} preview"
+          allow="autoplay; fullscreen"
+          loading="lazy">
+        </iframe>
+      `;
+
+      heroContent.innerHTML = `
+        <div class="hero-kicker">Featured Presentation</div>
+        <div class="hero-title">${escapeHtml(item.title)}</div>
+
+        <div class="hero-meta">
+          <span class="hero-pill">${escapeHtml(item.year || "—")}</span>
+          <span class="hero-pill">${escapeHtml(item.rating || "NR")}</span>
+          <span class="hero-pill">${escapeHtml(item.duration || "Full Movie")}</span>
+          <span class="hero-pill">${escapeHtml(item.row || "Featured")}</span>
+        </div>
+
+        <div class="hero-desc">${escapeHtml(item.description || "")}</div>
+
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-primary" href="watch.html?id=${encodeURIComponent(item.id)}">▶ Play</a>
+          <button class="hero-btn hero-btn-secondary" onclick="toggleMyList('${item.id}')">+ My List</button>
         </div>
       `;
     }
 
-    function renderCatalogRows() {
-      const rowsContainer = document.getElementById("catalogRows");
-      const uniqueRows = [...new Set(CATALOG.map(item => item.row))];
-
-      rowsContainer.innerHTML = uniqueRows.map(rowName => {
-        const items = CATALOG.filter(item => item.row === rowName);
-        return `
-          <section class="row" data-row-title="${rowName}">
-            <h2>${rowName}</h2>
-            <div class="row-wrap">
-              <button class="row-arrow left" type="button">‹</button>
-              <div class="row-posters">
-                ${items.map(cardHtml).join("")}
-              </div>
-              <button class="row-arrow right" type="button">›</button>
-            </div>
-          </section>
-        `;
-      }).join("");
-    }
-
-    function renderMyList() {
-      const ids = getStoredIds("myList");
-      const items = ids.map(getItemById).filter(Boolean);
-      const row = document.getElementById("my-list-row");
-      const container = document.getElementById("my-list-posters");
-
-      if (!items.length) {
-        row.classList.add("hidden-row");
-        container.innerHTML = "";
-        return;
+    async function renderHome() {
+      let posters = {};
+      try {
+        const res = await fetch("posters.json");
+        posters = await res.json();
+      } catch (err) {
+        console.warn("Could not load posters.json", err);
       }
 
-      row.classList.remove("hidden-row");
-      container.innerHTML = items.map(cardHtml).join("");
-      attachPosterPreviewEvents(container.querySelectorAll(".poster"));
-      attachRowArrows();
+      const movies = CATALOG.filter(item => item.type === "movie");
+      const myListIds = getMyList();
+      const myListItems = movies.filter(item => myListIds.includes(item.id));
+
+      const heroItem =
+        movies.find(item => item.id === "fantastic-planet__1973") ||
+        movies[0];
+
+      renderHero(heroItem);
+      renderRow("continue-row", movies.slice(0, 6), posters);
+      renderRow("my-list-row", myListItems, posters);
+      renderRow("featured-row", movies.slice(0, 6), posters);
+      renderRow("horror-row", movies.filter(item => item.row === "Horror"), posters);
+      renderRow("scifi-row", movies.filter(item => item.row === "Sci-Fi"), posters);
     }
 
-    function renderContinueWatching() {
-      const ids = getStoredIds("continueWatching");
-      const items = ids.map(getItemById).filter(Boolean);
-      const row = document.getElementById("continue-row");
-      const container = document.getElementById("continue-posters");
-
-      if (!items.length) {
-        row.classList.add("hidden-row");
-        container.innerHTML = "";
-        return;
-      }
-
-      row.classList.remove("hidden-row");
-      container.innerHTML = items.map(cardHtml).join("");
-      attachPosterPreviewEvents(container.querySelectorAll(".poster"));
-      attachRowArrows();
-    }
-
-    function attachPosterPreviewEvents(posters) {
-      posters.forEach((poster) => {
-        const video = poster.querySelector("video");
-        if (!video || poster.dataset.bound === "true") return;
-
-        poster.dataset.bound = "true";
-
-        poster.addEventListener("mouseenter", () => {
-          video.play().catch(() => {});
-        });
-
-        poster.addEventListener("mouseleave", () => {
-          video.pause();
-          video.currentTime = 0;
-        });
-      });
-    }
-
-    function attachRowArrows() {
-      document.querySelectorAll(".row-wrap").forEach((wrap) => {
-        const row = wrap.querySelector(".row-posters");
-        const left = wrap.querySelector(".row-arrow.left");
-        const right = wrap.querySelector(".row-arrow.right");
-        if (!row || !left || !right || wrap.dataset.bound === "true") return;
-
-        wrap.dataset.bound = "true";
-        left.onclick = () => row.scrollBy({ left: -500, behavior: "smooth" });
-        right.onclick = () => row.scrollBy({ left: 500, behavior: "smooth" });
-      });
-    }
-
-    function setupSearch() {
-      const searchInput = document.getElementById("searchInput");
-      searchInput.addEventListener("input", () => {
-        const value = searchInput.value.toLowerCase().trim();
-
-        document.querySelectorAll(".row").forEach((row) => {
-          const posters = row.querySelectorAll(".poster");
-          let visibleCount = 0;
-
-          posters.forEach((poster) => {
-            const title = poster.dataset.title || "";
-            const match = title.includes(value) || value === "";
-            poster.classList.toggle("hidden", !match);
-            if (match) visibleCount++;
-          });
-
-          row.classList.toggle("hidden-row", visibleCount === 0);
-        });
-      });
-    }
-
-    renderHero();
-    renderCatalogRows();
-    renderMyList();
-    renderContinueWatching();
-    attachPosterPreviewEvents(document.querySelectorAll(".poster"));
-    attachRowArrows();
-    setupSearch();
+    renderHome();
   </script>
 </body>
 </html>
