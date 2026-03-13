@@ -1,209 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My List • Plueto TV</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My List • Plueto TV</title>
+  <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
+  <style>
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --red:#ff4b5c;
+    }
 
-<script src="catalog.js"></script>
+    *{margin:0;padding:0;box-sizing:border-box}
 
-<style>
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+    }
 
-:root{
---bg:#0d0d12;
---panel:#15151d;
---text:#f4f4f5;
---muted:#a7a7b3;
---purple:#7a5cff;
---blue:#3aa8ff;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-*{margin:0;padding:0;box-sizing:border-box}
+    .navbar{
+      padding:20px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,14,.82);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
 
-body{
-background:var(--bg);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif;
-}
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      color:var(--purple);
+      text-shadow:0 0 24px rgba(122,92,255,.22);
+    }
 
-a{
-text-decoration:none;
-color:inherit;
-}
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+    }
 
-.navbar{
-padding:20px 32px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-background:rgba(10,10,14,.82);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(255,255,255,.05);
-position:sticky;
-top:0;
-z-index:40;
-}
+    .page{
+      padding:28px 32px 50px;
+    }
 
-.logo{
-font-size:24px;
-font-weight:800;
-color:var(--purple);
-text-shadow:0 0 24px rgba(122,92,255,.22);
-}
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
 
-.nav-links{
-display:flex;
-gap:18px;
-flex-wrap:wrap;
-color:var(--muted);
-}
+    .sub{
+      color:var(--muted);
+      margin-bottom:26px;
+      max-width:760px;
+      line-height:1.5;
+    }
 
-.page{
-padding:28px 32px 50px;
-}
+    .signal-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d7d7e3;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
 
-h1{
-font-size:42px;
-margin-bottom:10px;
-}
+    .signal-tag::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      box-shadow:0 0 14px rgba(122,92,255,.45);
+    }
 
-.sub{
-color:var(--muted);
-margin-bottom:26px;
-max-width:760px;
-line-height:1.5;
-}
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+      gap:22px;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-gap:22px;
-}
+    .card{
+      display:block;
+      transition:transform .18s ease;
+    }
 
-.card{
-display:block;
-transition:transform .18s ease;
-}
+    .card:hover{
+      transform:translateY(-5px);
+    }
 
-.card:hover{
-transform:translateY(-5px);
-}
+    .poster-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:2/3;
+      border-radius:18px;
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+    }
 
-.poster-wrap{
-position:relative;
-width:100%;
-aspect-ratio:2/3;
-border-radius:18px;
-overflow:hidden;
-background:var(--panel);
-box-shadow:0 12px 30px rgba(0,0,0,.28);
-}
+    .poster{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      background:#111;
+    }
 
-.poster{
-width:100%;
-height:100%;
-object-fit:cover;
-display:block;
-}
+    .poster-fallback{
+      width:100%;
+      height:100%;
+      display:none;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18)),
+        linear-gradient(135deg, #1b1b24, #29293b);
+    }
 
-.card-body{
-padding:10px 4px 0;
-}
+    .poster-fallback-title{
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
 
-.card-title{
-font-weight:800;
-margin-bottom:5px;
-font-size:.96rem;
-}
+    .poster-fallback-meta{
+      font-size:.82rem;
+      color:#d0d0d8;
+      line-height:1.35;
+    }
 
-.meta{
-font-size:13px;
-color:var(--muted);
-}
+    .card-body{
+      padding:10px 4px 0;
+    }
 
-.empty{
-margin-top:20px;
-color:var(--muted);
-}
+    .card-title{
+      font-weight:800;
+      margin-bottom:5px;
+      font-size:.96rem;
+      line-height:1.25;
+    }
 
-</style>
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.4;
+    }
+
+    .card-actions{
+      padding:10px 4px 0;
+    }
+
+    .my-list-btn{
+      width:100%;
+      border:none;
+      border-radius:12px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .my-list-btn:hover{
+      transform:translateY(-1px);
+      background:rgba(122,92,255,.18);
+    }
+
+    .empty-state{
+      margin-top:18px;
+      padding:24px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(122,92,255,.08), rgba(58,168,255,.06));
+      border:1px solid rgba(255,255,255,.06);
+      color:#d7d7e3;
+      line-height:1.6;
+    }
+
+    @media (max-width:800px){
+      .navbar,.page{padding-left:18px;padding-right:18px}
+      .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+      h1{font-size:34px}
+    }
+  </style>
 </head>
-
 <body>
+  <div class="navbar">
+    <a href="index.html" class="logo">PLUETO TV</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">Recently Added</a>
+      <a href="my-list.html">My List</a>
+    </div>
+  </div>
 
-<div class="navbar">
-<a href="index.html" class="logo">PLUETO TV</a>
+  <div class="page">
+    <div class="signal-tag">Saved Queue</div>
+    <h1>My List</h1>
+    <div class="sub">
+      Your saved movies and shows live here.
+    </div>
 
-<div class="nav-links">
-<a href="index.html">Home</a>
-<a href="movies.html">Movies</a>
-<a href="tv.html">TV Shows</a>
-<a href="new.html">Recently Added</a>
-<a href="my-list.html">My List</a>
-</div>
-</div>
+    <div class="grid" id="my-list-grid"></div>
 
-<div class="page">
+    <div class="empty-state" id="my-list-empty" style="display:none;">
+      Your list is empty. Tap <strong>+ My List</strong> on any title to save it here.
+    </div>
+  </div>
 
-<h1>My List</h1>
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
 
-<div class="sub">
-Anything you save will appear here.
-</div>
+    function createCard(item, posterUrl) {
+      const yearText = item.year ? item.year : "Unknown year";
+      const typeText = item.type ? item.type : "Title";
+      const safeTitle = escapeHtml(item.title);
+      const safeId = escapeHtml(item.id);
+      const safeImage = escapeHtml(posterUrl || item.image || item.fallbackImage || "");
+      const safeDuration = escapeHtml(item.duration || "Unavailable");
+      const safeRating = escapeHtml(item.rating || "NR");
+      const buttonLabel = escapeHtml(getMyListButtonLabel(item.id));
 
-<div class="grid" id="my-list-grid"></div>
+      return `
+        <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
+          <div class="poster-wrap">
+            ${
+              safeImage
+                ? `<img
+                    class="poster"
+                    src="${safeImage}"
+                    alt="${safeTitle}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  >`
+                : ""
+            }
+            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
+              <div class="poster-fallback-title">${safeTitle}</div>
+              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
+            </div>
+          </div>
 
-<div class="empty" id="empty">
-Your list is empty.
-</div>
+          <div class="card-body">
+            <div class="card-title">${safeTitle}</div>
+            <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+            <div class="card-actions">
+              <button class="my-list-btn" type="button" data-id="${safeId}">${buttonLabel}</button>
+            </div>
+          </div>
+        </a>
+      `;
+    }
 
-</div>
+    function wireMyListButtons(root = document) {
+      root.querySelectorAll(".my-list-btn").forEach(button => {
+        const id = button.dataset.id;
 
-<script>
+        button.onclick = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
 
-const grid = document.getElementById("my-list-grid")
-const empty = document.getElementById("empty")
+          toggleMyList(id);
+          renderMyList();
+        };
+      });
+    }
 
-function getMyList(){
-const raw = localStorage.getItem("plueto_my_list")
-return raw ? JSON.parse(raw) : []
-}
+    async function renderMyList() {
+      const grid = document.getElementById("my-list-grid");
+      const empty = document.getElementById("my-list-empty");
 
-function render(){
+      let posters = {};
+      try {
+        const res = await fetch("posters.json");
+        posters = await res.json();
+      } catch (err) {
+        console.warn("Could not load posters.json", err);
+      }
 
-const ids = getMyList()
+      const ids = getMyList();
+      const catalog = Array.isArray(window.CATALOG) ? window.CATALOG : [];
+      const items = ids
+        .map(id => catalog.find(item => item.id === id))
+        .filter(Boolean);
 
-const items = CATALOG.filter(item => ids.includes(item.id))
+      if (!items.length) {
+        grid.innerHTML = "";
+        empty.style.display = "block";
+        return;
+      }
 
-if(items.length === 0){
-empty.style.display="block"
-return
-}
+      empty.style.display = "none";
 
-empty.style.display="none"
+      grid.innerHTML = items
+        .map(item => createCard(item, posters[item.id] || null))
+        .join("");
 
-grid.innerHTML = items.map(item => `
+      wireMyListButtons(grid);
+    }
 
-<a class="card" href="watch.html?id=${item.id}">
-
-<div class="poster-wrap">
-<img class="poster" src="${item.image || ""}">
-</div>
-
-<div class="card-body">
-<div class="card-title">${item.title}</div>
-<div class="meta">${item.year || ""}</div>
-</div>
-
-</a>
-
-`).join("")
-
-}
-
-render()
-
-</script>
-
+    renderMyList();
+  </script>
 </body>
 </html>
