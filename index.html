@@ -279,24 +279,27 @@
       height:100%;
       display:none;
       flex-direction:column;
-      justify-content:flex-end;
-      padding:18px;
-      background:
-        linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18)),
-        linear-gradient(135deg, #1b1b24, #29293b);
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:22px;
+      background:#000;
+      color:#fff;
+      letter-spacing:.06em;
     }
 
     .poster-fallback-title{
-      font-size:1rem;
-      font-weight:800;
+      font-size:1.15rem;
+      font-weight:900;
       line-height:1.2;
-      margin-bottom:8px;
+      margin-bottom:10px;
+      text-transform:uppercase;
     }
 
     .poster-fallback-meta{
-      font-size:.82rem;
-      color:#d0d0d8;
-      line-height:1.35;
+      font-size:.78rem;
+      color:rgba(255,255,255,.72);
+      line-height:1.45;
     }
 
     .card-body{padding:10px 4px 0}
@@ -397,24 +400,6 @@
       return null;
     }
 
-    function createTextFallback(item) {
-      const yearText = item.year ? item.year : "Unknown year";
-      const typeText = item.type ? item.type.toUpperCase() : "TITLE";
-      const safeTitle = escapeHtml(item.title);
-      const safeDuration = escapeHtml(item.duration || "Full Movie");
-      const safeRating = escapeHtml(item.rating || "NR");
-
-      return `
-        <div class="poster-fallback" style="display:${item.image ? "none" : "flex"};">
-          <div class="poster-fallback-title">${safeTitle}</div>
-          <div class="poster-fallback-meta">
-            ${yearText} • ${typeText}<br>
-            ${safeDuration} • ${safeRating}
-          </div>
-        </div>
-      `;
-    }
-
     function createCard(item, posters) {
       const yearText = item.year ? item.year : "Unknown year";
       const safeTitle = escapeHtml(item.title);
@@ -437,7 +422,7 @@
                 : ""
             }
             <div class="poster-fallback" style="${poster ? "" : "display:flex;"}">
-              <div class="poster-fallback-title">${safeTitle}</div>
+              <div class="poster-fallback-title">${safeTitle.toUpperCase()}</div>
               <div class="poster-fallback-meta">
                 ${yearText} • ${escapeHtml((item.type || "title").toUpperCase())}<br>
                 ${safeDuration} • ${safeRating}
