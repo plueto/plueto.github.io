@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plueto TV</title>
-  <script src="catalog.js"></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -15,13 +14,16 @@
       --purple:#7a5cff;
       --blue:#3aa8ff;
       --red:#ff4b5c;
+      --border:rgba(255,255,255,0.08);
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
+
     body{
       background:var(--bg);
       color:var(--text);
       font-family:Arial,Helvetica,sans-serif;
+      line-height:1.4;
     }
 
     a{text-decoration:none;color:inherit}
@@ -31,136 +33,68 @@
       top:0;
       z-index:50;
       display:flex;
-      justify-content:space-between;
       align-items:center;
-      padding:20px 32px;
-      background:rgba(10,10,14,.82);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid rgba(255,255,255,.05);
+      gap:20px;
+      padding:16px 24px;
+      background:rgba(13,13,18,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
 
-    .logo{
-      font-size:24px;
+    .brand{
       font-weight:800;
-      letter-spacing:.04em;
-      color:var(--purple);
-      text-shadow:0 0 24px rgba(122,92,255,.22);
+      letter-spacing:1px;
+      margin-right:18px;
     }
 
-    .nav-links{
-      display:flex;
-      gap:18px;
-      flex-wrap:wrap;
+    .navbar a{
       color:var(--muted);
+      font-weight:600;
+      transition:color .18s ease;
     }
 
-    .nav-links a:hover{color:white}
+    .navbar a:hover{
+      color:var(--text);
+    }
 
     .hero{
       position:relative;
-      min-height:76vh;
-      overflow:hidden;
-      display:flex;
-      align-items:flex-end;
-      background:
-        radial-gradient(circle at top right, rgba(58,168,255,.18), transparent 30%),
-        radial-gradient(circle at top left, rgba(122,92,255,.24), transparent 34%),
-        linear-gradient(to bottom, #12121a, #0d0d12 70%);
-    }
-
-    .hero-bg{
-      position:absolute;
-      inset:0;
-      overflow:hidden;
-      z-index:0;
-    }
-
-    .hero-poster{
-      position:absolute;
-      right:-3%;
-      top:50%;
-      width:min(42vw,560px);
-      aspect-ratio:2/3;
-      object-fit:cover;
-      object-position:center;
-      border-radius:26px;
-      transform:translateY(-50%) scale(1.04);
-      opacity:.24;
-      filter:saturate(1.1);
-      box-shadow:0 30px 100px rgba(0,0,0,.45);
-      animation:heroFloat 16s ease-in-out infinite alternate;
-    }
-
-    @keyframes heroFloat{
-      from{transform:translateY(-50%) scale(1.04)}
-      to{transform:translateY(-48%) scale(1.08)}
-    }
-
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to right, rgba(13,13,18,.96) 0%, rgba(13,13,18,.8) 38%, rgba(13,13,18,.3) 70%, rgba(13,13,18,.55) 100%),
-        linear-gradient(to top, rgba(13,13,18,1) 0%, rgba(13,13,18,.2) 42%, rgba(13,13,18,.1) 100%);
-      z-index:1;
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:760px;
-      padding:52px 32px 48px;
-    }
-
-    .hero-kicker{
-      display:inline-flex;
+      min-height:72vh;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
       align-items:center;
-      gap:8px;
-      color:#d7d7e3;
-      font-size:12px;
-      letter-spacing:.16em;
+      gap:28px;
+      padding:40px 24px 28px;
+      border-bottom:1px solid var(--border);
+      background:
+        radial-gradient(circle at top left, rgba(122,92,255,0.22), transparent 35%),
+        radial-gradient(circle at top right, rgba(58,168,255,0.18), transparent 30%),
+        linear-gradient(180deg, #12121a 0%, #0d0d12 100%);
+    }
+
+    .hero-copy{
+      max-width:700px;
+    }
+
+    .eyebrow{
+      color:var(--purple);
+      font-size:.92rem;
+      font-weight:700;
+      letter-spacing:.12em;
       text-transform:uppercase;
       margin-bottom:14px;
     }
 
-    .hero-kicker::before{
-      content:"";
-      width:9px;
-      height:9px;
-      border-radius:999px;
-      background:linear-gradient(135deg,var(--purple),var(--blue));
-      box-shadow:0 0 14px rgba(122,92,255,.45);
-    }
-
-    .hero-title{
-      font-size:clamp(2.5rem,6vw,5.4rem);
+    .hero h1{
+      font-size:clamp(2.2rem,5vw,4.4rem);
       line-height:.95;
-      font-weight:900;
       margin-bottom:14px;
-      max-width:720px;
     }
 
-    .hero-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:16px;
-    }
-
-    .hero-pill{
-      border-radius:999px;
-      padding:8px 12px;
-      font-size:.92rem;
-      color:#dfdfeb;
-      background:rgba(255,255,255,.06);
-      border:1px solid rgba(255,255,255,.08);
-    }
-
-    .hero-desc{
-      max-width:640px;
-      color:#d7d7dd;
-      line-height:1.6;
-      font-size:1rem;
+    .hero p{
+      color:var(--muted);
+      font-size:1.05rem;
+      max-width:58ch;
       margin-bottom:22px;
     }
 
@@ -170,349 +104,293 @@
       flex-wrap:wrap;
     }
 
-    .hero-btn{
-      min-height:46px;
-      padding:0 18px;
-      border-radius:999px;
+    .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
-      font-weight:800;
-      border:none;
-      cursor:pointer;
-    }
-
-    .hero-btn-primary{
-      background:linear-gradient(135deg,var(--red),#ff6d4d);
-      color:white;
-      box-shadow:0 10px 30px rgba(255,75,92,.28);
-    }
-
-    .hero-btn-secondary{
-      background:rgba(255,255,255,.08);
-      border:1px solid rgba(255,255,255,.09);
-      color:white;
-    }
-
-    .signal-sweep{
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      z-index:3;
-      background:linear-gradient(
-        110deg,
-        transparent 0%,
-        rgba(122,92,255,0) 40%,
-        rgba(122,92,255,.18) 49%,
-        rgba(58,168,255,.16) 52%,
-        rgba(122,92,255,0) 60%,
-        transparent 100%
-      );
-      transform:translateX(-120%);
-      animation:sweep 7.2s linear infinite;
-    }
-
-    @keyframes sweep{
-      0%{transform:translateX(-120%)}
-      100%{transform:translateX(120%)}
-    }
-
-    .content{
-      padding:30px 32px 54px;
-    }
-
-    .row-section{margin-bottom:34px}
-    .row-title{
-      font-size:1.25rem;
-      font-weight:800;
-      margin-bottom:14px;
-      letter-spacing:.02em;
-    }
-
-    .row-track{
-      display:grid;
-      grid-auto-flow:column;
-      grid-auto-columns:minmax(160px,190px);
-      gap:18px;
-      overflow-x:auto;
-      padding-bottom:8px;
-      scroll-behavior:smooth;
-    }
-
-    .row-track::-webkit-scrollbar{height:8px}
-    .row-track::-webkit-scrollbar-thumb{
-      background:#2b2b38;
+      padding:12px 18px;
       border-radius:999px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:transform .18s ease, opacity .18s ease, border-color .18s ease;
     }
 
-    .card{
-      display:block;
-      transition:transform .18s ease, box-shadow .18s ease;
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.95;
     }
 
-    .card:hover{
-      transform:translateY(-5px);
+    .btn-primary{
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      color:white;
     }
 
-    .poster-wrap{
-      position:relative;
-      width:100%;
-      aspect-ratio:2/3;
-      border-radius:18px;
-      overflow:hidden;
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--border);
+      color:var(--text);
+    }
+
+    .hero-visual{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-card{
+      width:min(100%, 520px);
       background:var(--panel);
-      box-shadow:0 12px 30px rgba(0,0,0,.28);
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 24px 60px rgba(0,0,0,.35);
     }
 
-    .poster{
+    .hero-card img{
       width:100%;
-      height:100%;
+      aspect-ratio:16/10;
       object-fit:cover;
-      object-position:center;
       display:block;
       background:#111;
     }
 
-    .poster-fallback{
-      width:100%;
-      height:100%;
-      display:none;
-      flex-direction:column;
-      justify-content:flex-end;
-      padding:18px;
-      background:
-        linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18)),
-        linear-gradient(135deg, #1b1b24, #29293b);
+    .hero-card-body{
+      padding:16px;
     }
 
-    .poster-fallback-title{
-      font-size:1rem;
-      font-weight:800;
-      line-height:1.2;
+    .hero-card-body h2{
+      font-size:1.2rem;
       margin-bottom:8px;
     }
 
-    .poster-fallback-meta{
-      font-size:.82rem;
-      color:#d0d0d8;
-      line-height:1.35;
-    }
-
-    .card-body{padding:10px 4px 0}
-    .card-title{
-      font-weight:800;
-      margin-bottom:5px;
-      font-size:.96rem;
-      line-height:1.25;
-    }
-    .meta{
-      font-size:13px;
+    .hero-card-body p{
       color:var(--muted);
-      line-height:1.4;
+      font-size:.95rem;
     }
 
-    .loading{
+    .page{
+      padding:28px 24px 60px;
+    }
+
+    .content-row{
+      margin-top:30px;
+    }
+
+    .content-row h2{
+      font-size:1.4rem;
+      margin-bottom:14px;
+    }
+
+    .poster-row{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(170px, 1fr));
+      gap:16px;
+    }
+
+    .poster-card{
+      display:block;
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      overflow:hidden;
+      transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }
+
+    .poster-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(122,92,255,.45);
+      box-shadow:0 18px 35px rgba(0,0,0,.28);
+    }
+
+    .poster-card img{
+      width:100%;
+      aspect-ratio:2/3;
+      object-fit:cover;
+      display:block;
+      background:#111;
+    }
+
+    .poster-meta{
+      padding:12px;
+    }
+
+    .poster-meta h3{
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+
+    .poster-meta p{
       color:var(--muted);
-      font-size:15px;
+      font-size:.9rem;
     }
 
-    @media (max-width:800px){
-      .navbar,.content,.hero-content{padding-left:18px;padding-right:18px}
-      .hero{min-height:68vh}
-      .hero-poster{
-        width:62vw;
-        right:-12%;
-        opacity:.18;
+    .empty-row{
+      color:var(--muted);
+      background:var(--panel);
+      border:1px dashed var(--border);
+      border-radius:16px;
+      padding:18px;
+    }
+
+    @media (max-width: 900px){
+      .hero{
+        grid-template-columns:1fr;
       }
-      .row-track{
-        grid-auto-columns:minmax(145px,160px);
+
+      .hero-visual{
+        order:-1;
+      }
+
+      .navbar{
+        gap:14px;
+        overflow-x:auto;
+        white-space:nowrap;
       }
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html" class="logo">PLUETO TV</a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="movies.html">Movies</a>
-      <a href="tv.html">TV Shows</a>
-      <a href="new.html">Recently Added</a>
-      <a href="my-list.html">My List</a>
+  <nav class="navbar">
+    <a class="brand" href="index.html">PLUETO TV</a>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="tv.html">TV Shows</a>
+    <a href="new.html">Recently Added</a>
+    <a href="my-list.html">My List</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-copy">
+      <div class="eyebrow">Plueto Presents</div>
+      <h1 data-feature-title>Loading feature...</h1>
+      <p data-feature-description>Loading…</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" data-feature-watch href="watch.html">Watch Now</a>
+        <a class="btn btn-secondary" href="my-list.html">Open My List</a>
+      </div>
     </div>
-  </div>
 
-  <section class="hero" id="hero">
-    <div class="hero-bg" id="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="signal-sweep"></div>
-    <div class="hero-content" id="hero-content">
-      <div class="loading">Loading feature...</div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img data-feature-image src="" alt="Featured title" />
+        <div class="hero-card-body">
+          <h2>Featured Pick</h2>
+          <p>Hand-picked from your catalog.</p>
+        </div>
+      </div>
     </div>
-  </section>
+  </header>
 
-  <main class="content">
-    <section class="row-section">
-      <div class="row-title">Plueto Presents</div>
-      <div class="row-track" id="featured-row"><div class="loading">Loading…</div></div>
+  <main class="page">
+    <section class="content-row">
+      <h2>Sci-Fi Showcase</h2>
+      <div class="poster-row" data-row="sci-fi">
+        <p class="empty-row">Loading…</p>
+      </div>
     </section>
 
-    <section class="row-section">
-      <div class="row-title">Sci-Fi Showcase</div>
-      <div class="row-track" id="scifi-row"><div class="loading">Loading…</div></div>
+    <section class="content-row">
+      <h2>Midnight Horror</h2>
+      <div class="poster-row" data-row="horror">
+        <p class="empty-row">Loading…</p>
+      </div>
     </section>
 
-    <section class="row-section">
-      <div class="row-title">Midnight Horror</div>
-      <div class="row-track" id="horror-row"><div class="loading">Loading…</div></div>
+    <section class="content-row">
+      <h2>My List</h2>
+      <div class="poster-row" data-row="my-list">
+        <p class="empty-row">Loading…</p>
+      </div>
     </section>
 
-    <section class="row-section" id="my-list">
-      <div class="row-title">My List</div>
-      <div class="row-track" id="my-list-row"><div class="loading">Loading…</div></div>
-    </section>
-
-    <section class="row-section">
-      <div class="row-title">Animation Block</div>
-      <div class="row-track" id="animation-row"><div class="loading">Loading…</div></div>
+    <section class="content-row">
+      <h2>Animation Block</h2>
+      <div class="poster-row" data-row="animation">
+        <p class="empty-row">Loading…</p>
+      </div>
     </section>
   </main>
 
+  <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
   <script>
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
+    function getCatalog() {
+      return Array.isArray(window.CATALOG) ? window.CATALOG : [];
     }
 
-    function getMyList() {
-      return JSON.parse(localStorage.getItem("plueto_my_list") || "[]");
-    }
-
-    function getPosterForItem(item, posters) {
-      return posters[item.id] || item.fallbackImage || null;
-    }
-
-    function createCard(item, posters) {
-      const yearText = item.year ? item.year : "Unknown year";
-      const typeText = item.type ? item.type : "Title";
-      const safeTitle = escapeHtml(item.title);
-      const safeId = escapeHtml(item.id);
-      const finalPoster = getPosterForItem(item, posters);
-      const safeImage = escapeHtml(finalPoster || "");
-      const safeDuration = escapeHtml(item.duration || "Full Movie");
-      const safeRating = escapeHtml(item.rating || "NR");
-
+    function createPosterCard(item) {
       return `
-        <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
-          <div class="poster-wrap">
-            ${
-              safeImage
-                ? `<img
-                    class="poster"
-                    src="${safeImage}"
-                    alt="${safeTitle}"
-                    loading="lazy"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  >`
-                : ""
-            }
-            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
-              <div class="poster-fallback-title">${safeTitle}</div>
-              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
-            </div>
-          </div>
-
-          <div class="card-body">
-            <div class="card-title">${safeTitle}</div>
-            <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+        <a class="poster-card" href="watch.html?id=${encodeURIComponent(item.id)}">
+          <img
+            src="${item.image}"
+            alt="${item.title}"
+            loading="lazy"
+            onerror="this.onerror=null; this.src='${item.fallbackImage || item.image}'"
+          />
+          <div class="poster-meta">
+            <h3>${item.title}</h3>
+            <p>${item.year || ""}${item.duration ? " • " + item.duration : ""}</p>
           </div>
         </a>
       `;
     }
 
-    function renderRow(rowId, items, posters) {
-      const row = document.getElementById(rowId);
+    function renderRow(selector, items, emptyText) {
+      const row = document.querySelector(selector);
       if (!row) return;
+
       if (!items.length) {
-        row.innerHTML = `<div class="loading">Nothing here yet.</div>`;
+        row.innerHTML = `<p class="empty-row">${emptyText}</p>`;
         return;
       }
-      row.innerHTML = items.map(item => createCard(item, posters)).join("");
+
+      row.innerHTML = items.map(createPosterCard).join("");
     }
 
-    function renderHero(item, posters) {
-      const labels = [
-        "PLUETO PRESENTS",
-        "SCI-FI SHOWCASE",
-        "MIDNIGHT HORROR",
-        "ANIMATION BLOCK",
-        "FEATURE PRESENTATION"
-      ];
+    function renderHomePage() {
+      const catalog = getCatalog();
 
-      const heroLabel =
-        item.row === "Sci-Fi" ? "SCI-FI SHOWCASE" :
-        item.row === "Horror" ? "MIDNIGHT HORROR" :
-        item.row === "Animation" ? "ANIMATION BLOCK" :
-        labels[Math.floor(Math.random() * labels.length)];
+      const featured =
+        catalog.find(item => item.row === "Sci-Fi") ||
+        catalog[0] ||
+        null;
 
-      const heroPoster = getPosterForItem(item, posters);
+      const sciFi = catalog.filter(item => item.row === "Sci-Fi");
+      const horror = catalog.filter(item => item.row === "Horror");
+      const animation = catalog.filter(item => item.row === "Animation");
 
-      document.getElementById("hero-bg").innerHTML = heroPoster
-        ? `<img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">`
-        : "";
-
-      document.getElementById("hero-content").innerHTML = `
-        <div class="hero-kicker">${heroLabel}</div>
-        <div class="hero-title">${escapeHtml(item.title)}</div>
-        <div class="hero-meta">
-          <span class="hero-pill">${escapeHtml(item.year || "—")}</span>
-          <span class="hero-pill">${escapeHtml(item.rating || "NR")}</span>
-          <span class="hero-pill">${escapeHtml(item.duration || "Full Movie")}</span>
-          <span class="hero-pill">${escapeHtml(item.row || "Featured")}</span>
-        </div>
-        <div class="hero-desc">${escapeHtml(item.description || "")}</div>
-        <div class="hero-actions">
-          <a class="hero-btn hero-btn-primary" href="watch.html?id=${encodeURIComponent(item.id)}">▶ Play</a>
-          <button class="hero-btn hero-btn-secondary" onclick="toggleMyList('${item.id}')">+ My List</button>
-        </div>
-      `;
-    }
-
-    async function renderHome() {
-      let posters = {};
-      try {
-        const res = await fetch("posters.json");
-        posters = await res.json();
-      } catch (err) {
-        console.warn("Could not load posters.json", err);
-      }
-
-      const allTitles = Array.isArray(CATALOG) ? CATALOG : [];
-      const movies = allTitles.filter(item => item.type === "movie");
       const myListIds = getMyList();
-      const myListItems = movies.filter(item => myListIds.includes(item.id));
+      const myListItems = myListIds
+        .map(id => catalog.find(item => item.id === id))
+        .filter(Boolean);
 
-      const heroPool = movies.length ? movies : allTitles;
-      const heroItem =
-        heroPool.find(item => item.id === "fantastic-planet__1973") ||
-        heroPool[0];
+      if (featured) {
+        const heroTitle = document.querySelector("[data-feature-title]");
+        const heroDescription = document.querySelector("[data-feature-description]");
+        const heroWatch = document.querySelector("[data-feature-watch]");
+        const heroImage = document.querySelector("[data-feature-image]");
 
-      if (heroItem) {
-        renderHero(heroItem, posters);
+        if (heroTitle) heroTitle.textContent = featured.title;
+        if (heroDescription) heroDescription.textContent = featured.description || "";
+        if (heroWatch) heroWatch.href = `watch.html?id=${encodeURIComponent(featured.id)}`;
+        if (heroImage) {
+          heroImage.src = featured.image;
+          heroImage.alt = featured.title;
+          heroImage.onerror = function () {
+            this.onerror = null;
+            this.src = featured.fallbackImage || featured.image;
+          };
+        }
       }
 
-      renderRow("featured-row", movies.slice(0, 8), posters);
-      renderRow("scifi-row", movies.filter(item => item.row === "Sci-Fi"), posters);
-      renderRow("horror-row", movies.filter(item => item.row === "Horror"), posters);
-      renderRow("animation-row", movies.filter(item => item.row === "Animation"), posters);
-      renderRow("my-list-row", myListItems, posters);
+      renderRow("[data-row='sci-fi']", sciFi, "No sci-fi titles yet.");
+      renderRow("[data-row='horror']", horror, "No horror titles yet.");
+      renderRow("[data-row='my-list']", myListItems, "Your My List is empty.");
+      renderRow("[data-row='animation']", animation, "No animation titles yet.");
     }
 
-    renderHome();
+    document.addEventListener("DOMContentLoaded", renderHomePage);
+    window.addEventListener("storage", renderHomePage);
   </script>
 </body>
 </html>
