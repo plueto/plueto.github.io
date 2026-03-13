@@ -1,176 +1,568 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Streaming Site</title>
 
-<title>Streaming Site</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-<style>
+    body{
+      background:#141414;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+    }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+    a{
+      color:white;
+      text-decoration:none;
+    }
 
-body{
-background:#141414;
-color:white;
-font-family:Arial;
-}
+    .navbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 40px;
+      background:linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.25));
+      z-index:100;
+    }
 
-.navbar{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-padding:20px 40px;
-background:rgba(0,0,0,0.8);
-z-index:10;
-}
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
 
-.logo{
-font-size:24px;
-font-weight:bold;
-color:#e50914;
-}
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#e50914;
+      letter-spacing:1px;
+    }
 
-.hero{
-height:70vh;
-background:url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80") center/cover;
-display:flex;
-align-items:flex-end;
-padding:60px;
-}
+    .nav-links{
+      display:flex;
+      gap:18px;
+      font-size:14px;
+      color:#ddd;
+    }
 
-.hero h1{
-font-size:48px;
-}
+    .nav-links a:hover{
+      color:white;
+    }
 
-.content{
-padding:30px 40px;
-}
+    .search-box{
+      width:240px;
+      max-width:40vw;
+      padding:10px 14px;
+      border:none;
+      border-radius:6px;
+      outline:none;
+      background:rgba(255,255,255,.12);
+      color:white;
+    }
 
-.row{
-margin-bottom:30px;
-}
+    .search-box::placeholder{
+      color:#d0d0d0;
+    }
 
-.row h2{
-margin-bottom:10px;
-}
+    .hero{
+      position:relative;
+      height:78vh;
+      overflow:hidden;
+      display:flex;
+      align-items:flex-end;
+      padding:60px 50px;
+      background:#000;
+    }
 
-.row-posters{
-display:flex;
-gap:10px;
-overflow-x:auto;
-}
+    .hero video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:.42;
+    }
 
-.poster{
-min-width:220px;
-height:125px;
-border-radius:6px;
-overflow:hidden;
-transition:transform .25s;
-background:#222;
-position:relative;
-flex-shrink:0;
-display:block;
-color:white;
-text-decoration:none;
-}
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(to top, #141414 4%, rgba(20,20,20,.2) 40%),
+        linear-gradient(to right, rgba(0,0,0,.82) 18%, rgba(0,0,0,.25) 60%);
+      z-index:1;
+    }
 
-.poster img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:560px;
+    }
 
-.poster:hover{
-transform:scale(1.12);
-}
+    .hero h1{
+      font-size:54px;
+      margin-bottom:16px;
+    }
 
-.poster-title{
-position:absolute;
-bottom:10px;
-left:10px;
-font-size:14px;
-font-weight:bold;
-}
+    .hero p{
+      color:#e5e5e5;
+      line-height:1.6;
+      margin-bottom:22px;
+      font-size:17px;
+    }
 
-</style>
+    .hero-buttons{
+      display:flex;
+      gap:12px;
+    }
+
+    .hero-btn{
+      display:inline-block;
+      padding:12px 24px;
+      border-radius:6px;
+      font-weight:bold;
+      font-size:16px;
+      transition:.2s;
+    }
+
+    .hero-btn.play{
+      background:white;
+      color:black;
+    }
+
+    .hero-btn.play:hover{
+      background:#ddd;
+    }
+
+    .hero-btn.info{
+      background:rgba(109,109,110,.7);
+      color:white;
+    }
+
+    .hero-btn.info:hover{
+      background:rgba(109,109,110,.9);
+    }
+
+    .content{
+      padding:20px 40px 50px;
+      margin-top:-70px;
+      position:relative;
+      z-index:5;
+    }
+
+    .row{
+      margin-bottom:34px;
+    }
+
+    .row h2{
+      margin-bottom:12px;
+      font-size:22px;
+    }
+
+    .row-wrap{
+      position:relative;
+    }
+
+    .row-posters{
+      display:flex;
+      gap:12px;
+      overflow-x:auto;
+      scroll-behavior:smooth;
+      padding:8px 36px;
+      scrollbar-width:none;
+    }
+
+    .row-posters::-webkit-scrollbar{
+      display:none;
+    }
+
+    .row-arrow{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:34px;
+      height:72px;
+      border:none;
+      background:rgba(0,0,0,.55);
+      color:white;
+      font-size:24px;
+      cursor:pointer;
+      z-index:20;
+      border-radius:8px;
+    }
+
+    .row-arrow:hover{
+      background:rgba(0,0,0,.8);
+    }
+
+    .row-arrow.left{
+      left:0;
+    }
+
+    .row-arrow.right{
+      right:0;
+    }
+
+    .poster{
+      min-width:220px;
+      height:125px;
+      border-radius:8px;
+      overflow:hidden;
+      position:relative;
+      flex-shrink:0;
+      display:block;
+      transition:transform .25s ease, box-shadow .25s ease;
+      background:#222;
+    }
+
+    .poster img,
+    .poster video{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .poster video{
+      opacity:0;
+      transition:.25s;
+      pointer-events:none;
+    }
+
+    .poster::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.92), transparent 60%);
+      opacity:0;
+      transition:.25s;
+    }
+
+    .poster:hover{
+      transform:scale(1.12);
+      box-shadow:0 20px 40px rgba(0,0,0,.7);
+      z-index:10;
+    }
+
+    .poster:hover video{
+      opacity:1;
+    }
+
+    .poster:hover::after{
+      opacity:1;
+    }
+
+    .poster-title{
+      position:absolute;
+      left:12px;
+      bottom:10px;
+      z-index:3;
+      font-size:15px;
+      font-weight:bold;
+      opacity:.92;
+      transition:.25s;
+    }
+
+    .poster:hover .poster-title{
+      transform:translateY(-3px);
+      opacity:1;
+    }
+
+    .hidden{
+      display:none !important;
+    }
+
+    @media (max-width: 900px){
+      .navbar{
+        padding:16px 20px;
+        gap:12px;
+      }
+
+      .nav-links{
+        display:none;
+      }
+
+      .search-box{
+        width:180px;
+      }
+
+      .hero{
+        padding:30px 20px;
+        height:72vh;
+      }
+
+      .hero h1{
+        font-size:36px;
+      }
+
+      .hero p{
+        font-size:15px;
+      }
+
+      .content{
+        padding:20px 20px 40px;
+      }
+
+      .poster{
+        min-width:180px;
+        height:102px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-<div class="navbar">
-<div class="logo">STREAMVAULT</div>
-</div>
+  <div class="navbar">
+    <div class="nav-left">
+      <div class="logo">STREAMVAULT</div>
+      <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">TV Shows</a>
+        <a href="#">New</a>
+        <a href="#">My List</a>
+      </div>
+    </div>
 
-<div class="hero">
-<h1>Featured Show</h1>
-</div>
+    <input
+      type="text"
+      id="searchInput"
+      class="search-box"
+      placeholder="Search titles..."
+    />
+  </div>
 
-<div class="content">
+  <section class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+    </video>
 
-<div class="row">
-<h2>Trending Now</h2>
+    <div class="hero-content">
+      <h1>Featured Show</h1>
+      <p>
+        A streaming-style homepage with hover previews, search, arrows, and a real watch page.
+        You can swap all the placeholder titles and videos later.
+      </p>
 
-<div class="row-posters">
+      <div class="hero-buttons">
+        <a class="hero-btn play" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
+          ▶ Play
+        </a>
+        <a class="hero-btn info" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
+          More Info
+        </a>
+      </div>
+    </div>
+  </section>
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run">
-<img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Midnight Run</div>
-</a>
+  <main class="content">
 
-<a class="poster" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City">
-<img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Dark City</div>
-</a>
+    <section class="row" data-row-title="Trending Now">
+      <h2>Trending Now</h2>
+      <div class="row-wrap">
+        <button class="row-arrow left" type="button">‹</button>
+        <div class="row-posters">
 
-<a class="poster" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat">
-<img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Neon Heat</div>
-</a>
+          <a class="poster" data-title="Midnight Run" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run&desc=A%20late-night%20thriller%20placeholder%20page%20for%20your%20site.">
+            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80" alt="Midnight Run">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Midnight Run</div>
+          </a>
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Late%20Shift">
-<img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Late Shift</div>
-</a>
+          <a class="poster" data-title="Dark City" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City&desc=A%20dark%20city%20crime%20story%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Dark City">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Dark City</div>
+          </a>
 
-</div>
-</div>
+          <a class="poster" data-title="Neon Heat" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat&desc=A%20bright%20nightlife%20drama%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="Neon Heat">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Neon Heat</div>
+          </a>
 
-<div class="row">
-<h2>Popular Shows</h2>
+          <a class="poster" data-title="Late Shift" href="watch.html?video=jNQXAC9IVRw&title=Late%20Shift&desc=A%20moody%20late-shift%20mystery%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80" alt="Late Shift">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Late Shift</div>
+          </a>
 
-<div class="row-posters">
+        </div>
+        <button class="row-arrow right" type="button">›</button>
+      </div>
+    </section>
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Cold%20Signal">
-<img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Cold Signal</div>
-</a>
+    <section class="row" data-row-title="Popular Shows">
+      <h2>Popular Shows</h2>
+      <div class="row-wrap">
+        <button class="row-arrow left" type="button">‹</button>
+        <div class="row-posters">
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Red%20Harbor">
-<img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Red Harbor</div>
-</a>
+          <a class="poster" data-title="Cold Signal" href="watch.html?video=jNQXAC9IVRw&title=Cold%20Signal&desc=A%20cold-case%20style%20show%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Cold Signal">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Cold Signal</div>
+          </a>
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Static%20Nights">
-<img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Static Nights</div>
-</a>
+          <a class="poster" data-title="Red Harbor" href="watch.html?video=jNQXAC9IVRw&title=Red%20Harbor&desc=A%20harbor-town%20crime%20story%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80" alt="Red Harbor">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Red Harbor</div>
+          </a>
 
-<a class="poster" href="watch.html?video=jNQXAC9IVRw&title=Afterlight">
-<img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80">
-<div class="poster-title">Afterlight</div>
-</a>
+          <a class="poster" data-title="Static Nights" href="watch.html?video=jNQXAC9IVRw&title=Static%20Nights&desc=A%20late-night%20broadcast%20style%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="Static Nights">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Static Nights</div>
+          </a>
 
-</div>
-</div>
+          <a class="poster" data-title="Afterlight" href="watch.html?video=jNQXAC9IVRw&title=Afterlight&desc=A%20clean%20sci-fi%20placeholder%20page%20for%20your%20site.">
+            <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80" alt="Afterlight">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Afterlight</div>
+          </a>
 
-</div>
+        </div>
+        <button class="row-arrow right" type="button">›</button>
+      </div>
+    </section>
 
+    <section class="row" data-row-title="Action & Crime">
+      <h2>Action & Crime</h2>
+      <div class="row-wrap">
+        <button class="row-arrow left" type="button">‹</button>
+        <div class="row-posters">
+
+          <a class="poster" data-title="Blackout" href="watch.html?video=jNQXAC9IVRw&title=Blackout&desc=A%20gritty%20action%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=900&q=80" alt="Blackout">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Blackout</div>
+          </a>
+
+          <a class="poster" data-title="No Witness" href="watch.html?video=jNQXAC9IVRw&title=No%20Witness&desc=A%20crime%20drama%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="No Witness">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">No Witness</div>
+          </a>
+
+          <a class="poster" data-title="Street Theory" href="watch.html?video=jNQXAC9IVRw&title=Street%20Theory&desc=A%20street-level%20thriller%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="Street Theory">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Street Theory</div>
+          </a>
+
+          <a class="poster" data-title="Lockstep" href="watch.html?video=jNQXAC9IVRw&title=Lockstep&desc=A%20high-pressure%20crime%20placeholder%20page.">
+            <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=900&q=80" alt="Lockstep">
+            <video muted loop playsinline>
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+            </video>
+            <div class="poster-title">Lockstep</div>
+          </a>
+
+        </div>
+        <button class="row-arrow right" type="button">›</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const posters = document.querySelectorAll(".poster");
+
+    posters.forEach((poster) => {
+      const video = poster.querySelector("video");
+      if (!video) return;
+
+      poster.addEventListener("mouseenter", () => {
+        video.play().catch(() => {});
+      });
+
+      poster.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+
+    const rowWraps = document.querySelectorAll(".row-wrap");
+
+    rowWraps.forEach((wrap) => {
+      const row = wrap.querySelector(".row-posters");
+      const left = wrap.querySelector(".row-arrow.left");
+      const right = wrap.querySelector(".row-arrow.right");
+
+      left.addEventListener("click", () => {
+        row.scrollBy({ left: -500, behavior: "smooth" });
+      });
+
+      right.addEventListener("click", () => {
+        row.scrollBy({ left: 500, behavior: "smooth" });
+      });
+    });
+
+    const searchInput = document.getElementById("searchInput");
+    const rows = document.querySelectorAll(".row");
+
+    searchInput.addEventListener("input", () => {
+      const value = searchInput.value.toLowerCase().trim();
+
+      rows.forEach((row) => {
+        const rowPosters = row.querySelectorAll(".poster");
+        let visibleCount = 0;
+
+        rowPosters.forEach((poster) => {
+          const title = poster.dataset.title.toLowerCase();
+          const match = title.includes(value);
+
+          if (match || value === "") {
+            poster.classList.remove("hidden");
+            visibleCount++;
+          } else {
+            poster.classList.add("hidden");
+          }
+        });
+
+        if (visibleCount === 0) {
+          row.classList.add("hidden");
+        } else {
+          row.classList.remove("hidden");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
