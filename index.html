@@ -4,639 +4,279 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Plueto TV</title>
-
+  <script src="catalog.js"></script>
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      background:#141414;
-      color:white;
-      font-family:Arial, Helvetica, sans-serif;
-    }
-
-    a{
-      color:white;
-      text-decoration:none;
-    }
-
-    /* INTRO SPLASH */
-    .intro{
-      position:fixed;
-      inset:0;
-      background:black;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      z-index:9999;
-      animation:introFadeOut 0.9s ease 2.4s forwards;
-    }
-
-    .intro-logo{
-      font-size:64px;
-      font-weight:900;
-      letter-spacing:3px;
-      color:#e50914;
-      transform:scale(.7);
-      opacity:0;
-      animation:introPop 1.3s ease forwards;
-      text-shadow:0 0 18px rgba(229,9,20,.45);
-    }
-
-    @keyframes introPop{
-      0%{
-        transform:scale(.5);
-        opacity:0;
-        letter-spacing:10px;
-        filter:blur(10px);
-      }
-      55%{
-        transform:scale(1.08);
-        opacity:1;
-        letter-spacing:4px;
-        filter:blur(0);
-      }
-      100%{
-        transform:scale(1);
-        opacity:1;
-        letter-spacing:3px;
-        filter:blur(0);
-      }
-    }
-
-    @keyframes introFadeOut{
-      to{
-        opacity:0;
-        visibility:hidden;
-        pointer-events:none;
-      }
-    }
-
-    .site-shell{
-      opacity:0;
-      animation:siteFadeIn .7s ease 2.6s forwards;
-    }
-
-    @keyframes siteFadeIn{
-      to{
-        opacity:1;
-      }
-    }
-
-    .navbar{
-      position:fixed;
-      top:0;
-      left:0;
-      width:100%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 40px;
-      background:linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.25));
-      z-index:100;
-    }
-
-    .nav-left{
-      display:flex;
-      align-items:center;
-      gap:28px;
-    }
-
-    .logo{
-      font-size:24px;
-      font-weight:bold;
-      color:#e50914;
-      letter-spacing:1px;
-    }
-
-    .nav-links{
-      display:flex;
-      gap:18px;
-      font-size:14px;
-      color:#ddd;
-    }
-
-    .nav-links a:hover{
-      color:white;
-    }
-
-    .search-box{
-      width:240px;
-      max-width:40vw;
-      padding:10px 14px;
-      border:none;
-      border-radius:6px;
-      outline:none;
-      background:rgba(255,255,255,.12);
-      color:white;
-    }
-
-    .search-box::placeholder{
-      color:#d0d0d0;
-    }
-
-    .hero{
-      position:relative;
-      height:78vh;
-      overflow:hidden;
-      display:flex;
-      align-items:flex-end;
-      padding:60px 50px;
-      background:#000;
-    }
-
-    .hero video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:.42;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(to top, #141414 4%, rgba(20,20,20,.2) 40%),
-        linear-gradient(to right, rgba(0,0,0,.82) 18%, rgba(0,0,0,.25) 60%);
-      z-index:1;
-    }
-
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:560px;
-    }
-
-    .hero h1{
-      font-size:54px;
-      margin-bottom:16px;
-    }
-
-    .hero p{
-      color:#e5e5e5;
-      line-height:1.6;
-      margin-bottom:22px;
-      font-size:17px;
-    }
-
-    .hero-buttons{
-      display:flex;
-      gap:12px;
-    }
-
-    .hero-btn{
-      display:inline-block;
-      padding:12px 24px;
-      border-radius:6px;
-      font-weight:bold;
-      font-size:16px;
-      transition:.2s;
-    }
-
-    .hero-btn.play{
-      background:white;
-      color:black;
-    }
-
-    .hero-btn.play:hover{
-      background:#ddd;
-    }
-
-    .hero-btn.info{
-      background:rgba(109,109,110,.7);
-      color:white;
-    }
-
-    .hero-btn.info:hover{
-      background:rgba(109,109,110,.9);
-    }
-
-    .content{
-      padding:20px 40px 50px;
-      margin-top:-70px;
-      position:relative;
-      z-index:5;
-    }
-
-    .row{
-      margin-bottom:34px;
-    }
-
-    .row h2{
-      margin-bottom:12px;
-      font-size:22px;
-    }
-
-    .row-wrap{
-      position:relative;
-    }
-
-    .row-posters{
-      display:flex;
-      gap:12px;
-      overflow-x:auto;
-      scroll-behavior:smooth;
-      padding:8px 36px;
-      scrollbar-width:none;
-    }
-
-    .row-posters::-webkit-scrollbar{
-      display:none;
-    }
-
-    .row-arrow{
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      width:34px;
-      height:72px;
-      border:none;
-      background:rgba(0,0,0,.55);
-      color:white;
-      font-size:24px;
-      cursor:pointer;
-      z-index:20;
-      border-radius:8px;
-    }
-
-    .row-arrow:hover{
-      background:rgba(0,0,0,.8);
-    }
-
-    .row-arrow.left{
-      left:0;
-    }
-
-    .row-arrow.right{
-      right:0;
-    }
-
-    .poster{
-      min-width:220px;
-      height:125px;
-      border-radius:8px;
-      overflow:hidden;
-      position:relative;
-      flex-shrink:0;
-      display:block;
-      transition:transform .25s ease, box-shadow .25s ease;
-      background:#222;
-    }
-
-    .poster img,
-    .poster video{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-    }
-
-    .poster video{
-      opacity:0;
-      transition:.25s;
-      pointer-events:none;
-    }
-
-    .poster::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.92), transparent 60%);
-      opacity:0;
-      transition:.25s;
-    }
-
-    .poster:hover{
-      transform:scale(1.12);
-      box-shadow:0 20px 40px rgba(0,0,0,.7);
-      z-index:10;
-    }
-
-    .poster:hover video{
-      opacity:1;
-    }
-
-    .poster:hover::after{
-      opacity:1;
-    }
-
-    .poster-title{
-      position:absolute;
-      left:12px;
-      bottom:10px;
-      z-index:3;
-      font-size:15px;
-      font-weight:bold;
-      opacity:.92;
-      transition:.25s;
-    }
-
-    .poster:hover .poster-title{
-      transform:translateY(-3px);
-      opacity:1;
-    }
-
-    .hidden{
-      display:none !important;
-    }
-
-    @media (max-width: 900px){
-      .navbar{
-        padding:16px 20px;
-        gap:12px;
-      }
-
-      .nav-links{
-        display:none;
-      }
-
-      .search-box{
-        width:180px;
-      }
-
-      .hero{
-        padding:30px 20px;
-        height:72vh;
-      }
-
-      .hero h1{
-        font-size:36px;
-      }
-
-      .hero p{
-        font-size:15px;
-      }
-
-      .content{
-        padding:20px 20px 40px;
-      }
-
-      .poster{
-        min-width:180px;
-        height:102px;
-      }
-
-      .intro-logo{
-        font-size:42px;
-      }
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{background:#141414;color:#fff;font-family:Arial,Helvetica,sans-serif}
+    a{text-decoration:none;color:#fff}
+    .intro{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;animation:introFadeOut .9s ease 2.4s forwards}
+    .intro-logo{font-size:64px;font-weight:900;letter-spacing:3px;color:#e50914;transform:scale(.7);opacity:0;animation:introPop 1.3s ease forwards;text-shadow:0 0 18px rgba(229,9,20,.45)}
+    @keyframes introPop{0%{transform:scale(.5);opacity:0;letter-spacing:10px;filter:blur(10px)}55%{transform:scale(1.08);opacity:1;letter-spacing:4px;filter:blur(0)}100%{transform:scale(1);opacity:1;letter-spacing:3px;filter:blur(0)}}
+    @keyframes introFadeOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+    .site-shell{opacity:0;animation:siteFadeIn .7s ease 2.6s forwards}
+    @keyframes siteFadeIn{to{opacity:1}}
+    .navbar{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:linear-gradient(to bottom,rgba(0,0,0,.85),rgba(0,0,0,.25));z-index:100}
+    .nav-left{display:flex;align-items:center;gap:28px}
+    .logo{font-size:24px;font-weight:700;color:#e50914;letter-spacing:1px}
+    .nav-links{display:flex;gap:18px;font-size:14px;color:#ddd}
+    .nav-links a:hover{color:#fff}
+    .search-box{width:240px;max-width:40vw;padding:10px 14px;border:none;border-radius:6px;outline:none;background:rgba(255,255,255,.12);color:#fff}
+    .hero{position:relative;height:78vh;overflow:hidden;display:flex;align-items:flex-end;padding:60px 50px;background:#000}
+    .hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42}
+    .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,#141414 4%,rgba(20,20,20,.2) 40%),linear-gradient(to right,rgba(0,0,0,.82) 18%,rgba(0,0,0,.25) 60%);z-index:1}
+    .hero-content{position:relative;z-index:2;max-width:560px}
+    .hero h1{font-size:54px;margin-bottom:16px}
+    .hero p{color:#e5e5e5;line-height:1.6;margin-bottom:22px;font-size:17px}
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:700;font-size:16px;transition:.2s}
+    .hero-btn.play{background:#fff;color:#000}
+    .hero-btn.play:hover{background:#ddd}
+    .hero-btn.info,.hero-btn.list{background:rgba(109,109,110,.7)}
+    .hero-btn.info:hover,.hero-btn.list:hover{background:rgba(109,109,110,.9)}
+    .content{padding:20px 40px 50px;margin-top:-70px;position:relative;z-index:5}
+    .row{margin-bottom:34px}
+    .row.hidden-row{display:none}
+    .row h2{margin-bottom:12px;font-size:22px}
+    .row-wrap{position:relative}
+    .row-posters{display:flex;gap:12px;overflow-x:auto;scroll-behavior:smooth;padding:8px 36px;scrollbar-width:none}
+    .row-posters::-webkit-scrollbar{display:none}
+    .row-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:72px;border:none;background:rgba(0,0,0,.55);color:#fff;font-size:24px;cursor:pointer;z-index:20;border-radius:8px}
+    .row-arrow:hover{background:rgba(0,0,0,.8)}
+    .row-arrow.left{left:0}
+    .row-arrow.right{right:0}
+    .poster{min-width:220px;height:125px;border-radius:8px;overflow:hidden;position:relative;flex-shrink:0;display:block;transition:transform .25s ease,box-shadow .25s ease;background:#222}
+    .poster img,.poster video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+    .poster video{opacity:0;transition:.25s;pointer-events:none}
+    .poster::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.92),transparent 60%);opacity:0;transition:.25s}
+    .poster:hover{transform:scale(1.12);box-shadow:0 20px 40px rgba(0,0,0,.7);z-index:10}
+    .poster:hover video{opacity:1}
+    .poster:hover::after{opacity:1}
+    .poster-title{position:absolute;left:12px;bottom:10px;z-index:3;font-size:15px;font-weight:700;opacity:.92;transition:.25s}
+    .poster:hover .poster-title{transform:translateY(-3px);opacity:1}
+    .poster-badge{position:absolute;top:10px;left:10px;z-index:3;background:rgba(229,9,20,.95);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700}
+    .empty-box{background:#1d1d1d;border:1px solid rgba(255,255,255,.08);padding:22px;border-radius:12px;color:#cfcfcf}
+    .footer{margin-top:40px;padding:30px 0 10px;color:#999;font-size:13px}
+    .hidden{display:none !important}
+    @media (max-width:900px){
+      .navbar{padding:16px 20px;gap:12px}
+      .nav-links{display:none}
+      .search-box{width:180px}
+      .hero{padding:30px 20px;height:72vh}
+      .hero h1{font-size:36px}
+      .hero p{font-size:15px}
+      .content{padding:20px 20px 40px}
+      .poster{min-width:180px;height:102px}
+      .intro-logo{font-size:42px}
     }
   </style>
 </head>
 <body>
-
-  <div class="intro" id="intro">
-    <div class="intro-logo">PLUETO TV</div>
-  </div>
+  <div class="intro"><div class="intro-logo">PLUETO TV</div></div>
 
   <div class="site-shell">
-
     <div class="navbar">
       <div class="nav-left">
         <div class="logo">PLUETO TV</div>
         <div class="nav-links">
-          <a href="#">Home</a>
-          <a href="#">Movies</a>
-          <a href="#">TV Shows</a>
-          <a href="#">New</a>
-          <a href="#">My List</a>
+          <a href="index.html">Home</a>
+          <a href="movies.html">Movies</a>
+          <a href="tv.html">TV Shows</a>
+          <a href="new.html">New</a>
+          <a href="#my-list-row">My List</a>
         </div>
       </div>
-
-      <input
-        type="text"
-        id="searchInput"
-        class="search-box"
-        placeholder="Search titles..."
-      />
+      <input type="text" id="searchInput" class="search-box" placeholder="Search titles..." />
     </div>
 
-    <section class="hero">
-      <video autoplay muted loop playsinline>
-        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-      </video>
-
-      <div class="hero-content">
-        <h1>Featured Show</h1>
-        <p>
-          A streaming-style homepage with hover previews, search, arrows, and a clean intro splash.
-          You can swap all the placeholder titles and videos later.
-        </p>
-
-        <div class="hero-buttons">
-          <a class="hero-btn play" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
-            ▶ Play
-          </a>
-          <a class="hero-btn info" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
-            More Info
-          </a>
-        </div>
-      </div>
-    </section>
+    <section class="hero" id="heroSection"></section>
 
     <main class="content">
-
-      <section class="row" data-row-title="Trending Now">
-        <h2>Trending Now</h2>
+      <section class="row" id="continue-row">
+        <h2>Continue Watching</h2>
         <div class="row-wrap">
           <button class="row-arrow left" type="button">‹</button>
-          <div class="row-posters">
-
-            <a class="poster" data-title="Midnight Run" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run&desc=A%20late-night%20thriller%20placeholder%20page%20for%20your%20site.">
-              <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80" alt="Midnight Run">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Midnight Run</div>
-            </a>
-
-            <a class="poster" data-title="Dark City" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City&desc=A%20dark%20city%20crime%20story%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Dark City">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Dark City</div>
-            </a>
-
-            <a class="poster" data-title="Neon Heat" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat&desc=A%20bright%20nightlife%20drama%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="Neon Heat">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Neon Heat</div>
-            </a>
-
-            <a class="poster" data-title="Late Shift" href="watch.html?video=jNQXAC9IVRw&title=Late%20Shift&desc=A%20moody%20late-shift%20mystery%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80" alt="Late Shift">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Late Shift</div>
-            </a>
-
-          </div>
+          <div class="row-posters" id="continue-posters"></div>
           <button class="row-arrow right" type="button">›</button>
         </div>
       </section>
 
-      <section class="row" data-row-title="Popular Shows">
-        <h2>Popular Shows</h2>
+      <section class="row" id="my-list-row">
+        <h2>My List</h2>
         <div class="row-wrap">
           <button class="row-arrow left" type="button">‹</button>
-          <div class="row-posters">
-
-            <a class="poster" data-title="Cold Signal" href="watch.html?video=jNQXAC9IVRw&title=Cold%20Signal&desc=A%20cold-case%20style%20show%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Cold Signal">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Cold Signal</div>
-            </a>
-
-            <a class="poster" data-title="Red Harbor" href="watch.html?video=jNQXAC9IVRw&title=Red%20Harbor&desc=A%20harbor-town%20crime%20story%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80" alt="Red Harbor">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Red Harbor</div>
-            </a>
-
-            <a class="poster" data-title="Static Nights" href="watch.html?video=jNQXAC9IVRw&title=Static%20Nights&desc=A%20late-night%20broadcast%20style%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="Static Nights">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Static Nights</div>
-            </a>
-
-            <a class="poster" data-title="Afterlight" href="watch.html?video=jNQXAC9IVRw&title=Afterlight&desc=A%20clean%20sci-fi%20placeholder%20page%20for%20your%20site.">
-              <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80" alt="Afterlight">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Afterlight</div>
-            </a>
-
-          </div>
+          <div class="row-posters" id="my-list-posters"></div>
           <button class="row-arrow right" type="button">›</button>
         </div>
       </section>
 
-      <section class="row" data-row-title="Action & Crime">
-        <h2>Action & Crime</h2>
-        <div class="row-wrap">
-          <button class="row-arrow left" type="button">‹</button>
-          <div class="row-posters">
+      <div id="catalogRows"></div>
 
-            <a class="poster" data-title="Blackout" href="watch.html?video=jNQXAC9IVRw&title=Blackout&desc=A%20gritty%20action%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=900&q=80" alt="Blackout">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Blackout</div>
-            </a>
-
-            <a class="poster" data-title="No Witness" href="watch.html?video=jNQXAC9IVRw&title=No%20Witness&desc=A%20crime%20drama%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="No Witness">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">No Witness</div>
-            </a>
-
-            <a class="poster" data-title="Street Theory" href="watch.html?video=jNQXAC9IVRw&title=Street%20Theory&desc=A%20street-level%20thriller%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="Street Theory">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Street Theory</div>
-            </a>
-
-            <a class="poster" data-title="Lockstep" href="watch.html?video=jNQXAC9IVRw&title=Lockstep&desc=A%20high-pressure%20crime%20placeholder%20page.">
-              <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=900&q=80" alt="Lockstep">
-              <video muted loop playsinline>
-                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-              </video>
-              <div class="poster-title">Lockstep</div>
-            </a>
-
-          </div>
-          <button class="row-arrow right" type="button">›</button>
-        </div>
-      </section>
-
+      <div class="footer">Plueto TV • streaming prototype</div>
     </main>
   </div>
 
   <script>
-    const posters = document.querySelectorAll(".poster");
+    const getItemById = (id) => CATALOG.find(item => item.id === id);
 
-    posters.forEach((poster) => {
-      const video = poster.querySelector("video");
-      if (!video) return;
+    function cardHtml(item) {
+      return `
+        <a class="poster" data-title="${item.title.toLowerCase()}" href="watch.html?id=${item.id}">
+          <img src="${item.image}" alt="${item.title}">
+          <video muted loop playsinline>
+            <source src="${item.preview}" type="video/mp4">
+          </video>
+          ${item.isNew ? '<div class="poster-badge">NEW</div>' : ''}
+          <div class="poster-title">${item.title}</div>
+        </a>
+      `;
+    }
 
-      poster.addEventListener("mouseenter", () => {
-        video.play().catch(() => {});
-      });
+    function renderHero() {
+      const heroItem = CATALOG.find(item => item.hero) || CATALOG[0];
+      document.getElementById("heroSection").innerHTML = `
+        <video autoplay muted loop playsinline>
+          <source src="${heroItem.preview}" type="video/mp4">
+        </video>
+        <div class="hero-content">
+          <h1>${heroItem.title}</h1>
+          <p>${heroItem.description}</p>
+          <div class="hero-buttons">
+            <a class="hero-btn play" href="watch.html?id=${heroItem.id}">▶ Play</a>
+            <a class="hero-btn info" href="watch.html?id=${heroItem.id}">More Info</a>
+            <button class="hero-btn list" type="button" onclick="toggleMyList('${heroItem.id}')">+ My List</button>
+          </div>
+        </div>
+      `;
+    }
 
-      poster.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-      });
-    });
+    function renderCatalogRows() {
+      const rowsContainer = document.getElementById("catalogRows");
+      const uniqueRows = [...new Set(CATALOG.map(item => item.row))];
 
-    const rowWraps = document.querySelectorAll(".row-wrap");
+      rowsContainer.innerHTML = uniqueRows.map(rowName => {
+        const items = CATALOG.filter(item => item.row === rowName);
+        return `
+          <section class="row" data-row-title="${rowName}">
+            <h2>${rowName}</h2>
+            <div class="row-wrap">
+              <button class="row-arrow left" type="button">‹</button>
+              <div class="row-posters">
+                ${items.map(cardHtml).join("")}
+              </div>
+              <button class="row-arrow right" type="button">›</button>
+            </div>
+          </section>
+        `;
+      }).join("");
+    }
 
-    rowWraps.forEach((wrap) => {
-      const row = wrap.querySelector(".row-posters");
-      const left = wrap.querySelector(".row-arrow.left");
-      const right = wrap.querySelector(".row-arrow.right");
+    function getStoredIds(key) {
+      return JSON.parse(localStorage.getItem(key) || "[]");
+    }
 
-      left.addEventListener("click", () => {
-        row.scrollBy({ left: -500, behavior: "smooth" });
-      });
+    function setStoredIds(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
 
-      right.addEventListener("click", () => {
-        row.scrollBy({ left: 500, behavior: "smooth" });
-      });
-    });
+    function toggleMyList(id) {
+      const current = getStoredIds("myList");
+      const updated = current.includes(id) ? current.filter(x => x !== id) : [id, ...current];
+      setStoredIds("myList", updated);
+      renderMyList();
+    }
 
-    const searchInput = document.getElementById("searchInput");
-    const rows = document.querySelectorAll(".row");
+    function renderMyList() {
+      const ids = getStoredIds("myList");
+      const items = ids.map(getItemById).filter(Boolean);
+      const row = document.getElementById("my-list-row");
+      const container = document.getElementById("my-list-posters");
 
-    searchInput.addEventListener("input", () => {
-      const value = searchInput.value.toLowerCase().trim();
+      if (!items.length) {
+        row.classList.add("hidden-row");
+        container.innerHTML = "";
+        return;
+      }
 
-      rows.forEach((row) => {
-        const rowPosters = row.querySelectorAll(".poster");
-        let visibleCount = 0;
+      row.classList.remove("hidden-row");
+      container.innerHTML = items.map(cardHtml).join("");
+      attachPosterPreviewEvents(container.querySelectorAll(".poster"));
+    }
 
-        rowPosters.forEach((poster) => {
-          const title = poster.dataset.title.toLowerCase();
-          const match = title.includes(value);
+    function renderContinueWatching() {
+      const ids = getStoredIds("continueWatching");
+      const items = ids.map(getItemById).filter(Boolean);
+      const row = document.getElementById("continue-row");
+      const container = document.getElementById("continue-posters");
 
-          if (match || value === "") {
-            poster.classList.remove("hidden");
-            visibleCount++;
-          } else {
-            poster.classList.add("hidden");
-          }
+      if (!items.length) {
+        row.classList.add("hidden-row");
+        container.innerHTML = "";
+        return;
+      }
+
+      row.classList.remove("hidden-row");
+      container.innerHTML = items.map(cardHtml).join("");
+      attachPosterPreviewEvents(container.querySelectorAll(".poster"));
+    }
+
+    function attachPosterPreviewEvents(posters) {
+      posters.forEach((poster) => {
+        const video = poster.querySelector("video");
+        if (!video || poster.dataset.bound === "true") return;
+
+        poster.dataset.bound = "true";
+
+        poster.addEventListener("mouseenter", () => {
+          video.play().catch(() => {});
         });
 
-        if (visibleCount === 0) {
-          row.classList.add("hidden");
-        } else {
-          row.classList.remove("hidden");
-        }
+        poster.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
       });
-    });
+    }
+
+    function attachRowArrows() {
+      document.querySelectorAll(".row-wrap").forEach((wrap) => {
+        const row = wrap.querySelector(".row-posters");
+        const left = wrap.querySelector(".row-arrow.left");
+        const right = wrap.querySelector(".row-arrow.right");
+        if (!row || !left || !right) return;
+
+        left.onclick = () => row.scrollBy({ left: -500, behavior: "smooth" });
+        right.onclick = () => row.scrollBy({ left: 500, behavior: "smooth" });
+      });
+    }
+
+    function setupSearch() {
+      const searchInput = document.getElementById("searchInput");
+      searchInput.addEventListener("input", () => {
+        const value = searchInput.value.toLowerCase().trim();
+
+        document.querySelectorAll(".row").forEach((row) => {
+          const posters = row.querySelectorAll(".poster");
+          let visibleCount = 0;
+
+          posters.forEach((poster) => {
+            const title = poster.dataset.title || "";
+            const match = title.includes(value) || value === "";
+            poster.classList.toggle("hidden", !match);
+            if (match) visibleCount++;
+          });
+
+          row.classList.toggle("hidden-row", visibleCount === 0);
+        });
+      });
+    }
+
+    renderHero();
+    renderCatalogRows();
+    renderMyList();
+    renderContinueWatching();
+    attachPosterPreviewEvents(document.querySelectorAll(".poster"));
+    attachRowArrows();
+    setupSearch();
   </script>
 </body>
 </html>
