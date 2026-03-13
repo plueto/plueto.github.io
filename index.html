@@ -9,12 +9,6 @@
     *{margin:0;padding:0;box-sizing:border-box}
     body{background:#141414;color:#fff;font-family:Arial,Helvetica,sans-serif}
     a{text-decoration:none;color:#fff}
-    .intro{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;z-index:9999;animation:introFadeOut .9s ease 2.4s forwards}
-    .intro-logo{font-size:64px;font-weight:900;letter-spacing:3px;color:#e50914;transform:scale(.7);opacity:0;animation:introPop 1.3s ease forwards;text-shadow:0 0 18px rgba(229,9,20,.45)}
-    @keyframes introPop{0%{transform:scale(.5);opacity:0;letter-spacing:10px;filter:blur(10px)}55%{transform:scale(1.08);opacity:1;letter-spacing:4px;filter:blur(0)}100%{transform:scale(1);opacity:1;letter-spacing:3px;filter:blur(0)}}
-    @keyframes introFadeOut{to{opacity:0;visibility:hidden;pointer-events:none}}
-    .site-shell{opacity:0;animation:siteFadeIn .7s ease 2.6s forwards}
-    @keyframes siteFadeIn{to{opacity:1}}
     .navbar{position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 40px;background:linear-gradient(to bottom,rgba(0,0,0,.85),rgba(0,0,0,.25));z-index:100}
     .nav-left{display:flex;align-items:center;gap:28px}
     .logo{font-size:24px;font-weight:700;color:#e50914;letter-spacing:1px}
@@ -28,10 +22,10 @@
     .hero h1{font-size:54px;margin-bottom:16px}
     .hero p{color:#e5e5e5;line-height:1.6;margin-bottom:22px;font-size:17px}
     .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:700;font-size:16px;transition:.2s}
+    .hero-btn{display:inline-block;padding:12px 24px;border-radius:6px;font-weight:700;font-size:16px;transition:.2s;border:none;cursor:pointer}
     .hero-btn.play{background:#fff;color:#000}
     .hero-btn.play:hover{background:#ddd}
-    .hero-btn.info,.hero-btn.list{background:rgba(109,109,110,.7)}
+    .hero-btn.info,.hero-btn.list{background:rgba(109,109,110,.7);color:#fff}
     .hero-btn.info:hover,.hero-btn.list:hover{background:rgba(109,109,110,.9)}
     .content{padding:20px 40px 50px;margin-top:-70px;position:relative;z-index:5}
     .row{margin-bottom:34px}
@@ -54,7 +48,6 @@
     .poster-title{position:absolute;left:12px;bottom:10px;z-index:3;font-size:15px;font-weight:700;opacity:.92;transition:.25s}
     .poster:hover .poster-title{transform:translateY(-3px);opacity:1}
     .poster-badge{position:absolute;top:10px;left:10px;z-index:3;background:rgba(229,9,20,.95);padding:4px 8px;border-radius:999px;font-size:11px;font-weight:700}
-    .empty-box{background:#1d1d1d;border:1px solid rgba(255,255,255,.08);padding:22px;border-radius:12px;color:#cfcfcf}
     .footer{margin-top:40px;padding:30px 0 10px;color:#999;font-size:13px}
     .hidden{display:none !important}
     @media (max-width:900px){
@@ -66,57 +59,74 @@
       .hero p{font-size:15px}
       .content{padding:20px 20px 40px}
       .poster{min-width:180px;height:102px}
-      .intro-logo{font-size:42px}
     }
   </style>
 </head>
 <body>
-  <div class="intro"><div class="intro-logo">PLUETO TV</div></div>
-
-  <div class="site-shell">
-    <div class="navbar">
-      <div class="nav-left">
-        <div class="logo">PLUETO TV</div>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="movies.html">Movies</a>
-          <a href="tv.html">TV Shows</a>
-          <a href="new.html">New</a>
-          <a href="#my-list-row">My List</a>
-        </div>
+  <div class="navbar">
+    <div class="nav-left">
+      <div class="logo">PLUETO TV</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="movies.html">Movies</a>
+        <a href="tv.html">TV Shows</a>
+        <a href="new.html">New</a>
+        <a href="#my-list-row">My List</a>
       </div>
-      <input type="text" id="searchInput" class="search-box" placeholder="Search titles..." />
     </div>
-
-    <section class="hero" id="heroSection"></section>
-
-    <main class="content">
-      <section class="row" id="continue-row">
-        <h2>Continue Watching</h2>
-        <div class="row-wrap">
-          <button class="row-arrow left" type="button">‹</button>
-          <div class="row-posters" id="continue-posters"></div>
-          <button class="row-arrow right" type="button">›</button>
-        </div>
-      </section>
-
-      <section class="row" id="my-list-row">
-        <h2>My List</h2>
-        <div class="row-wrap">
-          <button class="row-arrow left" type="button">‹</button>
-          <div class="row-posters" id="my-list-posters"></div>
-          <button class="row-arrow right" type="button">›</button>
-        </div>
-      </section>
-
-      <div id="catalogRows"></div>
-
-      <div class="footer">Plueto TV • streaming prototype</div>
-    </main>
+    <input type="text" id="searchInput" class="search-box" placeholder="Search titles..." />
   </div>
+
+  <section class="hero" id="heroSection"></section>
+
+  <main class="content">
+    <section class="row" id="continue-row">
+      <h2>Continue Watching</h2>
+      <div class="row-wrap">
+        <button class="row-arrow left" type="button">‹</button>
+        <div class="row-posters" id="continue-posters"></div>
+        <button class="row-arrow right" type="button">›</button>
+      </div>
+    </section>
+
+    <section class="row" id="my-list-row">
+      <h2>My List</h2>
+      <div class="row-wrap">
+        <button class="row-arrow left" type="button">‹</button>
+        <div class="row-posters" id="my-list-posters"></div>
+        <button class="row-arrow right" type="button">›</button>
+      </div>
+    </section>
+
+    <div id="catalogRows"></div>
+
+    <div class="footer">Plueto TV • streaming prototype</div>
+  </main>
 
   <script>
     const getItemById = (id) => CATALOG.find(item => item.id === id);
+
+    function getStoredIds(key) {
+      return JSON.parse(localStorage.getItem(key) || "[]");
+    }
+
+    function setStoredIds(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function isInMyList(id) {
+      return getStoredIds("myList").includes(id);
+    }
+
+    function toggleMyList(id) {
+      const current = getStoredIds("myList");
+      const updated = current.includes(id)
+        ? current.filter(x => x !== id)
+        : [id, ...current];
+      setStoredIds("myList", updated);
+      renderHero();
+      renderMyList();
+    }
 
     function cardHtml(item) {
       return `
@@ -133,6 +143,8 @@
 
     function renderHero() {
       const heroItem = CATALOG.find(item => item.hero) || CATALOG[0];
+      const listText = isInMyList(heroItem.id) ? "✓ In My List" : "+ My List";
+
       document.getElementById("heroSection").innerHTML = `
         <video autoplay muted loop playsinline>
           <source src="${heroItem.preview}" type="video/mp4">
@@ -143,7 +155,7 @@
           <div class="hero-buttons">
             <a class="hero-btn play" href="watch.html?id=${heroItem.id}">▶ Play</a>
             <a class="hero-btn info" href="watch.html?id=${heroItem.id}">More Info</a>
-            <button class="hero-btn list" type="button" onclick="toggleMyList('${heroItem.id}')">+ My List</button>
+            <button class="hero-btn list" type="button" onclick="toggleMyList('${heroItem.id}')">${listText}</button>
           </div>
         </div>
       `;
@@ -170,21 +182,6 @@
       }).join("");
     }
 
-    function getStoredIds(key) {
-      return JSON.parse(localStorage.getItem(key) || "[]");
-    }
-
-    function setStoredIds(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-
-    function toggleMyList(id) {
-      const current = getStoredIds("myList");
-      const updated = current.includes(id) ? current.filter(x => x !== id) : [id, ...current];
-      setStoredIds("myList", updated);
-      renderMyList();
-    }
-
     function renderMyList() {
       const ids = getStoredIds("myList");
       const items = ids.map(getItemById).filter(Boolean);
@@ -200,6 +197,7 @@
       row.classList.remove("hidden-row");
       container.innerHTML = items.map(cardHtml).join("");
       attachPosterPreviewEvents(container.querySelectorAll(".poster"));
+      attachRowArrows();
     }
 
     function renderContinueWatching() {
@@ -217,6 +215,7 @@
       row.classList.remove("hidden-row");
       container.innerHTML = items.map(cardHtml).join("");
       attachPosterPreviewEvents(container.querySelectorAll(".poster"));
+      attachRowArrows();
     }
 
     function attachPosterPreviewEvents(posters) {
@@ -242,8 +241,9 @@
         const row = wrap.querySelector(".row-posters");
         const left = wrap.querySelector(".row-arrow.left");
         const right = wrap.querySelector(".row-arrow.right");
-        if (!row || !left || !right) return;
+        if (!row || !left || !right || wrap.dataset.bound === "true") return;
 
+        wrap.dataset.bound = "true";
         left.onclick = () => row.scrollBy({ left: -500, behavior: "smooth" });
         right.onclick = () => row.scrollBy({ left: 500, behavior: "smooth" });
       });
