@@ -1,728 +1,3967 @@
-const fs = require("fs");
-
-const OUTPUT_PATH = "./catalog.js";
-
-const MOVIE_ROWS = 900;
-const TV_ROWS = 500;
-
-const MAX_MOVIES = 260;
-const MAX_TV = 110;
-
-const ARCHIVE_ADVANCEDSEARCH = "https://archive.org/advancedsearch.php";
-const ARCHIVE_METADATA = "https://archive.org/metadata";
-
-function stripHtml(value) {
-  return String(value || "")
-    .replace(/<[^>]*>/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function firstString(value) {
-  if (Array.isArray(value)) return value.find(Boolean) || "";
-  return value || "";
-}
-
-function toArray(value) {
-  if (Array.isArray(value)) return value.filter(Boolean);
-  if (value == null || value === "") return [];
-  return [value];
-}
-
-function parseYear(value) {
-  const text = String(value || "");
-  const match = text.match(/\b(18|19|20)\d{2}\b/);
-  return match ? Number(match[0]) : null;
-}
-
-function parseRuntimeMinutes(value) {
-  if (value == null) return null;
-
-  if (typeof value === "number" && Number.isFinite(value)) {
-    return value > 0 ? Math.round(value) : null;
+window.CATALOG = [
+  {
+    "id": "paginas-de-anime",
+    "title": "Paginas de anime",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Paginas de anime",
+    "image": "https://archive.org/services/img/paginas-de-anime",
+    "fallbackImage": "https://archive.org/services/img/paginas-de-anime",
+    "preview": "https://archive.org/embed/paginas-de-anime"
+  },
+  {
+    "id": "The_Pied_Piper_of_Hamelin",
+    "title": "The Pied Piper of Hamelin",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1957,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "Stars Van Johnson, Claude Rains, Jim Backus Tagline: \"Now! a giant color spectacle! from the pages of the immortal classics comes this famous story\" Information regarding this film on its IMDb page . More information on Wikipedia .",
+    "image": "https://archive.org/services/img/The_Pied_Piper_of_Hamelin",
+    "fallbackImage": "https://archive.org/services/img/The_Pied_Piper_of_Hamelin",
+    "preview": "https://archive.org/embed/The_Pied_Piper_of_Hamelin"
+  },
+  {
+    "id": "utopia",
+    "title": "Utopia",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1951,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Utopia (also known as Atoll K and Robinson Crusoe Land) is last film Laurel and Hardy made together. It was filmed and produced in Europe.",
+    "image": "https://archive.org/services/img/utopia",
+    "fallbackImage": "https://archive.org/services/img/utopia",
+    "preview": "https://archive.org/embed/utopia"
+  },
+  {
+    "id": "new_adventures_of_tarzan",
+    "title": "New Adventures of Tarzan",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "No description available yet.",
+    "image": "https://archive.org/services/img/new_adventures_of_tarzan",
+    "fallbackImage": "https://archive.org/services/img/new_adventures_of_tarzan",
+    "preview": "https://archive.org/embed/new_adventures_of_tarzan"
+  },
+  {
+    "id": "tarzan_and_the_green_goddess",
+    "title": "Tarzan and the Green Goddess",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/tarzan_and_the_green_goddess",
+    "fallbackImage": "https://archive.org/services/img/tarzan_and_the_green_goddess",
+    "preview": "https://archive.org/embed/tarzan_and_the_green_goddess"
+  },
+  {
+    "id": "mr_robinson_crusoe",
+    "title": "Mr. Robinson Crusoe",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1932,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "Taken from IMDB : While cruising the South Seas with friends aboard a sailing yacht, it is wagered that Steve can not survive on a desert isle without the accouterments of civilization. After accepting the wager, Steve and his dog swim a...",
+    "image": "https://archive.org/services/img/mr_robinson_crusoe",
+    "fallbackImage": "https://archive.org/services/img/mr_robinson_crusoe",
+    "preview": "https://archive.org/embed/mr_robinson_crusoe"
+  },
+  {
+    "id": "penny_serenade",
+    "title": "Penny Serenade",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1941,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Touching romantic comedy starring Cary Grant and Irene Dunne. Find out more about this film at its IMDB page .",
+    "image": "https://archive.org/services/img/penny_serenade",
+    "fallbackImage": "https://archive.org/services/img/penny_serenade",
+    "preview": "https://archive.org/embed/penny_serenade"
+  },
+  {
+    "id": "OnlytheValaint",
+    "title": "Only the Valiant",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1951,
+    "duration": "105m",
+    "rating": "NR",
+    "description": "Capt. Richard Lance (Gregory Peck) is unjustly held responsible, by his men and his girlfriend (Barbara Payton), for an Indian massacre death of beloved Lt. Holloway. Holloway (Gig Young) is killed while escorting a dangerous Indian chie...",
+    "image": "https://archive.org/services/img/OnlytheValaint",
+    "fallbackImage": "https://archive.org/services/img/OnlytheValaint",
+    "preview": "https://archive.org/embed/OnlytheValaint"
+  },
+  {
+    "id": "ConcreteCowboys",
+    "title": "Concrete Cowboys",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1979,
+    "duration": "91m",
+    "rating": "NR",
+    "description": "Tom Selleck and Jerry Reed are a couple of con-artist cowboys from Montana who end up in Nashville in the adventure of their lives.",
+    "image": "https://archive.org/services/img/ConcreteCowboys",
+    "fallbackImage": "https://archive.org/services/img/ConcreteCowboys",
+    "preview": "https://archive.org/embed/ConcreteCowboys"
+  },
+  {
+    "id": "texas_terror_1935",
+    "title": "Texas Terror",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1935,
+    "duration": "52m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/texas_terror_1935",
+    "fallbackImage": "https://archive.org/services/img/texas_terror_1935",
+    "preview": "https://archive.org/embed/texas_terror_1935"
+  },
+  {
+    "id": "behave_yourself_ipod",
+    "title": "Behave Yourself",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1951,
+    "duration": "80m",
+    "rating": "NR",
+    "description": "When a cute Welsh terrier follows Bill Denny home, little does he know that all gangland has its eye on that dog. Who will be bumbling Bill's undoing - the gangsters, the cops, or his suspicious mother-in-law? Stars Farley Granger and Sh...",
+    "image": "https://archive.org/services/img/behave_yourself_ipod",
+    "fallbackImage": "https://archive.org/services/img/behave_yourself_ipod",
+    "preview": "https://archive.org/embed/behave_yourself_ipod"
+  },
+  {
+    "id": "private_snuffy_smith",
+    "title": "Private Snuffy Smith",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1942,
+    "duration": "66m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/private_snuffy_smith",
+    "fallbackImage": "https://archive.org/services/img/private_snuffy_smith",
+    "preview": "https://archive.org/embed/private_snuffy_smith"
+  },
+  {
+    "id": "TheOver-the-HillGangRidesAgain",
+    "title": "The Over-the-Hill Gang Rides Again",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1970,
+    "duration": "73m",
+    "rating": "NR",
+    "description": "The old-time comrades-in-arms join forces to sober up an old buddy, a down-and-out drunk, and restore his reputation. It´s the only movie where you can see Fred Astaire with a mustache!",
+    "image": "https://archive.org/services/img/TheOver-the-HillGangRidesAgain",
+    "fallbackImage": "https://archive.org/services/img/TheOver-the-HillGangRidesAgain",
+    "preview": "https://archive.org/embed/TheOver-the-HillGangRidesAgain"
+  },
+  {
+    "id": "SagebrushTrail",
+    "title": "Sagebrush Trail",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1933,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "Imprisoned for a murder he did not commit, John Brant (John Wayne) escapes and ends up out west where, after giving the local lawmen the slip, he joins up with an outlaw gang. Brant finds out that 'Jones' (Nancy Shubert), one of the outl...",
+    "image": "https://archive.org/services/img/SagebrushTrail",
+    "fallbackImage": "https://archive.org/services/img/SagebrushTrail",
+    "preview": "https://archive.org/embed/SagebrushTrail"
+  },
+  {
+    "id": "slave_in_bondage",
+    "title": "Slaves in Bondage",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1937,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "Taken from IMDB : Mary Lou manages to escape abduction by a prostitution ring. She tells the Chief of Detectives they were planning to take her to the Berrywood road house, a well-known den of iniquity. Jim Murray and beautician Belle Ha...",
+    "image": "https://archive.org/services/img/slave_in_bondage",
+    "fallbackImage": "https://archive.org/services/img/slave_in_bondage",
+    "preview": "https://archive.org/embed/slave_in_bondage"
+  },
+  {
+    "id": "brideless_groom",
+    "title": "Brideless Groom",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1947,
+    "duration": "17m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/brideless_groom",
+    "fallbackImage": "https://archive.org/services/img/brideless_groom",
+    "preview": "https://archive.org/embed/brideless_groom"
+  },
+  {
+    "id": "girl_o_my_dreams",
+    "title": "Girl o' My Dreams",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1934,
+    "duration": "63m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/girl_o_my_dreams",
+    "fallbackImage": "https://archive.org/services/img/girl_o_my_dreams",
+    "preview": "https://archive.org/embed/girl_o_my_dreams"
+  },
+  {
+    "id": "TheLuckyTexan",
+    "title": "The Lucky Texan",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1934,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "Jerry Mason (Wayne), a young Texan, and Jake Benson (Hayes), an old rancher, become partners and strike it rich with a gold mine. They then find their lives complicated by bad guys and a woman.",
+    "image": "https://archive.org/services/img/TheLuckyTexan",
+    "fallbackImage": "https://archive.org/services/img/TheLuckyTexan",
+    "preview": "https://archive.org/embed/TheLuckyTexan"
+  },
+  {
+    "id": "cco__HerculesandtheCaptiveWomen",
+    "title": "Hercules and the Captive Women",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1961,
+    "duration": "94m",
+    "rating": "NR",
+    "description": "A sleepy Hercules discovers that Queen Atlantis plans to use her superhuman warriors to take over the world. IMDB page",
+    "image": "https://archive.org/services/img/cco__HerculesandtheCaptiveWomen",
+    "fallbackImage": "https://archive.org/services/img/cco__HerculesandtheCaptiveWomen",
+    "preview": "https://archive.org/embed/cco__HerculesandtheCaptiveWomen"
+  },
+  {
+    "id": "Levoyagedanslalune",
+    "title": "Le voyage dans la lune",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "By George Melies, an old 1902 film from france about a small group of scientists that travel to space on a rocket to get to the moon.",
+    "image": "https://archive.org/services/img/Levoyagedanslalune",
+    "fallbackImage": "https://archive.org/services/img/Levoyagedanslalune",
+    "preview": "https://archive.org/embed/Levoyagedanslalune"
+  },
+  {
+    "id": "west_of_the_divide",
+    "title": "West of the Divide",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1934,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/west_of_the_divide",
+    "fallbackImage": "https://archive.org/services/img/west_of_the_divide",
+    "preview": "https://archive.org/embed/west_of_the_divide"
+  },
+  {
+    "id": "BeatTheDevil1953",
+    "title": "Beat the Devil (1953)",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "A group of crooks are headed to Africa in search of land with Uranium. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/BeatTheDevil1953",
+    "fallbackImage": "https://archive.org/services/img/BeatTheDevil1953",
+    "preview": "https://archive.org/embed/BeatTheDevil1953"
+  },
+  {
+    "id": "Death_Rides_A_Horse_pan_and_scan",
+    "title": "Death Rides A Horse",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1967,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "NOTE: THIS FILM IS SEPERATED INTO 4 FILES Death Rides A Horse, in public domain, this version is panned and scanned. first three vids are direct rips from dvd, '.vob' extension renamed '.mpg', fourth vid was cropped to exclude copyrighte...",
+    "image": "https://archive.org/services/img/Death_Rides_A_Horse_pan_and_scan",
+    "fallbackImage": "https://archive.org/services/img/Death_Rides_A_Horse_pan_and_scan",
+    "preview": "https://archive.org/embed/Death_Rides_A_Horse_pan_and_scan"
+  },
+  {
+    "id": "Winds_of_the_Wasteland",
+    "title": "Winds of the Wasteland",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1936,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "The arrival of the telegraph put Pony Express riders like John Blair (John Wayne) and his pal Smoky (Lane Chandler) out of work they try to start a stagecoach route through a ghost town. A rival stagecoach company tries to stop them.",
+    "image": "https://archive.org/services/img/Winds_of_the_Wasteland",
+    "fallbackImage": "https://archive.org/services/img/Winds_of_the_Wasteland",
+    "preview": "https://archive.org/embed/Winds_of_the_Wasteland"
+  },
+  {
+    "id": "she_gods_of_shark_reef",
+    "title": "She Gods of Shark Reef",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1958,
+    "duration": "63m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/she_gods_of_shark_reef",
+    "fallbackImage": "https://archive.org/services/img/she_gods_of_shark_reef",
+    "preview": "https://archive.org/embed/she_gods_of_shark_reef"
+  },
+  {
+    "id": "Kill.or.Cure",
+    "title": "Kill.or.Cure",
+    "type": "movie",
+    "row": "Crime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "classic",
+    "image": "https://archive.org/services/img/Kill.or.Cure",
+    "fallbackImage": "https://archive.org/services/img/Kill.or.Cure",
+    "preview": "https://archive.org/embed/Kill.or.Cure"
+  },
+  {
+    "id": "FightingCaravans1931_368",
+    "title": "Fighting Caravans (1931)",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "81m",
+    "rating": "NR",
+    "description": "A pioneer wagon train heads west from Missouri. When they are attacked by Indians Gary Cooper fights off the attack. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/FightingCaravans1931_368",
+    "fallbackImage": "https://archive.org/services/img/FightingCaravans1931_368",
+    "preview": "https://archive.org/embed/FightingCaravans1931_368"
+  },
+  {
+    "id": "AbileneTown",
+    "title": "Abilene Town",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1946,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "Randolph Scott plays the Marshall Dan Mitchell who tries to keep things peaceful in town. Edgar Buchanan plays the sheriff Bravo Trimble who rather gambles than shoots. Lloyd Bridges can be seen as Henry Dreiser. And sure there are also...",
+    "image": "https://archive.org/services/img/AbileneTown",
+    "fallbackImage": "https://archive.org/services/img/AbileneTown",
+    "preview": "https://archive.org/embed/AbileneTown"
+  },
+  {
+    "id": "AdaApaDenganCinta22016",
+    "title": "Ada Apa Dengan Cinta 2 ( 2016)",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Film Indonesia",
+    "image": "https://archive.org/services/img/AdaApaDenganCinta22016",
+    "fallbackImage": "https://archive.org/services/img/AdaApaDenganCinta22016",
+    "preview": "https://archive.org/embed/AdaApaDenganCinta22016"
+  },
+  {
+    "id": "Fed_Up_Genetic_Engineering",
+    "title": "Fed Up! Genetic Engineering, Industrial Agriculture, and Sustainable Alternatives",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "About 70% of the food we eat contains genetically modified ingredients and is not labeled. The biotechnology industry is spending $50 million a year to convince us that this technology is our only hope for feeding the world and saving th...",
+    "image": "https://archive.org/services/img/Fed_Up_Genetic_Engineering",
+    "fallbackImage": "https://archive.org/services/img/Fed_Up_Genetic_Engineering",
+    "preview": "https://archive.org/embed/Fed_Up_Genetic_Engineering"
+  },
+  {
+    "id": "TarzanoftheApes1918AndyDivx",
+    "title": "Tarzan of the Apes",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1918,
+    "duration": "60m",
+    "rating": "NR",
+    "description": "Original (PD) version of this classic, NOT the VHS version \"copyrighted\" in 1982. http://www.imdb.com/title/tt0009682/ At this early point in American film history, Tarzan of the Apes was an instant success. Elmo Lincoln was perhaps the...",
+    "image": "https://archive.org/services/img/TarzanoftheApes1918AndyDivx",
+    "fallbackImage": "https://archive.org/services/img/TarzanoftheApes1918AndyDivx",
+    "preview": "https://archive.org/embed/TarzanoftheApes1918AndyDivx"
+  },
+  {
+    "id": "Hell_Town",
+    "title": "Hell Town",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1937,
+    "duration": "59m",
+    "rating": "NR",
+    "description": "AKA Born to the West John Wayne plays the role of Dare Rudd, a drifter who gambles his money away and just can't seem to settle down until he goes back to his relative, Tom Fillmore (Johnny Mack Brown) who owns a great deal of cattle and...",
+    "image": "https://archive.org/services/img/Hell_Town",
+    "fallbackImage": "https://archive.org/services/img/Hell_Town",
+    "preview": "https://archive.org/embed/Hell_Town"
+  },
+  {
+    "id": "jack_and_the_beanstalk_ipod",
+    "title": "Jack and the Beanstalk",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1952,
+    "duration": "82m",
+    "rating": "NR",
+    "description": "Abbott and Costello's version of Jack and Beanstalk",
+    "image": "https://archive.org/services/img/jack_and_the_beanstalk_ipod",
+    "fallbackImage": "https://archive.org/services/img/jack_and_the_beanstalk_ipod",
+    "preview": "https://archive.org/embed/jack_and_the_beanstalk_ipod"
+  },
+  {
+    "id": "HighRisk",
+    "title": "High Risk",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1981,
+    "duration": "94m",
+    "rating": "NR",
+    "description": "Four American friends, badly needing money, decide to make a commando-like raid into a South American country and steal $5 million from the hacienda of an American-born drug dealer who lives there. The four Americans then succeed rather...",
+    "image": "https://archive.org/services/img/HighRisk",
+    "fallbackImage": "https://archive.org/services/img/HighRisk",
+    "preview": "https://archive.org/embed/HighRisk"
+  },
+  {
+    "id": "beneath_the_12-mile_reef",
+    "title": "Beneath the 12-Mile Reef",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1953,
+    "duration": "101m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page . This film contributed courtesy of SabuCat Productions .",
+    "image": "https://archive.org/services/img/beneath_the_12-mile_reef",
+    "fallbackImage": "https://archive.org/services/img/beneath_the_12-mile_reef",
+    "preview": "https://archive.org/embed/beneath_the_12-mile_reef"
+  },
+  {
+    "id": "Sabotage_1936",
+    "title": "Sabotage",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1936,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "From IMDb : Mr. Verloc, a cinema owner, is part of a gang of saboteurs in London. He lives with his wife, Winnie, and her young brother, Stevie. They know nothing about Verloc's secret. Scotland Yard assigns an undercover detective, Ted,...",
+    "image": "https://archive.org/services/img/Sabotage_1936",
+    "fallbackImage": "https://archive.org/services/img/Sabotage_1936",
+    "preview": "https://archive.org/embed/Sabotage_1936"
+  },
+  {
+    "id": "rogues_tavern",
+    "title": "Rogue's Tavern",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1936,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/rogues_tavern",
+    "fallbackImage": "https://archive.org/services/img/rogues_tavern",
+    "preview": "https://archive.org/embed/rogues_tavern"
+  },
+  {
+    "id": "Hercules_and_the_Tyrants_of_Babylon",
+    "title": "Hercules and the Tyrants of Babylon",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1964,
+    "duration": "85m",
+    "rating": "NR",
+    "description": "After a three-year absence, Hercules returns to find his home conquered by the Babylonian empire and his queen enslaved. He must free her before the three rulers of Babylon find her and use her to their own evil purposes. You can find ou...",
+    "image": "https://archive.org/services/img/Hercules_and_the_Tyrants_of_Babylon",
+    "fallbackImage": "https://archive.org/services/img/Hercules_and_the_Tyrants_of_Babylon",
+    "preview": "https://archive.org/embed/Hercules_and_the_Tyrants_of_Babylon"
+  },
+  {
+    "id": "miss_london_ltd_1943",
+    "title": "Miss London Ltd.",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1943,
+    "duration": "95m",
+    "rating": "NR",
+    "description": "Terry Arden (Evelyn Dall) travels to England to take over her half of her late fathers dating service run by Arthur Bowden (Arthur Askey).",
+    "image": "https://archive.org/services/img/miss_london_ltd_1943",
+    "fallbackImage": "https://archive.org/services/img/miss_london_ltd_1943",
+    "preview": "https://archive.org/embed/miss_london_ltd_1943"
+  },
+  {
+    "id": "King_of_the_Zombies",
+    "title": "King of the Zombies",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1941,
+    "duration": "77m",
+    "rating": "NR",
+    "description": "Three men in a plane searching the Caribbean for a missing admiral crash-land on an island where voodoo is practiced and zombies roam. They soon find a mansion occupied by a family of Austrian refugees, headed by Dr. Sangre. Dr. Sangre i...",
+    "image": "https://archive.org/services/img/King_of_the_Zombies",
+    "fallbackImage": "https://archive.org/services/img/King_of_the_Zombies",
+    "preview": "https://archive.org/embed/King_of_the_Zombies"
+  },
+  {
+    "id": "TheManFromUtah",
+    "title": "The Man from Utah",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1934,
+    "duration": "52m",
+    "rating": "NR",
+    "description": "The Marshal sends John Weston (John Wayne) to a rodeo to see if he can find out who is killing the rodeo riders who are about to win the prize money. Barton (Edward Peil Sr.) has organized the rodeo and plans to leave with all the prize...",
+    "image": "https://archive.org/services/img/TheManFromUtah",
+    "fallbackImage": "https://archive.org/services/img/TheManFromUtah",
+    "preview": "https://archive.org/embed/TheManFromUtah"
+  },
+  {
+    "id": "SonofHerculesTheLandofDarkness",
+    "title": "The Sons of Hercules: Land of Darkness",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1963,
+    "duration": "80m",
+    "rating": "NR",
+    "description": "The hero leaves on a quest to slay a beast, only to find his home taken prisoner when he returns. This film was originally an Italian film called \"Ercole l'invincibile\" which was later dubbed into English. You can find more information r...",
+    "image": "https://archive.org/services/img/SonofHerculesTheLandofDarkness",
+    "fallbackImage": "https://archive.org/services/img/SonofHerculesTheLandofDarkness",
+    "preview": "https://archive.org/embed/SonofHerculesTheLandofDarkness"
+  },
+  {
+    "id": "killer_diller",
+    "title": "Killer Diller",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1948,
+    "duration": "73m",
+    "rating": "NR",
+    "description": "African American musical variety show featuring The Nat King Cole Trio, the Clark Brothers and other musical and comedy acts.",
+    "image": "https://archive.org/services/img/killer_diller",
+    "fallbackImage": "https://archive.org/services/img/killer_diller",
+    "preview": "https://archive.org/embed/killer_diller"
+  },
+  {
+    "id": "GonewiththeWest_201511",
+    "title": "Gone with the West",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "This film has fallen into the Public Domain.",
+    "image": "https://archive.org/services/img/GonewiththeWest_201511",
+    "fallbackImage": "https://archive.org/services/img/GonewiththeWest_201511",
+    "preview": "https://archive.org/embed/GonewiththeWest_201511"
+  },
+  {
+    "id": "Grundeinkommen",
+    "title": "Grundeinkommen",
+    "type": "movie",
+    "row": "Featured",
+    "year": 2008,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Ein Einkommen braucht jeder Mensch, unabhängig davon, was er leistet und ob er arbeitet oder nicht. Ein bedingungsloses Grundeinkommen ist dafür die zeitgemäße politische Form. Ein brandaktuelles Thema",
+    "image": "https://archive.org/services/img/Grundeinkommen",
+    "fallbackImage": "https://archive.org/services/img/Grundeinkommen",
+    "preview": "https://archive.org/embed/Grundeinkommen"
+  },
+  {
+    "id": "Breaking_With_Old_Ideas",
+    "title": "Breaking with Old Ideas",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1975,
+    "duration": "128m",
+    "rating": "NR",
+    "description": "One of the most controversial dramatic films produced in China during the cultural revolution, \"Breaking\" is about the struggle to democratize education in the countryside. Made during Mao Tse Tung's infamous Cultural Revolution.",
+    "image": "https://archive.org/services/img/Breaking_With_Old_Ideas",
+    "fallbackImage": "https://archive.org/services/img/Breaking_With_Old_Ideas",
+    "preview": "https://archive.org/embed/Breaking_With_Old_Ideas"
+  },
+  {
+    "id": "jathi-ratnalu-2021-telugu-hdrip-720p-x-264-dd-5.1-192-kbps-aac-2.0-1.3-gb-esub",
+    "title": "JATHI RATNALU ( 2021) Telugu HDRip 720p X 264 ( DD 5.1 192 Kbps AAC 2.0) 1.3 GB ESub",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Film",
+    "image": "https://archive.org/services/img/jathi-ratnalu-2021-telugu-hdrip-720p-x-264-dd-5.1-192-kbps-aac-2.0-1.3-gb-esub",
+    "fallbackImage": "https://archive.org/services/img/jathi-ratnalu-2021-telugu-hdrip-720p-x-264-dd-5.1-192-kbps-aac-2.0-1.3-gb-esub",
+    "preview": "https://archive.org/embed/jathi-ratnalu-2021-telugu-hdrip-720p-x-264-dd-5.1-192-kbps-aac-2.0-1.3-gb-esub"
+  },
+  {
+    "id": "PublicDomainAnsaFilmandBeaverChampionAttactionsDavidandGoliath1960",
+    "title": "David and Goliath (1960)",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1960,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "This ia a film adaptation of the Biblical story of the Israelite shepherd David, who became a hero and later king by his defeat of Goliath, the champion of the Philistines. It also deals with David's relation with the first king of Israe...",
+    "image": "https://archive.org/services/img/PublicDomainAnsaFilmandBeaverChampionAttactionsDavidandGoliath1960",
+    "fallbackImage": "https://archive.org/services/img/PublicDomainAnsaFilmandBeaverChampionAttactionsDavidandGoliath1960",
+    "preview": "https://archive.org/embed/PublicDomainAnsaFilmandBeaverChampionAttactionsDavidandGoliath1960"
+  },
+  {
+    "id": "ItSeemedLikeaGoodIdeaattheTimeMPEG2",
+    "title": "It Seemed Like a Good Idea at the Time",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1975,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "IMDB (http://www.imdb.com/title/tt0073181/) Featuring John Candy and Isaac Hayes this Independent film is a must see for anyone who loves a laugh.",
+    "image": "https://archive.org/services/img/ItSeemedLikeaGoodIdeaattheTimeMPEG2",
+    "fallbackImage": "https://archive.org/services/img/ItSeemedLikeaGoodIdeaattheTimeMPEG2",
+    "preview": "https://archive.org/embed/ItSeemedLikeaGoodIdeaattheTimeMPEG2"
+  },
+  {
+    "id": "angelandthebadman1947",
+    "title": "Angel and the Badman",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Quirt Evens an all round bad guy is nursed back to health and sought after by Penelope Worth a quaker girl. He eventually finds himself having to choose from his world or the world from which Penelope lives by. You can find out more abou...",
+    "image": "https://archive.org/services/img/angelandthebadman1947",
+    "fallbackImage": "https://archive.org/services/img/angelandthebadman1947",
+    "preview": "https://archive.org/embed/angelandthebadman1947"
+  },
+  {
+    "id": "TheProudandtheDamned_201511",
+    "title": "The Proud and the Damned",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "This film has fallen into the Public Domain.",
+    "image": "https://archive.org/services/img/TheProudandtheDamned_201511",
+    "fallbackImage": "https://archive.org/services/img/TheProudandtheDamned_201511",
+    "preview": "https://archive.org/embed/TheProudandtheDamned_201511"
+  },
+  {
+    "id": "Topper_Returns_41",
+    "title": "Topper Returns",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1941,
+    "duration": "88m",
+    "rating": "NR",
+    "description": "Gail Richards is accompanying Ann Carrington who is visiting her father, Henry, at his spooky, old, country estate. It's been many years since she's seen him. They get a lift from Cosmo Topper, who lives in the neighborhood. Gail is murd...",
+    "image": "https://archive.org/services/img/Topper_Returns_41",
+    "fallbackImage": "https://archive.org/services/img/Topper_Returns_41",
+    "preview": "https://archive.org/embed/Topper_Returns_41"
+  },
+  {
+    "id": "PublicDomainJollyFilmJosephandHisBrethren",
+    "title": "Joseph and His Brethren",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1960,
+    "duration": "103m",
+    "rating": "NR",
+    "description": "Tthe biblical story of Joseph sold into slavery by his jealous brothers and his rise from slave to vizier in the Egypt of the Pharaohs.",
+    "image": "https://archive.org/services/img/PublicDomainJollyFilmJosephandHisBrethren",
+    "fallbackImage": "https://archive.org/services/img/PublicDomainJollyFilmJosephandHisBrethren",
+    "preview": "https://archive.org/embed/PublicDomainJollyFilmJosephandHisBrethren"
+  },
+  {
+    "id": "BattleofBloodIsland",
+    "title": "Battle of Blood Island",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1960,
+    "duration": "71m",
+    "rating": "NR",
+    "description": "Two American GIs are the only survivors of a unit wiped out in a battle with Japanese troops on an isolated island. The two, who don't like each other, find try to put aside their differences in order to evade the Japanese and survive.",
+    "image": "https://archive.org/services/img/BattleofBloodIsland",
+    "fallbackImage": "https://archive.org/services/img/BattleofBloodIsland",
+    "preview": "https://archive.org/embed/BattleofBloodIsland"
+  },
+  {
+    "id": "The_Star_Packer",
+    "title": "The Star Packer",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1934,
+    "duration": "53m",
+    "rating": "NR",
+    "description": "A gang working for \"The Shadow\" is terrorizing the town. John Travers (John Wayne) decides to take on the job of sheriff and do something about it.",
+    "image": "https://archive.org/services/img/The_Star_Packer",
+    "fallbackImage": "https://archive.org/services/img/The_Star_Packer",
+    "preview": "https://archive.org/embed/The_Star_Packer"
+  },
+  {
+    "id": "jungle_man",
+    "title": "Jungle Man",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "63m",
+    "rating": "NR",
+    "description": "An expedition sets out to darkest Africa to find the fabled City of the Dead, along the way they meet Buster Crabbe doing his best Doc Savage impression as Dr. Robert Hammond, aka Junga.",
+    "image": "https://archive.org/services/img/jungle_man",
+    "fallbackImage": "https://archive.org/services/img/jungle_man",
+    "preview": "https://archive.org/embed/jungle_man"
+  },
+  {
+    "id": "IronAngel",
+    "title": "Iron Angel",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1964,
+    "duration": "81m",
+    "rating": "NR",
+    "description": "In this wartime drama set during the Korean conflict, a U.S. platoon must destroy a North Korean mortar that is blocking a crucial road.",
+    "image": "https://archive.org/services/img/IronAngel",
+    "fallbackImage": "https://archive.org/services/img/IronAngel",
+    "preview": "https://archive.org/embed/IronAngel"
+  },
+  {
+    "id": "flight_to_nowhere",
+    "title": "Flight to Nowhere",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1946,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/flight_to_nowhere",
+    "fallbackImage": "https://archive.org/services/img/flight_to_nowhere",
+    "preview": "https://archive.org/embed/flight_to_nowhere"
+  },
+  {
+    "id": "Training_vid",
+    "title": "German_SniperTraining-video1944",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "No description available yet.",
+    "image": "https://archive.org/services/img/Training_vid",
+    "fallbackImage": "https://archive.org/services/img/Training_vid",
+    "preview": "https://archive.org/embed/Training_vid"
+  },
+  {
+    "id": "call_of_the_yukon",
+    "title": "Call of the Yukon",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "66m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/call_of_the_yukon",
+    "fallbackImage": "https://archive.org/services/img/call_of_the_yukon",
+    "preview": "https://archive.org/embed/call_of_the_yukon"
+  },
+  {
+    "id": "Drums_in_the_Deep_South",
+    "title": "Drums in the Deep South",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1951,
+    "duration": "86m",
+    "rating": "NR",
+    "description": "A small Confederate unit is ordered to prevent the passage of Federal trains for as long as possible. The IMDB entry is here . (The video is interlaced in the MPEG2 file. If viewing with VLC, deinterlace with menu-path Video/Deinterlace/...",
+    "image": "https://archive.org/services/img/Drums_in_the_Deep_South",
+    "fallbackImage": "https://archive.org/services/img/Drums_in_the_Deep_South",
+    "preview": "https://archive.org/embed/Drums_in_the_Deep_South"
+  },
+  {
+    "id": "border_patrol",
+    "title": "Border Patrol",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1943,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/border_patrol",
+    "fallbackImage": "https://archive.org/services/img/border_patrol",
+    "preview": "https://archive.org/embed/border_patrol"
+  },
+  {
+    "id": "love_island",
+    "title": "Love Island",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1950,
+    "duration": "62m",
+    "rating": "NR",
+    "description": "A young Eva Gabor plays a Balinese woman in this romantic story filled with lovely locales. An American flyer stranded in Bali falls for the sarong-swathed Gabor, much to the chagrin of an island creep who blackmails Gabor by having her...",
+    "image": "https://archive.org/services/img/love_island",
+    "fallbackImage": "https://archive.org/services/img/love_island",
+    "preview": "https://archive.org/embed/love_island"
+  },
+  {
+    "id": "ModelHotIndonesia",
+    "title": "Model Hot Indonesia",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "please visit all videos modeling is very hot https://www.youtube.com/channel/UCjQyVMQShs0vEO0e7XlX7HA model majalah popular 2018,model majalah popular,model majalah gress,model majalah fhm,model majalah remaja,model majalah gress 2018,mo...",
+    "image": "https://archive.org/services/img/ModelHotIndonesia",
+    "fallbackImage": "https://archive.org/services/img/ModelHotIndonesia",
+    "preview": "https://archive.org/embed/ModelHotIndonesia"
+  },
+  {
+    "id": "heartbeat",
+    "title": "Heartbeat",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1946,
+    "duration": "100m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/heartbeat",
+    "fallbackImage": "https://archive.org/services/img/heartbeat",
+    "preview": "https://archive.org/embed/heartbeat"
+  },
+  {
+    "id": "calvary",
+    "title": "Cavalry",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1936,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/calvary",
+    "fallbackImage": "https://archive.org/services/img/calvary",
+    "preview": "https://archive.org/embed/calvary"
+  },
+  {
+    "id": "Mastertouch",
+    "title": "Master Touch",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1972,
+    "duration": "112m",
+    "rating": "NR",
+    "description": "Un Uomo da rispettare A heist film with an outrageous car chase. For more info on this film see its IMDB.com entry",
+    "image": "https://archive.org/services/img/Mastertouch",
+    "fallbackImage": "https://archive.org/services/img/Mastertouch",
+    "preview": "https://archive.org/embed/Mastertouch"
+  },
+  {
+    "id": "Pygmalion",
+    "title": "Pygmalion",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1938,
+    "duration": "95m",
+    "rating": "NR",
+    "description": "Loosely based on the Greek myth \"Pygmalion\" a Cypriot sculptor who carved a woman out of ivory but his statue was so fair and realistic that he fell in love with it. The snobbish & intellectual Professor of languages, Henry Higgins (Lesl...",
+    "image": "https://archive.org/services/img/Pygmalion",
+    "fallbackImage": "https://archive.org/services/img/Pygmalion",
+    "preview": "https://archive.org/embed/Pygmalion"
+  },
+  {
+    "id": "take_me_back_to_oklahoma",
+    "title": "Take Me Back To Oklahoma",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1940,
+    "duration": "61m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/take_me_back_to_oklahoma",
+    "fallbackImage": "https://archive.org/services/img/take_me_back_to_oklahoma",
+    "preview": "https://archive.org/embed/take_me_back_to_oklahoma"
+  },
+  {
+    "id": "danger_flight",
+    "title": "Danger Flight",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "60m",
+    "rating": "NR",
+    "description": "Our hero tries to straighten out some juvenile delinquents in this adventure based on the comic strip \"Tailspin Tommy.\" You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/danger_flight",
+    "fallbackImage": "https://archive.org/services/img/danger_flight",
+    "preview": "https://archive.org/embed/danger_flight"
+  },
+  {
+    "id": "six_gun_trail",
+    "title": "Six Gun Trail",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/six_gun_trail",
+    "fallbackImage": "https://archive.org/services/img/six_gun_trail",
+    "preview": "https://archive.org/embed/six_gun_trail"
+  },
+  {
+    "id": "TheLawlessFrontier1934",
+    "title": "The Lawless Frontier (1934)",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "50m",
+    "rating": "NR",
+    "description": "John Tobin's (John Wayne) parents are killed by an outlaw. John teams up with Dusty to find the bad guy. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/TheLawlessFrontier1934",
+    "fallbackImage": "https://archive.org/services/img/TheLawlessFrontier1934",
+    "preview": "https://archive.org/embed/TheLawlessFrontier1934"
+  },
+  {
+    "id": "TheHouseILiveIn",
+    "title": "The House I Live In",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1945,
+    "duration": "10m",
+    "rating": "NR",
+    "description": "Frank Sinatra teaches some young boys a lesson about tolerance.",
+    "image": "https://archive.org/services/img/TheHouseILiveIn",
+    "fallbackImage": "https://archive.org/services/img/TheHouseILiveIn",
+    "preview": "https://archive.org/embed/TheHouseILiveIn"
+  },
+  {
+    "id": "mark_of_the_avenger_1938",
+    "title": "The Mysterious Rider AKA Mark of the Avenger",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "67m",
+    "rating": "NR",
+    "description": "Taken from IMDB : Ben Wade and his partner Frosty return to Bellounds' ranch where twenty years earlier Wade was wanted for murder",
+    "image": "https://archive.org/services/img/mark_of_the_avenger_1938",
+    "fallbackImage": "https://archive.org/services/img/mark_of_the_avenger_1938",
+    "preview": "https://archive.org/embed/mark_of_the_avenger_1938"
+  },
+  {
+    "id": "Law_of_the_Lash_film",
+    "title": "Law of the Lash",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1947,
+    "duration": "53m",
+    "rating": "NR",
+    "description": "A western with Lash La Rue and Al St. John.",
+    "image": "https://archive.org/services/img/Law_of_the_Lash_film",
+    "fallbackImage": "https://archive.org/services/img/Law_of_the_Lash_film",
+    "preview": "https://archive.org/embed/Law_of_the_Lash_film"
+  },
+  {
+    "id": "great_commandment",
+    "title": "Great Commandment, The",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "80m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/great_commandment",
+    "fallbackImage": "https://archive.org/services/img/great_commandment",
+    "preview": "https://archive.org/embed/great_commandment"
+  },
+  {
+    "id": "Indiscreet",
+    "title": "Indiscreet",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1931,
+    "duration": "75m",
+    "rating": "NR",
+    "description": "On New Year's Eve, Geraldine Trent (Gloria Swanson) decides to break up with her boyfriend Jim Woodward (Monroe Owsley), having finally grown tired of his dishonesty and his infidelities. Soon afterward, Geraldine meets and falls in love...",
+    "image": "https://archive.org/services/img/Indiscreet",
+    "fallbackImage": "https://archive.org/services/img/Indiscreet",
+    "preview": "https://archive.org/embed/Indiscreet"
+  },
+  {
+    "id": "PhiloVanceTheKennelMurderCase1933",
+    "title": "Philo Vance - The Kennel Murder Case",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1933,
+    "duration": "73m",
+    "rating": "NR",
+    "description": "Archer Coe has been found dead in his locked bedroom. The cops consider it suicide, but Philo believes otherwise. When the Coroner shows up, he finds that Archer had been hit with a blunt object, stabbed and shot - making suicide unlikel...",
+    "image": "https://archive.org/services/img/PhiloVanceTheKennelMurderCase1933",
+    "fallbackImage": "https://archive.org/services/img/PhiloVanceTheKennelMurderCase1933",
+    "preview": "https://archive.org/embed/PhiloVanceTheKennelMurderCase1933"
+  },
+  {
+    "id": "WE_FEED_THE_WORLD_DEUTSCH",
+    "title": "WE FEED THE WORLD [ Deutsch | HQ | Doku | 95 Min. ]",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 2005,
+    "duration": "94m",
+    "rating": "NR",
+    "description": "Alle vier Sekunden verhungert ein Kind. Derzeit kämpfen fast eine Milliarde Menschen täglich ums Überleben und gegen das Verhungern, obwohl es derzeit eine weltweite Nahrungskapazität für 171% der Weltbevölkerung gibt ! (Q: World Food Re...",
+    "image": "https://archive.org/services/img/WE_FEED_THE_WORLD_DEUTSCH",
+    "fallbackImage": "https://archive.org/services/img/WE_FEED_THE_WORLD_DEUTSCH",
+    "preview": "https://archive.org/embed/WE_FEED_THE_WORLD_DEUTSCH"
+  },
+  {
+    "id": "born_to_the_saddle",
+    "title": "Born to the Saddle",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1951,
+    "duration": "75m",
+    "rating": "NR",
+    "description": "While investigating his father's death, a man become friendly with the rancher he thinks killed his father. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/born_to_the_saddle",
+    "fallbackImage": "https://archive.org/services/img/born_to_the_saddle",
+    "preview": "https://archive.org/embed/born_to_the_saddle"
+  },
+  {
+    "id": "RainbowValley",
+    "title": "Rainbow Valley",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1935,
+    "duration": "52m",
+    "rating": "NR",
+    "description": "John Martin (John Wayne) is a government agent working under cover. Leading citizen Morgan calls in gunman Butch Galt (Buffalo Bill Jr.) who blows Martin's cover.",
+    "image": "https://archive.org/services/img/RainbowValley",
+    "fallbackImage": "https://archive.org/services/img/RainbowValley",
+    "preview": "https://archive.org/embed/RainbowValley"
+  },
+  {
+    "id": "The.Dark.Hour",
+    "title": "The Dark Hour",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1936,
+    "duration": "69m",
+    "rating": "NR",
+    "description": "From IMDb : A pair of detectives investigate the murder of an elderly millionaire who was the target of blackmail and death threats and find that there is no shortage of suspects, many of them in the victim's own family. Stars: Ray Walke...",
+    "image": "https://archive.org/services/img/The.Dark.Hour",
+    "fallbackImage": "https://archive.org/services/img/The.Dark.Hour",
+    "preview": "https://archive.org/embed/The.Dark.Hour"
+  },
+  {
+    "id": "HiDiddleDiddle",
+    "title": "Hi Diddle Diddle",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "73m",
+    "rating": "NR",
+    "description": "The bride's mother is swindled out of her money and the groom's father cooks up a scheme to make things right. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/HiDiddleDiddle",
+    "fallbackImage": "https://archive.org/services/img/HiDiddleDiddle",
+    "preview": "https://archive.org/embed/HiDiddleDiddle"
+  },
+  {
+    "id": "Dont_Look_in_theBasement",
+    "title": "Don't Look in the Basement",
+    "type": "movie",
+    "row": "Horror",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Nurse Charlotte Beale arrives at the isolated Stephens Sanitarium to work, only to learn that Dr. Stephens was murdered by one of the patients and his successor, Dr. Geraldine Masters, is not very eager to take on new staff. Charlotte fi...",
+    "image": "https://archive.org/services/img/Dont_Look_in_theBasement",
+    "fallbackImage": "https://archive.org/services/img/Dont_Look_in_theBasement",
+    "preview": "https://archive.org/embed/Dont_Look_in_theBasement"
+  },
+  {
+    "id": "they_raid_by_night",
+    "title": "They Raid By Night",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1942,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/they_raid_by_night",
+    "fallbackImage": "https://archive.org/services/img/they_raid_by_night",
+    "preview": "https://archive.org/embed/they_raid_by_night"
+  },
+  {
+    "id": "last_woman_on_earth",
+    "title": "Last Woman on Earth",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1960,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/last_woman_on_earth",
+    "fallbackImage": "https://archive.org/services/img/last_woman_on_earth",
+    "preview": "https://archive.org/embed/last_woman_on_earth"
+  },
+  {
+    "id": "spooks_run_wild",
+    "title": "Spooks Run Wild",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "64m",
+    "rating": "NR",
+    "description": "Bela Lugosi You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/spooks_run_wild",
+    "fallbackImage": "https://archive.org/services/img/spooks_run_wild",
+    "preview": "https://archive.org/embed/spooks_run_wild"
+  },
+  {
+    "id": "TheWhiteWarrior1961",
+    "title": "The White Warrior",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1961,
+    "duration": "85m",
+    "rating": "NR",
+    "description": "This is the English dub version. From IMDB: The story of Hadji Murad, a 19th-century Chechen chieftain who led his warriors in a fight against the invading forces of the Russian Czar.",
+    "image": "https://archive.org/services/img/TheWhiteWarrior1961",
+    "fallbackImage": "https://archive.org/services/img/TheWhiteWarrior1961",
+    "preview": "https://archive.org/embed/TheWhiteWarrior1961"
+  },
+  {
+    "id": "Doomed_to_Die_1940",
+    "title": "Doomed to Die",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1940,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "From IMDb : Only the possibility of avoiding a Tong War, plus persuasion by reporter Bobbie Logan leads the famous detective James Lee Wong to enter the Wentworth case. A million and a half dollars in bonds was taken from one of Cyrus P....",
+    "image": "https://archive.org/services/img/Doomed_to_Die_1940",
+    "fallbackImage": "https://archive.org/services/img/Doomed_to_Die_1940",
+    "preview": "https://archive.org/embed/Doomed_to_Die_1940"
+  },
+  {
+    "id": "iron_mask_ipod",
+    "title": "Iron Mask",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1952,
+    "duration": "72m",
+    "rating": "NR",
+    "description": "1952 re-release of the 1929 film, narrated by Douglas Fairbanks Jr. Based on the Futher Adventures of the Three Musketeers",
+    "image": "https://archive.org/services/img/iron_mask_ipod",
+    "fallbackImage": "https://archive.org/services/img/iron_mask_ipod",
+    "preview": "https://archive.org/embed/iron_mask_ipod"
+  },
+  {
+    "id": "brand_of_the_devil",
+    "title": "Brand of the Devil",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/brand_of_the_devil",
+    "fallbackImage": "https://archive.org/services/img/brand_of_the_devil",
+    "preview": "https://archive.org/embed/brand_of_the_devil"
+  },
+  {
+    "id": "gangsters_of_the_frontier_1944",
+    "title": "Gangsters of the Frontier",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1944,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "Tex put the Kern gang away once but they have returned with reinforcements and have take over the town of Red Rock capturing the townsmen and forcing them to work for them in the gold mines.",
+    "image": "https://archive.org/services/img/gangsters_of_the_frontier_1944",
+    "fallbackImage": "https://archive.org/services/img/gangsters_of_the_frontier_1944",
+    "preview": "https://archive.org/embed/gangsters_of_the_frontier_1944"
+  },
+  {
+    "id": "YoungLand",
+    "title": "The Young Land",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1959,
+    "duration": "86m",
+    "rating": "NR",
+    "description": "An American gunslinger (Dennis Hopper) kills a Mexican man in California immediately after the Mexican-American war. The killer is arrested and put on trial for murder with the Hispanic population waiting to learn of American justice.",
+    "image": "https://archive.org/services/img/YoungLand",
+    "fallbackImage": "https://archive.org/services/img/YoungLand",
+    "preview": "https://archive.org/embed/YoungLand"
+  },
+  {
+    "id": "ItCanBeDoneAmigo",
+    "title": "It Can Be Done Amigo",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1972,
+    "duration": "98m",
+    "rating": "NR",
+    "description": "A drifter with fast fists and a gunfighter- pimp with fast guns help a child to claim his inheritance. - IMDB Description",
+    "image": "https://archive.org/services/img/ItCanBeDoneAmigo",
+    "fallbackImage": "https://archive.org/services/img/ItCanBeDoneAmigo",
+    "preview": "https://archive.org/embed/ItCanBeDoneAmigo"
+  },
+  {
+    "id": "PublicdomainGalateaFilmandTitanusEstherandtheKing",
+    "title": "Esther and the King",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1960,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "The story of Esther and her relationship with King Ashuarius (Xerxes) of Persia.",
+    "image": "https://archive.org/services/img/PublicdomainGalateaFilmandTitanusEstherandtheKing",
+    "fallbackImage": "https://archive.org/services/img/PublicdomainGalateaFilmandTitanusEstherandtheKing",
+    "preview": "https://archive.org/embed/PublicdomainGalateaFilmandTitanusEstherandtheKing"
+  },
+  {
+    "id": "the_bashful_bachelor",
+    "title": "The Bashful Bachelor",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1942,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "The second film in the movie adaptation of Lum and Abner radio program.",
+    "image": "https://archive.org/services/img/the_bashful_bachelor",
+    "fallbackImage": "https://archive.org/services/img/the_bashful_bachelor",
+    "preview": "https://archive.org/embed/the_bashful_bachelor"
+  },
+  {
+    "id": "nevada_city_ipod",
+    "title": "Nevada City",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Stagecoach drivers Roy and Gabby go up against the evil Black Bart who is trying to pit the stage and train lines against each other.",
+    "image": "https://archive.org/services/img/nevada_city_ipod",
+    "fallbackImage": "https://archive.org/services/img/nevada_city_ipod",
+    "preview": "https://archive.org/embed/nevada_city_ipod"
+  },
+  {
+    "id": "zontar_the_thing_from_venus",
+    "title": "Zontar the Thing From Venus",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1966,
+    "duration": "80m",
+    "rating": "NR",
+    "description": "Taken from IMDB : A misguided scientist enables an alien from Venus named Zontar to come to earth in order to help solve man's problems. However, Zontar has other ideas, like disabling the power supply of the entire world and taking poss...",
+    "image": "https://archive.org/services/img/zontar_the_thing_from_venus",
+    "fallbackImage": "https://archive.org/services/img/zontar_the_thing_from_venus",
+    "preview": "https://archive.org/embed/zontar_the_thing_from_venus"
+  },
+  {
+    "id": "abe_lincoln_of_the_4th_ave",
+    "title": "Abe Lincoln of the Ninth Avenue",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1939,
+    "duration": "64m",
+    "rating": "NR",
+    "description": "A drama about an idealistic law student from Hell's Kitchen who unites his neighborhood pals against a gang. Originally released as \"Streets of New York\". You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/abe_lincoln_of_the_4th_ave",
+    "fallbackImage": "https://archive.org/services/img/abe_lincoln_of_the_4th_ave",
+    "preview": "https://archive.org/embed/abe_lincoln_of_the_4th_ave"
+  },
+  {
+    "id": "RareTitanicFilm",
+    "title": "Rare Titanic Film",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "10m",
+    "rating": "NR",
+    "description": "I found this in one of my file boxes. I either recovered it from one of my encrypted drives or someone sent it to me. The film preservations society said it was very, very rare. Here is a link to another rare Titanic Film. It is one of t...",
+    "image": "https://archive.org/services/img/RareTitanicFilm",
+    "fallbackImage": "https://archive.org/services/img/RareTitanicFilm",
+    "preview": "https://archive.org/embed/RareTitanicFilm"
+  },
+  {
+    "id": "water_rustlers",
+    "title": "Water Rustlers",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/water_rustlers",
+    "fallbackImage": "https://archive.org/services/img/water_rustlers",
+    "preview": "https://archive.org/embed/water_rustlers"
+  },
+  {
+    "id": "chinatown_after_dark",
+    "title": "Chinatown After Dark",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1931,
+    "duration": "59m",
+    "rating": "NR",
+    "description": "A female head of a Chinatown crime syndicate will use any lethal means available to acquire a valuable jewel.",
+    "image": "https://archive.org/services/img/chinatown_after_dark",
+    "fallbackImage": "https://archive.org/services/img/chinatown_after_dark",
+    "preview": "https://archive.org/embed/chinatown_after_dark"
+  },
+  {
+    "id": "cco_TheGiantofMarathon",
+    "title": "The Giant of Marathon",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1959,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "A Greek Warrior engages in battle against the Persian Army",
+    "image": "https://archive.org/services/img/cco_TheGiantofMarathon",
+    "fallbackImage": "https://archive.org/services/img/cco_TheGiantofMarathon",
+    "preview": "https://archive.org/embed/cco_TheGiantofMarathon"
+  },
+  {
+    "id": "big_trees",
+    "title": "Big Trees, The",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1952,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/big_trees",
+    "fallbackImage": "https://archive.org/services/img/big_trees",
+    "preview": "https://archive.org/embed/big_trees"
+  },
+  {
+    "id": "FamilyEnforcer",
+    "title": "Family Enforcer",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1976,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "AKA The Death Collector After being away for a couple of years, Jerry Bolanti (Joseph Cortese) is back in his tough, North Jersey neighborhood, close to swampy meadowlands where bodies get pulled from the trunks of cars and dumped. He's...",
+    "image": "https://archive.org/services/img/FamilyEnforcer",
+    "fallbackImage": "https://archive.org/services/img/FamilyEnforcer",
+    "preview": "https://archive.org/embed/FamilyEnforcer"
+  },
+  {
+    "id": "attack_from_space_ipod",
+    "title": "Attack from Space",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1964,
+    "duration": "76m",
+    "rating": "NR",
+    "description": "Benevolent aliens from the planet Emerald send superhero Starman to protect Earth from invasion by an evil alien race called the Spherions.",
+    "image": "https://archive.org/services/img/attack_from_space_ipod",
+    "fallbackImage": "https://archive.org/services/img/attack_from_space_ipod",
+    "preview": "https://archive.org/embed/attack_from_space_ipod"
+  },
+  {
+    "id": "call_of_the_yukon_1938",
+    "title": "Call of the Yukon",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1938,
+    "duration": "66m",
+    "rating": "NR",
+    "description": "Taken from IMDB : A fur trader guides a writer and her animals to safety in the Yukon territory when wolves are about to attack.",
+    "image": "https://archive.org/services/img/call_of_the_yukon_1938",
+    "fallbackImage": "https://archive.org/services/img/call_of_the_yukon_1938",
+    "preview": "https://archive.org/embed/call_of_the_yukon_1938"
+  },
+  {
+    "id": "rogue_on_the_range",
+    "title": "Rogue Of The Range",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1936,
+    "duration": "56m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/rogue_on_the_range",
+    "fallbackImage": "https://archive.org/services/img/rogue_on_the_range",
+    "preview": "https://archive.org/embed/rogue_on_the_range"
+  },
+  {
+    "id": "TwoFistedLawWithTimMccoyAndJohnWayne1932",
+    "title": "Two Fisted Law with Tim McCoy and John Wayne (1932)",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1932,
+    "duration": "57m",
+    "rating": "NR",
+    "description": "Two-Fisted Law (1932) Tim McCoy ... Tim Clark John Wayne ... Duke Walter Brennen - Sheriffâs Deputy Bendix Story by William Colt MacDonald (Creator of The Three Mesqueteers stories) Made by Columbia Studios Written by pulp writer William...",
+    "image": "https://archive.org/services/img/TwoFistedLawWithTimMccoyAndJohnWayne1932",
+    "fallbackImage": "https://archive.org/services/img/TwoFistedLawWithTimMccoyAndJohnWayne1932",
+    "preview": "https://archive.org/embed/TwoFistedLawWithTimMccoyAndJohnWayne1932"
+  },
+  {
+    "id": "phantom_of_42nd_st",
+    "title": "Phantom of 42nd St",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1945,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/phantom_of_42nd_st",
+    "fallbackImage": "https://archive.org/services/img/phantom_of_42nd_st",
+    "preview": "https://archive.org/embed/phantom_of_42nd_st"
+  },
+  {
+    "id": "alias_john_law",
+    "title": "Alias John Law",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1935,
+    "duration": "59m",
+    "rating": "NR",
+    "description": "The ringleader of a gang impersonates a deputy in order to steal land. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/alias_john_law",
+    "fallbackImage": "https://archive.org/services/img/alias_john_law",
+    "preview": "https://archive.org/embed/alias_john_law"
+  },
+  {
+    "id": "killer_dill",
+    "title": "Killer Dill",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1947,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Door-to-door salesman Johnny Dill, the exact double of a notorious gangster, finds himself struck between the forces of good and evil. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/killer_dill",
+    "fallbackImage": "https://archive.org/services/img/killer_dill",
+    "preview": "https://archive.org/embed/killer_dill"
+  },
+  {
+    "id": "UncleJoe",
+    "title": "Uncle Joe",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1941,
+    "duration": "51m",
+    "rating": "NR",
+    "description": "A film that's cheap, silly, and short. And it has Zasu Pitts.",
+    "image": "https://archive.org/services/img/UncleJoe",
+    "fallbackImage": "https://archive.org/services/img/UncleJoe",
+    "preview": "https://archive.org/embed/UncleJoe"
+  },
+  {
+    "id": "hearts_in_bondage",
+    "title": "Hearts In Bondage",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1936,
+    "duration": "72m",
+    "rating": "NR",
+    "description": "Lieutenant Kenneth Reynolds, a Naval officer, falls in love with Constance Jordan. Ken's friends with Raymond Jordan, also in the Navy; he's in love with Julie Buchanan. Captain Buchanan, however, sides with the Confederacy when his home...",
+    "image": "https://archive.org/services/img/hearts_in_bondage",
+    "fallbackImage": "https://archive.org/services/img/hearts_in_bondage",
+    "preview": "https://archive.org/embed/hearts_in_bondage"
+  },
+  {
+    "id": "go_down_death",
+    "title": "Go Down, Death!",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1944,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "Religious race film from Spencer Williams of \"Amos N' Andy\" fame. More info from the film's IMDB page .",
+    "image": "https://archive.org/services/img/go_down_death",
+    "fallbackImage": "https://archive.org/services/img/go_down_death",
+    "preview": "https://archive.org/embed/go_down_death"
+  },
+  {
+    "id": "little_men",
+    "title": "Little Men",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1940,
+    "duration": "83m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page",
+    "image": "https://archive.org/services/img/little_men",
+    "fallbackImage": "https://archive.org/services/img/little_men",
+    "preview": "https://archive.org/embed/little_men"
+  },
+  {
+    "id": "DeadManDrinking",
+    "title": "Dead Man Drinking",
+    "type": "movie",
+    "row": "Featured",
+    "year": 2008,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "Dead Man Drinking is a full-length independent feature-film released for free under a creative commons 3.0 license. A discussion by friends with long-winded histories and a love of drinking results in four of them running off to house-si...",
+    "image": "https://archive.org/services/img/DeadManDrinking",
+    "fallbackImage": "https://archive.org/services/img/DeadManDrinking",
+    "preview": "https://archive.org/embed/DeadManDrinking"
+  },
+  {
+    "id": "windjammer",
+    "title": "Windjammer",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1937,
+    "duration": "57m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/windjammer",
+    "fallbackImage": "https://archive.org/services/img/windjammer",
+    "preview": "https://archive.org/embed/windjammer"
+  },
+  {
+    "id": "house_of_secrets",
+    "title": "House of Secrets",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1936,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/house_of_secrets",
+    "fallbackImage": "https://archive.org/services/img/house_of_secrets",
+    "preview": "https://archive.org/embed/house_of_secrets"
+  },
+  {
+    "id": "Santa_Fe_Trail",
+    "title": "Santa Fe Trail",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1940,
+    "duration": "109m",
+    "rating": "NR",
+    "description": "From Wikipedia: The film loosely follows the life of J.E.B. Stuart (Errol Flynn) before the outbreak of the American Civil War. Among its sub-plots include a romance with the fictional Kit Carson Holliday (Olivia de Havilland), friendshi...",
+    "image": "https://archive.org/services/img/Santa_Fe_Trail",
+    "fallbackImage": "https://archive.org/services/img/Santa_Fe_Trail",
+    "preview": "https://archive.org/embed/Santa_Fe_Trail"
+  },
+  {
+    "id": "TheTrailBeyond1934",
+    "title": "The Trail Beyond (1934)",
+    "type": "movie",
+    "row": "Horror",
+    "year": "",
+    "duration": "55m",
+    "rating": "NR",
+    "description": "Rod is searching for a missing miner and his daughter. His friend Wabi is helping him and they find a map to a mine. But LaRocque finds out and he wants the map by any means neccessary. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/TheTrailBeyond1934",
+    "fallbackImage": "https://archive.org/services/img/TheTrailBeyond1934",
+    "preview": "https://archive.org/embed/TheTrailBeyond1934"
+  },
+  {
+    "id": "Gods_Gun",
+    "title": "Gods Gun KVCD-001",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1976,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Priest turned vigilante Father John (Van Cleef) hunts down a gang of criminals, led by Sam Clayton (Palance), who killed a man in a local bar. On the gang's return to the town, they kill the priest, leaving a young parishioner Johnny beh...",
+    "image": "https://archive.org/services/img/Gods_Gun",
+    "fallbackImage": "https://archive.org/services/img/Gods_Gun",
+    "preview": "https://archive.org/embed/Gods_Gun"
+  },
+  {
+    "id": "saddle_mountain_roundup_mp4",
+    "title": "Saddle Mountain Roundup",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "58m",
+    "rating": "NR",
+    "description": "An old man and his Chinese servant are in danager of becoming victims of the ruthless killer, \"The Raven.\"",
+    "image": "https://archive.org/services/img/saddle_mountain_roundup_mp4",
+    "fallbackImage": "https://archive.org/services/img/saddle_mountain_roundup_mp4",
+    "preview": "https://archive.org/embed/saddle_mountain_roundup_mp4"
+  },
+  {
+    "id": "law_of_the_rio_grande",
+    "title": "Law of the Rio Grande",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "48m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/law_of_the_rio_grande",
+    "fallbackImage": "https://archive.org/services/img/law_of_the_rio_grande",
+    "preview": "https://archive.org/embed/law_of_the_rio_grande"
+  },
+  {
+    "id": "waterfront",
+    "title": "Waterfront",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "64m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/waterfront",
+    "fallbackImage": "https://archive.org/services/img/waterfront",
+    "preview": "https://archive.org/embed/waterfront"
+  },
+  {
+    "id": "ClassicCinemaOnline_PublicDomain_TheLawlessFrontier",
+    "title": "The Lawless Frontier",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1934,
+    "duration": "50m",
+    "rating": "NR",
+    "description": "A mexican outlaw kills John Tobin's (John Wayne) parents. Eventually, John Tobin meets up with someone else who's life has been bothered ... all » by the same outlaw, and they team up to get the bad guy.",
+    "image": "https://archive.org/services/img/ClassicCinemaOnline_PublicDomain_TheLawlessFrontier",
+    "fallbackImage": "https://archive.org/services/img/ClassicCinemaOnline_PublicDomain_TheLawlessFrontier",
+    "preview": "https://archive.org/embed/ClassicCinemaOnline_PublicDomain_TheLawlessFrontier"
+  },
+  {
+    "id": "TheSoutherner",
+    "title": "The Southerner",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1945,
+    "duration": "92m",
+    "rating": "NR",
+    "description": "Jean Renoir's classic tale of a cotton picker (Zachary Scott) who moves his wife (Betty Field) and children to a run down farm in hopes that they can grow their own cotton and make for a better future.",
+    "image": "https://archive.org/services/img/TheSoutherner",
+    "fallbackImage": "https://archive.org/services/img/TheSoutherner",
+    "preview": "https://archive.org/embed/TheSoutherner"
+  },
+  {
+    "id": "paradise_express",
+    "title": "Paradise Express",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1937,
+    "duration": "53m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/paradise_express",
+    "fallbackImage": "https://archive.org/services/img/paradise_express",
+    "preview": "https://archive.org/embed/paradise_express"
+  },
+  {
+    "id": "phantom_patrol",
+    "title": "Phantom Patrol",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1936,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "Kermit Maynard, Joan Barclay You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/phantom_patrol",
+    "fallbackImage": "https://archive.org/services/img/phantom_patrol",
+    "preview": "https://archive.org/embed/phantom_patrol"
+  },
+  {
+    "id": "renfrew_of_the_royal_mounted",
+    "title": "Renfrew of the Royal Mounted",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1937,
+    "duration": "57m",
+    "rating": "NR",
+    "description": "Canadian Mountie Renfrew discovers and tries to smash a clever counterfeiting ring and sings a song or two... You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/renfrew_of_the_royal_mounted",
+    "fallbackImage": "https://archive.org/services/img/renfrew_of_the_royal_mounted",
+    "preview": "https://archive.org/embed/renfrew_of_the_royal_mounted"
+  },
+  {
+    "id": "TheSheik",
+    "title": "The Sheik",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1921,
+    "duration": "86m",
+    "rating": "NR",
+    "description": "Legendary Valentino picture. Valentino stars as an Arabian who falls in love with an English woman in this classic silent picture. Visit the IMDB page here.",
+    "image": "https://archive.org/services/img/TheSheik",
+    "fallbackImage": "https://archive.org/services/img/TheSheik",
+    "preview": "https://archive.org/embed/TheSheik"
+  },
+  {
+    "id": "machine_gun_mama_1944",
+    "title": "Machine Gun Mama",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "60m",
+    "rating": "NR",
+    "description": "Music and laughs surround the adventures of two brash Brooklynites (Wallace Ford, El Brendel) as they try to deliver Bunny the elephant to a Mexican carnival and tangle with the evil \"Joe the Gyp,\" who's trying to close the show. You can...",
+    "image": "https://archive.org/services/img/machine_gun_mama_1944",
+    "fallbackImage": "https://archive.org/services/img/machine_gun_mama_1944",
+    "preview": "https://archive.org/embed/machine_gun_mama_1944"
+  },
+  {
+    "id": "deborah-secco-10210",
+    "title": "Deborah Secco 10210",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Deborah Secco 10210",
+    "image": "https://archive.org/services/img/deborah-secco-10210",
+    "fallbackImage": "https://archive.org/services/img/deborah-secco-10210",
+    "preview": "https://archive.org/embed/deborah-secco-10210"
+  },
+  {
+    "id": "ParlorBedroomandBath",
+    "title": "Parlor, Bedroom and Bath",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1931,
+    "duration": "73m",
+    "rating": "NR",
+    "description": "Parlor, Bedroom and Bath is a curious mixture of all that was good and everything that was bad in Buster Keaton's talkie features. sidenote: The Movie was completely filmed in Buster Keaton private 10,000- square-foot Mediterranean palaz...",
+    "image": "https://archive.org/services/img/ParlorBedroomandBath",
+    "fallbackImage": "https://archive.org/services/img/ParlorBedroomandBath",
+    "preview": "https://archive.org/embed/ParlorBedroomandBath"
+  },
+  {
+    "id": "The_Fatal_Hour",
+    "title": "The Fatal Hour",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1940,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "From IMDb : When Captain Street's best friend Dan O'Grady is murdered, Street enlists the help of Chinese detective James Lee Wong. Mr. Wong uncovers a smuggling ring on the waterfront of San Francisco and unmasks the killer, though not...",
+    "image": "https://archive.org/services/img/The_Fatal_Hour",
+    "fallbackImage": "https://archive.org/services/img/The_Fatal_Hour",
+    "preview": "https://archive.org/embed/The_Fatal_Hour"
+  },
+  {
+    "id": "CCandCompany",
+    "title": "C.C. and Company",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1970,
+    "duration": "94m",
+    "rating": "NR",
+    "description": "C.C. Ryder (Joe Namath) is a biker who rescues Ann McCalley (Ann-Margret) from a rape attempt by a gang of malevolent hippies. But gang-leader Moon (William Smith) seeks revenge for C.C.'s interference.",
+    "image": "https://archive.org/services/img/CCandCompany",
+    "fallbackImage": "https://archive.org/services/img/CCandCompany",
+    "preview": "https://archive.org/embed/CCandCompany"
+  },
+  {
+    "id": "rain1932",
+    "title": "Rain",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1932,
+    "duration": "92m",
+    "rating": "NR",
+    "description": "Sadie Thompson vs. The Puritans. Maxwell Anderson's screenplay of the W. Somerset Maugham story. Joan Crawford. Walter Huston, William Gargan For more info on this film see its IMDB.com entry",
+    "image": "https://archive.org/services/img/rain1932",
+    "fallbackImage": "https://archive.org/services/img/rain1932",
+    "preview": "https://archive.org/embed/rain1932"
+  },
+  {
+    "id": "arzu_movie",
+    "title": "Arzu, Turkish Movie",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Arzu, Turkish Movie",
+    "image": "https://archive.org/services/img/arzu_movie",
+    "fallbackImage": "https://archive.org/services/img/arzu_movie",
+    "preview": "https://archive.org/embed/arzu_movie"
+  },
+  {
+    "id": "sos_your_aunt_emma_1942",
+    "title": "So's Your Aunt Emma",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1942,
+    "duration": "62m",
+    "rating": "NR",
+    "description": "A meek middle-aged spinster, get mistaken for the head of the Ma Parker gang.",
+    "image": "https://archive.org/services/img/sos_your_aunt_emma_1942",
+    "fallbackImage": "https://archive.org/services/img/sos_your_aunt_emma_1942",
+    "preview": "https://archive.org/embed/sos_your_aunt_emma_1942"
+  },
+  {
+    "id": "The_Son_of_Monte_Cristo",
+    "title": "The Son of Monte Cristo",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1940,
+    "duration": "102m",
+    "rating": "NR",
+    "description": "Dashing Edmund Dantes Jr. (Louis Hayward), the son of the famed Count of Monte Cristo, uses the masked guise of the Torch to come to the aid of his beloved the fair Zona (Joan Bennett), royal grand duchess of Lichtenburg in an attempt to...",
+    "image": "https://archive.org/services/img/The_Son_of_Monte_Cristo",
+    "fallbackImage": "https://archive.org/services/img/The_Son_of_Monte_Cristo",
+    "preview": "https://archive.org/embed/The_Son_of_Monte_Cristo"
+  },
+  {
+    "id": "cavalcade_of_the_west",
+    "title": "Cavalcade of the West",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1936,
+    "duration": "60m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/cavalcade_of_the_west",
+    "fallbackImage": "https://archive.org/services/img/cavalcade_of_the_west",
+    "preview": "https://archive.org/embed/cavalcade_of_the_west"
+  },
+  {
+    "id": "little_lord_fauntleroy",
+    "title": "Little Lord Fauntleroy",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1936,
+    "duration": "101m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/little_lord_fauntleroy",
+    "fallbackImage": "https://archive.org/services/img/little_lord_fauntleroy",
+    "preview": "https://archive.org/embed/little_lord_fauntleroy"
+  },
+  {
+    "id": "horror_hotel_ipod",
+    "title": "City of the Dead/Horror Hotel",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1960,
+    "duration": "76m",
+    "rating": "NR",
+    "description": "College student Nan Barlow visits the village of Whitewood as research for her paper on witchcraft in New England, particularly the case of Elizabeth Selwyn. Her tutor, Professor Alan Driscoll(Lee), recommends the Raven's Inn, run by a M...",
+    "image": "https://archive.org/services/img/horror_hotel_ipod",
+    "fallbackImage": "https://archive.org/services/img/horror_hotel_ipod",
+    "preview": "https://archive.org/embed/horror_hotel_ipod"
+  },
+  {
+    "id": "back_dragons_ipod",
+    "title": "Black Dragons",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1942,
+    "duration": "62m",
+    "rating": "NR",
+    "description": "A cabal of American industrialists, all fifth-columnists intent on sabotaging the war effort, are methodically murdered by the malevolent Monsieur Colomb. It is only until detective Dick Martin is assigned to the case that everyone's tru...",
+    "image": "https://archive.org/services/img/back_dragons_ipod",
+    "fallbackImage": "https://archive.org/services/img/back_dragons_ipod",
+    "preview": "https://archive.org/embed/back_dragons_ipod"
+  },
+  {
+    "id": "my_love_for_yours_ipod",
+    "title": "My Love for Your (AKA Honeymoon in Bali)",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "100m",
+    "rating": "NR",
+    "description": "Taken from IMDB: Bill Burnett, a resident of Bali, visits New York City, meets and falls in love with Gail Allen, the successful manager of a Fifth Avenue shop",
+    "image": "https://archive.org/services/img/my_love_for_yours_ipod",
+    "fallbackImage": "https://archive.org/services/img/my_love_for_yours_ipod",
+    "preview": "https://archive.org/embed/my_love_for_yours_ipod"
+  },
+  {
+    "id": "midnight_phantom_1935",
+    "title": "Midnight Phantom",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1935,
+    "duration": "57m",
+    "rating": "NR",
+    "description": "A newly hired police chief vows to clean up a notoriously corrupt police department. When he is murdered, investigators find that there is no shortage of suspects, most of them being fellow cops.",
+    "image": "https://archive.org/services/img/midnight_phantom_1935",
+    "fallbackImage": "https://archive.org/services/img/midnight_phantom_1935",
+    "preview": "https://archive.org/embed/midnight_phantom_1935"
+  },
+  {
+    "id": "neath_brooklyn_bridge",
+    "title": "'Neath Brooklyn Bridge",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1942,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "The East Side Kids protect a young girl from being framed for murder.",
+    "image": "https://archive.org/services/img/neath_brooklyn_bridge",
+    "fallbackImage": "https://archive.org/services/img/neath_brooklyn_bridge",
+    "preview": "https://archive.org/embed/neath_brooklyn_bridge"
+  },
+  {
+    "id": "mohawk",
+    "title": "Mohawk",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "No description available yet.",
+    "image": "https://archive.org/services/img/mohawk",
+    "fallbackImage": "https://archive.org/services/img/mohawk",
+    "preview": "https://archive.org/embed/mohawk"
+  },
+  {
+    "id": "underground_rustlers_ipod",
+    "title": "Underground Rustlers",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "Taken from IMDB : Gold stages are being held up in the far west at a time when the U.S. government needs bullion, just before the famed \"Black Friday\" attempt to corner the gold market. The government sends the Range Busters, to Gold But...",
+    "image": "https://archive.org/services/img/underground_rustlers_ipod",
+    "fallbackImage": "https://archive.org/services/img/underground_rustlers_ipod",
+    "preview": "https://archive.org/embed/underground_rustlers_ipod"
+  },
+  {
+    "id": "bride_of_a_gorilla",
+    "title": "Bride of the Gorilla",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1951,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/bride_of_a_gorilla",
+    "fallbackImage": "https://archive.org/services/img/bride_of_a_gorilla",
+    "preview": "https://archive.org/embed/bride_of_a_gorilla"
+  },
+  {
+    "id": "TheSnowCreature",
+    "title": "The Snow Creature",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1954,
+    "duration": "71m",
+    "rating": "NR",
+    "description": "A Himalayan expedition comes across a mountain being, manages to capture it, then transports it back to the United States. You can find more information regarding this film on its IMDb page . In addition to the formats listed to the left...",
+    "image": "https://archive.org/services/img/TheSnowCreature",
+    "fallbackImage": "https://archive.org/services/img/TheSnowCreature",
+    "preview": "https://archive.org/embed/TheSnowCreature"
+  },
+  {
+    "id": "UpInTheAir",
+    "title": "Up in the Air",
+    "type": "movie",
+    "row": "Horror",
+    "year": "",
+    "duration": "61m",
+    "rating": "NR",
+    "description": "Murder mystery at a radio station. Movie features Mantan Moreland and Frankie Darro along with Marjorie Reynolds and Lorna Gray.",
+    "image": "https://archive.org/services/img/UpInTheAir",
+    "fallbackImage": "https://archive.org/services/img/UpInTheAir",
+    "preview": "https://archive.org/embed/UpInTheAir"
+  },
+  {
+    "id": "TheRangeFeud1931-BuckJonesAndJohnWayne",
+    "title": "The Range Feud (1931) - Buck Jones and John Wayne",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1931,
+    "duration": "57m",
+    "rating": "NR",
+    "description": "Range Feud (1931) - Buck Jones and John Wayne Ranchers Walton and Turner are losing cattle to rustlers and they each blame the other. After Walton and Clint Turner (John Wayne) argue, Walton is found shot and Sheriff Buck Gordon (Buck Jo...",
+    "image": "https://archive.org/services/img/TheRangeFeud1931-BuckJonesAndJohnWayne",
+    "fallbackImage": "https://archive.org/services/img/TheRangeFeud1931-BuckJonesAndJohnWayne",
+    "preview": "https://archive.org/embed/TheRangeFeud1931-BuckJonesAndJohnWayne"
+  },
+  {
+    "id": "DonQuixote",
+    "title": "Adventures of Don Quixote",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1933,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "The classic film \"Don Quixote\" starring famous Russian singer Feodor Chaliapin.",
+    "image": "https://archive.org/services/img/DonQuixote",
+    "fallbackImage": "https://archive.org/services/img/DonQuixote",
+    "preview": "https://archive.org/embed/DonQuixote"
+  },
+  {
+    "id": "sky_patrol_ipod",
+    "title": "Sky Patrol",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "59m",
+    "rating": "NR",
+    "description": "\"Tailspin Tommy\" Tompkins and \"Skeeter\" Milligan are training young U. S. Army fliers for the newly-formed 'Sky Patrol,'a branch of the Army Reserves which operates along the borders and coast-lines, on the lookout for smugglers.",
+    "image": "https://archive.org/services/img/sky_patrol_ipod",
+    "fallbackImage": "https://archive.org/services/img/sky_patrol_ipod",
+    "preview": "https://archive.org/embed/sky_patrol_ipod"
+  },
+  {
+    "id": "RC_SwampWomen",
+    "title": "Swamp Women",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1955,
+    "duration": "68m",
+    "rating": "NR",
+    "description": "Swamp Women, produced in 1955, was the first film ever directed by Roger Corman. The film follows undercover police officer Lee Hampton after she infiltrates a prison, befriends three female convicts, and helps them all escape. In realit...",
+    "image": "https://archive.org/services/img/RC_SwampWomen",
+    "fallbackImage": "https://archive.org/services/img/RC_SwampWomen",
+    "preview": "https://archive.org/embed/RC_SwampWomen"
+  },
+  {
+    "id": "danger_lights",
+    "title": "Danger Lights",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1930,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/danger_lights",
+    "fallbackImage": "https://archive.org/services/img/danger_lights",
+    "preview": "https://archive.org/embed/danger_lights"
+  },
+  {
+    "id": "danger_ahead",
+    "title": "Danger Ahead",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1935,
+    "duration": "59m",
+    "rating": "NR",
+    "description": "Captain Matthews (John Elliot) is paid 40,000 dollars in cash by Nick Conrad (Bryant Washburn, who also played an attorney in 'Prison Mutiny') for his shipment of silk from China. About 15 seconds after he gets the cash, he's lured away...",
+    "image": "https://archive.org/services/img/danger_ahead",
+    "fallbackImage": "https://archive.org/services/img/danger_ahead",
+    "preview": "https://archive.org/embed/danger_ahead"
+  },
+  {
+    "id": "RoarinLead1936",
+    "title": "Roarin' Lead (1936)",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "53m",
+    "rating": "NR",
+    "description": "Roarin' Lead (1936) PD - No copyright renewal",
+    "image": "https://archive.org/services/img/RoarinLead1936",
+    "fallbackImage": "https://archive.org/services/img/RoarinLead1936",
+    "preview": "https://archive.org/embed/RoarinLead1936"
+  },
+  {
+    "id": "Hollywood_Man",
+    "title": "Hollywood Man",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1976,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "William Smith goes through hell while trying to make a low-budget biker film.",
+    "image": "https://archive.org/services/img/Hollywood_Man",
+    "fallbackImage": "https://archive.org/services/img/Hollywood_Man",
+    "preview": "https://archive.org/embed/Hollywood_Man"
+  },
+  {
+    "id": "long_shot",
+    "title": "Long Shot, The",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/long_shot",
+    "fallbackImage": "https://archive.org/services/img/long_shot",
+    "preview": "https://archive.org/embed/long_shot"
+  },
+  {
+    "id": "TheReturnOfTheShadow1945",
+    "title": "The Return of The Shadow (1945)",
+    "type": "movie",
+    "row": "Horror",
+    "year": "",
+    "duration": "58m",
+    "rating": "NR",
+    "description": "The Return of The Shadow (1945) - Richmond Kane",
+    "image": "https://archive.org/services/img/TheReturnOfTheShadow1945",
+    "fallbackImage": "https://archive.org/services/img/TheReturnOfTheShadow1945",
+    "preview": "https://archive.org/embed/TheReturnOfTheShadow1945"
+  },
+  {
+    "id": "film_indo_tahun_1980-1989",
+    "title": "Film indo tahun 1980-1989",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "install aplikasi streaming film indo di https://bit.ly/FilmGrewal",
+    "image": "https://archive.org/services/img/film_indo_tahun_1980-1989",
+    "fallbackImage": "https://archive.org/services/img/film_indo_tahun_1980-1989",
+    "preview": "https://archive.org/embed/film_indo_tahun_1980-1989"
+  },
+  {
+    "id": "murder_on_the_campus",
+    "title": "Murder on the Campus",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1933,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/murder_on_the_campus",
+    "fallbackImage": "https://archive.org/services/img/murder_on_the_campus",
+    "preview": "https://archive.org/embed/murder_on_the_campus"
+  },
+  {
+    "id": "the_contender_ipod",
+    "title": "The Contender",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1944,
+    "duration": "62m",
+    "rating": "NR",
+    "description": "Widower Gary Farrell can't afford, on his $45-weekly salary as a truck driver, to send his young son, Mickey, to a high-priced military school and decides to enter heavyweight-boxing tournament in an effort to win the $500 prize money.",
+    "image": "https://archive.org/services/img/the_contender_ipod",
+    "fallbackImage": "https://archive.org/services/img/the_contender_ipod",
+    "preview": "https://archive.org/embed/the_contender_ipod"
+  },
+  {
+    "id": "subs-please-kaifuku-jutsushi-no-yarinaoshi-01-720p-d-8338-e-50-af",
+    "title": "[ Subs Please] Kaifuku Jutsushi No Yarinaoshi 01 ( 720p) [ D 8338 E 50] Af",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "anime",
+    "image": "https://archive.org/services/img/subs-please-kaifuku-jutsushi-no-yarinaoshi-01-720p-d-8338-e-50-af",
+    "fallbackImage": "https://archive.org/services/img/subs-please-kaifuku-jutsushi-no-yarinaoshi-01-720p-d-8338-e-50-af",
+    "preview": "https://archive.org/embed/subs-please-kaifuku-jutsushi-no-yarinaoshi-01-720p-d-8338-e-50-af"
+  },
+  {
+    "id": "WakeMeUpWhentheWarisOverKenBarryJimBackus1969goofyrip",
+    "title": "Wake Me Up When the War Is Over",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1969,
+    "duration": "74m",
+    "rating": "NR",
+    "description": "http://imdb.com/title/tt0065194/ During the latter days of WW2 an American Lieutenant (Ken Berry), accidentally falls out of an airplane that he was on and falls into German territory. He is taken in by a Baroness (Eva Gabor). She is tak...",
+    "image": "https://archive.org/services/img/WakeMeUpWhentheWarisOverKenBarryJimBackus1969goofyrip",
+    "fallbackImage": "https://archive.org/services/img/WakeMeUpWhentheWarisOverKenBarryJimBackus1969goofyrip",
+    "preview": "https://archive.org/embed/WakeMeUpWhentheWarisOverKenBarryJimBackus1969goofyrip"
+  },
+  {
+    "id": "MarvellousMelbourne",
+    "title": "Marvellous Melbourne",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1910,
+    "duration": "14m",
+    "rating": "NR",
+    "description": "Full Title: Marvellous Melbourne - Queen City of the South An early documentary film about the City of Melbourne, then the interim capital city of Australia. Made in 1910. The director Charles Cozens Spencer was famous for his bushranger...",
+    "image": "https://archive.org/services/img/MarvellousMelbourne",
+    "fallbackImage": "https://archive.org/services/img/MarvellousMelbourne",
+    "preview": "https://archive.org/embed/MarvellousMelbourne"
+  },
+  {
+    "id": "ACloseCallForBostonBlackie",
+    "title": "A Close Call for Boston Blackie",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1946,
+    "duration": "60m",
+    "rating": "NR",
+    "description": "A Close Call for Boston Blackie (1946) is the tenth of fourteen Columbia Pictures crime films starring Chester Morris as Boston Blackie. Cast Chester Morris as Boston Blackie Lynn Merrick as Geraldine \"Gerry\" Peyton Richard Lane as Inspe...",
+    "image": "https://archive.org/services/img/ACloseCallForBostonBlackie",
+    "fallbackImage": "https://archive.org/services/img/ACloseCallForBostonBlackie",
+    "preview": "https://archive.org/embed/ACloseCallForBostonBlackie"
+  },
+  {
+    "id": "selfishfairy",
+    "title": "Wagamama Fairy - Mirumo de Pon",
+    "type": "movie",
+    "row": "Anime",
+    "year": 2002,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Kaede is a cheerful and energetic eighth grader. When it comes to boys, however, she is hopelessly shy. One day, on her way home from school, Kaede walks into a mysterious shop and buys a colorful cocoa mug. When she reaches home, she ca...",
+    "image": "https://archive.org/services/img/selfishfairy",
+    "fallbackImage": "https://archive.org/services/img/selfishfairy",
+    "preview": "https://archive.org/embed/selfishfairy"
+  },
+  {
+    "id": "TheSwap",
+    "title": "The Swap",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1979,
+    "duration": "81m",
+    "rating": "NR",
+    "description": "An introspective and disillusioned young film maker becomes involved with high-living jet-setters",
+    "image": "https://archive.org/services/img/TheSwap",
+    "fallbackImage": "https://archive.org/services/img/TheSwap",
+    "preview": "https://archive.org/embed/TheSwap"
+  },
+  {
+    "id": "million_dollar_weekend",
+    "title": "Million Dollar Weekend",
+    "type": "movie",
+    "row": "Sci-Fi",
+    "year": 1948,
+    "duration": "72m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/million_dollar_weekend",
+    "fallbackImage": "https://archive.org/services/img/million_dollar_weekend",
+    "preview": "https://archive.org/embed/million_dollar_weekend"
+  },
+  {
+    "id": "panthers_claw",
+    "title": "Panther's Claw, The",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1942,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/panthers_claw",
+    "fallbackImage": "https://archive.org/services/img/panthers_claw",
+    "preview": "https://archive.org/embed/panthers_claw"
+  },
+  {
+    "id": "AlltheKindStrangers",
+    "title": "All the Kind Strangers",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1974,
+    "duration": "73m",
+    "rating": "NR",
+    "description": "A couple traveling through a backwoods area are held by a a group of orphans who want them to become their parents. Unfortunately, the kids have a habit of killing adults who refuse that particular honor.",
+    "image": "https://archive.org/services/img/AlltheKindStrangers",
+    "fallbackImage": "https://archive.org/services/img/AlltheKindStrangers",
+    "preview": "https://archive.org/embed/AlltheKindStrangers"
+  },
+  {
+    "id": "bowery_blitzkrieg",
+    "title": "Bowery Blitzkrieg",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1941,
+    "duration": "1m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/bowery_blitzkrieg",
+    "fallbackImage": "https://archive.org/services/img/bowery_blitzkrieg",
+    "preview": "https://archive.org/embed/bowery_blitzkrieg"
+  },
+  {
+    "id": "HorrorExpresswithSpanishSubtitles",
+    "title": "Horror Express (with spanish subtitles)",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1973,
+    "duration": "87m",
+    "rating": "NR",
+    "description": "An English anthropologist has discovered a frozen monster in the frozen wastes of Manchuria which he believes may be the Missing Link. Audio: English, Subtitles: Spanish",
+    "image": "https://archive.org/services/img/HorrorExpresswithSpanishSubtitles",
+    "fallbackImage": "https://archive.org/services/img/HorrorExpresswithSpanishSubtitles",
+    "preview": "https://archive.org/embed/HorrorExpresswithSpanishSubtitles"
+  },
+  {
+    "id": "airborne",
+    "title": "Airborne",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1962,
+    "duration": "83m",
+    "rating": "NR",
+    "description": "A country boy trains to be a paratrooper at Fort Bragg. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/airborne",
+    "fallbackImage": "https://archive.org/services/img/airborne",
+    "preview": "https://archive.org/embed/airborne"
+  },
+  {
+    "id": "second_chorus_1940",
+    "title": "Second Chorus",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1940,
+    "duration": "84m",
+    "rating": "NR",
+    "description": "Taken from IlMDB : When perennial college students Danny O'Neill and Hank Taylor are forced to make it on their own, the competitive pair get jobs with Artie Shaw's band and reunite with ex-manager Ellen Miller.",
+    "image": "https://archive.org/services/img/second_chorus_1940",
+    "fallbackImage": "https://archive.org/services/img/second_chorus_1940",
+    "preview": "https://archive.org/embed/second_chorus_1940"
+  },
+  {
+    "id": "his_double_life",
+    "title": "His Double Life",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1933,
+    "duration": "92m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/his_double_life",
+    "fallbackImage": "https://archive.org/services/img/his_double_life",
+    "preview": "https://archive.org/embed/his_double_life"
+  },
+  {
+    "id": "StealThisFilmII",
+    "title": "Steal This Film 2",
+    "type": "movie",
+    "row": "Featured",
+    "year": 2007,
+    "duration": "45m",
+    "rating": "NR",
+    "description": "Steal This Film 2 has some very interesting views on file sharing from a neutral point of view. The League of Noble Peers are delighted, after more than a year, to release Part II of STEAL THIS FILM. In this film, we have tried to go bey...",
+    "image": "https://archive.org/services/img/StealThisFilmII",
+    "fallbackImage": "https://archive.org/services/img/StealThisFilmII",
+    "preview": "https://archive.org/embed/StealThisFilmII"
+  },
+  {
+    "id": "irish_luck_ipod",
+    "title": "Irish Luck",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1939,
+    "duration": "51m",
+    "rating": "NR",
+    "description": "Bellhop Buzzy and his pal Jefferson fumble their way to finding a killer in a hotel.",
+    "image": "https://archive.org/services/img/irish_luck_ipod",
+    "fallbackImage": "https://archive.org/services/img/irish_luck_ipod",
+    "preview": "https://archive.org/embed/irish_luck_ipod"
+  },
+  {
+    "id": "dalma-ribas-7894",
+    "title": "Dalma Ribas 7894",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Dalma Ribas 7894",
+    "image": "https://archive.org/services/img/dalma-ribas-7894",
+    "fallbackImage": "https://archive.org/services/img/dalma-ribas-7894",
+    "preview": "https://archive.org/embed/dalma-ribas-7894"
+  },
+  {
+    "id": "range_warfare",
+    "title": "Range Warfare",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1935,
+    "duration": "54m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/range_warfare",
+    "fallbackImage": "https://archive.org/services/img/range_warfare",
+    "preview": "https://archive.org/embed/range_warfare"
+  },
+  {
+    "id": "Gu-Ho-Ast-1989",
+    "title": "Gu-Ho-Ast-1989",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "107m",
+    "rating": "NR",
+    "description": "Gu-o-Ho-Ast-1989",
+    "image": "https://archive.org/services/img/Gu-Ho-Ast-1989",
+    "fallbackImage": "https://archive.org/services/img/Gu-Ho-Ast-1989",
+    "preview": "https://archive.org/embed/Gu-Ho-Ast-1989"
+  },
+  {
+    "id": "DorasDunkinDonuts",
+    "title": "Dora's Dunkin Donuts",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1933,
+    "duration": "20m",
+    "rating": "NR",
+    "description": "Comedy short featuring Shirley Temple",
+    "image": "https://archive.org/services/img/DorasDunkinDonuts",
+    "fallbackImage": "https://archive.org/services/img/DorasDunkinDonuts",
+    "preview": "https://archive.org/embed/DorasDunkinDonuts"
+  },
+  {
+    "id": "lumberjack1944",
+    "title": "Lumberjack",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/lumberjack1944",
+    "fallbackImage": "https://archive.org/services/img/lumberjack1944",
+    "preview": "https://archive.org/embed/lumberjack1944"
+  },
+  {
+    "id": "TheYinandtheYangofMr.Go",
+    "title": "The Yin and the Yang of Mr. Go",
+    "type": "movie",
+    "row": "Crime",
+    "year": 1970,
+    "duration": "89m",
+    "rating": "NR",
+    "description": "The story involves an American draft dodger and aspiring writer named Nero Finnigan (Jeff Bridges) who becomes involved with the notorious Mr. Go (James Mason), an oriental organized crime mastermind. They conspire to blackmail an Americ...",
+    "image": "https://archive.org/services/img/TheYinandtheYangofMr.Go",
+    "fallbackImage": "https://archive.org/services/img/TheYinandtheYangofMr.Go",
+    "preview": "https://archive.org/embed/TheYinandtheYangofMr.Go"
+  },
+  {
+    "id": "Seven_Doors_to_Death",
+    "title": "Seven Doors to Death",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1944,
+    "duration": "64m",
+    "rating": "NR",
+    "description": "Also Known As \"Vanishing Corpses\" A shot rings out in a darkened apartment; a woman screams and flees, tricking architect Jimmy McMillan into giving her a ride....",
+    "image": "https://archive.org/services/img/Seven_Doors_to_Death",
+    "fallbackImage": "https://archive.org/services/img/Seven_Doors_to_Death",
+    "preview": "https://archive.org/embed/Seven_Doors_to_Death"
+  },
+  {
+    "id": "lady_in_the_death_house",
+    "title": "Lady in the Death House",
+    "type": "movie",
+    "row": "Horror",
+    "year": 1944,
+    "duration": "55m",
+    "rating": "NR",
+    "description": "Mary Logan (Jean Parker) is accused of murdering a blackmailer (Uncredited) who threatens to tell her boss, Mr. Gregory (George Irving), that she was the daughter of Tom Logan, a racketeer he prosecuted. It's up to psychologist/criminolo...",
+    "image": "https://archive.org/services/img/lady_in_the_death_house",
+    "fallbackImage": "https://archive.org/services/img/lady_in_the_death_house",
+    "preview": "https://archive.org/embed/lady_in_the_death_house"
+  },
+  {
+    "id": "bad_boy",
+    "title": "Bad Boy",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/bad_boy",
+    "fallbackImage": "https://archive.org/services/img/bad_boy",
+    "preview": "https://archive.org/embed/bad_boy"
+  },
+  {
+    "id": "missing_corpse",
+    "title": "Missing Corpse",
+    "type": "movie",
+    "row": "Anime",
+    "year": 1945,
+    "duration": "62m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/missing_corpse",
+    "fallbackImage": "https://archive.org/services/img/missing_corpse",
+    "preview": "https://archive.org/embed/missing_corpse"
+  },
+  {
+    "id": "GulliversTravels720p",
+    "title": "Gulliver's Travels",
+    "type": "movie",
+    "row": "Featured",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "Gulliver's Travels presented in 720p HD",
+    "image": "https://archive.org/services/img/GulliversTravels720p",
+    "fallbackImage": "https://archive.org/services/img/GulliversTravels720p",
+    "preview": "https://archive.org/embed/GulliversTravels720p"
+  },
+  {
+    "id": "arizona_kid",
+    "title": "Arizona Kid, The",
+    "type": "movie",
+    "row": "Featured",
+    "year": 1939,
+    "duration": "53m",
+    "rating": "NR",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/arizona_kid",
+    "fallbackImage": "https://archive.org/services/img/arizona_kid",
+    "preview": "https://archive.org/embed/arizona_kid"
+  },
+  {
+    "id": "dbsl-75",
+    "title": "DBSL 75-80",
+    "type": "movie",
+    "row": "Anime",
+    "year": "",
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "dbs 72-80",
+    "image": "https://archive.org/services/img/dbsl-75",
+    "fallbackImage": "https://archive.org/services/img/dbsl-75",
+    "preview": "https://archive.org/embed/dbsl-75"
+  },
+  {
+    "id": "youtube-s4pdLC5CrGw",
+    "title": "Big Sister Kept Playing With Little Brother Until He Can No Longer Hold Back",
+    "type": "movie",
+    "row": "Anime",
+    "year": 2023,
+    "duration": "Full Movie",
+    "rating": "NR",
+    "description": "No description available yet.",
+    "image": "https://archive.org/services/img/youtube-s4pdLC5CrGw",
+    "fallbackImage": "https://archive.org/services/img/youtube-s4pdLC5CrGw",
+    "preview": "https://archive.org/embed/youtube-s4pdLC5CrGw"
+  },
+  {
+    "id": "series-animadas-html",
+    "title": "Series animadas html",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Series animadas html",
+    "image": "https://archive.org/services/img/series-animadas-html",
+    "fallbackImage": "https://archive.org/services/img/series-animadas-html",
+    "preview": "https://archive.org/embed/series-animadas-html"
+  },
+  {
+    "id": "series-animadas",
+    "title": "Series animadas",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Series animadas",
+    "image": "https://archive.org/services/img/series-animadas",
+    "fallbackImage": "https://archive.org/services/img/series-animadas",
+    "preview": "https://archive.org/embed/series-animadas"
+  },
+  {
+    "id": "series_202211",
+    "title": "Series",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "IMg",
+    "image": "https://archive.org/services/img/series_202211",
+    "fallbackImage": "https://archive.org/services/img/series_202211",
+    "preview": "https://archive.org/embed/series_202211"
+  },
+  {
+    "id": "isekai-meikyuu-de-harem-wo-sub-indo",
+    "title": "Isekai Meikyuu de Harem Wo (Sub Indo - Uncensored)",
+    "type": "tv",
+    "row": "Anime",
+    "year": 2023,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Isekai Meikyuu de Harem Wo (Sub Indo)",
+    "image": "https://archive.org/services/img/isekai-meikyuu-de-harem-wo-sub-indo",
+    "fallbackImage": "https://archive.org/services/img/isekai-meikyuu-de-harem-wo-sub-indo",
+    "preview": "https://archive.org/embed/isekai-meikyuu-de-harem-wo-sub-indo"
+  },
+  {
+    "id": "4Lecture",
+    "title": "OMAR Series Hindi Urdu Dubbed",
+    "type": "tv",
+    "row": "Anime",
+    "year": 2018,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "OMAR Series Hindi Urdu Dubbed",
+    "image": "https://archive.org/services/img/4Lecture",
+    "fallbackImage": "https://archive.org/services/img/4Lecture",
+    "preview": "https://archive.org/embed/4Lecture"
+  },
+  {
+    "id": "AsYouLikeIt1936",
+    "title": "As You Like It",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1936,
+    "duration": "96m",
+    "rating": "TV-G",
+    "description": "In this first film version of William Shakespeare's classic pastoral comedy, Sir Laurence Olivier stars as Orlando while Elisabeth Bergner is Rosalind, his secret admirer who disguises herself as a boy in order to stay near to him. Nearl...",
+    "image": "https://archive.org/services/img/AsYouLikeIt1936",
+    "fallbackImage": "https://archive.org/services/img/AsYouLikeIt1936",
+    "preview": "https://archive.org/embed/AsYouLikeIt1936"
+  },
+  {
+    "id": "OmarSeriesArabicWithEnglishSubtitles",
+    "title": "Omar Series Episode 01 to Episode 30 English Subtitles",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 2012,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "The life of Umar Ibn Al-Khattab, the second Caliph of Islamic State, before and after he embraces in Islam. MBC's Omar Series in ARABIC with English subtitles complete.",
+    "image": "https://archive.org/services/img/OmarSeriesArabicWithEnglishSubtitles",
+    "fallbackImage": "https://archive.org/services/img/OmarSeriesArabicWithEnglishSubtitles",
+    "preview": "https://archive.org/embed/OmarSeriesArabicWithEnglishSubtitles"
+  },
+  {
+    "id": "anpanmanepisodes",
+    "title": "anpanman episodes",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Several episodes of the Anpanman anime, mostly ripped from dvds and vhs",
+    "image": "https://archive.org/services/img/anpanmanepisodes",
+    "fallbackImage": "https://archive.org/services/img/anpanmanepisodes",
+    "preview": "https://archive.org/embed/anpanmanepisodes"
+  },
+  {
+    "id": "iron_mask",
+    "title": "The Iron Mask",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1929,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "A swashbuckling Alexandre Dumas adventure featuring Douglas Fairbanks. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/iron_mask",
+    "fallbackImage": "https://archive.org/services/img/iron_mask",
+    "preview": "https://archive.org/embed/iron_mask"
+  },
+  {
+    "id": "TheOvertheHillGang",
+    "title": "The Over-the-Hill Gang",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1969,
+    "duration": "70m",
+    "rating": "TV-G",
+    "description": "Captain Oren Hayes (Pat O'Brien) of the Texas Rangers takes a break to visit his daughter (Kristin Harmon) in a neighboring town. When he arrives he find's his daughter Hannah's husband Jeff (Ricky Nelson) is running for Mayor against a...",
+    "image": "https://archive.org/services/img/TheOvertheHillGang",
+    "fallbackImage": "https://archive.org/services/img/TheOvertheHillGang",
+    "preview": "https://archive.org/embed/TheOvertheHillGang"
+  },
+  {
+    "id": "cco_swordoflancelot",
+    "title": "Sword of Lancelot",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1963,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Also known as Lancelot and Guinevere, this romantic epic tells the tale of the legendary Lancelot and Guinevere. IMDB page",
+    "image": "https://archive.org/services/img/cco_swordoflancelot",
+    "fallbackImage": "https://archive.org/services/img/cco_swordoflancelot",
+    "preview": "https://archive.org/embed/cco_swordoflancelot"
+  },
+  {
+    "id": "the_big_show",
+    "title": "Big Show, The",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1936,
+    "duration": "70m",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/the_big_show",
+    "fallbackImage": "https://archive.org/services/img/the_big_show",
+    "preview": "https://archive.org/embed/the_big_show"
+  },
+  {
+    "id": "Kilimanjaro",
+    "title": "The Snows of Kilimanjaro",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1952,
+    "duration": "117m",
+    "rating": "TV-G",
+    "description": "The story centers on the memories of a writer (Gregory Peck) who is taking a safari in Africa. He develops a dangerous wound from a thorn prick, and lies awaiting his slow death. The loss of physical capability causes him to look inside...",
+    "image": "https://archive.org/services/img/Kilimanjaro",
+    "fallbackImage": "https://archive.org/services/img/Kilimanjaro",
+    "preview": "https://archive.org/embed/Kilimanjaro"
+  },
+  {
+    "id": "markofzorro-1920",
+    "title": "Mark of Zorro",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1920,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Mark of Zorro was the transition between Douglas Fairbanks' early career as a brash all-American hero and the lavish 1920s costume adventures.",
+    "image": "https://archive.org/services/img/markofzorro-1920",
+    "fallbackImage": "https://archive.org/services/img/markofzorro-1920",
+    "preview": "https://archive.org/embed/markofzorro-1920"
+  },
+  {
+    "id": "BeauIdeal",
+    "title": "Beau Ideal",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1931,
+    "duration": "79m",
+    "rating": "TV-G",
+    "description": "An American (Ralph Forbes) joins the French Foreign Legion in order to rescue a boyhood friend.",
+    "image": "https://archive.org/services/img/BeauIdeal",
+    "fallbackImage": "https://archive.org/services/img/BeauIdeal",
+    "preview": "https://archive.org/embed/BeauIdeal"
+  },
+  {
+    "id": "GonewiththeWest",
+    "title": "Gone with the West",
+    "type": "tv",
+    "row": "Crime",
+    "year": 1975,
+    "duration": "92m",
+    "rating": "TV-G",
+    "description": "James Caan stars as Jud McGraw, a cowboy unjustly framed for a crime he didn't commit; he partners up with an ethically wronged Native American woman named Little Moon (Stefanie Powers). In response to the ills they have each suffered, t...",
+    "image": "https://archive.org/services/img/GonewiththeWest",
+    "fallbackImage": "https://archive.org/services/img/GonewiththeWest",
+    "preview": "https://archive.org/embed/GonewiththeWest"
+  },
+  {
+    "id": "RidersofDestiny_",
+    "title": "Riders of Destiny",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1933,
+    "duration": "53m",
+    "rating": "TV-G",
+    "description": "John Wayne portrays Singin' Sandy Saunders and has a reputation as the most notorious gunman since Billy the Kid. That's somewhat ironic though, since it's later revealed that he's a special Secret Service agent sent from Washington to i...",
+    "image": "https://archive.org/services/img/RidersofDestiny_",
+    "fallbackImage": "https://archive.org/services/img/RidersofDestiny_",
+    "preview": "https://archive.org/embed/RidersofDestiny_"
+  },
+  {
+    "id": "TheGhostTrain",
+    "title": "The Ghost Train",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1941,
+    "duration": "85m",
+    "rating": "TV-G",
+    "description": "Mismatched travellers are stranded overnight at a lonely rural railway station. They soon learn of local superstition about a phantom train which is said to travel these parts at dead of night, carrying ghosts from a long-ago train wreck...",
+    "image": "https://archive.org/services/img/TheGhostTrain",
+    "fallbackImage": "https://archive.org/services/img/TheGhostTrain",
+    "preview": "https://archive.org/embed/TheGhostTrain"
+  },
+  {
+    "id": "Streetfighter_778",
+    "title": "The Streetfighter (1974)",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": "",
+    "duration": "91m",
+    "rating": "TV-G",
+    "description": "Classic grindhouse karate film starring Sonny Chiba.",
+    "image": "https://archive.org/services/img/Streetfighter_778",
+    "fallbackImage": "https://archive.org/services/img/Streetfighter_778",
+    "preview": "https://archive.org/embed/Streetfighter_778"
+  },
+  {
+    "id": "choutib.blogspot.com-kera-sakti-ii-full",
+    "title": "Kera Sakti Season 2 - Bahasa Indonesia",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "ini adalah seri lanjutan dari seri sebelumnya. yaitu kera sakti season yang kedua dengan menggunakan dubing bahasa indonesia. selamat bernostalgia.",
+    "image": "https://archive.org/services/img/choutib.blogspot.com-kera-sakti-ii-full",
+    "fallbackImage": "https://archive.org/services/img/choutib.blogspot.com-kera-sakti-ii-full",
+    "preview": "https://archive.org/embed/choutib.blogspot.com-kera-sakti-ii-full"
+  },
+  {
+    "id": "PrisonersOfTheLostUniverse1983",
+    "title": "Prisoners Of The Lost Universe (1983)",
+    "type": "tv",
+    "row": "Animation",
+    "year": "",
+    "duration": "94m",
+    "rating": "TV-G",
+    "description": "A scientist, a reporter and a repairman are accidentally transported to a prehistoric world in a parallel universe when they fall into the beam of the experiment during an earthquake aftershock. PD - Prisoners Of The Lost Universe (1983)...",
+    "image": "https://archive.org/services/img/PrisonersOfTheLostUniverse1983",
+    "fallbackImage": "https://archive.org/services/img/PrisonersOfTheLostUniverse1983",
+    "preview": "https://archive.org/embed/PrisonersOfTheLostUniverse1983"
+  },
+  {
+    "id": "things_to_come_ipod",
+    "title": "Things to Come",
+    "type": "tv",
+    "row": "Animation",
+    "year": 1936,
+    "duration": "95m",
+    "rating": "TV-G",
+    "description": "Things to Come opens with a near-future forecast of Christmas 1940 in the metropolis of Everytown (obviously London), a city threatened by world war. Pacifist intellectuals, such as John Cabal (Massey), try to turn the tide. But Cabal's...",
+    "image": "https://archive.org/services/img/things_to_come_ipod",
+    "fallbackImage": "https://archive.org/services/img/things_to_come_ipod",
+    "preview": "https://archive.org/embed/things_to_come_ipod"
+  },
+  {
+    "id": "masterchef-india-1",
+    "title": "Masterchef India Season 6",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Masterchef India",
+    "image": "https://archive.org/services/img/masterchef-india-1",
+    "fallbackImage": "https://archive.org/services/img/masterchef-india-1",
+    "preview": "https://archive.org/embed/masterchef-india-1"
+  },
+  {
+    "id": "TheWildWomenOfWongoVideoQualityUpgrade",
+    "title": "THE WILD WOMEN OF WONGO video quality upgrade.",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": "",
+    "duration": "72m",
+    "rating": "TV-G",
+    "description": "The women are still wild. The acting is still awful. The plot is still ridiculous. But now you can see it all more clearly and with a much smaller download file. Directed by James L Wolcott. Released in 1958. Filmed in Coral Gables and S...",
+    "image": "https://archive.org/services/img/TheWildWomenOfWongoVideoQualityUpgrade",
+    "fallbackImage": "https://archive.org/services/img/TheWildWomenOfWongoVideoQualityUpgrade",
+    "preview": "https://archive.org/embed/TheWildWomenOfWongoVideoQualityUpgrade"
+  },
+  {
+    "id": "Omar_Series_Urdu",
+    "title": "Omar Series Urdu Dubbing Complete",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Engineer Muhammad Ali Mirza Omar Series Urdu Dubbing",
+    "image": "https://archive.org/services/img/Omar_Series_Urdu",
+    "fallbackImage": "https://archive.org/services/img/Omar_Series_Urdu",
+    "preview": "https://archive.org/embed/Omar_Series_Urdu"
+  },
+  {
+    "id": "AChristmasWithoutSnow",
+    "title": "A Christmas Without Snow",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1980,
+    "duration": "95m",
+    "rating": "TV-G",
+    "description": "A divorced woman (Michael Learned) moves to a new city with her child, trying to build her life again. She joins the choir of a local church but has some personality conflicts with the choirmaster (John Houseman), a curmudgeonly old gent...",
+    "image": "https://archive.org/services/img/AChristmasWithoutSnow",
+    "fallbackImage": "https://archive.org/services/img/AChristmasWithoutSnow",
+    "preview": "https://archive.org/embed/AChristmasWithoutSnow"
+  },
+  {
+    "id": "american_empire",
+    "title": "American Empire",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/american_empire",
+    "fallbackImage": "https://archive.org/services/img/american_empire",
+    "preview": "https://archive.org/embed/american_empire"
+  },
+  {
+    "id": "UnknownWorld",
+    "title": "Unknown World",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1951,
+    "duration": "74m",
+    "rating": "TV-G",
+    "description": "Dr. Morley (dubbed the Prophet of Doom by at least one newspaper reporter) is an obsessive opponent of all things nuclear. Fearing that atomic weapons will destroy all life on earth, he recruits a group of scientists for his Society to S...",
+    "image": "https://archive.org/services/img/UnknownWorld",
+    "fallbackImage": "https://archive.org/services/img/UnknownWorld",
+    "preview": "https://archive.org/embed/UnknownWorld"
+  },
+  {
+    "id": "BillytheKidReturns",
+    "title": "Billy the Kid Returns",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1938,
+    "duration": "53m",
+    "rating": "TV-G",
+    "description": "After Pat Garrett kills Billy the Kid, Billy's look-alike Roy Rogers arrives and is mistaken for him.",
+    "image": "https://archive.org/services/img/BillytheKidReturns",
+    "fallbackImage": "https://archive.org/services/img/BillytheKidReturns",
+    "preview": "https://archive.org/embed/BillytheKidReturns"
+  },
+  {
+    "id": "phantom_ship",
+    "title": "Phantom Ship , The",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1936,
+    "duration": "61m",
+    "rating": "TV-G",
+    "description": "Also known as \"The Mystery of the Marie Celeste\". You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/phantom_ship",
+    "fallbackImage": "https://archive.org/services/img/phantom_ship",
+    "preview": "https://archive.org/embed/phantom_ship"
+  },
+  {
+    "id": "Rocky_Mountain_Mystery_1935",
+    "title": "Rocky Mountain Mystery",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1935,
+    "duration": "65m",
+    "rating": "TV-G",
+    "description": "An early Randolph Scott western, based on a novel by Zane Grey. Also known as \"The Fighting Westerner\". Don't bother downloading the h.264 file. The Cinepack file from which it is derived is smaller.",
+    "image": "https://archive.org/services/img/Rocky_Mountain_Mystery_1935",
+    "fallbackImage": "https://archive.org/services/img/Rocky_Mountain_Mystery_1935",
+    "preview": "https://archive.org/embed/Rocky_Mountain_Mystery_1935"
+  },
+  {
+    "id": "CreatureFromTheHauntedSea",
+    "title": "Creature from the Haunted Sea",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1961,
+    "duration": "75m",
+    "rating": "TV-G",
+    "description": "When a Carribean Island is engulfed by a revolution, one unscrupulous American mobster, Renzo Capeto plans to clean up with a get-rich-quick scheme. His diabolical plan is to provide refuge for the loyalists, and the contents of the gove...",
+    "image": "https://archive.org/services/img/CreatureFromTheHauntedSea",
+    "fallbackImage": "https://archive.org/services/img/CreatureFromTheHauntedSea",
+    "preview": "https://archive.org/embed/CreatureFromTheHauntedSea"
+  },
+  {
+    "id": "nancy_drew_reporter",
+    "title": "Nancy Drew... Reporter",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1939,
+    "duration": "68m",
+    "rating": "TV-G",
+    "description": "Nancy Drew, reporter for the school newspaper, clears a girl of murder charges.",
+    "image": "https://archive.org/services/img/nancy_drew_reporter",
+    "fallbackImage": "https://archive.org/services/img/nancy_drew_reporter",
+    "preview": "https://archive.org/embed/nancy_drew_reporter"
+  },
+  {
+    "id": "the_inspector_general",
+    "title": "The Inspector General",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1949,
+    "duration": "1m episode",
+    "rating": "TV-G",
+    "description": "Georgi (Danny Kaye) an illiterate member of a gypsy medicine show, is mistaken for the feared and cruel Inspector General.",
+    "image": "https://archive.org/services/img/the_inspector_general",
+    "fallbackImage": "https://archive.org/services/img/the_inspector_general",
+    "preview": "https://archive.org/embed/the_inspector_general"
+  },
+  {
+    "id": "ABucketOfBlood1959",
+    "title": "A Bucket of Blood (1959)",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": "",
+    "duration": "65m",
+    "rating": "TV-G",
+    "description": "A Bucket of Bllod is a 1959 B movie, produced and directed by Roger Corman and starring Dick Miller, who plays Walter Paisley, a waiter in a hip cafe frequented by artists and poets. Walter dreams of being an artist as well and all it ta...",
+    "image": "https://archive.org/services/img/ABucketOfBlood1959",
+    "fallbackImage": "https://archive.org/services/img/ABucketOfBlood1959",
+    "preview": "https://archive.org/embed/ABucketOfBlood1959"
+  },
+  {
+    "id": "Gung_Ho",
+    "title": "Gung Ho!",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1943,
+    "duration": "88m",
+    "rating": "TV-G",
+    "description": "Though loaded with clichés such as rousing pre-battle speeches and over-dramatized death scenes, Gung Ho tells a more-or-less true story about the successful deployment of the Makin Raiders (Carlson's Raiders) on a minor Japanese strongh...",
+    "image": "https://archive.org/services/img/Gung_Ho",
+    "fallbackImage": "https://archive.org/services/img/Gung_Ho",
+    "preview": "https://archive.org/embed/Gung_Ho"
+  },
+  {
+    "id": "TheScarletPimpernel",
+    "title": "The Scarlet Pimpernel",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1934,
+    "duration": "97m",
+    "rating": "TV-G",
+    "description": "London fop Percy Blakeney (Leslie Howard) is also secretly the Scarlet Pimpernel who, in a variety of disguises, makes repeated daring trips to France to save aristocrats from Madame Guillotine. His unknowing wife (Merle Oberon) is also...",
+    "image": "https://archive.org/services/img/TheScarletPimpernel",
+    "fallbackImage": "https://archive.org/services/img/TheScarletPimpernel",
+    "preview": "https://archive.org/embed/TheScarletPimpernel"
+  },
+  {
+    "id": "episode-20-a-solusi-konkret-atasi-covid",
+    "title": "Episode 20 A SOLUSI KONKRET ATASI COVID",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "FE101 Back Up Channel",
+    "image": "https://archive.org/services/img/episode-20-a-solusi-konkret-atasi-covid",
+    "fallbackImage": "https://archive.org/services/img/episode-20-a-solusi-konkret-atasi-covid",
+    "preview": "https://archive.org/embed/episode-20-a-solusi-konkret-atasi-covid"
+  },
+  {
+    "id": "episode-1_20210726",
+    "title": "Episode 1",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "anime",
+    "image": "https://archive.org/services/img/episode-1_20210726",
+    "fallbackImage": "https://archive.org/services/img/episode-1_20210726",
+    "preview": "https://archive.org/embed/episode-1_20210726"
+  },
+  {
+    "id": "The_Eye_Creatures",
+    "title": "The Eye Creatures",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1965,
+    "duration": "75m",
+    "rating": "TV-G",
+    "description": "The Eye Creatures (also known as Attack of the Eye Creatures, or Attack of the the Eye Creatures from a production error) is a 1965 science-fiction film about an invasion of an unnamed American countryside by a flying saucer and its sile...",
+    "image": "https://archive.org/services/img/The_Eye_Creatures",
+    "fallbackImage": "https://archive.org/services/img/The_Eye_Creatures",
+    "preview": "https://archive.org/embed/The_Eye_Creatures"
+  },
+  {
+    "id": "KingSolomonsMines1937",
+    "title": "King Solomon's Mines (1937)",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "80m",
+    "rating": "TV-G",
+    "description": "A young Irish woman hires a hunter to find her father in unexplored Africa. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/KingSolomonsMines1937",
+    "fallbackImage": "https://archive.org/services/img/KingSolomonsMines1937",
+    "preview": "https://archive.org/embed/KingSolomonsMines1937"
+  },
+  {
+    "id": "ClaCinOnl_Joshua",
+    "title": "Joshua",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1976,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Western A black man comes home from fighting in the civil war to find his mother has been murdered by some white men. Joshua becomes a bounty hunter and seeks to take revenge on behalf of his mother. You can read about this movie on it's...",
+    "image": "https://archive.org/services/img/ClaCinOnl_Joshua",
+    "fallbackImage": "https://archive.org/services/img/ClaCinOnl_Joshua",
+    "preview": "https://archive.org/embed/ClaCinOnl_Joshua"
+  },
+  {
+    "id": "26Men-DeadManInTucson",
+    "title": "26 Men - Dead Man in Tucson",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "26m episode",
+    "rating": "TV-G",
+    "description": "26 Men | Season 1, Episode 8",
+    "image": "https://archive.org/services/img/26Men-DeadManInTucson",
+    "fallbackImage": "https://archive.org/services/img/26Men-DeadManInTucson",
+    "preview": "https://archive.org/embed/26Men-DeadManInTucson"
+  },
+  {
+    "id": "tales_of_tomorrow_09_the_crystal_egg",
+    "title": "Tales of Tomorrow #9: The Crystal Egg",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1951,
+    "duration": "24m episode",
+    "rating": "TV-G",
+    "description": "From the live tv anthology series Tales of Tomorrow. After a customer is overly eager to buy a crystal egg, an antique shop owner does the only logical thing: takes it to the chairman of Cambridge's physics department (played by Thomas M...",
+    "image": "https://archive.org/services/img/tales_of_tomorrow_09_the_crystal_egg",
+    "fallbackImage": "https://archive.org/services/img/tales_of_tomorrow_09_the_crystal_egg",
+    "preview": "https://archive.org/embed/tales_of_tomorrow_09_the_crystal_egg"
+  },
+  {
+    "id": "my_dear_secretary",
+    "title": "My Dear Secretary",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1949,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Would-be writer Laraine Day takes a job as secretary to best-seller Kirk Douglas. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/my_dear_secretary",
+    "fallbackImage": "https://archive.org/services/img/my_dear_secretary",
+    "preview": "https://archive.org/embed/my_dear_secretary"
+  },
+  {
+    "id": "SvengaliJohnBarrymoreBKCap1931",
+    "title": "Svengali",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1931,
+    "duration": "81m",
+    "rating": "TV-G",
+    "description": "http://imdb.com/title/tt0022454/ Sinister music maestro Svengali can control the actions of women through hypnotism and his telepathic powers. When a pupil he has seduced announces she has left her husband for him, he uses his powers to...",
+    "image": "https://archive.org/services/img/SvengaliJohnBarrymoreBKCap1931",
+    "fallbackImage": "https://archive.org/services/img/SvengaliJohnBarrymoreBKCap1931",
+    "preview": "https://archive.org/embed/SvengaliJohnBarrymoreBKCap1931"
+  },
+  {
+    "id": "QueenoftheAmazons",
+    "title": "Queen of the Amazons",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1946,
+    "duration": "60m",
+    "rating": "TV-G",
+    "description": "A young woman's husband vanishes while exploring the Asian jungle. After hiring a crew of her own, the woman goes in search of her husband. You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/QueenoftheAmazons",
+    "fallbackImage": "https://archive.org/services/img/QueenoftheAmazons",
+    "preview": "https://archive.org/embed/QueenoftheAmazons"
+  },
+  {
+    "id": "under_california_stars",
+    "title": "Under California Stars",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1948,
+    "duration": "1m episode",
+    "rating": "TV-G",
+    "description": "Rancher Roy and his boys track down a gang who have stolen Trigger and are holding him for ransom.",
+    "image": "https://archive.org/services/img/under_california_stars",
+    "fallbackImage": "https://archive.org/services/img/under_california_stars",
+    "preview": "https://archive.org/embed/under_california_stars"
+  },
+  {
+    "id": "VengeanceValley",
+    "title": "Vengeance Valley",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1951,
+    "duration": "83m",
+    "rating": "TV-G",
+    "description": "A cattle baron takes in an orphaned boy and raises him, causing his own son to resent the boy. As they get older the resentment festers into hatred, and eventually the real son frames his stepbrother for fathering an illegitimate child t...",
+    "image": "https://archive.org/services/img/VengeanceValley",
+    "fallbackImage": "https://archive.org/services/img/VengeanceValley",
+    "preview": "https://archive.org/embed/VengeanceValley"
+  },
+  {
+    "id": "high-on-sex-episode-5",
+    "title": "High On Sex Episode 5",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Vivamax",
+    "image": "https://archive.org/services/img/high-on-sex-episode-5",
+    "fallbackImage": "https://archive.org/services/img/high-on-sex-episode-5",
+    "preview": "https://archive.org/embed/high-on-sex-episode-5"
+  },
+  {
+    "id": "Minesweeper_1943",
+    "title": "Minesweeper",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1943,
+    "duration": "66m",
+    "rating": "TV-G",
+    "description": "DANGER AFLOAT! ABOVE, BELOW AND ACROSS THE SEAS...WITH THE HEROIC MEN OF THE COAST GUARD! On hearing of the attack on Pearl Harbor, a hobo decides to join the Coast Guard under an assumed name -- because he deserted the Navy years before...",
+    "image": "https://archive.org/services/img/Minesweeper_1943",
+    "fallbackImage": "https://archive.org/services/img/Minesweeper_1943",
+    "preview": "https://archive.org/embed/Minesweeper_1943"
+  },
+  {
+    "id": "TheCorpseVanishes",
+    "title": "The Corpse Vanishes",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "63m",
+    "rating": "TV-G",
+    "description": "A newspaper reporter begins to investigate after a series of brides die suddenly during their wedding. Her quest leads her to the secret of eternal youth and almost gets her killed. You can find more information regarding this film on it...",
+    "image": "https://archive.org/services/img/TheCorpseVanishes",
+    "fallbackImage": "https://archive.org/services/img/TheCorpseVanishes",
+    "preview": "https://archive.org/embed/TheCorpseVanishes"
+  },
+  {
+    "id": "dli.ramayan.ep.01",
+    "title": "Ramayan, Episode 01: Birth and childhood of Lord Ram",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1987,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "[ Table of Contents ] [Episode 01] [ Episode 02 >> ] [ About the Subtitles ] The saga of Ramayan Gods’ Prayers to Lord Vishnu. King Dashrath’s yagna invoking blessings for a son. Birth and childhood of Shri Ram.",
+    "image": "https://archive.org/services/img/dli.ramayan.ep.01",
+    "fallbackImage": "https://archive.org/services/img/dli.ramayan.ep.01",
+    "preview": "https://archive.org/embed/dli.ramayan.ep.01"
+  },
+  {
+    "id": "arizona_stage_coach",
+    "title": "Arizona Stage Coach",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "54m",
+    "rating": "TV-G",
+    "description": "Piracy on the Prairie till Rangebuster Guns Start Dealing Death And Destruction!",
+    "image": "https://archive.org/services/img/arizona_stage_coach",
+    "fallbackImage": "https://archive.org/services/img/arizona_stage_coach",
+    "preview": "https://archive.org/embed/arizona_stage_coach"
+  },
+  {
+    "id": "Yellowstone_",
+    "title": "Yellowstone",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1936,
+    "duration": "65m",
+    "rating": "TV-G",
+    "description": "Henry Hunter stars as park ranger Dick Sherwood, who gets mixed up in a series of murders. The killings are tied in with $90,000 in stolen money, which the four villains had hidden in a Yellowstone cave 17 years earlier. Upon their relea...",
+    "image": "https://archive.org/services/img/Yellowstone_",
+    "fallbackImage": "https://archive.org/services/img/Yellowstone_",
+    "preview": "https://archive.org/embed/Yellowstone_"
+  },
+  {
+    "id": "aces_and_eights",
+    "title": "Aces and Eights",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1936,
+    "duration": "61m",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/aces_and_eights",
+    "fallbackImage": "https://archive.org/services/img/aces_and_eights",
+    "preview": "https://archive.org/embed/aces_and_eights"
+  },
+  {
+    "id": "omar-series-ep-30-english-subtitles",
+    "title": "Omar Series English Subtitles",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Omar Series (English Subtitles)",
+    "image": "https://archive.org/services/img/omar-series-ep-30-english-subtitles",
+    "fallbackImage": "https://archive.org/services/img/omar-series-ep-30-english-subtitles",
+    "preview": "https://archive.org/embed/omar-series-ep-30-english-subtitles"
+  },
+  {
+    "id": "boys_of_the_city",
+    "title": "Boys of the City",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1940,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "In the second East Side Kids film, Muggs and the gang are on their way to summer camp when they give a judge a lift to his gloomy mansion. After he later turns up dead, the kids find themselves searching dark passageways dominated by the...",
+    "image": "https://archive.org/services/img/boys_of_the_city",
+    "fallbackImage": "https://archive.org/services/img/boys_of_the_city",
+    "preview": "https://archive.org/embed/boys_of_the_city"
+  },
+  {
+    "id": "DanielBoone1936",
+    "title": "Daniel Boone (1936)",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "76m",
+    "rating": "TV-G",
+    "description": "The story of Daniel Boone in 1775 Kentucky and the hardships that they faced. Mystic Nights Videos",
+    "image": "https://archive.org/services/img/DanielBoone1936",
+    "fallbackImage": "https://archive.org/services/img/DanielBoone1936",
+    "preview": "https://archive.org/embed/DanielBoone1936"
+  },
+  {
+    "id": "episode-12-b-solusi-konkret-atasi-covid",
+    "title": "Episode 20 B SOLUSI KONKRET ATASI COVID",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "FE101 Back Up Channel",
+    "image": "https://archive.org/services/img/episode-12-b-solusi-konkret-atasi-covid",
+    "fallbackImage": "https://archive.org/services/img/episode-12-b-solusi-konkret-atasi-covid",
+    "preview": "https://archive.org/embed/episode-12-b-solusi-konkret-atasi-covid"
+  },
+  {
+    "id": "oh_susanna",
+    "title": "Oh, Susanna!",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1936,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/oh_susanna",
+    "fallbackImage": "https://archive.org/services/img/oh_susanna",
+    "preview": "https://archive.org/embed/oh_susanna"
+  },
+  {
+    "id": "silent-episodes-in-the-life-of-a-gin-bottle",
+    "title": "Episodes in the Life of a Gin Bottle",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1925,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "No description available yet.",
+    "image": "https://archive.org/services/img/silent-episodes-in-the-life-of-a-gin-bottle",
+    "fallbackImage": "https://archive.org/services/img/silent-episodes-in-the-life-of-a-gin-bottle",
+    "preview": "https://archive.org/embed/silent-episodes-in-the-life-of-a-gin-bottle"
+  },
+  {
+    "id": "GetChristieLove",
+    "title": "Get Christie Love!",
+    "type": "tv",
+    "row": "Crime",
+    "year": 1974,
+    "duration": "74m",
+    "rating": "TV-G",
+    "description": "When Captain Casey Reardon (played by Harry Guardino) learns that notorious gangster boss Enzo Cortino (Paul Stevens) possesses a secret ledger which could potentially be used to bring him to justice and said ledger is supposedly within...",
+    "image": "https://archive.org/services/img/GetChristieLove",
+    "fallbackImage": "https://archive.org/services/img/GetChristieLove",
+    "preview": "https://archive.org/embed/GetChristieLove"
+  },
+  {
+    "id": "Go_for_Broke",
+    "title": "Go for Broke!",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1951,
+    "duration": "92m",
+    "rating": "TV-G",
+    "description": "The film dramatizes the real-life story of the 442nd Regimental Combat Team, which was composed of Nisei, second-generation Americans born of Japanese parents. Fighting in the European theater during World War II, this unit became the mo...",
+    "image": "https://archive.org/services/img/Go_for_Broke",
+    "fallbackImage": "https://archive.org/services/img/Go_for_Broke",
+    "preview": "https://archive.org/embed/Go_for_Broke"
+  },
+  {
+    "id": "yummy_202105",
+    "title": "Yummy",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Peliculas todos los generos en español latino español castellano calidades bariadas hd full sd",
+    "image": "https://archive.org/services/img/yummy_202105",
+    "fallbackImage": "https://archive.org/services/img/yummy_202105",
+    "preview": "https://archive.org/embed/yummy_202105"
+  },
+  {
+    "id": "hitler_dead_or_alive",
+    "title": "Hitler Dead or Alive",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "70m",
+    "rating": "TV-G",
+    "description": "A wealthy man offers a million dollars to whoever captures Adolf Hitler dead or alive. A group of gangsters take him up on this offer and after hijacking a Canadian Air Force plane are dropped into Germany. Their delusions about Hitler b...",
+    "image": "https://archive.org/services/img/hitler_dead_or_alive",
+    "fallbackImage": "https://archive.org/services/img/hitler_dead_or_alive",
+    "preview": "https://archive.org/embed/hitler_dead_or_alive"
+  },
+  {
+    "id": "TheArizonaRaiders",
+    "title": "The Arizona Raiders",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1936,
+    "duration": "57m",
+    "rating": "TV-G",
+    "description": "After saving himself from hanging, Laramie Nelson (Buster Crabbe) saves Tracks Williams (Raymond Hatton) from the same fate. They then travel to Lindsay's ranch where they get jobs. There they run into Adams (Grant Withers) who they lear...",
+    "image": "https://archive.org/services/img/TheArizonaRaiders",
+    "fallbackImage": "https://archive.org/services/img/TheArizonaRaiders",
+    "preview": "https://archive.org/embed/TheArizonaRaiders"
+  },
+  {
+    "id": "young_bill_hickok",
+    "title": "Young Bill Hickok",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1940,
+    "duration": "52m",
+    "rating": "TV-G",
+    "description": "A yodeling Bill Hickok, assisted by Calamity Jane, is after a foreign agent and his guerrilla band.",
+    "image": "https://archive.org/services/img/young_bill_hickok",
+    "fallbackImage": "https://archive.org/services/img/young_bill_hickok",
+    "preview": "https://archive.org/embed/young_bill_hickok"
+  },
+  {
+    "id": "The_Red_Detachment_of_Women",
+    "title": "The Red Detachment of Women",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1970,
+    "duration": "105m",
+    "rating": "TV-G",
+    "description": "One of the most powerful and moving ballets from the Great Proletarian Cultural Revolution. It depicts a woman's journey into the People's Liberation Army. Instead of weak, fragile women dressed in fluttery tutus, women were depicted in...",
+    "image": "https://archive.org/services/img/The_Red_Detachment_of_Women",
+    "fallbackImage": "https://archive.org/services/img/The_Red_Detachment_of_Women",
+    "preview": "https://archive.org/embed/The_Red_Detachment_of_Women"
+  },
+  {
+    "id": "BlueSteel",
+    "title": "Blue Steel",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1934,
+    "duration": "54m",
+    "rating": "TV-G",
+    "description": "When Sheriff Jake Withers (George Hayes) sees John Carruthers (John Wayne) at the safe and then finds the payroll gone, he trails him. Just as he is about to arrest him, John saves his life. Still suspicious, he joins up with the man and...",
+    "image": "https://archive.org/services/img/BlueSteel",
+    "fallbackImage": "https://archive.org/services/img/BlueSteel",
+    "preview": "https://archive.org/embed/BlueSteel"
+  },
+  {
+    "id": "Bar-ZBadMen",
+    "title": "Bar-Z Bad Men",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1937,
+    "duration": "51m",
+    "rating": "TV-G",
+    "description": "Jim Waters (Johnny Mack Brown) arrives at Ed Parks' (Jack Rockwell) ranch to find Parks' cattle herd mysteriously increased. Hamp Harvey (Frank LaRue) has been losing cattle and he suspects Parks. But the culprit is Harvey's foreman Bren...",
+    "image": "https://archive.org/services/img/Bar-ZBadMen",
+    "fallbackImage": "https://archive.org/services/img/Bar-ZBadMen",
+    "preview": "https://archive.org/embed/Bar-ZBadMen"
+  },
+  {
+    "id": "Phantom_of_Chinatown_1940",
+    "title": "Phantom of Chinatown",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1940,
+    "duration": "62m",
+    "rating": "TV-G",
+    "description": "From IMDb : Detective James Lee Wong is on the scene as archeologist Dr. John Benton, recently returned from an expedition in China where a valuable ancient scroll was recovered, is murdered while giving a lecture on the expedition. Star...",
+    "image": "https://archive.org/services/img/Phantom_of_Chinatown_1940",
+    "fallbackImage": "https://archive.org/services/img/Phantom_of_Chinatown_1940",
+    "preview": "https://archive.org/embed/Phantom_of_Chinatown_1940"
+  },
+  {
+    "id": "TheWitcherTV",
+    "title": "The Witcher (Polish TV Series)",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Wiedzmin (The Hexer or The Witcher in English) is a 2002 fantasy television series. 13 episodes were made.",
+    "image": "https://archive.org/services/img/TheWitcherTV",
+    "fallbackImage": "https://archive.org/services/img/TheWitcherTV",
+    "preview": "https://archive.org/embed/TheWitcherTV"
+  },
+  {
+    "id": "UndertheRedRobeVSjostrom1937RMassey",
+    "title": "Under The Red Robe",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1937,
+    "duration": "82m",
+    "rating": "TV-G",
+    "description": "http://imdb.com/title/tt0029712/ Conrad Veidt, Annabella, Raymond Massey In 1620s France, dreaded swordsman Gil de Berault returns from carrying out a mission for Cardinal Richelieu, and finds the Cardinal worried about growing oppositio...",
+    "image": "https://archive.org/services/img/UndertheRedRobeVSjostrom1937RMassey",
+    "fallbackImage": "https://archive.org/services/img/UndertheRedRobeVSjostrom1937RMassey",
+    "preview": "https://archive.org/embed/UndertheRedRobeVSjostrom1937RMassey"
+  },
+  {
+    "id": "undekhi-2020-hindi-season-1-complete",
+    "title": "Undekhi ( 2020) Hindi Season 1 Complete www.hamzamoviesclub.online",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Undekhi ( 2020) Hindi Season 1 Complete www.hamzamoviesclub.online",
+    "image": "https://archive.org/services/img/undekhi-2020-hindi-season-1-complete",
+    "fallbackImage": "https://archive.org/services/img/undekhi-2020-hindi-season-1-complete",
+    "preview": "https://archive.org/embed/undekhi-2020-hindi-season-1-complete"
+  },
+  {
+    "id": "TheLostZeppelin",
+    "title": "The Lost Zeppelin",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "72m",
+    "rating": "TV-G",
+    "description": "An early sound film adventure/melodrama in which a dirigible expedition to the South Pole is complecated by a love triangle. Surprisingly good production values and visual FX for a Tiffany production. However the audio FX are very primit...",
+    "image": "https://archive.org/services/img/TheLostZeppelin",
+    "fallbackImage": "https://archive.org/services/img/TheLostZeppelin",
+    "preview": "https://archive.org/embed/TheLostZeppelin"
+  },
+  {
+    "id": "ThePaintedHills",
+    "title": "The Painted Hills",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1951,
+    "duration": "68m",
+    "rating": "TV-G",
+    "description": "A prospector named Jonathan Harvey (Paul Kelly), whose faithful companion is a rough collie named Shep, looks after the family of his late partner, Martha Blake (Ann Doran) and her son Tommy (Gary Gray). After years of digging in the hil...",
+    "image": "https://archive.org/services/img/ThePaintedHills",
+    "fallbackImage": "https://archive.org/services/img/ThePaintedHills",
+    "preview": "https://archive.org/embed/ThePaintedHills"
+  },
+  {
+    "id": "kansas_pacific",
+    "title": "Kansas Pacific",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1953,
+    "duration": "72m",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/kansas_pacific",
+    "fallbackImage": "https://archive.org/services/img/kansas_pacific",
+    "preview": "https://archive.org/embed/kansas_pacific"
+  },
+  {
+    "id": "dawn_of_the_great_divide",
+    "title": "Dawn of the Great Divide",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/dawn_of_the_great_divide",
+    "fallbackImage": "https://archive.org/services/img/dawn_of_the_great_divide",
+    "preview": "https://archive.org/embed/dawn_of_the_great_divide"
+  },
+  {
+    "id": "The_Scarlet_Clue",
+    "title": "The Scarlet Clue",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1945,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Government agent Charlie Chan is investigating a spy ring intent on stealing radar plans, which leads him to a radio station in a building also containing a radar research facility. Stars: Sidney Toler, Mantan Moreland, Ben Carter, and B...",
+    "image": "https://archive.org/services/img/The_Scarlet_Clue",
+    "fallbackImage": "https://archive.org/services/img/The_Scarlet_Clue",
+    "preview": "https://archive.org/embed/The_Scarlet_Clue"
+  },
+  {
+    "id": "Eegah",
+    "title": "Eegah",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1962,
+    "duration": "90m",
+    "rating": "TV-G",
+    "description": "A caveman is discovered out in the desert who proceeds to fall in love with a girl and then wreak havoc on a nearby town. You can find out more about this film on its IMDB page .",
+    "image": "https://archive.org/services/img/Eegah",
+    "fallbackImage": "https://archive.org/services/img/Eegah",
+    "preview": "https://archive.org/embed/Eegah"
+  },
+  {
+    "id": "KingOfTheZombies",
+    "title": "King of the Zombies",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1941,
+    "duration": "67m",
+    "rating": "TV-G",
+    "description": "A plane flying to the Bahamas gets blown off course and crashes on the island of the mysterious Dr. Sangare. Jefferson Jackson (Mantan Moreland) tries to warn his fellow survivors that the island's haunted but they all soon learn there's...",
+    "image": "https://archive.org/services/img/KingOfTheZombies",
+    "fallbackImage": "https://archive.org/services/img/KingOfTheZombies",
+    "preview": "https://archive.org/embed/KingOfTheZombies"
+  },
+  {
+    "id": "WatchBibleStoriesForKidsKidsShows2HoursMegaEpisodeOfBibleStoriesMeaningful",
+    "title": "Watch Bible Stories For Kids Kids Shows 2 Hours Mega Episode Of Bible Stories Meaningful",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "a",
+    "image": "https://archive.org/services/img/WatchBibleStoriesForKidsKidsShows2HoursMegaEpisodeOfBibleStoriesMeaningful",
+    "fallbackImage": "https://archive.org/services/img/WatchBibleStoriesForKidsKidsShows2HoursMegaEpisodeOfBibleStoriesMeaningful",
+    "preview": "https://archive.org/embed/WatchBibleStoriesForKidsKidsShows2HoursMegaEpisodeOfBibleStoriesMeaningful"
+  },
+  {
+    "id": "ThreeCameHomeClaudetteColbertHankrip",
+    "title": "Three Came Home",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1950,
+    "duration": "100m",
+    "rating": "TV-G",
+    "description": "http://imdb.com/title/tt0043041/ The true story of Agnes Newton Keith's imprisonment in several Japanese prisoner-of-war camps from 1941 to the end of WWII, with the man you love to hate - Sessue Hayakawa. Few recall that, before Valenti...",
+    "image": "https://archive.org/services/img/ThreeCameHomeClaudetteColbertHankrip",
+    "fallbackImage": "https://archive.org/services/img/ThreeCameHomeClaudetteColbertHankrip",
+    "preview": "https://archive.org/embed/ThreeCameHomeClaudetteColbertHankrip"
+  },
+  {
+    "id": "northwest_trail",
+    "title": "Northwest Trail",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1945,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Filmed in Cinecolor! You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/northwest_trail",
+    "fallbackImage": "https://archive.org/services/img/northwest_trail",
+    "preview": "https://archive.org/embed/northwest_trail"
+  },
+  {
+    "id": "south_of_santa_fe",
+    "title": "South of Santa Fe",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1942,
+    "duration": "53m",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/south_of_santa_fe",
+    "fallbackImage": "https://archive.org/services/img/south_of_santa_fe",
+    "preview": "https://archive.org/embed/south_of_santa_fe"
+  },
+  {
+    "id": "MurderOnFlight502",
+    "title": "Murder on Flight 502",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1975,
+    "duration": "97m",
+    "rating": "TV-G",
+    "description": "This film falls firmly in the So Bad You'll Love It. After a plane takes off for London, a note is found in the airport saying that some people are going to be killed. And it is not long after that, that someone is killed. The captain (R...",
+    "image": "https://archive.org/services/img/MurderOnFlight502",
+    "fallbackImage": "https://archive.org/services/img/MurderOnFlight502",
+    "preview": "https://archive.org/embed/MurderOnFlight502"
+  },
+  {
+    "id": "zoids-chaotic-century-s-01e-03",
+    "title": "Zoids Chaotic Century (HD)",
+    "type": "tv",
+    "row": "Anime",
+    "year": 2023,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Zoids Chaotic Century, Upscaled to 4K via Topaz Video AI and then re-encoded down to 1080p for size and clarity. Source was a 480p collection of all episodes. Hope you enjoy this bit of nostalgia!",
+    "image": "https://archive.org/services/img/zoids-chaotic-century-s-01e-03",
+    "fallbackImage": "https://archive.org/services/img/zoids-chaotic-century-s-01e-03",
+    "preview": "https://archive.org/embed/zoids-chaotic-century-s-01e-03"
+  },
+  {
+    "id": "fatal_hour",
+    "title": "Fatal Hour",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1940,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/fatal_hour",
+    "fallbackImage": "https://archive.org/services/img/fatal_hour",
+    "preview": "https://archive.org/embed/fatal_hour"
+  },
+  {
+    "id": "captain_calamity",
+    "title": "Captain Calamity",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1936,
+    "duration": "61m",
+    "rating": "TV-G",
+    "description": "Captain Bill Jones (George Houston) gets a Spanish doubloon from a passenger he was ferrying. Flat broke, he uses the doubloon to trick the greedy storekeeper Joblin (Harold Howard) into giving him a drink (or two) for free. Soon, the wh...",
+    "image": "https://archive.org/services/img/captain_calamity",
+    "fallbackImage": "https://archive.org/services/img/captain_calamity",
+    "preview": "https://archive.org/embed/captain_calamity"
+  },
+  {
+    "id": "DeviloftheDesertAgainstSonofHercules",
+    "title": "The Devil of the Desert Against the Son of Hercules",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1964,
+    "duration": "92m",
+    "rating": "TV-G",
+    "description": "The daughter of a well-off man is sold into slavery, only to be later rescued by the film's hero. This film was originally a European (primarily Italian) film called \"Anthar l'invincibile\" which was later dubbed into English. You can fin...",
+    "image": "https://archive.org/services/img/DeviloftheDesertAgainstSonofHercules",
+    "fallbackImage": "https://archive.org/services/img/DeviloftheDesertAgainstSonofHercules",
+    "preview": "https://archive.org/embed/DeviloftheDesertAgainstSonofHercules"
+  },
+  {
+    "id": "umar-series-episode-1",
+    "title": "Umar Series URDU / HINDI - EPISODE 01",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Umar Series URDU / HINDI - EPISODE 01",
+    "image": "https://archive.org/services/img/umar-series-episode-1",
+    "fallbackImage": "https://archive.org/services/img/umar-series-episode-1",
+    "preview": "https://archive.org/embed/umar-series-episode-1"
+  },
+  {
+    "id": "brain_that_wouldnt_die",
+    "title": "Brain That Wouldn't Die, The",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1962,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/brain_that_wouldnt_die",
+    "fallbackImage": "https://archive.org/services/img/brain_that_wouldnt_die",
+    "preview": "https://archive.org/embed/brain_that_wouldnt_die"
+  },
+  {
+    "id": "TheMarinesareComing",
+    "title": "The Marines Are Coming",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1934,
+    "duration": "71m",
+    "rating": "TV-G",
+    "description": "When Lt. \"Wild Bill\" Traynor (William Haines), bad boy of the Marine Corps, arrives at a San Diego Marine Base, he is surprised to discover he has been assigned to duty under his old rival, Captain Benton (Conrad Nagel). While eluding th...",
+    "image": "https://archive.org/services/img/TheMarinesareComing",
+    "fallbackImage": "https://archive.org/services/img/TheMarinesareComing",
+    "preview": "https://archive.org/embed/TheMarinesareComing"
+  },
+  {
+    "id": "TheMightyThorAgainstTheQueenOfTheAmazonsthorAndTheAmazonWomen-",
+    "title": "The Mighty Thor Against The Queen Of The Amazons (aka Thor And The Amazon Women) - English",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": "",
+    "duration": "86m",
+    "rating": "TV-G",
+    "description": "The mighty Thor finds that it's hard to juggle more than one beauty at a time when he encounters the Queen of the Amazon and her army of women gladiators.",
+    "image": "https://archive.org/services/img/TheMightyThorAgainstTheQueenOfTheAmazonsthorAndTheAmazonWomen-",
+    "fallbackImage": "https://archive.org/services/img/TheMightyThorAgainstTheQueenOfTheAmazonsthorAndTheAmazonWomen-",
+    "preview": "https://archive.org/embed/TheMightyThorAgainstTheQueenOfTheAmazonsthorAndTheAmazonWomen-"
+  },
+  {
+    "id": "Andy-Griffith-Show_Andy-Discovers-America",
+    "title": "The Andy Griffith Show: S3 E23, Andy Discovers America",
+    "type": "tv",
+    "row": "Anime",
+    "year": 1963,
+    "duration": "26m episode",
+    "rating": "TV-G",
+    "description": "(DVD Quality) Original Air Date: March 4, 1963 (Season 3, Episode 23). Opie's had it with his history homework, and misinterprets Andy's empathy as an excuse to skip it and lead his friends in revolt against their teacher, \"Old Lady\" Cru...",
+    "image": "https://archive.org/services/img/Andy-Griffith-Show_Andy-Discovers-America",
+    "fallbackImage": "https://archive.org/services/img/Andy-Griffith-Show_Andy-Discovers-America",
+    "preview": "https://archive.org/embed/Andy-Griffith-Show_Andy-Discovers-America"
+  },
+  {
+    "id": "Cisco_Kid_-_Buried_Treasure",
+    "title": "Buried Treasure",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "The Cisco Kid ep Buried Treasure",
+    "image": "https://archive.org/services/img/Cisco_Kid_-_Buried_Treasure",
+    "fallbackImage": "https://archive.org/services/img/Cisco_Kid_-_Buried_Treasure",
+    "preview": "https://archive.org/embed/Cisco_Kid_-_Buried_Treasure"
+  },
+  {
+    "id": "mahabharat-1988-tv-series",
+    "title": "Mahabharat 1988 TV series (94 episodes) - B. R. Chopra",
+    "type": "tv",
+    "row": "Sci-Fi",
+    "year": 1988,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Set of video files covering the 94 episodes of the series. Language: Hindi Embedded subtitles: English Note: some of the files had gaps in the English subtitles; for some of them, alternative files with improved subtitles were found and...",
+    "image": "https://archive.org/services/img/mahabharat-1988-tv-series",
+    "fallbackImage": "https://archive.org/services/img/mahabharat-1988-tv-series",
+    "preview": "https://archive.org/embed/mahabharat-1988-tv-series"
+  },
+  {
+    "id": "Yousaf-Payamber-Urdu",
+    "title": "Prophet Yousuf Series In URDU [HD]",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "Prophet Yousuf Series In URDU [HD]",
+    "image": "https://archive.org/services/img/Yousaf-Payamber-Urdu",
+    "fallbackImage": "https://archive.org/services/img/Yousaf-Payamber-Urdu",
+    "preview": "https://archive.org/embed/Yousaf-Payamber-Urdu"
+  },
+  {
+    "id": "renegade_girl",
+    "title": "Renegade Girl",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1946,
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/renegade_girl",
+    "fallbackImage": "https://archive.org/services/img/renegade_girl",
+    "preview": "https://archive.org/embed/renegade_girl"
+  },
+  {
+    "id": "war_babies",
+    "title": "War Babies",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1932,
+    "duration": "11m episode",
+    "rating": "TV-G",
+    "description": "Also known as \"What Price Gloria?\" Part of the \"Baby Bulesks\" series You can find more information regarding this film on its IMDb page .",
+    "image": "https://archive.org/services/img/war_babies",
+    "fallbackImage": "https://archive.org/services/img/war_babies",
+    "preview": "https://archive.org/embed/war_babies"
+  },
+  {
+    "id": "the_scene_xvid_episode_1",
+    "title": "Welcome to the Scene: Episode 01",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 2004,
+    "duration": "20m episode",
+    "rating": "TV-G",
+    "description": "Welcome to the Scene: Episode 01 NYU student Brian Sandro has a secret: he and his friends pirate hundres of millions of dollars of illicit Hollywood movies in their spare time. They are revered, reviled, hunted and admired. No one knows...",
+    "image": "https://archive.org/services/img/the_scene_xvid_episode_1",
+    "fallbackImage": "https://archive.org/services/img/the_scene_xvid_episode_1",
+    "preview": "https://archive.org/embed/the_scene_xvid_episode_1"
+  },
+  {
+    "id": "WarOfTheMonsters_201405",
+    "title": "War Of The Monsters",
+    "type": "tv",
+    "row": "Anime",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "This is the AIP-TV cut of Gamera vs. Barugon with improved color and sharpness. It's generally considered one of the better entries in the series. Gamera vs. Barugon From Wikipedia, the free encyclopedia Gamera vs. Barugon Theatrical pos...",
+    "image": "https://archive.org/services/img/WarOfTheMonsters_201405",
+    "fallbackImage": "https://archive.org/services/img/WarOfTheMonsters_201405",
+    "preview": "https://archive.org/embed/WarOfTheMonsters_201405"
+  },
+  {
+    "id": "TheBigTrees720p1952",
+    "title": "The Big Trees",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1952,
+    "duration": "89m",
+    "rating": "TV-G",
+    "description": "Title: The Big Trees Summary: A Quaker colony tries to save the giant sequoias from a timber baron. Directed by: Felix E. Feist Actors: Production Company: Warner Bros. Release Date: 30 March 1952 (UK) Aspect Ratio: 1.37 : 1 In 1900, uns...",
+    "image": "https://archive.org/services/img/TheBigTrees720p1952",
+    "fallbackImage": "https://archive.org/services/img/TheBigTrees720p1952",
+    "preview": "https://archive.org/embed/TheBigTrees720p1952"
+  },
+  {
+    "id": "Cleopatra_1912",
+    "title": "Cleopatra",
+    "type": "tv",
+    "row": "Animation",
+    "year": 1912,
+    "duration": "87m",
+    "rating": "TV-G",
+    "description": "Cleopatra is a silent film created in 1912 by Helen Gardner and the Helen Gardner Picture Players. The film, in which Gardner stars in the title role, was based on a play written by Victorien Sardou. In a series of elaborately staged tab...",
+    "image": "https://archive.org/services/img/Cleopatra_1912",
+    "fallbackImage": "https://archive.org/services/img/Cleopatra_1912",
+    "preview": "https://archive.org/embed/Cleopatra_1912"
+  },
+  {
+    "id": "omer-series_01",
+    "title": "EP 01 OMER [ra] SERIES URDU 720p",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": "",
+    "duration": "Series / Episodes",
+    "rating": "TV-G",
+    "description": "EP 01 OMER [ra] SERIES URDU 720p",
+    "image": "https://archive.org/services/img/omer-series_01",
+    "fallbackImage": "https://archive.org/services/img/omer-series_01",
+    "preview": "https://archive.org/embed/omer-series_01"
+  },
+  {
+    "id": "TheGreatDanPatch720p1949",
+    "title": "The Great Dan Patch",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1949,
+    "duration": "96m",
+    "rating": "TV-G",
+    "description": "Title: The Great Dan Patch Summary: Story of the legendary trotting horse Dan Patch. Directed by: Joseph M. Newman Actors: Production Company: W.R. Frank Productions Release Date: 22 July 1949 (USA) Aspect Ratio: 1.37 : 1 David Palmer, a...",
+    "image": "https://archive.org/services/img/TheGreatDanPatch720p1949",
+    "fallbackImage": "https://archive.org/services/img/TheGreatDanPatch720p1949",
+    "preview": "https://archive.org/embed/TheGreatDanPatch720p1949"
+  },
+  {
+    "id": "BuckskinFrontier1943",
+    "title": "Buckskin Frontier",
+    "type": "tv",
+    "row": "TV Picks",
+    "year": 1943,
+    "duration": "76m",
+    "rating": "TV-G",
+    "description": "Title: Buckskin Frontier Summary: A railroad man and the owner of a freight line battle for control of a crucial mountain pass. Directed by: Lesley Selander Actors: Richard Dix, Jane Wyatt, Albert Dekker Production Company: Harry Sherman...",
+    "image": "https://archive.org/services/img/BuckskinFrontier1943",
+    "fallbackImage": "https://archive.org/services/img/BuckskinFrontier1943",
+    "preview": "https://archive.org/embed/BuckskinFrontier1943"
+  },
+  {
+    "id": "C-Man",
+    "title": "C-Man",
+    "type": "tv",
+    "row": "Crime",
+    "year": 1949,
+    "duration": "76m",
+    "rating": "TV-G",
+    "description": "When his best friend is murdered in pursuit of jewel smugglers, customs agent Cliff Holden (Dean Jagger) finds himself assigned to track down the killers and close the case. He flies to Europe in order to catch a return flight on which a...",
+    "image": "https://archive.org/services/img/C-Man",
+    "fallbackImage": "https://archive.org/services/img/C-Man",
+    "preview": "https://archive.org/embed/C-Man"
+  },
+  {
+    "id": "barefoot_boy_1938",
+    "title": "Barefoot Boy",
+    "type": "tv",
+    "row": "Crime",
+    "year": 1938,
+    "duration": "1m episode",
+    "rating": "TV-G",
+    "description": "A pampered, snobbish young boy is sent by his father who has served time in prison for a crime he did not commit.",
+    "image": "https://archive.org/services/img/barefoot_boy_1938",
+    "fallbackImage": "https://archive.org/services/img/barefoot_boy_1938",
+    "preview": "https://archive.org/embed/barefoot_boy_1938"
   }
-
-  const text = String(Array.isArray(value) ? value[0] : value).trim().toLowerCase();
-  if (!text) return null;
-
-  if (/^\d{1,2}:\d{2}(:\d{2})?$/.test(text)) {
-    const parts = text.split(":").map(Number);
-    if (parts.length === 3) {
-      const [h, m, s] = parts;
-      return Math.round(h * 60 + m + s / 60);
-    }
-    if (parts.length === 2) {
-      const [m, s] = parts;
-      return Math.round(m + s / 60);
-    }
-  }
-
-  const hourMatch = text.match(/(\d+(?:\.\d+)?)\s*h/);
-  const minMatch = text.match(/(\d+(?:\.\d+)?)\s*m/);
-
-  if (hourMatch || minMatch) {
-    const hours = hourMatch ? Number(hourMatch[1]) : 0;
-    const mins = minMatch ? Number(minMatch[1]) : 0;
-    const total = Math.round(hours * 60 + mins);
-    return total > 0 ? total : null;
-  }
-
-  const plainNumber = text.match(/\d+(?:\.\d+)?/);
-  if (plainNumber) {
-    const n = Number(plainNumber[0]);
-    if (Number.isFinite(n) && n > 0 && n < 5000) {
-      return Math.round(n);
-    }
-  }
-
-  return null;
-}
-
-function formatDuration(minutes, type) {
-  if (!minutes || !Number.isFinite(minutes)) {
-    return type === "tv" ? "Series / Episodes" : "Full Movie";
-  }
-
-  if (type === "tv") {
-    if (minutes >= 50) return `${minutes}m`;
-    return `${minutes}m episode`;
-  }
-
-  return `${minutes}m`;
-}
-
-function normalizeDescription(metadata, doc) {
-  const description =
-    firstString(metadata.description) ||
-    firstString(doc.description) ||
-    "";
-
-  const cleaned = stripHtml(description);
-  if (!cleaned) return "No description available yet.";
-  return cleaned.length > 240 ? `${cleaned.slice(0, 237).trim()}...` : cleaned;
-}
-
-function normalizeTitle(metadata, doc, identifier) {
-  const rawTitle =
-    firstString(metadata.title) ||
-    firstString(doc.title) ||
-    identifier;
-
-  return stripHtml(rawTitle) || identifier;
-}
-
-function getSubjects(metadata, doc) {
-  return [
-    ...toArray(metadata.subject),
-    ...toArray(doc.subject),
-    ...toArray(metadata.collection),
-    ...toArray(doc.collection),
-  ]
-    .map(x => String(x).toLowerCase())
-    .filter(Boolean);
-}
-
-function classifyType(metadata, doc, identifier, title) {
-  const blob = [
-    identifier,
-    title,
-    firstString(metadata.mediatype),
-    ...getSubjects(metadata, doc),
-    normalizeDescription(metadata, doc),
-  ]
-    .join(" ")
-    .toLowerCase();
-
-  if (
-    blob.includes("tv") ||
-    blob.includes("television") ||
-    blob.includes("episode") ||
-    blob.includes("season") ||
-    blob.includes("series") ||
-    blob.includes("classic_tv") ||
-    blob.includes("classic tv") ||
-    blob.includes("serial")
-  ) {
-    return "tv";
-  }
-
-  return "movie";
-}
-
-function classifyRow(title, description, subjects, type) {
-  const blob = [title, description, ...subjects].join(" ").toLowerCase();
-
-  if (
-    blob.includes("anime") ||
-    blob.includes("subbed") ||
-    blob.includes("dubbed") ||
-    blob.includes("manga") ||
-    blob.includes("ova") ||
-    blob.includes("pokemon") ||
-    blob.includes("lain")
-  ) {
-    return "Anime";
-  }
-
-  if (type === "tv") {
-    if (blob.includes("cartoon") || blob.includes("animation") || blob.includes("animated")) {
-      return "Animation";
-    }
-    if (blob.includes("science fiction") || blob.includes("sci-fi") || blob.includes("space")) {
-      return "Sci-Fi";
-    }
-    if (blob.includes("crime") || blob.includes("detective") || blob.includes("police")) {
-      return "Crime";
-    }
-    return "TV Picks";
-  }
-
-  if (
-    blob.includes("horror") ||
-    blob.includes("zombie") ||
-    blob.includes("vampire") ||
-    blob.includes("monster") ||
-    blob.includes("phantom") ||
-    blob.includes("ghost") ||
-    blob.includes("werewolf")
-  ) {
-    return "Horror";
-  }
-
-  if (
-    blob.includes("science fiction") ||
-    blob.includes("sci-fi") ||
-    blob.includes("alien") ||
-    blob.includes("robot") ||
-    blob.includes("space") ||
-    blob.includes("future")
-  ) {
-    return "Sci-Fi";
-  }
-
-  if (
-    blob.includes("animation") ||
-    blob.includes("animated") ||
-    blob.includes("cartoon")
-  ) {
-    return "Animation";
-  }
-
-  if (
-    blob.includes("crime") ||
-    blob.includes("gangster") ||
-    blob.includes("noir") ||
-    blob.includes("detective")
-  ) {
-    return "Crime";
-  }
-
-  return "Featured";
-}
-
-function hasAny(text, words) {
-  const lower = String(text || "").toLowerCase();
-  return words.some(word => lower.includes(word));
-}
-
-function looksLikeGarbageTitle(title) {
-  const t = String(title || "").trim();
-  if (!t || t === ".") return true;
-
-  const lower = t.toLowerCase();
-
-  const garbagePatterns = [
-    "apk",
-    "mod extra",
-    "time trial videos",
-    "rom pack",
-    "compressed by",
-    "upload by"
-  ];
-
-  if (hasAny(lower, garbagePatterns)) return true;
-
-  const symbolCount = (t.match(/[_\-]/g) || []).length;
-  if (symbolCount > 14) return true;
-
-  return false;
-}
-
-function hasExplicitKeywords(text) {
-  const banned = [
-    "porn",
-    "porno",
-    "pornography",
-    "nudist",
-    "nude",
-    "nudity",
-    "erotic",
-    "sexual",
-    "xxx",
-    "fetish",
-    "bdsm",
-    "hardcore",
-    "softcore",
-    "orgy",
-    "seduction",
-    "hot web series",
-    "hentai sex",
-    "stag film",
-    "love camp 7",
-    "real sex episode",
-    "topless",
-    "alpha france"
-  ];
-
-  return hasAny(text, banned);
-}
-
-function hasNewsKeywords(text) {
-  const banned = [
-    "eyewitness news",
-    "sept. 11",
-    "september 11",
-    "9/11",
-    "cnn ",
-    "bbc world news",
-    "fox5",
-    "abc sept.",
-    "nbc sept.",
-    "cbs sept.",
-    "wrc :",
-    "wusa :",
-    "live at daybreak",
-    "newscast",
-    "coverage",
-    "today :"
-  ];
-
-  return hasAny(text, banned);
-}
-
-function hasSoftwareKeywords(text) {
-  const banned = [
-    "apk",
-    "mod extra",
-    "app",
-    "software",
-    "console x",
-    "game collection",
-    "pc lite",
-    "android",
-    "retroarch",
-    "rom pack"
-  ];
-
-  return hasAny(text, banned);
-}
-
-function hasReligiousUploadKeywords(text) {
-  const banned = [
-    "quran",
-    "hatim",
-    "reciter",
-    "oktakipli",
-    "mahir zain mp3",
-    "holy quran translation"
-  ];
-
-  return hasAny(text, banned);
-}
-
-function hasJunkKeywords(text) {
-  const banned = [
-    "trailer",
-    "preview",
-    "promo",
-    "teaser",
-    "clip",
-    "sample",
-    "test",
-    "outtakes",
-    "bloopers",
-    "commercial",
-    "advertisement",
-    "radio show",
-    "audio only",
-    "mp3",
-    "soundtrack",
-    "demo reel",
-    "training film",
-    "instructional film",
-    "public domain movies",
-    "archive",
-    "shocker internet drive in",
-    "countrockula"
-  ];
-
-  return hasAny(text, banned);
-}
-
-function isBadCollectionOrSubject(subjects) {
-  const banned = [
-    "newsandpublicaffairs",
-    "podcasts",
-    "audio",
-    "software",
-    "adult",
-    "pornography",
-    "fetish",
-    "sex",
-    "news",
-    "politics"
-  ];
-
-  return subjects.some(s => banned.some(b => s.includes(b)));
-}
-
-function getVideoFiles(metadataPayload) {
-  const files = Array.isArray(metadataPayload?.files) ? metadataPayload.files : [];
-
-  return files.filter(file => {
-    const format = String(file.format || "").toLowerCase();
-    const name = String(file.name || "").toLowerCase();
-
-    const isVideoFormat =
-      format.includes("mpeg4") ||
-      format.includes("h.264") ||
-      format.includes("matroska") ||
-      format.includes("quicktime") ||
-      format.includes("ogg video") ||
-      format.includes("mp4") ||
-      format.includes("video");
-
-    const isVideoExt =
-      name.endsWith(".mp4") ||
-      name.endsWith(".mkv") ||
-      name.endsWith(".mov") ||
-      name.endsWith(".ogv") ||
-      name.endsWith(".avi") ||
-      name.endsWith(".m4v");
-
-    const isBadAux =
-      name.includes("_thumb") ||
-      name.includes("_spectrogram") ||
-      name.endsWith(".gif") ||
-      name.endsWith(".jpg") ||
-      name.endsWith(".jpeg") ||
-      name.endsWith(".png") ||
-      name.endsWith(".srt") ||
-      name.endsWith(".vtt") ||
-      name.endsWith(".txt") ||
-      name.endsWith(".xml") ||
-      name.endsWith(".pdf") ||
-      name.endsWith(".zip") ||
-      name.endsWith(".rar");
-
-    return (isVideoFormat || isVideoExt) && !isBadAux;
-  });
-}
-
-function extractHeight(file) {
-  const candidates = [
-    file.height,
-    file.video_height,
-    file.imageheight
-  ];
-
-  for (const candidate of candidates) {
-    const n = Number(candidate);
-    if (Number.isFinite(n) && n > 0) return n;
-  }
-
-  const text = `${file.name || ""} ${file.format || ""}`;
-  const match = String(text).match(/\b(2160|1440|1080|900|864|810|800|720|576|540|480|360)p\b/i);
-  if (match) return Number(match[1]);
-
-  return null;
-}
-
-function getBestVideoFile(metadataPayload) {
-  const videos = getVideoFiles(metadataPayload);
-  if (!videos.length) return null;
-
-  const ranked = videos
-    .map(file => ({
-      file,
-      height: extractHeight(file) || 0,
-      size: Number(file.size || 0)
-    }))
-    .sort((a, b) => {
-      if (b.height !== a.height) return b.height - a.height;
-      return b.size - a.size;
-    });
-
-  return ranked[0];
-}
-
-function passesResolutionCheck(bestVideo, type, title, description, downloads) {
-  if (!bestVideo) return false;
-
-  const height = bestVideo.height || 0;
-  const blob = `${title} ${description}`.toLowerCase();
-  const isAnimeish = hasAny(blob, ["anime", "subbed", "dubbed", "ova", "pokemon", "lain"]);
-
-  if (height >= 720) return true;
-  if (type === "tv" && height >= 480) return true;
-  if (type === "movie" && height >= 540 && downloads >= 400) return true;
-  if (type === "movie" && height >= 480 && downloads >= 2500) return true;
-  if (isAnimeish && height >= 480) return true;
-
-  return false;
-}
-
-function hasRecognizableSignals(title, description, subjects, downloads, type) {
-  const blob = `${title} ${description} ${subjects.join(" ")}`.toLowerCase();
-
-  const strongSignals = [
-    "movie",
-    "film",
-    "tv",
-    "series",
-    "episode",
-    "season",
-    "anime",
-    "cartoon",
-    "animation",
-    "dubbed",
-    "subbed",
-    "classic tv",
-    "feature film",
-    "feature films",
-    "science fiction",
-    "horror",
-    "detective",
-    "western",
-    "comedy",
-    "drama",
-    "thriller",
-    "adventure"
-  ];
-
-  if (hasAny(blob, strongSignals)) return true;
-  if (type === "movie" && downloads >= 120) return true;
-  if (type === "tv" && downloads >= 80) return true;
-
-  return false;
-}
-
-function isProbablyBadTvDump(title, description, downloads) {
-  const blob = `${title} ${description}`.toLowerCase();
-
-  if (hasAny(blob, ["complete series", "full series", "all episodes", "episode collection"])) {
-    return downloads < 300;
-  }
-
-  return false;
-}
-
-function isBadCandidate({ title, description, subjects, metadata, downloads, type }) {
-  const blob = `${title} ${description} ${subjects.join(" ")}`.toLowerCase();
-
-  if (String(title).trim() === "." || String(title).trim().length < 2) return true;
-  if (looksLikeGarbageTitle(title)) return true;
-
-  if (hasExplicitKeywords(blob)) return true;
-  if (hasNewsKeywords(blob)) return true;
-  if (hasSoftwareKeywords(blob)) return true;
-  if (hasReligiousUploadKeywords(blob)) return true;
-  if (hasJunkKeywords(blob)) return true;
-  if (isBadCollectionOrSubject(subjects)) return true;
-
-  if (type === "tv" && isProbablyBadTvDump(title, description, downloads)) return true;
-
-  if (/^episode\s*\d+/i.test(String(title).trim()) && downloads < 300) return true;
-
-  if (!hasRecognizableSignals(title, description, subjects, downloads, type)) return true;
-
-  const metadataTitle = String(firstString(metadata.title) || "").toLowerCase();
-  if (metadataTitle === "home" || metadataTitle === "archive") return true;
-
-  return false;
-}
-
-async function fetchJson(url) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent": "PluetoTVCatalogBuilder/1.0 (+https://github.com/plueto/plueto.github.io)"
-    }
-  });
-
-  if (!res.ok) {
-    throw new Error(`Request failed ${res.status}: ${url}`);
-  }
-
-  return res.json();
-}
-
-function buildAdvancedSearchUrl(query, rows) {
-  const url = new URL(ARCHIVE_ADVANCEDSEARCH);
-  url.searchParams.set("q", query);
-
-  url.searchParams.append("fl[]", "identifier");
-  url.searchParams.append("fl[]", "title");
-  url.searchParams.append("fl[]", "description");
-  url.searchParams.append("fl[]", "year");
-  url.searchParams.append("fl[]", "runtime");
-  url.searchParams.append("fl[]", "downloads");
-  url.searchParams.append("fl[]", "subject");
-  url.searchParams.append("fl[]", "collection");
-  url.searchParams.append("fl[]", "mediatype");
-
-  url.searchParams.append("sort[]", "downloads desc");
-  url.searchParams.set("rows", String(rows));
-  url.searchParams.set("page", "1");
-  url.searchParams.set("output", "json");
-  return url.toString();
-}
-
-async function searchArchive(query, rows) {
-  const url = buildAdvancedSearchUrl(query, rows);
-  const data = await fetchJson(url);
-  return Array.isArray(data?.response?.docs) ? data.response.docs : [];
-}
-
-async function fetchMetadata(identifier) {
-  return fetchJson(`${ARCHIVE_METADATA}/${encodeURIComponent(identifier)}`);
-}
-
-async function buildItem(doc) {
-  const identifier = doc.identifier;
-  if (!identifier) return null;
-
-  const metadataPayload = await fetchMetadata(identifier);
-  const metadata = metadataPayload?.metadata || {};
-
-  const title = normalizeTitle(metadata, doc, identifier);
-  const description = normalizeDescription(metadata, doc);
-
-  const year =
-    parseYear(firstString(metadata.year)) ||
-    parseYear(firstString(doc.year)) ||
-    parseYear(firstString(metadata.date)) ||
-    null;
-
-  const runtimeMinutes =
-    parseRuntimeMinutes(firstString(metadata.runtime)) ||
-    parseRuntimeMinutes(firstString(doc.runtime)) ||
-    null;
-
-  const subjects = getSubjects(metadata, doc);
-  const type = classifyType(metadata, doc, identifier, title);
-  const downloads = Number(doc.downloads || 0);
-
-  if (isBadCandidate({ title, description, subjects, metadata, downloads, type })) {
-    return null;
-  }
-
-  const bestVideo = getBestVideoFile(metadataPayload);
-  if (!passesResolutionCheck(bestVideo, type, title, description, downloads)) {
-    return null;
-  }
-
-  const row = classifyRow(title, description, subjects, type);
-
-  return {
-    id: identifier,
-    title,
-    type,
-    row,
-    year: year || "",
-    duration: formatDuration(runtimeMinutes, type),
-    rating: type === "tv" ? "TV-G" : "NR",
-    description,
-    image: `https://archive.org/services/img/${identifier}`,
-    fallbackImage: `https://archive.org/services/img/${identifier}`,
-    preview: `https://archive.org/embed/${identifier}`,
-    downloads
-  };
-}
-
-function dedupe(items) {
-  const seen = new Set();
-  const out = [];
-
-  for (const item of items) {
-    if (!item) continue;
-
-    const key = item.id || item.identifier;
-    if (!key) continue;
-
-    if (seen.has(key)) continue;
-    seen.add(key);
-    out.push(item);
-  }
-
-  return out;
-}
-
-function sortCatalog(items) {
-  return [...items].sort((a, b) => {
-    const dl = (b.downloads || 0) - (a.downloads || 0);
-    if (dl !== 0) return dl;
-    return String(a.title).localeCompare(String(b.title));
-  });
-}
-
-function removeInternalFields(items) {
-  return items.map(({ downloads, ...rest }) => rest);
-}
-
-function serializeCatalog(items) {
-  return `window.CATALOG = ${JSON.stringify(items, null, 2)};\n`;
-}
-
-async function main() {
-  const movieQuery =
-    '(mediatype:movies) AND ' +
-    '((collection:feature_films) OR (collection:movies) OR (subject:"feature film") OR (subject:"feature films") OR (subject:cinema) OR (subject:film))';
-
-  const tvQuery =
-    '(mediatype:movies) AND ' +
-    '((collection:classic_tv) OR (subject:television) OR (subject:"television programs") OR (subject:"tv shows") OR (subject:anime) OR (title:episode) OR (title:season) OR (title:series))';
-
-  console.log("Searching Internet Archive for movies...");
-  const movieDocs = await searchArchive(movieQuery, MOVIE_ROWS);
-
-  console.log("Searching Internet Archive for TV...");
-  const tvDocs = await searchArchive(tvQuery, TV_ROWS);
-
-  const combinedDocs = dedupe([...movieDocs, ...tvDocs]);
-
-  console.log(`Found ${combinedDocs.length} raw candidates. Fetching metadata...`);
-
-  const built = [];
-  for (let i = 0; i < combinedDocs.length; i += 1) {
-    const doc = combinedDocs[i];
-    try {
-      const item = await buildItem(doc);
-      if (item) {
-        built.push(item);
-        console.log(`[${i + 1}/${combinedDocs.length}] OK: ${item.title}`);
-      } else {
-        console.log(`[${i + 1}/${combinedDocs.length}] skipped: ${doc.identifier}`);
-      }
-    } catch (err) {
-      console.warn(`[${i + 1}/${combinedDocs.length}] failed: ${doc.identifier} -> ${err.message}`);
-    }
-  }
-
-  let catalog = sortCatalog(dedupe(built));
-
-  const movies = catalog.filter(item => item.type === "movie").slice(0, MAX_MOVIES);
-  const tv = catalog.filter(item => item.type === "tv").slice(0, MAX_TV);
-
-  catalog = removeInternalFields([...movies, ...tv]);
-
-  fs.writeFileSync(OUTPUT_PATH, serializeCatalog(catalog), "utf8");
-
-  console.log(`Saved ${catalog.length} titles to ${OUTPUT_PATH}`);
-  console.log(`Movies: ${movies.length}`);
-  console.log(`TV: ${tv.length}`);
-}
-
-main().catch(err => {
-  console.error(err);
-  process.exit(1);
-});
+];
