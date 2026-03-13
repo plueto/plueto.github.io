@@ -1,75 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Watch</title>
 
-<title>Watch</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-<style>
+    body{
+      background:#141414;
+      color:white;
+      font-family:Arial, Helvetica, sans-serif;
+    }
 
-body{
-background:#141414;
-color:white;
-font-family:Arial;
-margin:0;
-}
+    a{
+      color:white;
+      text-decoration:none;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px;
-}
+    .topbar{
+      padding:22px 32px;
+    }
 
-.video{
-position:relative;
-padding-bottom:56.25%;
-height:0;
-}
+    .back{
+      opacity:.9;
+      font-size:15px;
+    }
 
-.video iframe{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-}
+    .back:hover{
+      opacity:1;
+    }
 
-a{
-color:white;
-text-decoration:none;
-}
+    .container{
+      max-width:1150px;
+      margin:0 auto;
+      padding:0 32px 50px;
+    }
 
-</style>
+    .title{
+      font-size:40px;
+      margin-bottom:14px;
+    }
 
+    .meta{
+      color:#bbb;
+      margin-bottom:18px;
+      font-size:14px;
+    }
+
+    .player-wrap{
+      width:100%;
+      aspect-ratio:16/9;
+      background:black;
+      border-radius:10px;
+      overflow:hidden;
+      margin-bottom:22px;
+    }
+
+    .player-wrap iframe{
+      width:100%;
+      height:100%;
+      border:none;
+    }
+
+    .desc{
+      color:#ddd;
+      line-height:1.7;
+      max-width:850px;
+      margin-bottom:34px;
+      font-size:16px;
+    }
+
+    .section-title{
+      font-size:24px;
+      margin-bottom:14px;
+    }
+
+    .episode-list{
+      display:grid;
+      gap:12px;
+      margin-bottom:36px;
+    }
+
+    .episode{
+      background:#1f1f1f;
+      border-radius:10px;
+      padding:16px;
+    }
+
+    .episode strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .rec-row{
+      display:flex;
+      gap:14px;
+      overflow-x:auto;
+      padding-bottom:10px;
+      scrollbar-width:none;
+    }
+
+    .rec-row::-webkit-scrollbar{
+      display:none;
+    }
+
+    .rec-card{
+      min-width:230px;
+      background:#1f1f1f;
+      border-radius:10px;
+      overflow:hidden;
+      color:white;
+      text-decoration:none;
+      flex-shrink:0;
+    }
+
+    .rec-card img{
+      width:100%;
+      height:130px;
+      object-fit:cover;
+      display:block;
+    }
+
+    .rec-card-title{
+      padding:12px;
+      font-weight:bold;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="topbar">
+    <a class="back" href="index.html">← Back to browse</a>
+  </div>
 
-<div class="container">
+  <div class="container">
+    <div class="title" id="video-title">Now Playing</div>
+    <div class="meta">Streaming demo • HD • Placeholder content</div>
 
-<a href="index.html">← Back</a>
+    <div class="player-wrap">
+      <iframe
+        id="video-frame"
+        src=""
+        allowfullscreen
+        allow="autoplay; encrypted-media; picture-in-picture">
+      </iframe>
+    </div>
 
-<h1 id="title">Now Playing</h1>
+    <div class="desc" id="video-desc">
+      Description goes here.
+    </div>
 
-<div class="video">
-<iframe id="player" src="" allowfullscreen></iframe>
-</div>
+    <div class="section-title">Episodes</div>
+    <div class="episode-list">
+      <div class="episode">
+        <strong>Episode 1 — Pilot</strong>
+        A sample episode card so your page feels like a real streaming platform.
+      </div>
+      <div class="episode">
+        <strong>Episode 2 — Night Drive</strong>
+        Another placeholder episode description you can swap later.
+      </div>
+      <div class="episode">
+        <strong>Episode 3 — Loose Ends</strong>
+        Keeps the page from feeling empty while you build things out.
+      </div>
+    </div>
 
-</div>
+    <div class="section-title">More Like This</div>
+    <div class="rec-row">
+      <a class="rec-card" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run&desc=A%20late-night%20thriller%20placeholder%20page%20for%20your%20site.">
+        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80" alt="Midnight Run">
+        <div class="rec-card-title">Midnight Run</div>
+      </a>
 
-<script>
+      <a class="rec-card" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City&desc=A%20dark%20city%20crime%20story%20placeholder%20page.">
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Dark City">
+        <div class="rec-card-title">Dark City</div>
+      </a>
 
-const params = new URLSearchParams(window.location.search);
+      <a class="rec-card" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat&desc=A%20bright%20nightlife%20drama%20placeholder%20page.">
+        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="Neon Heat">
+        <div class="rec-card-title">Neon Heat</div>
+      </a>
+    </div>
+  </div>
 
-const video = params.get("video");
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const video = params.get("video") || "jNQXAC9IVRw";
+    const title = params.get("title") || "Now Playing";
+    const desc = params.get("desc") || "This is a placeholder watch page for your streaming site.";
 
-const title = params.get("title");
+    document.getElementById("video-frame").src =
+      "https://www.youtube.com/embed/" + video;
 
-document.getElementById("player").src =
-"https://www.youtube.com/embed/" + video;
-
-document.getElementById("title").innerText = title;
-
-</script>
-
+    document.getElementById("video-title").textContent = decodeURIComponent(title);
+    document.getElementById("video-desc").textContent = decodeURIComponent(desc);
+  </script>
 </body>
 </html>
