@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Recently Added • Plueto TV</title>
   <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -168,6 +169,27 @@
       line-height:1.4;
     }
 
+    .card-actions{
+      padding:10px 4px 0;
+    }
+
+    .my-list-btn{
+      width:100%;
+      border:none;
+      border-radius:12px;
+      padding:10px 12px;
+      background:rgba(255,255,255,.08);
+      color:var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:transform .15s ease, background .15s ease;
+    }
+
+    .my-list-btn:hover{
+      transform:translateY(-1px);
+      background:rgba(122,92,255,.18);
+    }
+
     .empty-state{
       margin-top:18px;
       padding:24px;
@@ -194,12 +216,12 @@
   <div class="navbar">
     <a href="index.html" class="logo">PLUETO TV</a>
     <div class="nav-links">
-  <a href="index.html">Home</a>
-  <a href="movies.html">Movies</a>
-  <a href="tv.html">TV Shows</a>
-  <a href="new.html">Recently Added</a>
-  <a href="my-list.html">My List</a>
-</div>
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">Recently Added</a>
+      <a href="my-list.html">My List</a>
+    </div>
   </div>
 
   <div class="page">
@@ -236,6 +258,7 @@
       const safeImage = escapeHtml(posterUrl || item.image || item.fallbackImage || "");
       const safeDuration = escapeHtml(item.duration || "Runtime unavailable");
       const safeRating = escapeHtml(item.rating || "NR");
+      const buttonLabel = escapeHtml(getMyListButtonLabel(item.id));
 
       return `
         <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
@@ -260,9 +283,26 @@
           <div class="card-body">
             <div class="card-title">${safeTitle}</div>
             <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+            <div class="card-actions">
+              <button class="my-list-btn" type="button" data-id="${safeId}">${buttonLabel}</button>
+            </div>
           </div>
         </a>
       `;
+    }
+
+    function wireMyListButtons(root = document) {
+      root.querySelectorAll(".my-list-btn").forEach(button => {
+        const id = button.dataset.id;
+
+        button.onclick = (event) => {
+          event.preventDefault();
+          event.stopPropagation();
+
+          const added = toggleMyList(id);
+          button.textContent = added ? "✓ In My List" : "+ My List";
+        };
+      });
     }
 
     async function renderRecent() {
@@ -288,6 +328,8 @@
       grid.innerHTML = recent
         .map(item => createCard(item, posters[item.id] || null))
         .join("");
+
+      wireMyListButtons(grid);
     }
 
     renderRecent();
