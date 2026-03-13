@@ -4,179 +4,300 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Watch • Plueto TV</title>
-  <script src="catalog.js" defer></script>
   <style>
-    body {
-      margin: 0;
-      background: #0b0b0f;
-      color: white;
-      font-family: Arial, sans-serif;
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --panel-2:#1c1c26;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --border:rgba(255,255,255,0.08);
     }
 
-    .wrap {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 24px;
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.4;
     }
 
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
+    a{text-decoration:none;color:inherit}
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:16px 24px;
+      background:rgba(13,13,18,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
 
-    a {
-      color: white;
-      text-decoration: none;
+    .brand{
+      font-weight:800;
+      letter-spacing:1px;
+      margin-right:18px;
     }
 
-    .player-shell {
-      background: #111;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    .navbar a{
+      color:var(--muted);
+      font-weight:600;
+      transition:color .18s ease;
     }
 
-    .player-shell iframe {
-      width: 100%;
-      height: 70vh;
-      min-height: 420px;
-      border: 0;
-      display: block;
+    .navbar a:hover{
+      color:var(--text);
     }
 
-    .meta {
-      margin-top: 20px;
+    .page{
+      padding:24px;
+      max-width:1300px;
+      margin:0 auto;
     }
 
-    .title {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
+    .back-link{
+      display:inline-block;
+      color:var(--muted);
+      margin-bottom:16px;
     }
 
-    .submeta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      color: #bdbdbd;
-      margin-bottom: 14px;
+    .watch-layout{
+      display:grid;
+      grid-template-columns:1.6fr .9fr;
+      gap:24px;
+      align-items:start;
     }
 
-    .pill {
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 999px;
-      padding: 6px 10px;
-      background: rgba(255,255,255,.05);
+    .player-shell{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 24px 60px rgba(0,0,0,.3);
     }
 
-    .desc {
-      max-width: 800px;
-      line-height: 1.6;
-      color: #ddd;
+    .player-shell iframe{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      display:block;
+      background:#000;
     }
 
-    .actions {
-      margin-top: 18px;
-      display: flex;
-      gap: 12px;
+    .info-card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px;
     }
 
-    button {
-      border: 0;
-      border-radius: 999px;
-      padding: 12px 18px;
-      font-weight: 700;
-      cursor: pointer;
+    .eyebrow{
+      color:var(--purple);
+      font-size:.9rem;
+      font-weight:700;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      margin-bottom:10px;
     }
 
-    .btn-main {
-      background: white;
-      color: black;
+    h1{
+      font-size:clamp(1.8rem,4vw,3rem);
+      line-height:1;
+      margin-bottom:10px;
     }
 
-    .btn-alt {
-      background: rgba(255,255,255,.08);
-      color: white;
-      border: 1px solid rgba(255,255,255,.14);
+    .meta{
+      color:var(--muted);
+      margin-bottom:16px;
+      font-size:.98rem;
     }
 
-    .error {
-      padding: 32px;
-      background: #161616;
-      border-radius: 18px;
-      color: #ddd;
+    .description{
+      color:var(--text);
+      margin-bottom:18px;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 18px;
+      border-radius:999px;
+      font-weight:700;
+      border:1px solid transparent;
+      cursor:pointer;
+      transition:transform .18s ease, opacity .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.95;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      color:white;
+    }
+
+    .btn-secondary{
+      background:transparent;
+      border-color:var(--border);
+      color:var(--text);
+    }
+
+    .poster-preview{
+      width:100%;
+      border-radius:18px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#111;
+    }
+
+    .poster-preview img{
+      width:100%;
+      aspect-ratio:2/3;
+      object-fit:cover;
+      display:block;
+    }
+
+    .error-box{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      color:var(--muted);
+    }
+
+    @media (max-width: 980px){
+      .watch-layout{
+        grid-template-columns:1fr;
+      }
+
+      .navbar{
+        gap:14px;
+        overflow-x:auto;
+        white-space:nowrap;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <div class="topbar">
-      <a href="movies.html">← Back to browse</a>
-      <a href="index.html">Home</a>
-    </div>
+  <nav class="navbar">
+    <a class="brand" href="index.html">PLUETO TV</a>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="tv.html">TV Shows</a>
+    <a href="new.html">Recently Added</a>
+    <a href="my-list.html">My List</a>
+  </nav>
 
-    <div id="watch-app"></div>
-  </div>
+  <main class="page">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
 
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const id = params.get("id");
-      const app = document.getElementById("watch-app");
-
-      if (typeof CATALOG === "undefined" || !Array.isArray(CATALOG)) {
-        app.innerHTML = `
-          <div class="error">
-            <h2>Catalog failed to load</h2>
-            <p>catalog.js did not load correctly.</p>
-          </div>
-        `;
-        return;
-      }
-
-      const item = CATALOG.find(movie => movie.id === id);
-
-      if (!item) {
-        app.innerHTML = `
-          <div class="error">
-            <h2>Movie not found</h2>
-            <p>That title is not in the catalog yet.</p>
-          </div>
-        `;
-        return;
-      }
-
-      app.innerHTML = `
+    <div id="watch-app">
+      <div class="watch-layout">
         <div class="player-shell">
           <iframe
-            src="https://archive.org/embed/${item.id}"
+            data-watch-frame
             allowfullscreen
-            webkitallowfullscreen="true"
-            mozallowfullscreen="true">
-          </iframe>
+            loading="lazy"
+            referrerpolicy="no-referrer"
+            title="Player"
+          ></iframe>
         </div>
 
-        <div class="meta">
-          <div class="title">${item.title}</div>
-
-          <div class="submeta">
-            <span class="pill">${item.year}</span>
-            <span class="pill">${item.rating}</span>
-            <span class="pill">${item.duration}</span>
-            <span class="pill">${item.row}</span>
-          </div>
-
-          <div class="desc">${item.description}</div>
+        <aside class="info-card">
+          <div class="eyebrow">Now Streaming</div>
+          <h1 data-watch-title>Loading…</h1>
+          <p class="meta" data-watch-meta></p>
+          <p class="description" data-watch-description></p>
 
           <div class="actions">
-            <button class="btn-main" onclick="location.reload()">⟳ Reload</button>
-            <button class="btn-alt" onclick="toggleMyList('${item.id}')">+ My List</button>
+            <button class="btn btn-primary" data-my-list-button type="button">+ My List</button>
+            <a class="btn btn-secondary" href="my-list.html">Open My List</a>
           </div>
+
+          <div class="poster-preview">
+            <img data-watch-poster src="" alt="Poster" />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const catalog = Array.isArray(window.CATALOG) ? window.CATALOG : [];
+    const item = catalog.find(entry => entry.id === id);
+
+    const watchApp = document.getElementById("watch-app");
+    const titleEl = document.querySelector("[data-watch-title]");
+    const metaEl = document.querySelector("[data-watch-meta]");
+    const descEl = document.querySelector("[data-watch-description]");
+    const frameEl = document.querySelector("[data-watch-frame]");
+    const posterEl = document.querySelector("[data-watch-poster]");
+    const myListBtn = document.querySelector("[data-my-list-button]");
+
+    if (!item) {
+      watchApp.innerHTML = `
+        <div class="error-box">
+          <h2 style="margin-bottom:10px;color:#f4f4f5;">Title not found</h2>
+          <p style="margin-bottom:16px;">This item is missing from the catalog or the URL is invalid.</p>
+          <a class="btn btn-secondary" href="index.html">Return Home</a>
         </div>
       `;
-    });
+    } else {
+      document.title = `${item.title} • Plueto TV`;
+
+      if (titleEl) titleEl.textContent = item.title;
+      if (metaEl) {
+        const bits = [item.year, item.duration, item.rating].filter(Boolean);
+        metaEl.textContent = bits.join(" • ");
+      }
+      if (descEl) descEl.textContent = item.description || "";
+      if (frameEl && item.preview) {
+        frameEl.src = item.preview;
+        frameEl.title = item.title;
+      }
+      if (posterEl) {
+        posterEl.src = item.image;
+        posterEl.alt = item.title;
+        posterEl.onerror = function () {
+          this.onerror = null;
+          this.src = item.fallbackImage || item.image;
+        };
+      }
+
+      function refreshMyListButton() {
+        if (!myListBtn) return;
+        myListBtn.textContent = getMyListButtonLabel(item.id);
+      }
+
+      if (myListBtn) {
+        refreshMyListButton();
+        myListBtn.addEventListener("click", () => {
+          toggleMyList(item.id);
+          refreshMyListButton();
+        });
+      }
+    }
   </script>
 </body>
 </html>
