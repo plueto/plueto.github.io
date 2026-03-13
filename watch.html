@@ -126,7 +126,7 @@
       const id = params.get("id");
       const app = document.getElementById("watch-app");
 
-      if (!window.CATALOG || !Array.isArray(CATALOG)) {
+      if (typeof CATALOG === "undefined" || !Array.isArray(CATALOG)) {
         app.innerHTML = `
           <div class="error">
             <h2>Catalog failed to load</h2>
