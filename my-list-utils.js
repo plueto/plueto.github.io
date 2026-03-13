@@ -1,8 +1,13 @@
 const MY_LIST_KEY = "plueto_my_list";
 
 function getMyList() {
-  const raw = localStorage.getItem(MY_LIST_KEY);
-  return raw ? JSON.parse(raw) : [];
+  try {
+    const raw = localStorage.getItem(MY_LIST_KEY);
+    const parsed = JSON.parse(raw || "[]");
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
 }
 
 function saveMyList(list) {
@@ -15,13 +20,19 @@ function toggleMyList(id) {
 
   if (index === -1) {
     list.push(id);
+    saveMyList(list);
+    return true;
   } else {
     list.splice(index, 1);
+    saveMyList(list);
+    return false;
   }
-
-  saveMyList(list);
 }
 
 function isInMyList(id) {
   return getMyList().includes(id);
+}
+
+function getMyListButtonLabel(id) {
+  return isInMyList(id) ? "✓ In My List" : "+ My List";
 }
