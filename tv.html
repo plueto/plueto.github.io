@@ -6,21 +6,180 @@
   <title>TV Shows • Plueto TV</title>
   <script src="catalog.js"></script>
   <style>
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --red:#ff4b5c;
+    }
+
     *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#141414;color:#fff;font-family:Arial,Helvetica,sans-serif}
-    a{text-decoration:none;color:#fff}
-    .navbar{padding:22px 32px;display:flex;justify-content:space-between;align-items:center;background:#111;position:sticky;top:0;z-index:20}
-    .logo{font-size:24px;font-weight:700;color:#e50914}
-    .nav-links{display:flex;gap:18px}
-    .page{padding:28px 32px 50px}
-    h1{font-size:42px;margin-bottom:10px}
-    .sub{color:#bbb;margin-bottom:26px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
-    .card{background:#1f1f1f;border-radius:12px;overflow:hidden;display:block}
-    .card img{width:100%;height:145px;object-fit:cover;display:block}
-    .card-body{padding:14px}
-    .card-title{font-weight:700;margin-bottom:6px}
-    .meta{font-size:13px;color:#bbb}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+    }
+
+    a{text-decoration:none;color:inherit}
+
+    .navbar{
+      padding:20px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,14,.82);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      color:var(--purple);
+      text-shadow:0 0 24px rgba(122,92,255,.22);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+    }
+
+    .page{
+      padding:28px 32px 50px;
+    }
+
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
+    }
+
+    .sub{
+      color:var(--muted);
+      margin-bottom:26px;
+      max-width:760px;
+      line-height:1.5;
+    }
+
+    .signal-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d7d7e3;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .signal-tag::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      box-shadow:0 0 14px rgba(122,92,255,.45);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+      gap:22px;
+    }
+
+    .card{
+      display:block;
+      transition:transform .18s ease;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .poster-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:2/3;
+      border-radius:18px;
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+    }
+
+    .poster{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      background:#111;
+    }
+
+    .poster-fallback{
+      width:100%;
+      height:100%;
+      display:none;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18)),
+        linear-gradient(135deg, #1b1b24, #29293b);
+    }
+
+    .poster-fallback-title{
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.2;
+      margin-bottom:8px;
+    }
+
+    .poster-fallback-meta{
+      font-size:.82rem;
+      color:#d0d0d8;
+      line-height:1.35;
+    }
+
+    .card-body{padding:10px 4px 0}
+    .card-title{
+      font-weight:800;
+      margin-bottom:5px;
+      font-size:.96rem;
+      line-height:1.25;
+    }
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.4;
+    }
+
+    .empty-state{
+      margin-top:18px;
+      padding:24px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(122,92,255,.08), rgba(58,168,255,.06));
+      border:1px solid rgba(255,255,255,.06);
+      color:#d7d7e3;
+      line-height:1.6;
+    }
+
+    .loading{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    @media (max-width:800px){
+      .navbar,.page{padding-left:18px;padding-right:18px}
+      .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+      h1{font-size:34px}
+    }
   </style>
 </head>
 <body>
@@ -35,22 +194,93 @@
   </div>
 
   <div class="page">
+    <div class="signal-tag">Transmission Queue</div>
     <h1>TV Shows</h1>
-    <div class="sub">Series and long-form content in your catalog.</div>
-    <div class="grid" id="tv-grid"></div>
+    <div class="sub">
+      Series, blocks, and long-form content live here. Right now your repo doesn’t have TV entries yet, so this page is set up and ready for them.
+    </div>
+
+    <div class="grid" id="tv-grid">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="empty-state" id="tv-empty" style="display:none;">
+      No TV entries yet. Once you add titles with <strong>type: "tv"</strong> to your catalog or future auto-pull data,
+      they’ll show up here with the same TMDB poster system.
+    </div>
   </div>
 
   <script>
-    const shows = CATALOG.filter(item => item.type === "series");
-    document.getElementById("tv-grid").innerHTML = shows.map(item => `
-      <a class="card" href="watch.html?id=${item.id}">
-        <img src="${item.image}" alt="${item.title}">
-        <div class="card-body">
-          <div class="card-title">${item.title}</div>
-          <div class="meta">${item.year} • ${item.duration} • ${item.rating}</div>
-        </div>
-      </a>
-    `).join("");
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    function createCard(item, posterUrl) {
+      const yearText = item.year ? item.year : "Unknown year";
+      const typeText = item.type ? item.type : "Title";
+      const safeTitle = escapeHtml(item.title);
+      const safeId = escapeHtml(item.id);
+      const safeImage = escapeHtml(posterUrl || "");
+      const safeDuration = escapeHtml(item.duration || "Series");
+      const safeRating = escapeHtml(item.rating || "NR");
+
+      return `
+        <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
+          <div class="poster-wrap">
+            ${
+              safeImage
+                ? `<img
+                    class="poster"
+                    src="${safeImage}"
+                    alt="${safeTitle}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  >`
+                : ""
+            }
+            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
+              <div class="poster-fallback-title">${safeTitle}</div>
+              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
+            </div>
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">${safeTitle}</div>
+            <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+          </div>
+        </a>
+      `;
+    }
+
+    async function renderTV() {
+      const grid = document.getElementById("tv-grid");
+      const empty = document.getElementById("tv-empty");
+
+      let posters = {};
+      try {
+        const res = await fetch("posters.json");
+        posters = await res.json();
+      } catch (err) {
+        console.warn("Could not load posters.json", err);
+      }
+
+      const tv = (Array.isArray(CATALOG) ? CATALOG : []).filter(item => item.type === "tv");
+
+      if (!tv.length) {
+        grid.innerHTML = "";
+        empty.style.display = "block";
+        return;
+      }
+
+      grid.innerHTML = tv.map(item => createCard(item, posters[item.id] || null)).join("");
+    }
+
+    renderTV();
   </script>
 </body>
 </html>
