@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Streaming Site</title>
+  <title>Plueto TV</title>
 
   <style>
     *{
@@ -21,6 +21,69 @@
     a{
       color:white;
       text-decoration:none;
+    }
+
+    /* INTRO SPLASH */
+    .intro{
+      position:fixed;
+      inset:0;
+      background:black;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      animation:introFadeOut 0.9s ease 2.4s forwards;
+    }
+
+    .intro-logo{
+      font-size:64px;
+      font-weight:900;
+      letter-spacing:3px;
+      color:#e50914;
+      transform:scale(.7);
+      opacity:0;
+      animation:introPop 1.3s ease forwards;
+      text-shadow:0 0 18px rgba(229,9,20,.45);
+    }
+
+    @keyframes introPop{
+      0%{
+        transform:scale(.5);
+        opacity:0;
+        letter-spacing:10px;
+        filter:blur(10px);
+      }
+      55%{
+        transform:scale(1.08);
+        opacity:1;
+        letter-spacing:4px;
+        filter:blur(0);
+      }
+      100%{
+        transform:scale(1);
+        opacity:1;
+        letter-spacing:3px;
+        filter:blur(0);
+      }
+    }
+
+    @keyframes introFadeOut{
+      to{
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+      }
+    }
+
+    .site-shell{
+      opacity:0;
+      animation:siteFadeIn .7s ease 2.6s forwards;
+    }
+
+    @keyframes siteFadeIn{
+      to{
+        opacity:1;
+      }
     }
 
     .navbar{
@@ -320,186 +383,197 @@
         min-width:180px;
         height:102px;
       }
+
+      .intro-logo{
+        font-size:42px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="navbar">
-    <div class="nav-left">
-      <div class="logo">STREAMVAULT</div>
-      <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Movies</a>
-        <a href="#">TV Shows</a>
-        <a href="#">New</a>
-        <a href="#">My List</a>
-      </div>
-    </div>
-
-    <input
-      type="text"
-      id="searchInput"
-      class="search-box"
-      placeholder="Search titles..."
-    />
+  <div class="intro" id="intro">
+    <div class="intro-logo">PLUETO TV</div>
   </div>
 
-  <section class="hero">
-    <video autoplay muted loop playsinline>
-      <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-    </video>
+  <div class="site-shell">
 
-    <div class="hero-content">
-      <h1>Featured Show</h1>
-      <p>
-        A streaming-style homepage with hover previews, search, arrows, and a real watch page.
-        You can swap all the placeholder titles and videos later.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="hero-btn play" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
-          ▶ Play
-        </a>
-        <a class="hero-btn info" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
-          More Info
-        </a>
+    <div class="navbar">
+      <div class="nav-left">
+        <div class="logo">PLUETO TV</div>
+        <div class="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Movies</a>
+          <a href="#">TV Shows</a>
+          <a href="#">New</a>
+          <a href="#">My List</a>
+        </div>
       </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        class="search-box"
+        placeholder="Search titles..."
+      />
     </div>
-  </section>
 
-  <main class="content">
+    <section class="hero">
+      <video autoplay muted loop playsinline>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+      </video>
 
-    <section class="row" data-row-title="Trending Now">
-      <h2>Trending Now</h2>
-      <div class="row-wrap">
-        <button class="row-arrow left" type="button">‹</button>
-        <div class="row-posters">
+      <div class="hero-content">
+        <h1>Featured Show</h1>
+        <p>
+          A streaming-style homepage with hover previews, search, arrows, and a clean intro splash.
+          You can swap all the placeholder titles and videos later.
+        </p>
 
-          <a class="poster" data-title="Midnight Run" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run&desc=A%20late-night%20thriller%20placeholder%20page%20for%20your%20site.">
-            <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80" alt="Midnight Run">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Midnight Run</div>
+        <div class="hero-buttons">
+          <a class="hero-btn play" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
+            ▶ Play
           </a>
-
-          <a class="poster" data-title="Dark City" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City&desc=A%20dark%20city%20crime%20story%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Dark City">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Dark City</div>
+          <a class="hero-btn info" href="watch.html?video=jNQXAC9IVRw&title=Featured%20Show&desc=A%20featured%20show%20spotlight%20for%20your%20homepage.">
+            More Info
           </a>
-
-          <a class="poster" data-title="Neon Heat" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat&desc=A%20bright%20nightlife%20drama%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="Neon Heat">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Neon Heat</div>
-          </a>
-
-          <a class="poster" data-title="Late Shift" href="watch.html?video=jNQXAC9IVRw&title=Late%20Shift&desc=A%20moody%20late-shift%20mystery%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80" alt="Late Shift">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Late Shift</div>
-          </a>
-
         </div>
-        <button class="row-arrow right" type="button">›</button>
       </div>
     </section>
 
-    <section class="row" data-row-title="Popular Shows">
-      <h2>Popular Shows</h2>
-      <div class="row-wrap">
-        <button class="row-arrow left" type="button">‹</button>
-        <div class="row-posters">
+    <main class="content">
 
-          <a class="poster" data-title="Cold Signal" href="watch.html?video=jNQXAC9IVRw&title=Cold%20Signal&desc=A%20cold-case%20style%20show%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Cold Signal">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Cold Signal</div>
-          </a>
+      <section class="row" data-row-title="Trending Now">
+        <h2>Trending Now</h2>
+        <div class="row-wrap">
+          <button class="row-arrow left" type="button">‹</button>
+          <div class="row-posters">
 
-          <a class="poster" data-title="Red Harbor" href="watch.html?video=jNQXAC9IVRw&title=Red%20Harbor&desc=A%20harbor-town%20crime%20story%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80" alt="Red Harbor">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Red Harbor</div>
-          </a>
+            <a class="poster" data-title="Midnight Run" href="watch.html?video=jNQXAC9IVRw&title=Midnight%20Run&desc=A%20late-night%20thriller%20placeholder%20page%20for%20your%20site.">
+              <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?auto=format&fit=crop&w=900&q=80" alt="Midnight Run">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Midnight Run</div>
+            </a>
 
-          <a class="poster" data-title="Static Nights" href="watch.html?video=jNQXAC9IVRw&title=Static%20Nights&desc=A%20late-night%20broadcast%20style%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="Static Nights">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Static Nights</div>
-          </a>
+            <a class="poster" data-title="Dark City" href="watch.html?video=dQw4w9WgXcQ&title=Dark%20City&desc=A%20dark%20city%20crime%20story%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=900&q=80" alt="Dark City">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Dark City</div>
+            </a>
 
-          <a class="poster" data-title="Afterlight" href="watch.html?video=jNQXAC9IVRw&title=Afterlight&desc=A%20clean%20sci-fi%20placeholder%20page%20for%20your%20site.">
-            <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80" alt="Afterlight">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Afterlight</div>
-          </a>
+            <a class="poster" data-title="Neon Heat" href="watch.html?video=ysz5S6PUM-U&title=Neon%20Heat&desc=A%20bright%20nightlife%20drama%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=900&q=80" alt="Neon Heat">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Neon Heat</div>
+            </a>
 
+            <a class="poster" data-title="Late Shift" href="watch.html?video=jNQXAC9IVRw&title=Late%20Shift&desc=A%20moody%20late-shift%20mystery%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=900&q=80" alt="Late Shift">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Late Shift</div>
+            </a>
+
+          </div>
+          <button class="row-arrow right" type="button">›</button>
         </div>
-        <button class="row-arrow right" type="button">›</button>
-      </div>
-    </section>
+      </section>
 
-    <section class="row" data-row-title="Action & Crime">
-      <h2>Action & Crime</h2>
-      <div class="row-wrap">
-        <button class="row-arrow left" type="button">‹</button>
-        <div class="row-posters">
+      <section class="row" data-row-title="Popular Shows">
+        <h2>Popular Shows</h2>
+        <div class="row-wrap">
+          <button class="row-arrow left" type="button">‹</button>
+          <div class="row-posters">
 
-          <a class="poster" data-title="Blackout" href="watch.html?video=jNQXAC9IVRw&title=Blackout&desc=A%20gritty%20action%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=900&q=80" alt="Blackout">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Blackout</div>
-          </a>
+            <a class="poster" data-title="Cold Signal" href="watch.html?video=jNQXAC9IVRw&title=Cold%20Signal&desc=A%20cold-case%20style%20show%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Cold Signal">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Cold Signal</div>
+            </a>
 
-          <a class="poster" data-title="No Witness" href="watch.html?video=jNQXAC9IVRw&title=No%20Witness&desc=A%20crime%20drama%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="No Witness">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">No Witness</div>
-          </a>
+            <a class="poster" data-title="Red Harbor" href="watch.html?video=jNQXAC9IVRw&title=Red%20Harbor&desc=A%20harbor-town%20crime%20story%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?auto=format&fit=crop&w=900&q=80" alt="Red Harbor">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Red Harbor</div>
+            </a>
 
-          <a class="poster" data-title="Street Theory" href="watch.html?video=jNQXAC9IVRw&title=Street%20Theory&desc=A%20street-level%20thriller%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="Street Theory">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Street Theory</div>
-          </a>
+            <a class="poster" data-title="Static Nights" href="watch.html?video=jNQXAC9IVRw&title=Static%20Nights&desc=A%20late-night%20broadcast%20style%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=900&q=80" alt="Static Nights">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Static Nights</div>
+            </a>
 
-          <a class="poster" data-title="Lockstep" href="watch.html?video=jNQXAC9IVRw&title=Lockstep&desc=A%20high-pressure%20crime%20placeholder%20page.">
-            <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=900&q=80" alt="Lockstep">
-            <video muted loop playsinline>
-              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
-            </video>
-            <div class="poster-title">Lockstep</div>
-          </a>
+            <a class="poster" data-title="Afterlight" href="watch.html?video=jNQXAC9IVRw&title=Afterlight&desc=A%20clean%20sci-fi%20placeholder%20page%20for%20your%20site.">
+              <img src="https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?auto=format&fit=crop&w=900&q=80" alt="Afterlight">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Afterlight</div>
+            </a>
 
+          </div>
+          <button class="row-arrow right" type="button">›</button>
         </div>
-        <button class="row-arrow right" type="button">›</button>
-      </div>
-    </section>
+      </section>
 
-  </main>
+      <section class="row" data-row-title="Action & Crime">
+        <h2>Action & Crime</h2>
+        <div class="row-wrap">
+          <button class="row-arrow left" type="button">‹</button>
+          <div class="row-posters">
+
+            <a class="poster" data-title="Blackout" href="watch.html?video=jNQXAC9IVRw&title=Blackout&desc=A%20gritty%20action%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=900&q=80" alt="Blackout">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Blackout</div>
+            </a>
+
+            <a class="poster" data-title="No Witness" href="watch.html?video=jNQXAC9IVRw&title=No%20Witness&desc=A%20crime%20drama%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=900&q=80" alt="No Witness">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">No Witness</div>
+            </a>
+
+            <a class="poster" data-title="Street Theory" href="watch.html?video=jNQXAC9IVRw&title=Street%20Theory&desc=A%20street-level%20thriller%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=900&q=80" alt="Street Theory">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Street Theory</div>
+            </a>
+
+            <a class="poster" data-title="Lockstep" href="watch.html?video=jNQXAC9IVRw&title=Lockstep&desc=A%20high-pressure%20crime%20placeholder%20page.">
+              <img src="https://images.unsplash.com/photo-1499364615650-ec38552f4f34?auto=format&fit=crop&w=900&q=80" alt="Lockstep">
+              <video muted loop playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              </video>
+              <div class="poster-title">Lockstep</div>
+            </a>
+
+          </div>
+          <button class="row-arrow right" type="button">›</button>
+        </div>
+      </section>
+
+    </main>
+  </div>
 
   <script>
     const posters = document.querySelectorAll(".poster");
