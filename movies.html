@@ -1,142 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movies • Plueto TV</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies • Plueto TV</title>
+  <script src="catalog.js"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<script src="catalog.js"></script>
+    body {
+      background: #141414;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-<style>
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
 
-body{
-background:#141414;
-color:white;
-font-family:Arial;
-margin:0;
-}
+    .navbar {
+      padding: 22px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #111;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
 
-.navbar{
-padding:22px 32px;
-display:flex;
-justify-content:space-between;
-background:#111;
-}
+    .logo {
+      font-size: 24px;
+      font-weight: 700;
+      color: #e50914;
+    }
 
-.logo{
-font-size:24px;
-font-weight:700;
-color:#e50914;
-}
+    .nav-links {
+      display: flex;
+      gap: 18px;
+    }
 
-.page{
-padding:30px;
-}
+    .page {
+      padding: 28px 32px 50px;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
-gap:22px;
-}
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
 
-.poster{
-aspect-ratio:2/3;
-width:100%;
-border-radius:14px;
-overflow:hidden;
-background:#222;
-position:relative;
-}
+    .sub {
+      color: #bbb;
+      margin-bottom: 26px;
+    }
 
-.poster img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 22px;
+    }
 
-.poster-fallback{
-display:none;
-position:absolute;
-top:0;
-left:0;
-right:0;
-bottom:0;
-padding:16px;
-background:
-linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,.2)),
-linear-gradient(135deg,#1a1a1a,#2d2d2d);
-display:flex;
-flex-direction:column;
-justify-content:flex-end;
-}
+    .card {
+      display: block;
+      transition: transform 0.18s ease;
+    }
 
-.title{
-margin-top:8px;
-font-weight:700;
-}
+    .card:hover {
+      transform: translateY(-4px);
+    }
 
-.meta{
-color:#bbb;
-font-size:13px;
-}
+    .poster-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 2 / 3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #1b1b1b;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    }
 
-</style>
+    .poster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background: #111;
+    }
+
+    .poster-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 18px;
+      background:
+        linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.18)),
+        linear-gradient(135deg, #1a1a1a, #2b2b2b);
+    }
+
+    .poster-fallback-title {
+      font-size: 1.02rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .poster-fallback-meta {
+      font-size: 0.82rem;
+      color: #d0d0d0;
+      line-height: 1.35;
+    }
+
+    .card-body {
+      padding: 12px 4px 0;
+    }
+
+    .card-title {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 0.98rem;
+      line-height: 1.25;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: #bbb;
+      line-height: 1.4;
+    }
+
+    .loading {
+      color: #bbb;
+      font-size: 16px;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="navbar">
+    <div class="logo">PLUETO TV</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">New</a>
+    </div>
+  </div>
 
-<div class="navbar">
-<div class="logo">PLUETO TV</div>
-</div>
+  <div class="page">
+    <h1>Movies</h1>
+    <div class="sub">Feature films in your catalog.</div>
+    <div class="grid" id="movie-grid">
+      <div class="loading">Loading posters...</div>
+    </div>
+  </div>
 
-<div class="page">
+  <script>
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
 
-<h1>Movies</h1>
+    function createMovieCard(item, posterUrl) {
+      const yearText = item.year ? item.year : "Unknown year";
+      const typeText = item.type ? item.type : "Title";
+      const safeTitle = escapeHtml(item.title);
+      const safeId = escapeHtml(item.id);
+      const safeImage = escapeHtml(posterUrl || "");
+      const safeDuration = escapeHtml(item.duration || "Full Movie");
+      const safeRating = escapeHtml(item.rating || "NR");
 
-<div class="grid" id="grid"></div>
+      return `
+        <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
+          <div class="poster-wrap">
+            ${
+              safeImage
+                ? `<img
+                    class="poster"
+                    src="${safeImage}"
+                    alt="${safeTitle}"
+                    loading="lazy"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  >`
+                : ""
+            }
 
-</div>
+            <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
+              <div class="poster-fallback-title">${safeTitle}</div>
+              <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
+            </div>
+          </div>
 
-<script>
+          <div class="card-body">
+            <div class="card-title">${safeTitle}</div>
+            <div class="meta">${yearText} • ${safeDuration} • ${safeRating}</div>
+          </div>
+        </a>
+      `;
+    }
 
-function card(item){
+    async function renderMovies() {
+      const grid = document.getElementById("movie-grid");
+      const movies = CATALOG.filter(item => item.type === "movie");
 
-return `
-<a href="watch.html?id=${item.id}">
+      let posters = {};
+      try {
+        const res = await fetch("posters.json");
+        posters = await res.json();
+      } catch (err) {
+        console.warn("Could not load posters.json", err);
+      }
 
-<div class="poster">
+      grid.innerHTML = movies
+        .map(item => createMovieCard(item, posters[item.id] || null))
+        .join("");
+    }
 
-<img src="${item.image}"
-onerror="
-if(this.dataset.fallback!='1'){
-this.dataset.fallback='1';
-this.src='${item.fallbackImage}';
-}else{
-this.style.display='none';
-this.nextElementSibling.style.display='flex';
-}
-">
-
-<div class="poster-fallback">
-<div>${item.title}</div>
-<div style="font-size:12px;color:#bbb">${item.year}</div>
-</div>
-
-</div>
-
-<div class="title">${item.title}</div>
-<div class="meta">${item.year} • ${item.duration}</div>
-
-</a>
-`
-
-}
-
-const movies = CATALOG.filter(x=>x.type==="movie")
-
-document.getElementById("grid").innerHTML = movies.map(card).join("")
-
-</script>
-
+    renderMovies();
+  </script>
 </body>
 </html>
