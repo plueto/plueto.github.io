@@ -86,7 +86,7 @@
       border-radius:26px;
       transform:translateY(-50%) scale(1.04);
       opacity:.24;
-      filter:blur(0px) saturate(1.1);
+      filter:saturate(1.1);
       box-shadow:0 30px 100px rgba(0,0,0,.45);
       animation:heroFloat 16s ease-in-out infinite alternate;
     }
@@ -392,12 +392,17 @@
       return JSON.parse(localStorage.getItem("pluetoMyList") || "[]");
     }
 
-    function createCard(item, posterUrl) {
+    function getPosterForItem(item, posters) {
+      return posters[item.id] || item.fallbackImage || null;
+    }
+
+    function createCard(item, posters) {
       const yearText = item.year ? item.year : "Unknown year";
       const typeText = item.type ? item.type : "Title";
       const safeTitle = escapeHtml(item.title);
       const safeId = escapeHtml(item.id);
-      const safeImage = escapeHtml(posterUrl || "");
+      const finalPoster = getPosterForItem(item, posters);
+      const safeImage = escapeHtml(finalPoster || "");
       const safeDuration = escapeHtml(item.duration || "Full Movie");
       const safeRating = escapeHtml(item.rating || "NR");
 
@@ -436,10 +441,10 @@
         row.innerHTML = `<div class="loading">Nothing here yet.</div>`;
         return;
       }
-      row.innerHTML = items.map(item => createCard(item, posters[item.id] || null)).join("");
+      row.innerHTML = items.map(item => createCard(item, posters)).join("");
     }
 
-    function renderHero(item, posterUrl) {
+    function renderHero(item, posters) {
       const labels = [
         "PLUETO PRESENTS",
         "SCI-FI SHOWCASE",
@@ -454,8 +459,10 @@
         item.row === "Animation" ? "ANIMATION BLOCK" :
         labels[Math.floor(Math.random() * labels.length)];
 
-      document.getElementById("hero-bg").innerHTML = posterUrl
-        ? `<img class="hero-poster" src="${posterUrl}" alt="${escapeHtml(item.title)}">`
+      const heroPoster = getPosterForItem(item, posters);
+
+      document.getElementById("hero-bg").innerHTML = heroPoster
+        ? `<img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">`
         : "";
 
       document.getElementById("hero-content").innerHTML = `
@@ -495,7 +502,7 @@
         heroPool[0];
 
       if (heroItem) {
-        renderHero(heroItem, posters[heroItem.id] || null);
+        renderHero(heroItem, posters);
       }
 
       renderRow("featured-row", movies.slice(0, 8), posters);
