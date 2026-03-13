@@ -6,134 +6,187 @@
   <title>Movies • Plueto TV</title>
   <script src="catalog.js"></script>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      background: #141414;
-      color: #fff;
-      font-family: Arial, Helvetica, sans-serif;
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --red:#ff4b5c;
     }
 
-    a {
-      text-decoration: none;
-      color: #fff;
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
     }
 
-    .navbar {
-      padding: 22px 32px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #111;
-      position: sticky;
-      top: 0;
-      z-index: 20;
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: 700;
-      color: #e50914;
+    .navbar{
+      padding:20px 32px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(10,10,14,.82);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      position:sticky;
+      top:0;
+      z-index:40;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 18px;
+    .logo{
+      font-size:24px;
+      font-weight:800;
+      color:var(--purple);
+      text-shadow:0 0 24px rgba(122,92,255,.22);
     }
 
-    .page {
-      padding: 28px 32px 50px;
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
     }
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+    .page{
+      padding:28px 32px 50px;
     }
 
-    .sub {
-      color: #bbb;
-      margin-bottom: 26px;
+    h1{
+      font-size:42px;
+      margin-bottom:10px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
-      gap: 22px;
+    .sub{
+      color:var(--muted);
+      margin-bottom:26px;
+      max-width:760px;
+      line-height:1.5;
     }
 
-    .card {
-      display: block;
-      transition: transform 0.18s ease;
+    .signal-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d7d7e3;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
+    .signal-tag::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      box-shadow:0 0 14px rgba(122,92,255,.45);
     }
 
-    .poster-wrap {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 2 / 3;
-      border-radius: 16px;
-      overflow: hidden;
-      background: #1b1b1b;
-      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+      gap:22px;
     }
 
-    .poster {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      background: #111;
+    .card{
+      display:block;
+      transition:transform .18s ease;
     }
 
-    .poster-fallback {
-      width: 100%;
-      height: 100%;
-      display: none;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 18px;
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .poster-wrap{
+      position:relative;
+      width:100%;
+      aspect-ratio:2/3;
+      border-radius:18px;
+      overflow:hidden;
+      background:var(--panel);
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+    }
+
+    .poster{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center;
+      display:block;
+      background:#111;
+    }
+
+    .poster-fallback{
+      width:100%;
+      height:100%;
+      display:none;
+      flex-direction:column;
+      justify-content:flex-end;
+      padding:18px;
       background:
-        linear-gradient(to top, rgba(0,0,0,0.92), rgba(0,0,0,0.18)),
-        linear-gradient(135deg, #1a1a1a, #2b2b2b);
+        linear-gradient(to top, rgba(0,0,0,.92), rgba(0,0,0,.18)),
+        linear-gradient(135deg, #1b1b24, #29293b);
     }
 
-    .poster-fallback-title {
-      font-size: 1.02rem;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 8px;
+    .poster-fallback-title{
+      font-size:1rem;
+      font-weight:800;
+      line-height:1.2;
+      margin-bottom:8px;
     }
 
-    .poster-fallback-meta {
-      font-size: 0.82rem;
-      color: #d0d0d0;
-      line-height: 1.35;
+    .poster-fallback-meta{
+      font-size:.82rem;
+      color:#d0d0d8;
+      line-height:1.35;
     }
 
-    .card-body {
-      padding: 12px 4px 0;
+    .card-body{
+      padding:10px 4px 0;
     }
 
-    .card-title {
-      font-weight: 700;
-      margin-bottom: 6px;
-      font-size: 0.98rem;
-      line-height: 1.25;
+    .card-title{
+      font-weight:800;
+      margin-bottom:5px;
+      font-size:.96rem;
+      line-height:1.25;
     }
 
-    .meta {
-      font-size: 13px;
-      color: #bbb;
-      line-height: 1.4;
+    .meta{
+      font-size:13px;
+      color:var(--muted);
+      line-height:1.4;
     }
 
-    .loading {
-      color: #bbb;
-      font-size: 16px;
+    .empty-state{
+      margin-top:18px;
+      padding:24px;
+      border-radius:18px;
+      background:linear-gradient(135deg, rgba(122,92,255,.08), rgba(58,168,255,.06));
+      border:1px solid rgba(255,255,255,.06);
+      color:#d7d7e3;
+      line-height:1.6;
+    }
+
+    .loading{
+      color:var(--muted);
+      font-size:15px;
+    }
+
+    @media (max-width:800px){
+      .navbar,.page{padding-left:18px;padding-right:18px}
+      .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+      h1{font-size:34px}
     }
   </style>
 </head>
@@ -144,15 +197,23 @@
       <a href="index.html">Home</a>
       <a href="movies.html">Movies</a>
       <a href="tv.html">TV Shows</a>
-      <a href="new.html">New</a>
+      <a href="new.html">Recently Added</a>
     </div>
   </div>
 
   <div class="page">
+    <div class="signal-tag">Feature Queue</div>
     <h1>Movies</h1>
-    <div class="sub">Feature films in your catalog.</div>
-    <div class="grid" id="movie-grid">
-      <div class="loading">Loading posters...</div>
+    <div class="sub">
+      Feature films in your catalog live here. Clean, simple, and easy to browse.
+    </div>
+
+    <div class="grid" id="movies-grid">
+      <div class="loading">Loading...</div>
+    </div>
+
+    <div class="empty-state" id="movies-empty" style="display:none;">
+      No movie entries yet. Once you add titles with <strong>type: "movie"</strong> to your catalog, they’ll appear here automatically.
     </div>
   </div>
 
@@ -166,13 +227,13 @@
         .replaceAll("'", "&#39;");
     }
 
-    function createMovieCard(item, posterUrl) {
+    function createCard(item, posterUrl) {
       const yearText = item.year ? item.year : "Unknown year";
       const typeText = item.type ? item.type : "Title";
       const safeTitle = escapeHtml(item.title);
       const safeId = escapeHtml(item.id);
-      const safeImage = escapeHtml(posterUrl || "");
-      const safeDuration = escapeHtml(item.duration || "Full Movie");
+      const safeImage = escapeHtml(posterUrl || item.image || item.fallbackImage || "");
+      const safeDuration = escapeHtml(item.duration || "Runtime unavailable");
       const safeRating = escapeHtml(item.rating || "NR");
 
       return `
@@ -189,7 +250,6 @@
                   >`
                 : ""
             }
-
             <div class="poster-fallback" style="${safeImage ? "" : "display:flex;"}">
               <div class="poster-fallback-title">${safeTitle}</div>
               <div class="poster-fallback-meta">${yearText} • ${typeText}<br>${safeId}</div>
@@ -205,8 +265,8 @@
     }
 
     async function renderMovies() {
-      const grid = document.getElementById("movie-grid");
-      const movies = CATALOG.filter(item => item.type === "movie");
+      const grid = document.getElementById("movies-grid");
+      const empty = document.getElementById("movies-empty");
 
       let posters = {};
       try {
@@ -216,8 +276,17 @@
         console.warn("Could not load posters.json", err);
       }
 
+      const movies = (Array.isArray(window.CATALOG) ? window.CATALOG : [])
+        .filter(item => item.type === "movie");
+
+      if (!movies.length) {
+        grid.innerHTML = "";
+        empty.style.display = "block";
+        return;
+      }
+
       grid.innerHTML = movies
-        .map(item => createMovieCard(item, posters[item.id] || null))
+        .map(item => createCard(item, posters[item.id] || null))
         .join("");
     }
 
