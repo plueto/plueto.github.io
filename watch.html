@@ -4,126 +4,165 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Watch • Plueto TV</title>
-  <script src="catalog.js"></script>
+  <script src="catalog.js" defer></script>
   <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{background:#141414;color:#fff;font-family:Arial,Helvetica,sans-serif}
-    a{text-decoration:none;color:#fff}
-    .topbar{padding:22px 32px}
-    .back{opacity:.9;font-size:15px}
-    .back:hover{opacity:1}
-    .container{max-width:1150px;margin:0 auto;padding:0 32px 50px}
-    .title{font-size:40px;margin-bottom:14px}
-    .meta{color:#bbb;margin-bottom:18px;font-size:14px;display:flex;gap:12px;flex-wrap:wrap}
-    .pill{background:#1f1f1f;padding:6px 10px;border-radius:999px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
-    .action-btn{border:none;background:#2a2a2a;color:#fff;padding:10px 16px;border-radius:8px;cursor:pointer;font-weight:700}
-    .action-btn:hover{background:#3a3a3a}
-    .player-wrap{width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden;margin-bottom:22px}
-    .player-wrap iframe{width:100%;height:100%;border:none}
-    .desc{color:#ddd;line-height:1.7;max-width:850px;margin-bottom:34px;font-size:16px}
-    .section-title{font-size:24px;margin-bottom:14px}
-    .episode-list{display:grid;gap:12px;margin-bottom:36px}
-    .episode{background:#1f1f1f;border-radius:10px;padding:16px}
-    .episode strong{display:block;margin-bottom:6px}
-    .rec-row{display:flex;gap:14px;overflow-x:auto;padding-bottom:10px;scrollbar-width:none}
-    .rec-row::-webkit-scrollbar{display:none}
-    .rec-card{min-width:230px;background:#1f1f1f;border-radius:10px;overflow:hidden;color:#fff;display:block;flex-shrink:0}
-    .rec-card img{width:100%;height:130px;object-fit:cover;display:block}
-    .rec-card-title{padding:12px;font-weight:700}
+    body {
+      margin: 0;
+      background: #0b0b0f;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .player-shell {
+      background: #111;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,.45);
+    }
+
+    .player-shell iframe {
+      width: 100%;
+      height: 70vh;
+      min-height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    .meta {
+      margin-top: 20px;
+    }
+
+    .title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .submeta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #bdbdbd;
+      margin-bottom: 14px;
+    }
+
+    .pill {
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(255,255,255,.05);
+    }
+
+    .desc {
+      max-width: 800px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .actions {
+      margin-top: 18px;
+      display: flex;
+      gap: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-main {
+      background: white;
+      color: black;
+    }
+
+    .btn-alt {
+      background: rgba(255,255,255,.08);
+      color: white;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+
+    .error {
+      padding: 32px;
+      background: #161616;
+      border-radius: 18px;
+      color: #ddd;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">
-    <a class="back" href="index.html">← Back to browse</a>
-  </div>
-
-  <div class="container">
-    <div class="title" id="video-title">Now Playing</div>
-    <div class="meta" id="meta-row"></div>
-
-    <div class="actions">
-      <button class="action-btn" id="listBtn" type="button">+ My List</button>
-      <a class="action-btn" href="index.html">Browse More</a>
+  <div class="wrap">
+    <div class="topbar">
+      <a href="movies.html">← Back to browse</a>
+      <a href="index.html">Home</a>
     </div>
 
-    <div class="player-wrap">
-      <iframe id="video-frame" src="" allowfullscreen allow="autoplay; encrypted-media; picture-in-picture"></iframe>
-    </div>
-
-    <div class="desc" id="video-desc"></div>
-
-    <div class="section-title">Episodes</div>
-    <div class="episode-list" id="episode-list"></div>
-
-    <div class="section-title">More Like This</div>
-    <div class="rec-row" id="rec-row"></div>
+    <div id="watch-app"></div>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
-    const item = CATALOG.find(x => x.id === id) || CATALOG[0];
+    const item = CATALOG.find(movie => movie.id === id);
+    const app = document.getElementById("watch-app");
 
-    document.getElementById("video-title").textContent = item.title;
-    document.getElementById("video-frame").src = "https://www.youtube.com/embed/" + item.youtubeId;
-    document.getElementById("video-desc").textContent = item.description;
-
-    document.getElementById("meta-row").innerHTML = `
-      <span class="pill">${item.type === "movie" ? "Movie" : "Series"}</span>
-      <span class="pill">${item.year}</span>
-      <span class="pill">${item.duration}</span>
-      <span class="pill">${item.rating}</span>
-    `;
-
-    const episodeList = document.getElementById("episode-list");
-    if (item.type === "series") {
-      episodeList.innerHTML = `
-        <div class="episode"><strong>Episode 1 — Pilot</strong> A sample opening episode for ${item.title}.</div>
-        <div class="episode"><strong>Episode 2 — Night Drive</strong> Placeholder episode text to make the page feel complete.</div>
-        <div class="episode"><strong>Episode 3 — Loose Ends</strong> More sample long-form structure for your streaming site.</div>
+    if (!item) {
+      app.innerHTML = `
+        <div class="error">
+          <h2>Movie not found</h2>
+          <p>That title is not in the catalog yet.</p>
+        </div>
       `;
     } else {
-      episodeList.innerHTML = `
-        <div class="episode"><strong>Feature Presentation</strong> This title is currently set up like a movie page, with room for extras or bonus clips later.</div>
+      app.innerHTML = `
+        <div class="player-shell">
+          <iframe
+            src="https://archive.org/embed/${item.id}"
+            allowfullscreen
+            webkitallowfullscreen="true"
+            mozallowfullscreen="true">
+          </iframe>
+        </div>
+
+        <div class="meta">
+          <div class="title">${item.title}</div>
+
+          <div class="submeta">
+            <span class="pill">${item.year}</span>
+            <span class="pill">${item.rating}</span>
+            <span class="pill">${item.duration}</span>
+            <span class="pill">${item.row}</span>
+          </div>
+
+          <div class="desc">${item.description}</div>
+
+          <div class="actions">
+            <button class="btn-main" onclick="location.reload()">⟳ Reload</button>
+            <button class="btn-alt" onclick="toggleMyList('${item.id}')">+ My List</button>
+          </div>
+        </div>
       `;
     }
-
-    const recommendations = CATALOG.filter(x => x.id !== item.id).slice(0, 6);
-    document.getElementById("rec-row").innerHTML = recommendations.map(rec => `
-      <a class="rec-card" href="watch.html?id=${rec.id}">
-        <img src="${rec.image}" alt="${rec.title}">
-        <div class="rec-card-title">${rec.title}</div>
-      </a>
-    `).join("");
-
-    function getStoredIds(key) {
-      return JSON.parse(localStorage.getItem(key) || "[]");
-    }
-
-    function setStoredIds(key, value) {
-      localStorage.setItem(key, JSON.stringify(value));
-    }
-
-    function updateListBtn() {
-      const ids = getStoredIds("myList");
-      document.getElementById("listBtn").textContent =
-        ids.includes(item.id) ? "✓ In My List" : "+ My List";
-    }
-
-    document.getElementById("listBtn").addEventListener("click", () => {
-      const ids = getStoredIds("myList");
-      const updated = ids.includes(item.id)
-        ? ids.filter(x => x !== item.id)
-        : [item.id, ...ids];
-      setStoredIds("myList", updated);
-      updateListBtn();
-    });
-
-    const continueIds = getStoredIds("continueWatching").filter(x => x !== item.id);
-    setStoredIds("continueWatching", [item.id, ...continueIds].slice(0, 12));
-
-    updateListBtn();
   </script>
 </body>
 </html>
