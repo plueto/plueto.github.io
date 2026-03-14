@@ -2434,701 +2434,301 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e01-ANNIE%20AND%20THE%20BRASS%20COLLAR%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e01-ANNIE%20AND%20THE%20BRASS%20COLLAR%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e01-ANNIE%20AND%20THE%20BRASS%20COLLAR%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e02-ANNIE%20TRUSTS%20A%20CONVICT%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e02-ANNIE%20TRUSTS%20A%20CONVICT%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e02-ANNIE%20TRUSTS%20A%20CONVICT%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e03-GUNPLAY%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e03-GUNPLAY%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e03-GUNPLAY%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e04-DUDE%20STAGECOACH%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e04-DUDE%20STAGECOACH%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e04-DUDE%20STAGECOACH%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e05-AMBUSH%20CANYON%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e05-AMBUSH%20CANYON%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e05-AMBUSH%20CANYON%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e06-ANNIE%20CALLS%20HER%20SHOTS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e06-ANNIE%20CALLS%20HER%20SHOTS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e06-ANNIE%20CALLS%20HER%20SHOTS%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e08-ANNIE%20AND%20THE%20SILVER%20ACE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e08-ANNIE%20AND%20THE%20SILVER%20ACE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e08-ANNIE%20AND%20THE%20SILVER%20ACE%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e09-ANNIE%20FINDS%20STRANGE%20TREASURE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e09-ANNIE%20FINDS%20STRANGE%20TREASURE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e09-ANNIE%20FINDS%20STRANGE%20TREASURE%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e11-VALLEY%20OF%20THE%20SHADOWS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e11-VALLEY%20OF%20THE%20SHADOWS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e11-VALLEY%20OF%20THE%20SHADOWS%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e12-ANNIE%20AND%20THE%20LILY%20MAID%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e12-ANNIE%20AND%20THE%20LILY%20MAID%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e12-ANNIE%20AND%20THE%20LILY%20MAID%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e13-THE%20HARDROCK%20TRAIL%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e13-THE%20HARDROCK%20TRAIL%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e13-THE%20HARDROCK%20TRAIL%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e14-ANNIE%20GETS%20HER%20MAN%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e14-ANNIE%20GETS%20HER%20MAN%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e14-ANNIE%20GETS%20HER%20MAN%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e15-JUSTICE%20GUNS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e15-JUSTICE%20GUNS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e15-JUSTICE%20GUNS%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e16-ANNIE'S%20DESERT%20ADVENTURE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e16-ANNIE'S%20DESERT%20ADVENTURE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e16-ANNIE'S%20DESERT%20ADVENTURE%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e18-ANNIE%20AND%20THE%20TEXAS%20SANDMAN%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e18-ANNIE%20AND%20THE%20TEXAS%20SANDMAN%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e18-ANNIE%20AND%20THE%20TEXAS%20SANDMAN%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e19-ANNIE%20MEETS%20SOME%20TENDERFEET%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e19-ANNIE%20MEETS%20SOME%20TENDERFEET%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e19-ANNIE%20MEETS%20SOME%20TENDERFEET%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e21-BULL'S%20EYE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e21-BULL'S%20EYE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e21-BULL'S%20EYE%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e23-SHARPSHOOTING%20ANNIE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e23-SHARPSHOOTING%20ANNIE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e23-SHARPSHOOTING%20ANNIE%20%5B360p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e25-OUTLAW%20MESA%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e25-OUTLAW%20MESA%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s01e25-OUTLAW%20MESA%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e02-THE%20TOMBOY%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e02-THE%20TOMBOY%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e02-THE%20TOMBOY%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e04-ANNIE%20AND%20THE%20SIX%20O'%20SPADES%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e04-ANNIE%20AND%20THE%20SIX%20O'%20SPADES%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e04-ANNIE%20AND%20THE%20SIX%20O'%20SPADES%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e05-ESCAPE%20FROM%20DIABLO%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e05-ESCAPE%20FROM%20DIABLO%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e05-ESCAPE%20FROM%20DIABLO%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e06-THE%20IRON%20SMOKE-WAGON%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e06-THE%20IRON%20SMOKE-WAGON%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e06-THE%20IRON%20SMOKE-WAGON%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e07-ANNIE%20AND%20THE%20CHINESE%20PUZZLE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e07-ANNIE%20AND%20THE%20CHINESE%20PUZZLE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e07-ANNIE%20AND%20THE%20CHINESE%20PUZZLE%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e11-DEAD%20MAN'S%20BLUFF%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e11-DEAD%20MAN'S%20BLUFF%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e11-DEAD%20MAN'S%20BLUFF%20%5B360p%5D.mp4"
       },
       {
         "season": 2,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e20-POWDER%20ROCK%20STAMPEDE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e20-POWDER%20ROCK%20STAMPEDE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s02e20-POWDER%20ROCK%20STAMPEDE%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e01-SUNDOWN%20STAGE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e01-SUNDOWN%20STAGE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e01-SUNDOWN%20STAGE%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e02-JOKER%20ON%20HORSEBACK%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e02-JOKER%20ON%20HORSEBACK%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e02-JOKER%20ON%20HORSEBACK%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e03-A%20TALL%20TALE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e03-A%20TALL%20TALE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e03-A%20TALL%20TALE%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e04-ANNIE%20AND%20THE%20TWISTED%20TRAILS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e04-ANNIE%20AND%20THE%20TWISTED%20TRAILS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e04-ANNIE%20AND%20THE%20TWISTED%20TRAILS%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e06-ANNIE%20AND%20THE%20BICYCLE%20RIDERS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e06-ANNIE%20AND%20THE%20BICYCLE%20RIDERS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e06-ANNIE%20AND%20THE%20BICYCLE%20RIDERS%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e08-ANNIE%20AND%20THE%20FIRST%20PHONE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e08-ANNIE%20AND%20THE%20FIRST%20PHONE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e08-ANNIE%20AND%20THE%20FIRST%20PHONE%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e12-RENEGADE'S%20RETURN%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e12-RENEGADE'S%20RETURN%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e12-RENEGADE'S%20RETURN%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e14-ANNIE%20AND%20THE%20LEPRECHAUNS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e14-ANNIE%20AND%20THE%20LEPRECHAUNS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e14-ANNIE%20AND%20THE%20LEPRECHAUNS%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e15-DILEMMA%20AT%20DIABLO%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e15-DILEMMA%20AT%20DIABLO%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e15-DILEMMA%20AT%20DIABLO%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e16-OUTLAW%20BRAND%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e16-OUTLAW%20BRAND%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e16-OUTLAW%20BRAND%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e17-SHADOW%20AT%20SONOMA%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e17-SHADOW%20AT%20SONOMA%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e17-SHADOW%20AT%20SONOMA%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e18-WESTERN%20PRIVATEER%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e18-WESTERN%20PRIVATEER%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e18-WESTERN%20PRIVATEER%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e19-THE%20RECKLESS%20PRESS%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e19-THE%20RECKLESS%20PRESS%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e19-THE%20RECKLESS%20PRESS%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e20-FLINT%20AND%20STEEL%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e20-FLINT%20AND%20STEEL%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e20-FLINT%20AND%20STEEL%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e22-THE%20WACO%20KID%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e22-THE%20WACO%20KID%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e22-THE%20WACO%20KID%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e23-THE%20SAGA%20OF%20CLEMENT%20O'TOOLE%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e23-THE%20SAGA%20OF%20CLEMENT%20O'TOOLE%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e23-THE%20SAGA%20OF%20CLEMENT%20O'TOOLE%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e25-ANNIE%20RIDES%20THE%20NAVAJO%20TRAIL%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e25-ANNIE%20RIDES%20THE%20NAVAJO%20TRAIL%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e25-ANNIE%20RIDES%20THE%20NAVAJO%20TRAIL%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e26-ANNIE%20RINGS%20THE%20BELL%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e26-ANNIE%20RINGS%20THE%20BELL%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e26-ANNIE%20RINGS%20THE%20BELL%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e27-SANTA%20WEARS%20A%20GUN%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 27,
-        "title": "Episode 27",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e27-SANTA%20WEARS%20A%20GUN%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e27-SANTA%20WEARS%20A%20GUN%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e28-AMATEUR%20OUTLAW%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 28,
-        "title": "Episode 28",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e28-AMATEUR%20OUTLAW%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e28-AMATEUR%20OUTLAW%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20S03E30-TREASURE%20MAP%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 30,
-        "title": "Episode 30",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20S03E30-TREASURE%20MAP%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20S03E30-TREASURE%20MAP%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 33,
         "title": "Episode 33",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e33-DUDE'S%20DECISION%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 33,
-        "title": "Episode 33",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e33-DUDE'S%20DECISION%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e33-DUDE'S%20DECISION%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 34,
         "title": "Episode 34",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e34-THE%20DUTCH%20GUNMAKER%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 34,
-        "title": "Episode 34",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e34-THE%20DUTCH%20GUNMAKER%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e34-THE%20DUTCH%20GUNMAKER%20%5B360p%5D.mp4"
       },
       {
         "season": 3,
         "episode": 35,
         "title": "Episode 35",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e35-DESPERATE%20MEN%20%5B360p%5D.mp4",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 35,
-        "title": "Episode 35",
-        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e35-DESPERATE%20MEN%20%5B360p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/annieoakleys01/Annie%20Oakley%20s03e35-DESPERATE%20MEN%20%5B360p%5D.mp4"
       }
     ]
   },
@@ -3149,234 +2749,55 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E01.Welcome.to.the.Playground.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E01.Welcome.to.the.Playground.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E01.Welcome.to.the.Playground.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E02.Some.Mysteries.Are.Better.Left.Unsolved.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E02.Some.Mysteries.Are.Better.Left.Unsolved.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E02.Some.Mysteries.Are.Better.Left.Unsolved.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E03.the.Base.Violence.Necessary.for.Change.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E03.the.Base.Violence.Necessary.for.Change.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E03.the.Base.Violence.Necessary.for.Change.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E04.Happy.Progress.Day!.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E04.Happy.Progress.Day!.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E04.Happy.Progress.Day!.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E05.Everybody.Wants.to.Be.My.Enemy.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E05.Everybody.Wants.to.Be.My.Enemy.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E05.Everybody.Wants.to.Be.My.Enemy.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E06.When.These.Walls.Come.Tumbling.Down.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E06.When.These.Walls.Come.Tumbling.Down.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E06.When.These.Walls.Come.Tumbling.Down.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E07.The.Boy.Savior.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E07.The.Boy.Savior.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E07.The.Boy.Savior.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E08.Oil.and.Water.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E08.Oil.and.Water.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mp4",
-        "height": 480
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E08.Oil.and.Water.1080p.NF.WEB-DL.DDP5.1.HEVC.Homelander.mkv"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E09.The.Monster.You.Created.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv",
-        "height": 816
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E09.The.Monster.You.Created.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mp4",
-        "height": 480
-      }
-    ]
-  },
-  {
-    "id": "BloodSpell_Episode_1",
-    "title": "BloodSpell Episode 1",
-    "type": "tv",
-    "row": "Animation",
-    "year": 2006,
-    "duration": "Series",
-    "rating": "TV-G",
-    "description": "The Blooded are cursed to carry magic in their blood - when their blood is spilled, the magic comes out, whether to heal, summon or destroy. They are hunted by the Church of the Angels, whose Black Monks hunt them through the nights and...",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "",
-    "episodes": [
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Large.avi",
-        "height": 450
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Large.mov",
-        "height": 450
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Large.ogv",
-        "height": 304
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Large_512kb.mp4",
-        "height": 240
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Small.avi",
-        "height": 228
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Small.mov",
-        "height": 228
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Small.ogv",
-        "height": 304
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/BloodSpell_Episode_1/BloodSpell_Episode_1_Small_512kb.mp4",
-        "height": 240
-      }
-    ]
-  },
-  {
-    "id": "bliptv-20131013-074816-Baysbd-Episode1TheRooftop357",
-    "title": "Episode 1: The Rooftop",
-    "type": "tv",
-    "row": "Sci-Fi",
-    "year": "",
-    "duration": "Series",
-    "rating": "TV-G",
-    "description": "Set in a futuristic city, Aidan 5 chronicles the journey of one detective who must unravel the mystery behind the serial killings of his own clones.",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "",
-    "episodes": [
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357.mov",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357/bliptv-20131013-074816-Baysbd-Episode1TheRooftop357.ogv",
-        "height": 300
+        "src": "https://archive.org/download/arcane-season-1-60fps/%5B60FPS%5D.Arcane.S01E09.The.Monster.You.Created.1080p.NF.WEB-DL.DDP5.1.x265.Homelander.mkv"
       }
     ]
   },
@@ -3397,36 +2818,31 @@ window.CATALOG = [
         "season": 1,
         "episode": 0,
         "title": "Episode 0",
-        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20episode%200%20The%20Beginning_360p.mp4",
-        "height": 360
+        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20episode%200%20The%20Beginning_360p.mp4"
       },
       {
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%201%20LET%20THE%20GAMES%20BEGIN_360p.mp4",
-        "height": 360
+        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%201%20LET%20THE%20GAMES%20BEGIN_360p.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%202%20THERES%20SOMETHING%20ABOUT%20RINNE%20BYAKUYA%20feat%20PETER%20GRIFFIN_360p.mp4",
-        "height": 360
+        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%202%20THERES%20SOMETHING%20ABOUT%20RINNE%20BYAKUYA%20feat%20PETER%20GRIFFIN_360p.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-Euphoria%20Abridged%20Episode%203%20THIS%20IS%20NOT%20THE%20END%20OF%20THE%20SHOW%20YET_360p.mp4",
-        "height": 360
+        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-Euphoria%20Abridged%20Episode%203%20THIS%20IS%20NOT%20THE%20END%20OF%20THE%20SHOW%20YET_360p.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%204%20THE%20EXPLOSIVE%20LIVE%20ACTIONPACKED%20MARTIAL%20ARTS%20FINALE_360P.ia.mp4",
-        "height": 360
+        "src": "https://archive.org/download/euphoriaabridged/yt1s.com%20-%20Euphoria%20Abridged%20Episode%204%20THE%20EXPLOSIVE%20LIVE%20ACTIONPACKED%20MARTIAL%20ARTS%20FINALE_360P.ia.mp4"
       }
     ]
   },
@@ -3447,547 +2863,157 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x01%20-%20The%20Inheritance.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x01%20-%20The%20Inheritance.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x01%20-%20The%20Inheritance.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x01%20-%20The%20Inheritance.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x02%20-%20The%20Poison%20Pen.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x02%20-%20The%20Poison%20Pen.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x02%20-%20The%20Poison%20Pen.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x02%20-%20The%20Poison%20Pen.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x03%20-%20Cupids%20Quiver.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x03%20-%20Cupids%20Quiver.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x03%20-%20Cupids%20Quiver.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x03%20-%20Cupids%20Quiver.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x04%20-%20A%20Cup%20of%20Time.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x04%20-%20A%20Cup%20of%20Time.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x04%20-%20A%20Cup%20of%20Time.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x04%20-%20A%20Cup%20of%20Time.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x05%20-%20Helloween.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x05%20-%20Helloween.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x05%20-%20Helloween.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x05%20-%20Helloween.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x06%20-%20The%20Great%20Montarro.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x06%20-%20The%20Great%20Montarro.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x06%20-%20The%20Great%20Montarro.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x06%20-%20The%20Great%20Montarro.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x07%20-%20Dr.%20Jack.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x07%20-%20Dr.%20Jack.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x07%20-%20Dr.%20Jack.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x07%20-%20Dr.%20Jack.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x08%20-%20Shadow%20Boxer.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x08%20-%20Shadow%20Boxer.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x08%20-%20Shadow%20Boxer.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x08%20-%20Shadow%20Boxer.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x09%20-%20Root%20of%20All%20Evil.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x09%20-%20Root%20of%20All%20Evil.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x09%20-%20Root%20of%20All%20Evil.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x09%20-%20Root%20of%20All%20Evil.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x10%20-%20Tales%20of%20the%20Undead.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x10%20-%20Tales%20of%20the%20Undead.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x10%20-%20Tales%20of%20the%20Undead.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x10%20-%20Tales%20of%20the%20Undead.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x11%20-%20Scarecrow.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x11%20-%20Scarecrow.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x11%20-%20Scarecrow.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x11%20-%20Scarecrow.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x12%20-%20Faith%20Healer.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x12%20-%20Faith%20Healer.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x12%20-%20Faith%20Healer.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x12%20-%20Faith%20Healer.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x13%20-%20The%20Barons%20Bride.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x13%20-%20The%20Barons%20Bride.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x13%20-%20The%20Barons%20Bride.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x13%20-%20The%20Barons%20Bride.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x14%20-%20Bedazzled.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x14%20-%20Bedazzled.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x14%20-%20Bedazzled.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x14%20-%20Bedazzled.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x15%20-%20Vanitys%20Mirror.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x15%20-%20Vanitys%20Mirror.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x15%20-%20Vanitys%20Mirror.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x15%20-%20Vanitys%20Mirror.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x16%20-%20Tattoo.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x16%20-%20Tattoo.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x16%20-%20Tattoo.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x16%20-%20Tattoo.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x17%20-%20The%20Electrocutioner.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x17%20-%20The%20Electrocutioner.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x17%20-%20The%20Electrocutioner.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x17%20-%20The%20Electrocutioner.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x18%20-%20Brain%20Drain.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x18%20-%20Brain%20Drain.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x18%20-%20Brain%20Drain.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x18%20-%20Brain%20Drain.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x19%20-%20The%20Quilt%20of%20Hathor%20(1).avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x19%20-%20The%20Quilt%20of%20Hathor%20(1).mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x19%20-%20The%20Quilt%20of%20Hathor%20(1).ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x19%20-%20The%20Quilt%20of%20Hathor%20(1).mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x20%20-%20The%20Quilt%20of%20Hathor.%20The%20Awakening%20(2).avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x20%20-%20The%20Quilt%20of%20Hathor.%20The%20Awakening%20(2).mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x20%20-%20The%20Quilt%20of%20Hathor.%20The%20Awakening%20(2).ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x20%20-%20The%20Quilt%20of%20Hathor.%20The%20Awakening%20(2).mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x21%20-%20Double%20Exposure.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x21%20-%20Double%20Exposure.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x21%20-%20Double%20Exposure.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x21%20-%20Double%20Exposure.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x22%20-%20Pirates%20Promise.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x22%20-%20Pirates%20Promise.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x22%20-%20Pirates%20Promise.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x22%20-%20Pirates%20Promise.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x23%20-%20Badge%20of%20Honor.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x23%20-%20Badge%20of%20Honor.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x23%20-%20Badge%20of%20Honor.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x23%20-%20Badge%20of%20Honor.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x24%20-%20Pipe%20Dream.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x24%20-%20Pipe%20Dream.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x24%20-%20Pipe%20Dream.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x24%20-%20Pipe%20Dream.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x25%20-%20What%20a%20Mother%20Wouldnt%20Do.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x25%20-%20What%20a%20Mother%20Wouldnt%20Do.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x25%20-%20What%20a%20Mother%20Wouldnt%20Do.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x25%20-%20What%20a%20Mother%20Wouldnt%20Do.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x26%20-%20Bottle%20of%20Dreams.avi",
-        "height": 432
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x26%20-%20Bottle%20of%20Dreams.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x26%20-%20Bottle%20of%20Dreams.ogv",
-        "height": 300
+        "src": "https://archive.org/download/FridayThe13th.TheSeries1x02ThePoisonPen/season%201%2FFriday%20The%2013th.%20The%20Series%201x26%20-%20Bottle%20of%20Dreams.mp4"
       }
     ]
   },
@@ -4008,29 +3034,25 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E1.mp4",
-        "height": 360
+        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E1.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E2.mp4",
-        "height": 360
+        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E2.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E3.mp4",
-        "height": 360
+        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E3.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E4.mp4",
-        "height": 360
+        "src": "https://archive.org/download/gakuen_de_jikan_all_episodes/S1E4.mp4"
       }
     ]
   },
@@ -4051,1093 +3073,469 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E01.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E01.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E01.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E02.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E02.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E02.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E03.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E03.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E03.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E04.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E04.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E04.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E05.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E05.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E05.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E06.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E06.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E06.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E07.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E07.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E07.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E08.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E08.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E08.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E09.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E09.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E09.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E10.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E10.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E10.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E11.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E11.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E11.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E12.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E12.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E12.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E13.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E13.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E13.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E14.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E14.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E14.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E15.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E15.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E15.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E16.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E16.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E16.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E17.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E17.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E17.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E18.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E18.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E18.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E19.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E19.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E19.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E20.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E20.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E20.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E21.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E21.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E21.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E22.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E22.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E22.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E23.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E23.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E23.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E24.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E24.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E24.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E25.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E25.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E25.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E26.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E26.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E26.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E27.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 27,
-        "title": "Episode 27",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E27.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E27.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E28.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 28,
-        "title": "Episode 28",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E28.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E28.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E29.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 29,
-        "title": "Episode 29",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E29.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E29.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E30.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 30,
-        "title": "Episode 30",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E30.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E30.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 31,
         "title": "Episode 31",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E31.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 31,
-        "title": "Episode 31",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E31.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E31.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 32,
         "title": "Episode 32",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E32.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 32,
-        "title": "Episode 32",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E32.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E32.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 33,
         "title": "Episode 33",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E33.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 33,
-        "title": "Episode 33",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E33.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E33.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 34,
         "title": "Episode 34",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E34.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 34,
-        "title": "Episode 34",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E34.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E34.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 35,
         "title": "Episode 35",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E35.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 35,
-        "title": "Episode 35",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E35.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E35.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 36,
         "title": "Episode 36",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E36.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 36,
-        "title": "Episode 36",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E36.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E36.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 37,
         "title": "Episode 37",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E37.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 37,
-        "title": "Episode 37",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E37.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E37.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 38,
         "title": "Episode 38",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E38.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 38,
-        "title": "Episode 38",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E38.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E38.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 39,
         "title": "Episode 39",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E39.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 39,
-        "title": "Episode 39",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E39.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E39.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 40,
         "title": "Episode 40",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E40.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 40,
-        "title": "Episode 40",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E40.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E40.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 41,
         "title": "Episode 41",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E41.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 41,
-        "title": "Episode 41",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E41.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E41.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 42,
         "title": "Episode 42",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E42.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 42,
-        "title": "Episode 42",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E42.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E42.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 43,
         "title": "Episode 43",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E43.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 43,
-        "title": "Episode 43",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E43.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E43.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 44,
         "title": "Episode 44",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E44.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 44,
-        "title": "Episode 44",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E44.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E44.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 45,
         "title": "Episode 45",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E45.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 45,
-        "title": "Episode 45",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E45.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E45.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 46,
         "title": "Episode 46",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E46.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 46,
-        "title": "Episode 46",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E46.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E46.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 47,
         "title": "Episode 47",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E47.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 47,
-        "title": "Episode 47",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E47.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E47.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 48,
         "title": "Episode 48",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E48.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 48,
-        "title": "Episode 48",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E48.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E48.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 49,
         "title": "Episode 49",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E49.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 49,
-        "title": "Episode 49",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E49.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E49.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 50,
         "title": "Episode 50",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E50.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 50,
-        "title": "Episode 50",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E50.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E50.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 51,
         "title": "Episode 51",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E51.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 51,
-        "title": "Episode 51",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E51.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E51.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 52,
         "title": "Episode 52",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E52.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 52,
-        "title": "Episode 52",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E52.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E52.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 53,
         "title": "Episode 53",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E53.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 53,
-        "title": "Episode 53",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E53.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E53.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 54,
         "title": "Episode 54",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E54.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 54,
-        "title": "Episode 54",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E54.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E54.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 55,
         "title": "Episode 55",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E55.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 55,
-        "title": "Episode 55",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E55.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E55.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 56,
         "title": "Episode 56",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E56.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 56,
-        "title": "Episode 56",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E56.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E56.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 57,
         "title": "Episode 57",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E57.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 57,
-        "title": "Episode 57",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E57.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E57.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 58,
         "title": "Episode 58",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E58.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 58,
-        "title": "Episode 58",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E58.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E58.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 59,
         "title": "Episode 59",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E59.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 59,
-        "title": "Episode 59",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E59.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E59.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 60,
         "title": "Episode 60",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E60.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 60,
-        "title": "Episode 60",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E60.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E60.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 61,
         "title": "Episode 61",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E61.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 61,
-        "title": "Episode 61",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E61.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E61.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 62,
         "title": "Episode 62",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E62.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 62,
-        "title": "Episode 62",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E62.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E62.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 63,
         "title": "Episode 63",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E63.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 63,
-        "title": "Episode 63",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E63.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E63.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 64,
         "title": "Episode 64",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E64.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 64,
-        "title": "Episode 64",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E64.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E64.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 65,
         "title": "Episode 65",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E65.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 65,
-        "title": "Episode 65",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E65.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E65.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 66,
         "title": "Episode 66",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E66.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 66,
-        "title": "Episode 66",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E66.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E66.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 67,
         "title": "Episode 67",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E67.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 67,
-        "title": "Episode 67",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E67.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E67.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 68,
         "title": "Episode 68",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E68.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 68,
-        "title": "Episode 68",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E68.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E68.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 69,
         "title": "Episode 69",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E69.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 69,
-        "title": "Episode 69",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E69.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E69.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 70,
         "title": "Episode 70",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E70.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 70,
-        "title": "Episode 70",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E70.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E70.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 71,
         "title": "Episode 71",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E71.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 71,
-        "title": "Episode 71",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E71.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E71.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 72,
         "title": "Episode 72",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E72.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 72,
-        "title": "Episode 72",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E72.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E72.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 73,
         "title": "Episode 73",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E73.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 73,
-        "title": "Episode 73",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E73.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E73.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 74,
         "title": "Episode 74",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E74.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 74,
-        "title": "Episode 74",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E74.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E74.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 75,
         "title": "Episode 75",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E75.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 75,
-        "title": "Episode 75",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E75.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E75.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 76,
         "title": "Episode 76",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E76.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 76,
-        "title": "Episode 76",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E76.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E76.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 77,
         "title": "Episode 77",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E77.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 77,
-        "title": "Episode 77",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E77.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E77.WEBRip.x264-ION10.ia.mp4"
       },
       {
         "season": 1,
         "episode": 78,
         "title": "Episode 78",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E78.WEBRip.x264-ION10.ia.mp4",
-        "height": 400
-      },
-      {
-        "season": 1,
-        "episode": 78,
-        "title": "Episode 78",
-        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E78.WEBRip.x264-ION10.mp4",
-        "height": 400
+        "src": "https://archive.org/download/grizzyandthelemmingss1/Grizzy.and.the.Lemmings.S01.WEBRip.x264-ION10%2FGrizzy.and.the.Lemmings.S01E78.WEBRip.x264-ION10.ia.mp4"
       }
     ]
   },
@@ -5158,449 +3556,49 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%201%20-%20Sex%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%201%20-%20Sex%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%201%20-%20The%20Announcement%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%201%20-%20The%20Announcement%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%201%20-%20Cactus%20Hour%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%201%20-%20Cactus%20Hour%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%201%20-%20Holiday%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%201%20-%20Holiday%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%201%20-%20Holiday%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%202%20-%20Gay%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%202%20-%20Gay%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%202%20-%20Inside%20Out%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%202%20-%20Inside%20Out%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%202%20-%20The%20Mango%20Espadrille%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%202%20-%20The%20Mango%20Espadrille%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%202%20-%20Fame%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%202%20-%20Fame%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%202%20-%20The%20Mango%20Espadrille%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%203%20-%20Sport%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%203%20-%20Sport%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%203%20-%20The%20Moon%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%203%20-%20The%20Moon%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%203%20-%20Sitting%20on%20a%20Pile%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%203%20-%20Sitting%20on%20a%20Pile%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%203%20-%20Work%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%203%20-%20Work%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%203%20-%20Sitting%20on%20a%20Pile%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%204%20-%20Fat%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%204%20-%20Fat%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%204%20-%20Obsession%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%204%20-%20Obsession%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%204%20-%20Kicking%20up%20a%20Stink%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%204%20-%20Kicking%20up%20a%20Stink%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%204%20-%20Environment%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%204%20-%20Environment%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%204%20-%20Kicking%20up%20a%20Stink%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%205%20-%20Old%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%205%20-%20Old%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%205%20-%20My%20Boyfriend%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%205%20-%20My%20Boyfriend%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%205%20-%20Hello%20Nails!%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%205%20-%20Hello%20Nails!%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%205%20-%20House%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%205%20-%20House%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%205%20-%20Hello%20Nails!%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%206%20-%20Money%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%206%20-%20Money%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%206%20-%20Another%20Announcement%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%206%20-%20Another%20Announcement%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%206%20-%20High%20and%20Dry%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%206%20-%20High%20and%20Dry%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%206%20-%20Roots%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%206%20-%20Roots%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%206%20-%20High%20and%20Dry%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%207%20-%20Party%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%207%20-%20Party%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%207%20-%20The%20Shower%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%207%20-%20The%20Shower%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%207%20-%20Foxy%20on%20the%20Run%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%207%20-%20Foxy%20on%20the%20Run%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%207%20-%20Lust%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%207%20-%20Lust%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%207%20-%20Foxy%20on%20the%20Run%20%5B720p%5D.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%208%20-%20The%20Wedding%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%201%20Episode%208%20-%20The%20Wedding%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%208%20-%20The%20Hideous%20Truth%20%5B480p%5D.mp4",
-        "height": 470
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%202%20Episode%208%20-%20The%20Hideous%20Truth%20%5B480p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%208%20-%2099%25%20Fat%20Free%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%208%20-%2099%25%20Fat%20Free%20%5B720p%5D.ogv",
-        "height": 300
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%208%20-%20Wedding%20of%20the%20Century%20%5B720p%5D.mp4",
-        "height": 720
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%204%20Episode%208%20-%20Wedding%20of%20the%20Century%20%5B720p%5D.ogv",
-        "height": 300
+        "src": "https://archive.org/download/KathKimSeries1Episode1Sex480p/Kath%20%26%20Kim%20Series%203%20Episode%208%20-%2099%25%20Fat%20Free%20%5B720p%5D.mp4"
       }
     ]
   },
@@ -5621,442 +3619,199 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x01%20-%20Highway%20to%20Hell%20-%2010%20Years%20on%20the%20Road.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x01%20-%20Highway%20to%20Hell%20-%2010%20Years%20on%20the%20Road.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x01%20-%20Highway%20to%20Hell%20-%2010%20Years%20on%20the%20Road.mkv"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x02%20-%20Let%20the%20Madness%20Begin.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x02%20-%20Let%20the%20Madness%20Begin.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x02%20-%20Let%20the%20Madness%20Begin.mkv"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x03%20-%20Shirtless%20In%20Seattle.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x03%20-%20Shirtless%20In%20Seattle.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x03%20-%20Shirtless%20In%20Seattle.mkv"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x04%20-%20Sabotage%20Is%20Part%20Of%20The%20Game.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x04%20-%20Sabotage%20Is%20Part%20Of%20The%20Game.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x05%20-%20Possible%20Broken%20Cheekbone.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x05%20-%20Possible%20Broken%20Cheekbone.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x05%20-%20Possible%20Broken%20Cheekbone.mkv"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x06%20-%20Midway%20Point.ia.mp4",
-        "height": 324
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x06%20-%20Midway%20Point.mp4",
-        "height": 324
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x06%20-%20Midway%20Point.ia.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x07%20-%20SF%20Legends.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x07%20-%20SF%20Legends.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x07%20-%20SF%20Legends.mkv"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x08%20-%20A%20Wobbly%20Beast.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x08%20-%20A%20Wobbly%20Beast.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x08%20-%20A%20Wobbly%20Beast.mkv"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x09%20-%20Serious%20Rock%20Vibes.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x09%20-%20Serious%20Rock%20Vibes.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x10%20-%20Put%20On%20That%20Angry%20Face%20and%20Grind.ia.mp4",
-        "height": 324
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x10%20-%20Put%20On%20That%20Angry%20Face%20and%20Grind.mp4",
-        "height": 324
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x10%20-%20Put%20On%20That%20Angry%20Face%20and%20Grind.ia.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x11%20-%20End%20Of%20The%20Line.mkv",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x11%20-%20End%20Of%20The%20Line.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x11%20-%20End%20Of%20The%20Line.mkv"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x12%20-%20Grand%20Finale.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%201%2FKing%20of%20the%20Road%20-%2001x12%20-%20Grand%20Finale.mp4"
       },
       {
         "season": 2,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x01%20-%20The%20Quickest%20Piss%20in%20the%20West!.mkv",
-        "height": 720
-      },
-      {
-        "season": 2,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x01%20-%20The%20Quickest%20Piss%20in%20the%20West!.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x01%20-%20The%20Quickest%20Piss%20in%20the%20West!.mkv"
       },
       {
         "season": 2,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x02%20-%20Is%20This%20Safe.mkv",
-        "height": 720
-      },
-      {
-        "season": 2,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x02%20-%20Is%20This%20Safe.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x02%20-%20Is%20This%20Safe.mkv"
       },
       {
         "season": 2,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x03%20-%20Handcuffed%20in%20Hell%20Paso.mkv",
-        "height": 504
-      },
-      {
-        "season": 2,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x03%20-%20Handcuffed%20in%20Hell%20Paso.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x03%20-%20Handcuffed%20in%20Hell%20Paso.mkv"
       },
       {
         "season": 2,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x04%20-%20All%20In%20a%20Days%20Twerk.mkv",
-        "height": 720
-      },
-      {
-        "season": 2,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x04%20-%20All%20In%20a%20Days%20Twerk.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x04%20-%20All%20In%20a%20Days%20Twerk.mkv"
       },
       {
         "season": 2,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x05%20-%20Feel%20the%20Splat%20Baby.mkv",
-        "height": 504
-      },
-      {
-        "season": 2,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x05%20-%20Feel%20the%20Splat%20Baby.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x05%20-%20Feel%20the%20Splat%20Baby.mkv"
       },
       {
         "season": 2,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x06%20-%20Whys%20America%20So%20Big.mkv",
-        "height": 480
-      },
-      {
-        "season": 2,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x06%20-%20Whys%20America%20So%20Big.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x06%20-%20Whys%20America%20So%20Big.mkv"
       },
       {
         "season": 2,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x07%20-%20The%20Return%20of%20the%20Butt%20Chug.avi",
-        "height": 360
-      },
-      {
-        "season": 2,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x07%20-%20The%20Return%20of%20the%20Butt%20Chug.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x07%20-%20The%20Return%20of%20the%20Butt%20Chug.avi"
       },
       {
         "season": 2,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x08%20-%20Handrails%2C%20Homies!.mkv",
-        "height": 504
-      },
-      {
-        "season": 2,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x08%20-%20Handrails%2C%20Homies!.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x08%20-%20Handrails%2C%20Homies!.mkv"
       },
       {
         "season": 2,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x09%20-%20Torture%20in%20Paradise.mkv",
-        "height": 558
-      },
-      {
-        "season": 2,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x09%20-%20Torture%20in%20Paradise.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x09%20-%20Torture%20in%20Paradise.mkv"
       },
       {
         "season": 2,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x10%20-%20Hawaiian%20Psycho%20Jam.mkv",
-        "height": 504
-      },
-      {
-        "season": 2,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x10%20-%20Hawaiian%20Psycho%20Jam.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x10%20-%20Hawaiian%20Psycho%20Jam.mkv"
       },
       {
         "season": 2,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x11%20-%20And%20the%20Winner%20Is....mkv",
-        "height": 504
-      },
-      {
-        "season": 2,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x11%20-%20And%20the%20Winner%20Is....mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%202%2FKing%20of%20the%20Road%20-%2002x11%20-%20And%20the%20Winner%20Is....mkv"
       },
       {
         "season": 3,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x01%20-%20Get%20the%20Goddamn%20Pigs%20Feet.mkv",
-        "height": 720
-      },
-      {
-        "season": 3,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x01%20-%20Get%20the%20Goddamn%20Pigs%20Feet.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x01%20-%20Get%20the%20Goddamn%20Pigs%20Feet.mkv"
       },
       {
         "season": 3,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x02%20-%20Death%20by%20Pizza.avi",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x02%20-%20Death%20by%20Pizza.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x02%20-%20Death%20by%20Pizza.avi"
       },
       {
         "season": 3,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x03%20-%20Chained%20Up%20And%20Tripped%20Out.mkv",
-        "height": 1080
-      },
-      {
-        "season": 3,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x03%20-%20Chained%20Up%20And%20Tripped%20Out.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x03%20-%20Chained%20Up%20And%20Tripped%20Out.mkv"
       },
       {
         "season": 3,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x04%20-%20Get%20Your%20War%20Face%20On.avi",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x04%20-%20Get%20Your%20War%20Face%20On.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x04%20-%20Get%20Your%20War%20Face%20On.avi"
       },
       {
         "season": 3,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x05%20-%20Game%20Of%20Stoke.mkv",
-        "height": 720
-      },
-      {
-        "season": 3,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x05%20-%20Game%20Of%20Stoke.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x05%20-%20Game%20Of%20Stoke.mkv"
       },
       {
         "season": 3,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x06%20-%20Hill%20Bomb%20In%20Diapers.avi",
-        "height": 360
-      },
-      {
-        "season": 3,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x06%20-%20Hill%20Bomb%20In%20Diapers.mp4",
-        "height": 360
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x06%20-%20Hill%20Bomb%20In%20Diapers.avi"
       },
       {
         "season": 3,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x07%20-%20Bruised%20Ribs%20and%20Broken%20Teeth.mkv",
-        "height": 720
-      },
-      {
-        "season": 3,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x07%20-%20Bruised%20Ribs%20and%20Broken%20Teeth.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x07%20-%20Bruised%20Ribs%20and%20Broken%20Teeth.mkv"
       },
       {
         "season": 3,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x08%20-%20Dusted%20In%20The%20Desert.mkv",
-        "height": 1080
-      },
-      {
-        "season": 3,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x08%20-%20Dusted%20In%20The%20Desert.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x08%20-%20Dusted%20In%20The%20Desert.mkv"
       },
       {
         "season": 3,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x09%20-%20Phoenix%20Rising.mkv",
-        "height": 720
-      },
-      {
-        "season": 3,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x09%20-%20Phoenix%20Rising.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x09%20-%20Phoenix%20Rising.mkv"
       },
       {
         "season": 3,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x10%20-%20The%20Finale.mkv",
-        "height": 720
-      },
-      {
-        "season": 3,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x10%20-%20The%20Finale.mp4",
-        "height": 480
+        "src": "https://archive.org/download/king-of-the-road-s1s2s3/Season%203%2FKing%20of%20the%20Road%20-%2003x10%20-%20The%20Finale.mkv"
       }
     ]
   },
@@ -6077,414 +3832,181 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2001.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2001.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2001.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2002.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2002.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2002.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2003.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2003.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2003.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2004.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2004.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2004.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2005.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2005.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2005.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2006.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2006.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2006.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2007.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2007.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2007.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2008.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2008.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2008.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2009.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2009.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2009.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2010.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2010.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2010.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2011.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2011.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2011.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2012.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2012.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2012.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2013.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2013.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2013.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2014.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2014.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2014.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2015.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2015.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2015.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2016.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2016.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2016.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2017.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2017.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2017.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2018.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2018.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2018.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2019.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2019.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2019.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2020.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2020.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2020.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2021.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2021.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2021.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2022.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2022.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2022.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2023.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2023.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2023.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2024.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2024.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2024.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2025.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2025.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2025.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2026.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2026.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2026.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2027.mp4",
-        "height": 352
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2027.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2028.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 28,
-        "title": "Episode 28",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2028.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2028.mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2029.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 29,
-        "title": "Episode 29",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2029.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2029.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2030.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 30,
-        "title": "Episode 30",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2030.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.Chopra/Mahabharat%20-%20Episode%2030.mp4"
       }
     ]
   },
@@ -6505,372 +4027,163 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2001.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2001.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2001.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2002.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2002.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2002.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2003.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2003.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2003.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2004.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2004.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2004.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2005.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2005.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2005.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2006.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2006.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2006.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2007.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2007.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2007.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2008.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2008.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2008.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2009.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2009.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2009.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2010.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2010.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2010.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2011.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2011.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2011.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2012.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2012.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2012.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2013.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2013.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2013.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2014.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2014.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2014.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2015.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2015.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2015.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2016.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2016.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2016.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2017.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2017.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2017.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2018.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2018.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2018.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2019.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2019.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2019.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2020.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2020.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2020.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2021.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2021.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2021.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2022.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2022.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2022.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2023.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2023.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2023.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2024.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2024.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2024.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2025.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2025.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2025.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2026.mp4",
-        "height": 352
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2026.ogv",
-        "height": 300
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2026.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2027.mp4",
-        "height": 352
+        "src": "https://archive.org/download/MahabaratEpisodeInHindiByB.R.ChopraPart1/Mahabharat%20-%20Episode%2027.mp4"
       }
     ]
   },
@@ -6891,211 +4204,181 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2001-UMAR%20DURING%20HIS%20YOUTH.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2001-UMAR%20DURING%20HIS%20YOUTH.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2002-ISLAM%20BEGINS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2002-ISLAM%20BEGINS.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2003-ABU%20LAHAB%20(ONLY%20URDU%20%26%20ENGLISH%20SUBTITLES).mp4",
-        "height": 622
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2003-ABU%20LAHAB%20(ONLY%20URDU%20%26%20ENGLISH%20SUBTITLES).mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2004-FAMILY%20AFFAIRS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2004-FAMILY%20AFFAIRS.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2005-TORTURE%20BEGINS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2005-TORTURE%20BEGINS.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2006-BILAL%20INB%20RABAH%20GAINS%20FREEDOM.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2006-BILAL%20INB%20RABAH%20GAINS%20FREEDOM.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2007-HIJRAH%20TO%20ABISSINIA.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2007-HIJRAH%20TO%20ABISSINIA.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2008-UMAR%20EMBRACES%20ISLAM.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2008-UMAR%20EMBRACES%20ISLAM.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2009-BOYCOTT%20AGAINST%20MUSLIMS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2009-BOYCOTT%20AGAINST%20MUSLIMS.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2010-HIJRAH%20TO%20YATHRIB.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2010-HIJRAH%20TO%20YATHRIB.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2011-BATTLE%20OF%20BADR.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2011-BATTLE%20OF%20BADR.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2012-PRISONERS%20OF%20THE%20BATTLE%20OF%20BADR.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2012-PRISONERS%20OF%20THE%20BATTLE%20OF%20BADR.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2013-BATTLE%20OF%20UHUD%20AND%20KHANDAQ.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2013-BATTLE%20OF%20UHUD%20AND%20KHANDAQ.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2014-BATTLE%20OF%20KHANDAQ%2C%20INVASION%20OF%20BANU%20QURAYZA%2C%20TREATY%20OF%20HUDAIBIYAH.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2014-BATTLE%20OF%20KHANDAQ%2C%20INVASION%20OF%20BANU%20QURAYZA%2C%20TREATY%20OF%20HUDAIBIYAH.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2015-THE%20STRUGLE%20OF%20ABU%20BASEER%2C%20THE%20YEAR%20OF%20DELEGATIONS%2C%20FIRST%20HAJJ.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2015-THE%20STRUGLE%20OF%20ABU%20BASEER%2C%20THE%20YEAR%20OF%20DELEGATIONS%2C%20FIRST%20HAJJ.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2016-KHALID%20IBN%20AL-WALEED%20AND%20AMR%20IBN%20AL-'AS%20EMBRACE%20ISLAM%2C%20FATAH-E-MAKKAH.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2016-KHALID%20IBN%20AL-WALEED%20AND%20AMR%20IBN%20AL-'AS%20EMBRACE%20ISLAM%2C%20FATAH-E-MAKKAH.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2017-ABU%20SUFIAN%20AND%20SOME%20OTHERS%20EMBRANCE%20ISLAM%2C%20DEATH%20OF%20PROPHET.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2017-ABU%20SUFIAN%20AND%20SOME%20OTHERS%20EMBRANCE%20ISLAM%2C%20DEATH%20OF%20PROPHET.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2018-ABU%20BAKR%20BECOMES%20THE%20FIRST%20CALIPH%2C%20BATTLE%20AGAINST%20PEOPLE%20NOT%20PAYING%20ZAKAT%20(1).mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2018-ABU%20BAKR%20BECOMES%20THE%20FIRST%20CALIPH%2C%20BATTLE%20AGAINST%20PEOPLE%20NOT%20PAYING%20ZAKAT%20(1).mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2019-RISE%20OF%20SAJAH%2C%20BATTLES%20AGAINST%20RIDDA.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2019-RISE%20OF%20SAJAH%2C%20BATTLES%20AGAINST%20RIDDA.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2020-BATTLE%20AGAINST%20MUSAILIMAH%20(BATTLE%20OF%20YAMAMA).mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2020-BATTLE%20AGAINST%20MUSAILIMAH%20(BATTLE%20OF%20YAMAMA).mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2021-BATTLE%20AGAINST%20PERSIANS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2021-BATTLE%20AGAINST%20PERSIANS.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2022-OMAR%20BECOMES%20THE%20SECOND%20CALIPH.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2022-OMAR%20BECOMES%20THE%20SECOND%20CALIPH.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2023-BATTLE%20OF%20YARMUK%20AGAINST%20ROME%20(BYZANTINE).mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2023-BATTLE%20OF%20YARMUK%20AGAINST%20ROME%20(BYZANTINE).mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2024-BATTLE%20IN%20SYRIA.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2024-BATTLE%20IN%20SYRIA.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2025-OMAR%20AND%20HIS%20SUBJECTS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2025-OMAR%20AND%20HIS%20SUBJECTS.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2026-CONQUEST%20OF%20DAMASCUS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2026-CONQUEST%20OF%20DAMASCUS.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2027-BATTLE%20OF%20QADISIYA%20AGAINST%20SASSANIDS.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2027-BATTLE%20OF%20QADISIYA%20AGAINST%20SASSANIDS.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2028-BATTLE%20OF%20MADAIN%2C%20CONQUEST%20OF%20AL-QUDS%20(JERUSALEM).mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2028-BATTLE%20OF%20MADAIN%2C%20CONQUEST%20OF%20AL-QUDS%20(JERUSALEM).mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2029-FAMINE%20YEAR.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2029-FAMINE%20YEAR.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2030-PLAGUE%2C%20CONQUEST%20OF%20EGYPT%20AND%20DEATH%20OF%20OMAR.mp4",
-        "height": 480
+        "src": "https://archive.org/download/Omar_Series_Urdu/EPISODE%2030-PLAGUE%2C%20CONQUEST%20OF%20EGYPT%20AND%20DEATH%20OF%20OMAR.mp4"
       }
     ]
   },
@@ -7116,365 +4399,157 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e01%20Episode%201.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e01%20Episode%201.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e01%20Episode%201.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e02%20Episode%202.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e02%20Episode%202.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e02%20Episode%202.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e03%20Episode%203.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e03%20Episode%203.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e03%20Episode%203.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e04%20Episode%204.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e04%20Episode%204.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e04%20Episode%204.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e05%20Episode%205.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e05%20Episode%205.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e05%20Episode%205.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e06%20Episode%206.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e06%20Episode%206.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e06%20Episode%206.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e07%20Episode%207.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e07%20Episode%207.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e07%20Episode%207.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e08%20Episode%208.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e08%20Episode%208.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e08%20Episode%208.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e09%20Episode%209.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e09%20Episode%209.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e09%20Episode%209.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e10%20Episode%2010.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e10%20Episode%2010.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e10%20Episode%2010.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e11%20Episode%2011.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e11%20Episode%2011.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e11%20Episode%2011.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e12%20Episode%2012.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e12%20Episode%2012.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e12%20Episode%2012.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e13%20Episode%2013.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e13%20Episode%2013.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e13%20Episode%2013.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e14%20Episode%2014.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e14%20Episode%2014.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e14%20Episode%2014.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e15%20Episode%2015.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e15%20Episode%2015.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e15%20Episode%2015.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e16%20Episode%2016.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e16%20Episode%2016.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e16%20Episode%2016.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e17%20Episode%2017.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e17%20Episode%2017.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e17%20Episode%2017.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e18%20Episode%2018.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e18%20Episode%2018.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e18%20Episode%2018.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e19%20Episode%2019.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e19%20Episode%2019.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e19%20Episode%2019.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e20%20Episode%2020.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e20%20Episode%2020.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e20%20Episode%2020.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e21%20Episode%2021.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e21%20Episode%2021.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e21%20Episode%2021.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e22%20Episode%2022.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e22%20Episode%2022.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e22%20Episode%2022.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e23%20Episode%2023.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e23%20Episode%2023.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e23%20Episode%2023.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e24%20Episode%2024.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e24%20Episode%2024.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e24%20Episode%2024.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e25%20Episode%2025.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e25%20Episode%2025.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e25%20Episode%2025.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e26%20Episode%2026.mp4",
-        "height": 404
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e26%20Episode%2026.ogv",
-        "height": 300
+        "src": "https://archive.org/download/playwithmesesames01e09episode9/Play%20With%20Me%20Sesame%20Season%201%2FPlay%20With%20Me%20Sesame%20-%20S01e26%20Episode%2026.mp4"
       }
     ]
   },
@@ -7495,631 +4570,271 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%201%20From%20A%20to%20Z!%20(Season%2019%20English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%201%20From%20A%20to%20Z!%20(Season%2019%20English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%201%20From%20A%20to%20Z!%20(Season%2019%20English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%202%20Love%20Strikes!%20Eevee%20%20Yikes!%20(Season%2019%20English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 2,
-        "title": "Episode 2",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%202%20Love%20Strikes!%20Eevee%20%20Yikes!%20(Season%2019%20English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%202%20Love%20Strikes!%20Eevee%20%20Yikes!%20(Season%2019%20English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%203%20A%20Giga%20Battle%20With%20Mega%20Results!%20(English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 3,
-        "title": "Episode 3",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%203%20A%20Giga%20Battle%20With%20Mega%20Results!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%203%20A%20Giga%20Battle%20With%20Mega%20Results!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%204%20A%20Fiery%20Rite%20of%20Passage!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 4,
-        "title": "Episode 4",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%204%20A%20Fiery%20Rite%20of%20Passage!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%204%20A%20Fiery%20Rite%20of%20Passage!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%205%20Dream%20a%20Little%20Dream%20from%20Me!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 5,
-        "title": "Episode 5",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%205%20Dream%20a%20Little%20Dream%20from%20Me!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%205%20Dream%20a%20Little%20Dream%20from%20Me!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%206%20The%20Legend%20of%20the%20Ninja%20Hero!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 6,
-        "title": "Episode 6",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%206%20The%20Legend%20of%20the%20Ninja%20Hero!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%206%20The%20Legend%20of%20the%20Ninja%20Hero!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%207%20A%20Festival%20of%20Decisions!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 7,
-        "title": "Episode 7",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%207%20A%20Festival%20of%20Decisions!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%207%20A%20Festival%20of%20Decisions!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%208%20A%20Dancing%20Debut!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 8,
-        "title": "Episode 8",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%208%20A%20Dancing%20Debut!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%208%20A%20Dancing%20Debut!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%209%20Meeting%20at%20Terminus%20Cave!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 9,
-        "title": "Episode 9",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%209%20Meeting%20at%20Terminus%20Cave!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%209%20Meeting%20at%20Terminus%20Cave!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2010%20A%20Cellular%20Connection!%20(English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 10,
-        "title": "Episode 10",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2010%20A%20Cellular%20Connection!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2010%20A%20Cellular%20Connection!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2011%20A%20Windswept%20Encounter!%20(English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 11,
-        "title": "Episode 11",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2011%20A%20Windswept%20Encounter!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2011%20A%20Windswept%20Encounter!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2012%20Party%20Dancecapades!%20(English%20Dubbed).mp4",
-        "height": 358
-      },
-      {
-        "season": 1,
-        "episode": 12,
-        "title": "Episode 12",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2012%20Party%20Dancecapades!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2012%20Party%20Dancecapades!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2013%20An%20Explosive%20Operation!%20(English%20Dubbed).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 13,
-        "title": "Episode 13",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2013%20An%20Explosive%20Operation!%20(English%20Dubbed).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2013%20An%20Explosive%20Operation!%20(English%20Dubbed).mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2014%20%20An%20Explosive%20Operation!%20%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 14,
-        "title": "Episode 14",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2014%20%20An%20Explosive%20Operation!%20%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2014%20%20An%20Explosive%20Operation!%20%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2015%20A%20Watershed%20Moment!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 15,
-        "title": "Episode 15",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2015%20A%20Watershed%20Moment!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2015%20A%20Watershed%20Moment!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2016%20Master%20Class%20Choices!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 16,
-        "title": "Episode 16",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2016%20Master%20Class%20Choices!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2016%20Master%20Class%20Choices!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2017%20An%20Electrifying%20Rage!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 17,
-        "title": "Episode 17",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2017%20An%20Electrifying%20Rage!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2017%20An%20Electrifying%20Rage!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2018%20Unlocking%20Some%20Respect!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 18,
-        "title": "Episode 18",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2018%20Unlocking%20Some%20Respect!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2018%20Unlocking%20Some%20Respect!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2019%20Master%20Class%20Is%20in%20Session!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 19,
-        "title": "Episode 19",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2019%20Master%20Class%20Is%20in%20Session!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2019%20Master%20Class%20Is%20in%20Session!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2020%20Performing%20a%20Pathway%20to%20the%20Future!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 20,
-        "title": "Episode 20",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2020%20Performing%20a%20Pathway%20to%20the%20Future!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2020%20Performing%20a%20Pathway%20to%20the%20Future!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2021%20A%20Keeper%20for%20Keeps!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 21,
-        "title": "Episode 21",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2021%20A%20Keeper%20for%20Keeps!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2021%20A%20Keeper%20for%20Keeps!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2022%20Battling%20at%20Full%20Volume!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 22,
-        "title": "Episode 22",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2022%20Battling%20at%20Full%20Volume!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2022%20Battling%20at%20Full%20Volume!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2023%20The%20Synchronicity%20Test!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 23,
-        "title": "Episode 23",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2023%20The%20Synchronicity%20Test!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2023%20The%20Synchronicity%20Test!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2024%20Making%20Friends%20and%20Influencing%20Villains!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 24,
-        "title": "Episode 24",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2024%20Making%20Friends%20and%20Influencing%20Villains!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2024%20Making%20Friends%20and%20Influencing%20Villains!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2025%20Championing%20a%20Research%20Battle!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 25,
-        "title": "Episode 25",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2025%20Championing%20a%20Research%20Battle!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2025%20Championing%20a%20Research%20Battle!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2026%20A%20Full%20Strength%20Battle%20Surprise!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 26,
-        "title": "Episode 26",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2026%20A%20Full%20Strength%20Battle%20Surprise!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2026%20A%20Full%20Strength%20Battle%20Surprise!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2027%20All%20Hail%20the%20Ice%20Battlefield!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 27,
-        "title": "Episode 27",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2027%20All%20Hail%20the%20Ice%20Battlefield!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2027%20All%20Hail%20the%20Ice%20Battlefield!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2028%20Seeing%20the%20Forest%20for%20the%20Trees!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 28,
-        "title": "Episode 28",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2028%20Seeing%20the%20Forest%20for%20the%20Trees!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2028%20Seeing%20the%20Forest%20for%20the%20Trees!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2029%20Satoshi%20Gekkouga%20VS%20Mega%20Yukinooh!%20English%20Dubbed.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 29,
-        "title": "Episode 29",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2029%20Satoshi%20Gekkouga%20VS%20Mega%20Yukinooh!%20English%20Dubbed.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2029%20Satoshi%20Gekkouga%20VS%20Mega%20Yukinooh!%20English%20Dubbed.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2030%20Find%20Melecie!%20Numelgon%20and%20Dedenne!!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 30,
-        "title": "Episode 30",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2030%20Find%20Melecie!%20Numelgon%20and%20Dedenne!!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2030%20Find%20Melecie!%20Numelgon%20and%20Dedenne!!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 31,
         "title": "Episode 31",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2031%20The%20Explosive%20Heat%20at%20the%20Mechanical%20Festival!!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 31,
-        "title": "Episode 31",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2031%20The%20Explosive%20Heat%20at%20the%20Mechanical%20Festival!!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2031%20The%20Explosive%20Heat%20at%20the%20Mechanical%20Festival!!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 32,
         "title": "Episode 32",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2032%20The%20Kalos%20League%20Begins!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 32,
-        "title": "Episode 32",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2032%20The%20Kalos%20League%20Begins!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2032%20The%20Kalos%20League%20Begins!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 33,
         "title": "Episode 33",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2033%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 33,
-        "title": "Episode 33",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2033%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2033%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).mp4"
       },
       {
         "season": 1,
         "episode": 34,
         "title": "Episode 34",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2034%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 34,
-        "title": "Episode 34",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2034%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20the%20Series-%20XY%26Z%20-%20Episode%2034%20The%20Semifinal%20Full%20Battle!%20(Season%2019%20English%20Subtitle).mp4"
       },
       {
         "season": 1,
         "episode": 35,
         "title": "Episode 35",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2035%20Decisive%20Rival%20Battle!%20Satoshi%20Gekkouga%20VS%20Mega%20Jukain!!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 35,
-        "title": "Episode 35",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2035%20Decisive%20Rival%20Battle!%20Satoshi%20Gekkouga%20VS%20Mega%20Jukain!!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2035%20Decisive%20Rival%20Battle!%20Satoshi%20Gekkouga%20VS%20Mega%20Jukain!!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 36,
         "title": "Episode 36",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2036%20Fierce%20Fighting%20at%20the%20Kalos%20League!%20Gather%20%20All%20of%20My%20Passion!!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 36,
-        "title": "Episode 36",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2036%20Fierce%20Fighting%20at%20the%20Kalos%20League!%20Gather%20%20All%20of%20My%20Passion!!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2036%20Fierce%20Fighting%20at%20the%20Kalos%20League!%20Gather%20%20All%20of%20My%20Passion!!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 37,
         "title": "Episode 37",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2037%20Kalos%20League%20Finale!%20Satoshi%20vs%20Alan!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 37,
-        "title": "Episode 37",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2037%20Kalos%20League%20Finale!%20Satoshi%20vs%20Alan!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2037%20Kalos%20League%20Finale!%20Satoshi%20vs%20Alan!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 38,
         "title": "Episode 38",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2038%20Kalos%20League%20Victory!%20Satoshi's%20Greatest%20Decisive%20Battle!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 38,
-        "title": "Episode 38",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2038%20Kalos%20League%20Victory!%20Satoshi's%20Greatest%20Decisive%20Battle!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2038%20Kalos%20League%20Victory!%20Satoshi's%20Greatest%20Decisive%20Battle!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 39,
         "title": "Episode 39",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2039%20A%20Towering%20Takeover!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 39,
-        "title": "Episode 39",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2039%20A%20Towering%20Takeover!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2039%20A%20Towering%20Takeover!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 40,
         "title": "Episode 40",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2040%20Coming%20Apart%20at%20the%20Dreams!%20English%20Sub.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 40,
-        "title": "Episode 40",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2040%20Coming%20Apart%20at%20the%20Dreams!%20English%20Sub.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pokemon%20XYZ%20Episode%2040%20Coming%20Apart%20at%20the%20Dreams!%20English%20Sub.mp4"
       },
       {
         "season": 1,
         "episode": 41,
         "title": "Episode 41",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2041%20(Eng%20Dub)-%20The%20Right%20Hero%20For%20The%20Right%20Job!.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 41,
-        "title": "Episode 41",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2041%20(Eng%20Dub)-%20The%20Right%20Hero%20For%20The%20Right%20Job!.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2041%20(Eng%20Dub)-%20The%20Right%20Hero%20For%20The%20Right%20Job!.mp4"
       },
       {
         "season": 1,
         "episode": 42,
         "title": "Episode 42",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2042%20(Eng%20Dub)-%20Rocking%20Kalos%20Defenses!.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 42,
-        "title": "Episode 42",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2042%20(Eng%20Dub)-%20Rocking%20Kalos%20Defenses!.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2042%20(Eng%20Dub)-%20Rocking%20Kalos%20Defenses!.mp4"
       },
       {
         "season": 1,
         "episode": 43,
         "title": "Episode 43",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2043%20(Eng%20Dub)-%20Forming%20A%20More%20Perfect%20Union!.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 43,
-        "title": "Episode 43",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2043%20(Eng%20Dub)-%20Forming%20A%20More%20Perfect%20Union!.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2043%20(Eng%20Dub)-%20Forming%20A%20More%20Perfect%20Union!.mp4"
       },
       {
         "season": 1,
         "episode": 44,
         "title": "Episode 44",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2044%20(Eng%20Dub)-%20Battling%20With%20A%20Clean%20Slate!.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 44,
-        "title": "Episode 44",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2044%20(Eng%20Dub)-%20Battling%20With%20A%20Clean%20Slate!.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2044%20(Eng%20Dub)-%20Battling%20With%20A%20Clean%20Slate!.mp4"
       },
       {
         "season": 1,
         "episode": 45,
         "title": "Episode 45",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2045%20(Eng%20Dub)-%20The%20First%20Day%20Of%20The%20Rest%20Of%20Your%20Life!.mp4",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 45,
-        "title": "Episode 45",
-        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2045%20(Eng%20Dub)-%20The%20First%20Day%20Of%20The%20Rest%20Of%20Your%20Life!.ogv",
-        "height": 300
+        "src": "https://archive.org/download/PokemonXYZEpisode35DecisiveRivalBattleSatoshiGekkougaVSMegaJukainEnglishSub/Pok%C3%A9mon%20XY%26Z%20(Season%2019)%20Episode%2045%20(Eng%20Dub)-%20The%20First%20Day%20Of%20The%20Rest%20Of%20Your%20Life!.mp4"
       }
     ]
   },
@@ -8140,424 +4855,271 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%201%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd%20(1).mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%201%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd%20(1).mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%202%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%202%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%203%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%203%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%204%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%204%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%205%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%205%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%206%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%206%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%207%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%207%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%208%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%208%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%209%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%209%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2010%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2010%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2011%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2011%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2012%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2012%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2013%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2013%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2014%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2014%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2015%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2015%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2016%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2016%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2017%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2017%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2018%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2018%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2019%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2019%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2020%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2020%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2021%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2021%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2022%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2022%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2023%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2023%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2024%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2024%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2025%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2025%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2026%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2026%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2027%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2027%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2028%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2028%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2029%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2029%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2030%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2030%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 31,
         "title": "Episode 31",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2031%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2031%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 32,
         "title": "Episode 32",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2032%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2032%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 33,
         "title": "Episode 33",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2033%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2033%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 34,
         "title": "Episode 34",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2034%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2034%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 35,
         "title": "Episode 35",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2035%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2035%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 36,
         "title": "Episode 36",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2036%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2036%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 37,
         "title": "Episode 37",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2037%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2037%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 38,
         "title": "Episode 38",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2038%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2038%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 39,
         "title": "Episode 39",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2039%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2039%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 40,
         "title": "Episode 40",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2040%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2040%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 41,
         "title": "Episode 41",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2041%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2041%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 42,
         "title": "Episode 42",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2042%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2042%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 43,
         "title": "Episode 43",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2043%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2043%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 44,
         "title": "Episode 44",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2044%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2044%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       },
       {
         "season": 1,
         "episode": 45,
         "title": "Episode 45",
-        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2045%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4",
-        "height": 720
-      }
-    ]
-  },
-  {
-    "id": "RamayanEpisode-1",
-    "title": "Ramayan Episode - 1",
-    "type": "tv",
-    "row": "TV Picks",
-    "year": "",
-    "duration": "34m episodes",
-    "rating": "TV-G",
-    "description": "Ramanand Sagar Ramayan",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "",
-    "episodes": [
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/RamayanEpisode-1/RamayanEpisode01.avi",
-        "height": 368
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/RamayanEpisode-1/RamayanEpisode01.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/RamayanEpisode-1/RamayanEpisode01.ogv",
-        "height": 300
-      }
-    ]
-  },
-  {
-    "id": "SteptoeAndSonS1xE1TheBird",
-    "title": "Steptoe and Son - 1x01 - The Bird",
-    "type": "tv",
-    "row": "TV Picks",
-    "year": 1962,
-    "duration": "Series",
-    "rating": "TV-G",
-    "description": "Harold is going out every night, so Albert suspects that he must being seeing a girl. Determined to put a stop to the romance, he gets Harold to invite the girl back to the house for dinner. Meanwhile, Albert puts the clocks forward so w...",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "",
-    "episodes": [
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/SteptoeAndSonS1xE1TheBird/Steptoe%20And%20Son_%20S1E1%20-%20The%20Bird.avi",
-        "height": 360
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/SteptoeAndSonS1xE1TheBird/Steptoe%20And%20Son_%20S1E1%20-%20The%20Bird.mp4",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/SteptoeAndSonS1xE1TheBird/Steptoe%20And%20Son_%20S1E1%20-%20The%20Bird.ogv",
-        "height": 300
-      }
-    ]
-  },
-  {
-    "id": "the_scene_xvid_episode_1",
-    "title": "Welcome to the Scene: Episode 01",
-    "type": "tv",
-    "row": "TV Picks",
-    "year": 2004,
-    "duration": "20m episodes",
-    "rating": "TV-G",
-    "description": "Welcome to the Scene: Episode 01 NYU student Brian Sandro has a secret: he and his friends pirate hundres of millions of dollars of illicit Hollywood movies in their spare time. They are revered, reviled, hunted and admired. No one knows...",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "",
-    "episodes": [
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/the_scene_xvid_episode_1/the_scene_xvid_episode_1.avi",
-        "height": 480
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/the_scene_xvid_episode_1/the_scene_xvid_episode_1.ogv",
-        "height": 304
-      },
-      {
-        "season": 1,
-        "episode": 1,
-        "title": "Episode 1",
-        "src": "https://archive.org/download/the_scene_xvid_episode_1/the_scene_xvid_episode_1_512kb.mp4",
-        "height": 240
+        "src": "https://archive.org/download/Yousaf-Payamber-Urdu/H.%20Yousaf%20a.s%2FProphet%20Yousuf%20%26%2340%3Ba.s.%26%2341%3B%20-%20Episode%2045%20in%20URDU%20%5BHD%5D-ShiaTV.net-hd.mp4"
       }
     ]
   },
@@ -8578,470 +5140,403 @@ window.CATALOG = [
         "season": 1,
         "episode": 1,
         "title": "Episode 1",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e01.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e01.mp4"
       },
       {
         "season": 1,
         "episode": 2,
         "title": "Episode 2",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e02.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e02.mp4"
       },
       {
         "season": 1,
         "episode": 3,
         "title": "Episode 3",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e03.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e03.mp4"
       },
       {
         "season": 1,
         "episode": 4,
         "title": "Episode 4",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e04.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e04.mp4"
       },
       {
         "season": 1,
         "episode": 5,
         "title": "Episode 5",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e05.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e05.mp4"
       },
       {
         "season": 1,
         "episode": 6,
         "title": "Episode 6",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e06.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e06.mp4"
       },
       {
         "season": 1,
         "episode": 7,
         "title": "Episode 7",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e07.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e07.mp4"
       },
       {
         "season": 1,
         "episode": 8,
         "title": "Episode 8",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e08.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e08.mp4"
       },
       {
         "season": 1,
         "episode": 9,
         "title": "Episode 9",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e09.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e09.mp4"
       },
       {
         "season": 1,
         "episode": 10,
         "title": "Episode 10",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e10.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e10.mp4"
       },
       {
         "season": 1,
         "episode": 11,
         "title": "Episode 11",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e11.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e11.mp4"
       },
       {
         "season": 1,
         "episode": 12,
         "title": "Episode 12",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e12.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e12.mp4"
       },
       {
         "season": 1,
         "episode": 13,
         "title": "Episode 13",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e13.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e13.mp4"
       },
       {
         "season": 1,
         "episode": 14,
         "title": "Episode 14",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e14.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e14.mp4"
       },
       {
         "season": 1,
         "episode": 15,
         "title": "Episode 15",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e15.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e15.mp4"
       },
       {
         "season": 1,
         "episode": 16,
         "title": "Episode 16",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e16.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e16.mp4"
       },
       {
         "season": 1,
         "episode": 17,
         "title": "Episode 17",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e17.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e17.mp4"
       },
       {
         "season": 1,
         "episode": 18,
         "title": "Episode 18",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e18.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e18.mp4"
       },
       {
         "season": 1,
         "episode": 19,
         "title": "Episode 19",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e19.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e19.mp4"
       },
       {
         "season": 1,
         "episode": 20,
         "title": "Episode 20",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e20.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e20.mp4"
       },
       {
         "season": 1,
         "episode": 21,
         "title": "Episode 21",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e21.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e21.mp4"
       },
       {
         "season": 1,
         "episode": 22,
         "title": "Episode 22",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e22.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e22.mp4"
       },
       {
         "season": 1,
         "episode": 23,
         "title": "Episode 23",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e23.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e23.mp4"
       },
       {
         "season": 1,
         "episode": 24,
         "title": "Episode 24",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e24.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e24.mp4"
       },
       {
         "season": 1,
         "episode": 25,
         "title": "Episode 25",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e25.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e25.mp4"
       },
       {
         "season": 1,
         "episode": 26,
         "title": "Episode 26",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e26.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e26.mp4"
       },
       {
         "season": 1,
         "episode": 27,
         "title": "Episode 27",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e27.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e27.mp4"
       },
       {
         "season": 1,
         "episode": 28,
         "title": "Episode 28",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e28.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e28.mp4"
       },
       {
         "season": 1,
         "episode": 29,
         "title": "Episode 29",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e29.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e29.mp4"
       },
       {
         "season": 1,
         "episode": 30,
         "title": "Episode 30",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e30.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e30.mp4"
       },
       {
         "season": 1,
         "episode": 31,
         "title": "Episode 31",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e31.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e31.mp4"
       },
       {
         "season": 1,
         "episode": 32,
         "title": "Episode 32",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e32.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e32.mp4"
       },
       {
         "season": 1,
         "episode": 33,
         "title": "Episode 33",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e33.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e33.mp4"
       },
       {
         "season": 1,
         "episode": 34,
         "title": "Episode 34",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e34.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e34.mp4"
       },
       {
         "season": 1,
         "episode": 35,
         "title": "Episode 35",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e35.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e35.mp4"
       },
       {
         "season": 1,
         "episode": 36,
         "title": "Episode 36",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e36.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e36.mp4"
       },
       {
         "season": 1,
         "episode": 37,
         "title": "Episode 37",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e37.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e37.mp4"
       },
       {
         "season": 1,
         "episode": 38,
         "title": "Episode 38",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e38.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e38.mp4"
       },
       {
         "season": 1,
         "episode": 39,
         "title": "Episode 39",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e39.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e39.mp4"
       },
       {
         "season": 1,
         "episode": 40,
         "title": "Episode 40",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e40.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e40.mp4"
       },
       {
         "season": 1,
         "episode": 41,
         "title": "Episode 41",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e41.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e41.mp4"
       },
       {
         "season": 1,
         "episode": 42,
         "title": "Episode 42",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e42.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e42.mp4"
       },
       {
         "season": 1,
         "episode": 43,
         "title": "Episode 43",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e43.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e43.mp4"
       },
       {
         "season": 1,
         "episode": 44,
         "title": "Episode 44",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e44.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e44.mp4"
       },
       {
         "season": 1,
         "episode": 45,
         "title": "Episode 45",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e45.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e45.mp4"
       },
       {
         "season": 1,
         "episode": 46,
         "title": "Episode 46",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e46.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e46.mp4"
       },
       {
         "season": 1,
         "episode": 47,
         "title": "Episode 47",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e47.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e47.mp4"
       },
       {
         "season": 1,
         "episode": 48,
         "title": "Episode 48",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e48.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e48.mp4"
       },
       {
         "season": 1,
         "episode": 49,
         "title": "Episode 49",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e49.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e49.mp4"
       },
       {
         "season": 1,
         "episode": 50,
         "title": "Episode 50",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e50.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e50.mp4"
       },
       {
         "season": 1,
         "episode": 51,
         "title": "Episode 51",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e51.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e51.mp4"
       },
       {
         "season": 1,
         "episode": 52,
         "title": "Episode 52",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e52.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e52.mp4"
       },
       {
         "season": 1,
         "episode": 53,
         "title": "Episode 53",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e53.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e53.mp4"
       },
       {
         "season": 1,
         "episode": 54,
         "title": "Episode 54",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e54.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e54.mp4"
       },
       {
         "season": 1,
         "episode": 55,
         "title": "Episode 55",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e55.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e55.mp4"
       },
       {
         "season": 1,
         "episode": 56,
         "title": "Episode 56",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e56.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e56.mp4"
       },
       {
         "season": 1,
         "episode": 57,
         "title": "Episode 57",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e57.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e57.mp4"
       },
       {
         "season": 1,
         "episode": 58,
         "title": "Episode 58",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e58.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e58.mp4"
       },
       {
         "season": 1,
         "episode": 59,
         "title": "Episode 59",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e59.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e59.mp4"
       },
       {
         "season": 1,
         "episode": 60,
         "title": "Episode 60",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e60.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e60.mp4"
       },
       {
         "season": 1,
         "episode": 61,
         "title": "Episode 61",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e61.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e61.mp4"
       },
       {
         "season": 1,
         "episode": 62,
         "title": "Episode 62",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e62.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e62.mp4"
       },
       {
         "season": 1,
         "episode": 63,
         "title": "Episode 63",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e63.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e63.mp4"
       },
       {
         "season": 1,
         "episode": 64,
         "title": "Episode 64",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e64.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e64.mp4"
       },
       {
         "season": 1,
         "episode": 65,
         "title": "Episode 65",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e65.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e65.mp4"
       },
       {
         "season": 1,
         "episode": 66,
         "title": "Episode 66",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e66.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e66.mp4"
       },
       {
         "season": 1,
         "episode": 67,
         "title": "Episode 67",
-        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e67.mp4",
-        "height": 1080
+        "src": "https://archive.org/download/zoids-chaotic-century-s-01e-03/Zoids%20Chaotic%20Century%20-%20S01e67.mp4"
       }
     ]
   }
