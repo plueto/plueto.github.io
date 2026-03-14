@@ -4,20 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Watch • Plueto TV</title>
+  <script src="catalog.js"></script>
+  <script src="my-list-utils.js"></script>
   <style>
     :root{
       --bg:#0d0d12;
       --panel:#15151d;
-      --panel-2:#1c1c26;
       --text:#f4f4f5;
       --muted:#a7a7b3;
       --purple:#7a5cff;
       --blue:#3aa8ff;
-      --border:rgba(255,255,255,0.08);
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
-
     body{
       background:var(--bg);
       color:var(--text);
@@ -37,24 +36,22 @@
       padding:16px 24px;
       background:rgba(13,13,18,0.92);
       backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--border);
+      border-bottom:1px solid rgba(255,255,255,.08);
     }
 
     .brand{
       font-weight:800;
       letter-spacing:1px;
       margin-right:18px;
+      color:var(--purple);
     }
 
     .navbar a{
       color:var(--muted);
       font-weight:600;
-      transition:color .18s ease;
     }
 
-    .navbar a:hover{
-      color:var(--text);
-    }
+    .navbar a:hover{color:var(--text)}
 
     .page{
       padding:24px;
@@ -77,23 +74,22 @@
 
     .player-shell{
       background:var(--panel);
-      border:1px solid var(--border);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:22px;
       overflow:hidden;
       box-shadow:0 24px 60px rgba(0,0,0,.3);
     }
 
-    .player-shell iframe{
+    .player-shell video{
       width:100%;
       aspect-ratio:16/9;
-      border:0;
       display:block;
       background:#000;
     }
 
     .info-card{
       background:var(--panel);
-      border:1px solid var(--border);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:22px;
       padding:22px;
     }
@@ -120,7 +116,6 @@
     }
 
     .description{
-      color:var(--text);
       margin-bottom:18px;
     }
 
@@ -140,12 +135,6 @@
       font-weight:700;
       border:1px solid transparent;
       cursor:pointer;
-      transition:transform .18s ease, opacity .18s ease, border-color .18s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-      opacity:.95;
     }
 
     .btn-primary{
@@ -155,28 +144,33 @@
 
     .btn-secondary{
       background:transparent;
-      border-color:var(--border);
+      border-color:rgba(255,255,255,.08);
       color:var(--text);
     }
 
-    .poster-preview{
-      width:100%;
-      border-radius:18px;
-      overflow:hidden;
-      border:1px solid var(--border);
-      background:#111;
+    .episode-wrap{
+      margin-top:18px;
     }
 
-    .poster-preview img{
+    .episode-label{
+      font-size:.86rem;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+
+    select{
       width:100%;
-      aspect-ratio:2/3;
-      object-fit:cover;
-      display:block;
+      background:#0f0f15;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:12px;
+      font-size:.96rem;
     }
 
     .error-box{
       background:var(--panel);
-      border:1px solid var(--border);
+      border:1px solid rgba(255,255,255,.08);
       border-radius:18px;
       padding:22px;
       color:var(--muted);
@@ -211,36 +205,29 @@
     <div id="watch-app">
       <div class="watch-layout">
         <div class="player-shell">
-          <iframe
-            data-watch-frame
-            allowfullscreen
-            loading="lazy"
-            referrerpolicy="no-referrer"
-            title="Player"
-          ></iframe>
+          <video id="player" controls playsinline></video>
         </div>
 
         <aside class="info-card">
           <div class="eyebrow">Now Streaming</div>
-          <h1 data-watch-title>Loading…</h1>
-          <p class="meta" data-watch-meta></p>
-          <p class="description" data-watch-description></p>
+          <h1 id="watch-title">Loading…</h1>
+          <p class="meta" id="watch-meta"></p>
+          <p class="description" id="watch-description"></p>
 
           <div class="actions">
-            <button class="btn btn-primary" data-my-list-button type="button">+ My List</button>
+            <button class="btn btn-primary" id="my-list-btn" type="button">+ My List</button>
             <a class="btn btn-secondary" href="my-list.html">Open My List</a>
           </div>
 
-          <div class="poster-preview">
-            <img data-watch-poster src="" alt="Poster" />
+          <div class="episode-wrap" id="episode-wrap" style="display:none;">
+            <div class="episode-label">Episodes</div>
+            <select id="episode-select"></select>
           </div>
         </aside>
       </div>
     </div>
   </main>
 
-  <script src="catalog.js"></script>
-  <script src="my-list-utils.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
@@ -248,12 +235,13 @@
     const item = catalog.find(entry => entry.id === id);
 
     const watchApp = document.getElementById("watch-app");
-    const titleEl = document.querySelector("[data-watch-title]");
-    const metaEl = document.querySelector("[data-watch-meta]");
-    const descEl = document.querySelector("[data-watch-description]");
-    const frameEl = document.querySelector("[data-watch-frame]");
-    const posterEl = document.querySelector("[data-watch-poster]");
-    const myListBtn = document.querySelector("[data-my-list-button]");
+    const titleEl = document.getElementById("watch-title");
+    const metaEl = document.getElementById("watch-meta");
+    const descEl = document.getElementById("watch-description");
+    const playerEl = document.getElementById("player");
+    const myListBtn = document.getElementById("my-list-btn");
+    const episodeWrap = document.getElementById("episode-wrap");
+    const episodeSelect = document.getElementById("episode-select");
 
     if (!item) {
       watchApp.innerHTML = `
@@ -265,37 +253,38 @@
       `;
     } else {
       document.title = `${item.title} • Plueto TV`;
-
-      if (titleEl) titleEl.textContent = item.title;
-      if (metaEl) {
-        const bits = [item.year, item.duration, item.rating].filter(Boolean);
-        metaEl.textContent = bits.join(" • ");
-      }
-      if (descEl) descEl.textContent = item.description || "";
-      if (frameEl && item.preview) {
-        frameEl.src = item.preview;
-        frameEl.title = item.title;
-      }
-      if (posterEl) {
-        posterEl.src = item.image;
-        posterEl.alt = item.title;
-        posterEl.onerror = function () {
-          this.onerror = null;
-          this.src = item.fallbackImage || item.image;
-        };
-      }
+      titleEl.textContent = item.title;
+      descEl.textContent = item.description || "";
 
       function refreshMyListButton() {
-        if (!myListBtn) return;
         myListBtn.textContent = getMyListButtonLabel(item.id);
       }
 
-      if (myListBtn) {
+      refreshMyListButton();
+      myListBtn.addEventListener("click", () => {
+        toggleMyList(item.id);
         refreshMyListButton();
-        myListBtn.addEventListener("click", () => {
-          toggleMyList(item.id);
-          refreshMyListButton();
+      });
+
+      if (item.type === "tv" && Array.isArray(item.episodes) && item.episodes.length) {
+        metaEl.textContent = `${item.year || "—"} • ${item.episodes.length} episodes • ${item.rating || "TV-G"}`;
+        episodeWrap.style.display = "block";
+
+        episodeSelect.innerHTML = item.episodes.map(ep => `
+          <option value="${ep.src}">
+            Season ${ep.season} • Episode ${ep.episode}
+          </option>
+        `).join("");
+
+        playerEl.src = item.episodes[0].src;
+
+        episodeSelect.addEventListener("change", () => {
+          playerEl.src = episodeSelect.value;
+          playerEl.play().catch(() => {});
         });
+      } else {
+        metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
+        playerEl.src = item.preview || "";
       }
     }
   </script>
