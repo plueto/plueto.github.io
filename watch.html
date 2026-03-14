@@ -10,13 +10,16 @@
     :root{
       --bg:#0d0d12;
       --panel:#15151d;
+      --panel-2:#1c1c26;
       --text:#f4f4f5;
       --muted:#a7a7b3;
       --purple:#7a5cff;
       --blue:#3aa8ff;
+      --border:rgba(255,255,255,0.08);
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
+
     body{
       background:var(--bg);
       color:var(--text);
@@ -36,7 +39,7 @@
       padding:16px 24px;
       background:rgba(13,13,18,0.92);
       backdrop-filter:blur(10px);
-      border-bottom:1px solid rgba(255,255,255,.08);
+      border-bottom:1px solid var(--border);
     }
 
     .brand{
@@ -49,9 +52,12 @@
     .navbar a{
       color:var(--muted);
       font-weight:600;
+      transition:color .18s ease;
     }
 
-    .navbar a:hover{color:var(--text)}
+    .navbar a:hover{
+      color:var(--text);
+    }
 
     .page{
       padding:24px;
@@ -74,7 +80,7 @@
 
     .player-shell{
       background:var(--panel);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid var(--border);
       border-radius:22px;
       overflow:hidden;
       box-shadow:0 24px 60px rgba(0,0,0,.3);
@@ -83,13 +89,14 @@
     .player-shell video{
       width:100%;
       aspect-ratio:16/9;
+      border:0;
       display:block;
       background:#000;
     }
 
     .info-card{
       background:var(--panel);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid var(--border);
       border-radius:22px;
       padding:22px;
     }
@@ -116,6 +123,7 @@
     }
 
     .description{
+      color:var(--text);
       margin-bottom:18px;
     }
 
@@ -135,6 +143,12 @@
       font-weight:700;
       border:1px solid transparent;
       cursor:pointer;
+      transition:transform .18s ease, opacity .18s ease, border-color .18s ease;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      opacity:.95;
     }
 
     .btn-primary{
@@ -144,18 +158,23 @@
 
     .btn-secondary{
       background:transparent;
-      border-color:rgba(255,255,255,.08);
+      border-color:var(--border);
       color:var(--text);
     }
 
     .episode-wrap{
       margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
     }
 
     .episode-label{
       font-size:.86rem;
       color:var(--muted);
       margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:700;
     }
 
     select{
@@ -166,11 +185,16 @@
       border-radius:12px;
       padding:12px;
       font-size:.96rem;
+      outline:none;
+    }
+
+    select:focus{
+      border-color:var(--purple);
     }
 
     .error-box{
       background:var(--panel);
-      border:1px solid rgba(255,255,255,.08);
+      border:1px solid var(--border);
       border-radius:18px;
       padding:22px;
       color:var(--muted);
@@ -243,6 +267,10 @@
     const episodeWrap = document.getElementById("episode-wrap");
     const episodeSelect = document.getElementById("episode-select");
 
+    function formatEpisodeLabel(ep) {
+      return `Season ${ep.season} • Episode ${ep.episode}`;
+    }
+
     if (!item) {
       watchApp.innerHTML = `
         <div class="error-box">
@@ -257,10 +285,12 @@
       descEl.textContent = item.description || "";
 
       function refreshMyListButton() {
+        if (!myListBtn) return;
         myListBtn.textContent = getMyListButtonLabel(item.id);
       }
 
       refreshMyListButton();
+
       myListBtn.addEventListener("click", () => {
         toggleMyList(item.id);
         refreshMyListButton();
@@ -270,9 +300,9 @@
         metaEl.textContent = `${item.year || "—"} • ${item.episodes.length} episodes • ${item.rating || "TV-G"}`;
         episodeWrap.style.display = "block";
 
-        episodeSelect.innerHTML = item.episodes.map(ep => `
-          <option value="${ep.src}">
-            Season ${ep.season} • Episode ${ep.episode}
+        episodeSelect.innerHTML = item.episodes.map((ep, index) => `
+          <option value="${ep.src}" ${index === 0 ? "selected" : ""}>
+            ${formatEpisodeLabel(ep)}
           </option>
         `).join("");
 
