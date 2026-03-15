@@ -61,7 +61,7 @@
     }
 
     .page{
-      max-width:920px;
+      max-width:980px;
       margin:0 auto;
       padding:40px 22px 70px;
     }
@@ -194,7 +194,7 @@
     }
 
     textarea{
-      min-height:130px;
+      min-height:140px;
       resize:vertical;
     }
 
@@ -204,6 +204,35 @@
       border-color:rgba(122,92,255,.55);
       box-shadow:0 0 0 4px rgba(122,92,255,.10);
       background:#20202b;
+    }
+
+    .tag-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:10px;
+      margin-top:4px;
+    }
+
+    .tag-option{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px 12px;
+    }
+
+    .tag-option input{
+      width:auto;
+      accent-color:var(--purple);
+    }
+
+    .tag-option label{
+      font-size:.9rem;
+      font-weight:600;
+      color:#e8e8ef;
+      cursor:pointer;
     }
 
     .checkbox-wrap{
@@ -276,9 +305,16 @@
       display:none;
     }
 
+    @media (max-width: 900px){
+      .tag-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+    }
+
     @media (max-width: 800px){
       .info-grid,
-      .form-grid{
+      .form-grid,
+      .tag-grid{
         grid-template-columns:1fr;
       }
 
@@ -310,7 +346,7 @@
         Plueto TV is a curated streaming platform focused on cult cinema, retro sci-fi,
         experimental animation, psychological thrillers, reality-bending films, and
         other off-center stories. Fill this out so we can review your film quickly and
-        place it in the right section if accepted.
+        use your submission data directly if it’s accepted.
       </p>
     </section>
 
@@ -327,9 +363,9 @@
         <h2>What Helps Most</h2>
         <ul>
           <li>A working screener link</li>
-          <li>A poster URL if available</li>
-          <li>A clear genre / vibe fit</li>
-          <li>Your preferred placement idea</li>
+          <li>A direct poster image URL</li>
+          <li>A clear genre selection</li>
+          <li>Accurate tone / vibe tags</li>
         </ul>
       </div>
     </section>
@@ -362,53 +398,152 @@
           </div>
 
           <div class="field">
-            <label for="runtime">Runtime</label>
-            <input id="runtime" type="text" name="Runtime" placeholder="18 min / 1h 27m">
+            <label for="runtime">Runtime (minutes)</label>
+            <input id="runtime" type="number" name="Runtime (minutes)" min="1" placeholder="87" required>
           </div>
 
           <div class="field">
             <label for="country">Country</label>
-            <input id="country" type="text" name="Country">
+            <select id="country" name="Country">
+              <option value="">Select country</option>
+              <option>United States</option>
+              <option>United Kingdom</option>
+              <option>Canada</option>
+              <option>Mexico</option>
+              <option>Brazil</option>
+              <option>Argentina</option>
+              <option>France</option>
+              <option>Germany</option>
+              <option>Italy</option>
+              <option>Spain</option>
+              <option>Netherlands</option>
+              <option>Belgium</option>
+              <option>Sweden</option>
+              <option>Norway</option>
+              <option>Denmark</option>
+              <option>Finland</option>
+              <option>Poland</option>
+              <option>Czech Republic</option>
+              <option>Romania</option>
+              <option>Ukraine</option>
+              <option>Turkey</option>
+              <option>India</option>
+              <option>Pakistan</option>
+              <option>Bangladesh</option>
+              <option>China</option>
+              <option>Japan</option>
+              <option>South Korea</option>
+              <option>Thailand</option>
+              <option>Vietnam</option>
+              <option>Philippines</option>
+              <option>Indonesia</option>
+              <option>Australia</option>
+              <option>New Zealand</option>
+              <option>South Africa</option>
+              <option>Nigeria</option>
+              <option>Egypt</option>
+              <option>Morocco</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
 
-        <div class="section-title">Catalog Placement</div>
+        <div class="section-title">Catalog Info</div>
 
         <div class="form-grid">
           <div class="field">
-            <label for="genre">Primary Genre / Vibe</label>
-            <select id="genre" name="Primary Genre / Vibe" required>
+            <label for="genre">Primary Genre</label>
+            <select id="genre" name="Primary Genre" required>
               <option value="">Select one</option>
-              <option value="Cult Cinema">Cult Cinema</option>
-              <option value="Retro Sci-Fi">Retro Sci-Fi</option>
-              <option value="Experimental Animation">Experimental Animation</option>
-              <option value="Psychological Thriller">Psychological Thriller</option>
-              <option value="Horror">Horror</option>
-              <option value="Thriller">Thriller</option>
-              <option value="Reality-Bending">Reality-Bending</option>
-              <option value="Death Game">Death Game</option>
-              <option value="Mystery">Mystery</option>
-              <option value="Drama">Drama</option>
-              <option value="Animation">Animation</option>
-              <option value="Other">Other</option>
+              <option>Action</option>
+              <option>Adventure</option>
+              <option>Animation</option>
+              <option>Comedy</option>
+              <option>Cult Cinema</option>
+              <option>Crime</option>
+              <option>Death Game</option>
+              <option>Documentary</option>
+              <option>Drama</option>
+              <option>Experimental</option>
+              <option>Experimental Animation</option>
+              <option>Fantasy</option>
+              <option>Historical</option>
+              <option>Horror</option>
+              <option>Mystery</option>
+              <option>Psychological Thriller</option>
+              <option>Reality-Bending</option>
+              <option>Retro Sci-Fi</option>
+              <option>Romance</option>
+              <option>Satire</option>
+              <option>Sci-Fi</option>
+              <option>Short Film</option>
+              <option>Surreal</option>
+              <option>Thriller</option>
+              <option>War</option>
+              <option>Western</option>
+              <option>Other</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="secondary">Secondary Genre / Vibe</label>
-            <input id="secondary" type="text" name="Secondary Genre / Vibe" placeholder="Optional">
+            <label for="secondary-genre">Secondary Genre / Vibe</label>
+            <input id="secondary-genre" type="text" name="Secondary Genre / Vibe" placeholder="Optional">
           </div>
 
           <div class="field full">
-            <label for="placement">Preferred Placement on Plueto TV</label>
-            <input
-              id="placement"
-              type="text"
-              name="Preferred Placement"
-              placeholder="Examples: Midnight Horror, Sci-Fi Showcase, Plueto Presents, Experimental Animation"
-            >
+            <label>How would you describe the tone of your film?</label>
             <div class="hint">
-              This helps us sort the film faster. Final placement is still curated by Plueto TV.
+              Pick the words that best fit. This helps us curate and place the film later.
+            </div>
+            <div class="tag-grid">
+              <div class="tag-option">
+                <input id="tone-dark" type="checkbox" name="Tone / Vibe" value="Dark">
+                <label for="tone-dark">Dark</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-surreal" type="checkbox" name="Tone / Vibe" value="Surreal">
+                <label for="tone-surreal">Surreal</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-psychological" type="checkbox" name="Tone / Vibe" value="Psychological">
+                <label for="tone-psychological">Psychological</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-experimental" type="checkbox" name="Tone / Vibe" value="Experimental">
+                <label for="tone-experimental">Experimental</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-absurd" type="checkbox" name="Tone / Vibe" value="Absurd">
+                <label for="tone-absurd">Absurd</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-dreamlike" type="checkbox" name="Tone / Vibe" value="Dreamlike">
+                <label for="tone-dreamlike">Dreamlike</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-retro" type="checkbox" name="Tone / Vibe" value="Retro">
+                <label for="tone-retro">Retro</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-cult" type="checkbox" name="Tone / Vibe" value="Cult">
+                <label for="tone-cult">Cult</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-atmospheric" type="checkbox" name="Tone / Vibe" value="Atmospheric">
+                <label for="tone-atmospheric">Atmospheric</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-reality-bending" type="checkbox" name="Tone / Vibe" value="Reality-Bending">
+                <label for="tone-reality-bending">Reality-Bending</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-high-energy" type="checkbox" name="Tone / Vibe" value="High Energy">
+                <label for="tone-high-energy">High Energy</label>
+              </div>
+              <div class="tag-option">
+                <input id="tone-slow-cinema" type="checkbox" name="Tone / Vibe" value="Slow Cinema">
+                <label for="tone-slow-cinema">Slow Cinema</label>
+              </div>
             </div>
           </div>
         </div>
@@ -443,26 +578,30 @@
           </div>
 
           <div class="field">
-            <label for="poster-url">Poster URL</label>
+            <label for="poster-url">Poster Image URL</label>
             <input
               id="poster-url"
               type="url"
-              name="Poster URL"
-              placeholder="Optional but recommended"
-              pattern="https://.*"
+              name="Poster Image URL"
+              placeholder="Direct .jpg, .jpeg, .png, or .webp image URL"
+              pattern="https://.*\.(jpg|jpeg|png|webp)(\?.*)?$"
+              required
             >
+            <div class="hint">
+              Direct image URL only. Recommended poster ratio: 2:3, such as 1000×1500.
+            </div>
           </div>
         </div>
 
-        <div class="section-title">Film Details</div>
+        <div class="section-title">On-Site Description</div>
 
         <div class="form-grid">
           <div class="field full">
-            <label for="description">Short Description / Synopsis</label>
+            <label for="description">Official Film Description / Synopsis</label>
             <textarea
               id="description"
-              name="Description"
-              placeholder="Tell us what the film is about and why it fits Plueto TV."
+              name="Official Film Description / Synopsis"
+              placeholder="This description may be used directly on Plueto TV if your film is accepted."
               required
             ></textarea>
           </div>
@@ -472,7 +611,7 @@
             <textarea
               id="notes"
               name="Additional Notes"
-              placeholder="Festival history, premiere status, content notes, cast/crew info, placement ideas, or anything else we should know."
+              placeholder="Festival history, premiere status, content notes, cast/crew info, or anything else we should know."
             ></textarea>
           </div>
         </div>
@@ -495,7 +634,7 @@
         </div>
 
         <div class="small-note">
-          Tip: if you have a poster and trailer ready, your review usually goes faster because it’s easier to picture how the film will look on-platform.
+          Since Plueto TV is presentation-driven, a poster image is required so we can review branding, placement, and catalog fit faster.
         </div>
       </form>
     </section>
