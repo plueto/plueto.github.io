@@ -64,6 +64,8 @@
     }
 
     .nav-search{
+      position:relative;
+      overflow:visible;
       width:100%;
       max-width:560px;
       height:50px;
@@ -605,19 +607,117 @@
       const input = document.getElementById("nav-search-input");
       if (!form || !input) return;
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
-        const query = input.value.trim().toLowerCase();
-        if (!query) return;
+      const existingBox = document.getElementById("nav-search-results");
+      if (existingBox) existingBox.remove();
+
+      const resultsBox = document.createElement("div");
+      resultsBox.id = "nav-search-results";
+      resultsBox.style.position = "absolute";
+      resultsBox.style.top = "calc(100% + 10px)";
+      resultsBox.style.left = "0";
+      resultsBox.style.width = "100%";
+      resultsBox.style.maxHeight = "340px";
+      resultsBox.style.overflowY = "auto";
+      resultsBox.style.borderRadius = "18px";
+      resultsBox.style.background = "rgba(21,21,29,.96)";
+      resultsBox.style.border = "1px solid rgba(255,255,255,.08)";
+      resultsBox.style.boxShadow = "0 16px 40px rgba(0,0,0,.35)";
+      resultsBox.style.backdropFilter = "blur(18px)";
+      resultsBox.style.webkitBackdropFilter = "blur(18px)";
+      resultsBox.style.display = "none";
+      resultsBox.style.zIndex = "200";
+      resultsBox.style.padding = "8px";
+
+      form.appendChild(resultsBox);
+
+      function getMatches(query) {
+        const q = query.trim().toLowerCase();
+        if (!q) return [];
 
         const allTitles = Array.isArray(window.CATALOG) ? window.CATALOG : [];
-        const match = allTitles.find(item => {
-          const title = String(item.title || "").toLowerCase();
-          return title.includes(query);
-        });
 
-        if (match) {
-          window.location.href = `watch.html?id=${encodeURIComponent(match.id)}`;
+        return allTitles
+          .filter(item => {
+            const title = String(item.title || "").toLowerCase();
+            const description = String(item.description || "").toLowerCase();
+            const row = String(item.row || "").toLowerCase();
+            return title.includes(q) || description.includes(q) || row.includes(q);
+          })
+          .slice(0, 12);
+      }
+
+      function renderResults(matches, query) {
+        if (!query.trim()) {
+          resultsBox.style.display = "none";
+          resultsBox.innerHTML = "";
+          return;
+        }
+
+        if (!matches.length) {
+          resultsBox.innerHTML = `
+            <div style="padding:14px 16px; color:rgba(255,255,255,.68); font-size:14px;">
+              No results found for "${escapeHtml(query)}"
+            </div>
+          `;
+          resultsBox.style.display = "block";
+          return;
+        }
+
+        resultsBox.innerHTML = matches.map(item => `
+          <a
+            href="watch.html?id=${encodeURIComponent(item.id)}"
+            style="
+              display:flex;
+              flex-direction:column;
+              gap:4px;
+              padding:12px 14px;
+              border-radius:12px;
+              color:#f4f4f5;
+              text-decoration:none;
+            "
+            onmouseover="this.style.background='rgba(255,255,255,.06)'"
+            onmouseout="this.style.background='transparent'"
+          >
+            <div style="font-weight:700; font-size:14px;">${escapeHtml(item.title || "Untitled")}</div>
+            <div style="font-size:12px; color:rgba(255,255,255,.58);">
+              ${escapeHtml(item.year || "—")} • ${escapeHtml(item.type || "title")} • ${escapeHtml(item.rating || "NR")}
+            </div>
+          </a>
+        `).join("");
+
+        resultsBox.style.display = "block";
+      }
+
+      input.addEventListener("input", () => {
+        const query = input.value;
+        const matches = getMatches(query);
+        renderResults(matches, query);
+      });
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const query = input.value;
+        const matches = getMatches(query);
+
+        if (matches.length === 1) {
+          window.location.href = `watch.html?id=${encodeURIComponent(matches[0].id)}`;
+          return;
+        }
+
+        renderResults(matches, query);
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!form.contains(event.target)) {
+          resultsBox.style.display = "none";
+        }
+      });
+
+      input.addEventListener("focus", () => {
+        const query = input.value;
+        const matches = getMatches(query);
+        if (query.trim()) {
+          renderResults(matches, query);
         }
       });
     }
