@@ -6,8 +6,6 @@
   <title>Plueto TV</title>
   <script src="catalog.js"></script>
   <script src="my-list-utils.js"></script>
-  <link rel="stylesheet" href="navbar.css">
-  <script src="navbar.js" defer></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -337,7 +335,16 @@
   </style>
 </head>
 <body>
-  <div id="navbar-mount"></div>
+  <div class="navbar">
+    <a href="index.html" class="logo">PLUETO TV</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="movies.html">Movies</a>
+      <a href="tv.html">TV Shows</a>
+      <a href="new.html">Recently Added</a>
+      <a href="my-list.html">My List</a>
+    </div>
+  </div>
 
   <section class="hero" id="hero">
     <div class="hero-bg" id="hero-bg"></div>
@@ -527,7 +534,6 @@
       renderRow("my-list-row", myListItems, posters);
     }
 
-    loadNavbar("home");
     renderHome();
     window.addEventListener("storage", renderHome);
   </script>
