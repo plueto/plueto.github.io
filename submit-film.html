@@ -1,97 +1,504 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Submit Film • Plueto TV</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Film • Plueto TV</title>
+  <style>
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --panel-2:#1c1c26;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --border:rgba(255,255,255,.08);
+    }
 
-<style>
-:root{
---bg:#0d0d12;
---panel:#15151d;
---text:#f4f4f5;
---muted:#a7a7b3;
---purple:#7a5cff;
-}
+    *{margin:0;padding:0;box-sizing:border-box}
 
-body{
-background:var(--bg);
-color:var(--text);
-font-family:Arial,Helvetica,sans-serif;
-margin:0;
-}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.45;
+    }
 
-.page{
-max-width:700px;
-margin:auto;
-padding:40px 28px;
-}
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
 
-h1{
-font-size:36px;
-margin-bottom:20px;
-}
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:20;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:18px 28px;
+      background:rgba(10,10,14,.86);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--border);
+    }
 
-label{
-display:block;
-margin-top:16px;
-margin-bottom:6px;
-color:#ddd;
-}
+    .logo{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.04em;
+      color:var(--purple);
+      text-shadow:0 0 24px rgba(122,92,255,.22);
+    }
 
-input, textarea{
-width:100%;
-padding:10px;
-border-radius:8px;
-border:none;
-background:#1b1b24;
-color:white;
-}
+    .nav-link{
+      color:var(--muted);
+      font-weight:600;
+    }
 
-button{
-margin-top:20px;
-padding:12px 20px;
-border:none;
-border-radius:999px;
-background:linear-gradient(135deg,var(--purple),#3aa8ff);
-color:white;
-font-weight:700;
-cursor:pointer;
-}
-</style>
+    .nav-link:hover{
+      color:var(--text);
+    }
 
+    .page{
+      max-width:920px;
+      margin:0 auto;
+      padding:40px 22px 70px;
+    }
+
+    .hero{
+      margin-bottom:28px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#d7d7e3;
+      font-size:12px;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      margin-bottom:14px;
+    }
+
+    .eyebrow::before{
+      content:"";
+      width:9px;
+      height:9px;
+      border-radius:999px;
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      box-shadow:0 0 14px rgba(122,92,255,.45);
+    }
+
+    h1{
+      font-size:clamp(2rem,5vw,3.2rem);
+      line-height:1;
+      margin-bottom:14px;
+    }
+
+    .intro{
+      color:var(--muted);
+      max-width:760px;
+      line-height:1.65;
+    }
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+      margin:28px 0 34px;
+    }
+
+    .info-card{
+      background:linear-gradient(135deg, rgba(122,92,255,.08), rgba(58,168,255,.05));
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .info-card h2{
+      font-size:1rem;
+      margin-bottom:10px;
+    }
+
+    .info-card p,
+    .info-card li{
+      color:var(--muted);
+      font-size:.95rem;
+      line-height:1.6;
+    }
+
+    .info-card ul{
+      padding-left:18px;
+    }
+
+    .form-shell{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 20px 60px rgba(0,0,0,.25);
+    }
+
+    .section-title{
+      font-size:1.1rem;
+      font-weight:800;
+      margin:26px 0 14px;
+    }
+
+    .section-title:first-child{
+      margin-top:0;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .field.full{
+      grid-column:1 / -1;
+    }
+
+    label{
+      font-size:.94rem;
+      font-weight:700;
+      color:#ececf3;
+    }
+
+    .hint{
+      color:var(--muted);
+      font-size:.82rem;
+      line-height:1.45;
+      margin-top:-2px;
+    }
+
+    input,
+    textarea,
+    select{
+      width:100%;
+      border:1px solid rgba(255,255,255,.10);
+      background:var(--panel-2);
+      color:var(--text);
+      border-radius:14px;
+      padding:13px 14px;
+      font-size:.95rem;
+      outline:none;
+      transition:border-color .16s ease, box-shadow .16s ease, background .16s ease;
+    }
+
+    textarea{
+      min-height:130px;
+      resize:vertical;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus{
+      border-color:rgba(122,92,255,.55);
+      box-shadow:0 0 0 4px rgba(122,92,255,.10);
+      background:#20202b;
+    }
+
+    .checkbox-wrap{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px;
+      margin-top:8px;
+    }
+
+    .checkbox-wrap input{
+      width:auto;
+      margin-top:2px;
+      accent-color:var(--purple);
+    }
+
+    .checkbox-wrap label{
+      font-size:.9rem;
+      font-weight:600;
+      color:#e8e8ef;
+      line-height:1.55;
+    }
+
+    .submit-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:24px;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+    }
+
+    .submit-note{
+      color:var(--muted);
+      font-size:.88rem;
+      line-height:1.55;
+      max-width:560px;
+    }
+
+    button{
+      border:none;
+      border-radius:999px;
+      padding:14px 22px;
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      color:white;
+      font-weight:800;
+      cursor:pointer;
+      font-size:.95rem;
+      box-shadow:0 10px 26px rgba(122,92,255,.24);
+    }
+
+    button:hover{
+      opacity:.95;
+      transform:translateY(-1px);
+    }
+
+    .small-note{
+      color:var(--muted);
+      font-size:.84rem;
+      line-height:1.55;
+      margin-top:16px;
+    }
+
+    .hidden{
+      display:none;
+    }
+
+    @media (max-width: 800px){
+      .info-grid,
+      .form-grid{
+        grid-template-columns:1fr;
+      }
+
+      .navbar{
+        padding:16px 18px;
+      }
+
+      .page{
+        padding:28px 16px 56px;
+      }
+
+      .form-shell{
+        padding:18px;
+      }
+    }
+  </style>
 </head>
-
 <body>
+  <div class="navbar">
+    <a href="index.html" class="logo">PLUETO TV</a>
+    <a href="filmmakers.html" class="nav-link">For Filmmakers</a>
+  </div>
 
-<div class="page">
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">Creator Intake</div>
+      <h1>Submit Your Film</h1>
+      <p class="intro">
+        Plueto TV is a curated streaming platform focused on cult cinema, retro sci-fi,
+        experimental animation, psychological thrillers, reality-bending films, and
+        other off-center stories. Fill this out so we can review your film quickly and
+        place it in the right section if accepted.
+      </p>
+    </section>
 
-<h1>Submit Your Film</h1>
+    <section class="info-grid">
+      <div class="info-card">
+        <h2>Accepted Screener Links</h2>
+        <p>
+          Please submit only trusted links from Vimeo, YouTube, Google Drive,
+          or Dropbox.
+        </p>
+      </div>
 
-<form action="https://formspree.io/f/YOURID" method="POST">
+      <div class="info-card">
+        <h2>What Helps Most</h2>
+        <ul>
+          <li>A working screener link</li>
+          <li>A poster URL if available</li>
+          <li>A clear genre / vibe fit</li>
+          <li>Your preferred placement idea</li>
+        </ul>
+      </div>
+    </section>
 
-<label>Film Title</label> <input type="text" name="title" required>
+    <section class="form-shell">
+      <form action="https://formspree.io/f/mojknzaj" method="POST">
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
 
-<label>Director</label> <input type="text" name="director">
+        <div class="section-title">Basic Info</div>
 
-<label>Email</label> <input type="email" name="email" required>
+        <div class="form-grid">
+          <div class="field">
+            <label for="title">Film Title</label>
+            <input id="title" type="text" name="Film Title" required>
+          </div>
 
-<label>Runtime</label> <input type="text" name="runtime">
+          <div class="field">
+            <label for="director">Director / Creator Name</label>
+            <input id="director" type="text" name="Director Name" required>
+          </div>
 
-<label>Year</label> <input type="text" name="year">
+          <div class="field">
+            <label for="email">Contact Email</label>
+            <input id="email" type="email" name="Contact Email" required>
+          </div>
 
-<label>Film Link (Vimeo / YouTube / Drive)</label> <input type="text" name="link" required>
+          <div class="field">
+            <label for="year">Release Year</label>
+            <input id="year" type="text" name="Release Year" placeholder="2024">
+          </div>
 
-<label>Description</label>
+          <div class="field">
+            <label for="runtime">Runtime</label>
+            <input id="runtime" type="text" name="Runtime" placeholder="18 min / 1h 27m">
+          </div>
 
-<textarea name="description"></textarea>
+          <div class="field">
+            <label for="country">Country</label>
+            <input id="country" type="text" name="Country">
+          </div>
+        </div>
 
-<button type="submit">Submit Film</button>
+        <div class="section-title">Catalog Placement</div>
 
-</form>
+        <div class="form-grid">
+          <div class="field">
+            <label for="genre">Primary Genre / Vibe</label>
+            <select id="genre" name="Primary Genre / Vibe" required>
+              <option value="">Select one</option>
+              <option value="Cult Cinema">Cult Cinema</option>
+              <option value="Retro Sci-Fi">Retro Sci-Fi</option>
+              <option value="Experimental Animation">Experimental Animation</option>
+              <option value="Psychological Thriller">Psychological Thriller</option>
+              <option value="Horror">Horror</option>
+              <option value="Thriller">Thriller</option>
+              <option value="Reality-Bending">Reality-Bending</option>
+              <option value="Death Game">Death Game</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Drama">Drama</option>
+              <option value="Animation">Animation</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
 
-</div>
+          <div class="field">
+            <label for="secondary">Secondary Genre / Vibe</label>
+            <input id="secondary" type="text" name="Secondary Genre / Vibe" placeholder="Optional">
+          </div>
 
+          <div class="field full">
+            <label for="placement">Preferred Placement on Plueto TV</label>
+            <input
+              id="placement"
+              type="text"
+              name="Preferred Placement"
+              placeholder="Examples: Midnight Horror, Sci-Fi Showcase, Plueto Presents, Experimental Animation"
+            >
+            <div class="hint">
+              This helps us sort the film faster. Final placement is still curated by Plueto TV.
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">Links & Assets</div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="film-link">Film Screener Link</label>
+            <input
+              id="film-link"
+              type="url"
+              name="Film Screener Link"
+              placeholder="Vimeo, YouTube, Google Drive, or Dropbox only"
+              pattern="https://(www\.)?(vimeo\.com|player\.vimeo\.com|youtu\.be|youtube\.com|drive\.google\.com|dropbox\.com).*"
+              required
+            >
+            <div class="hint">
+              Accepted links only: Vimeo, YouTube, Google Drive, and Dropbox. No shortened URLs, executables, third-party download links, or anything requiring software installation.
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="trailer-link">Trailer Link</label>
+            <input
+              id="trailer-link"
+              type="url"
+              name="Trailer Link"
+              placeholder="Optional"
+              pattern="https://.*"
+            >
+          </div>
+
+          <div class="field">
+            <label for="poster-url">Poster URL</label>
+            <input
+              id="poster-url"
+              type="url"
+              name="Poster URL"
+              placeholder="Optional but recommended"
+              pattern="https://.*"
+            >
+          </div>
+        </div>
+
+        <div class="section-title">Film Details</div>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="description">Short Description / Synopsis</label>
+            <textarea
+              id="description"
+              name="Description"
+              placeholder="Tell us what the film is about and why it fits Plueto TV."
+              required
+            ></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="notes">Additional Notes</label>
+            <textarea
+              id="notes"
+              name="Additional Notes"
+              placeholder="Festival history, premiere status, content notes, cast/crew info, placement ideas, or anything else we should know."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="section-title">Rights Confirmation</div>
+
+        <div class="checkbox-wrap">
+          <input id="rights-confirm" type="checkbox" name="Rights Confirmation" required>
+          <label for="rights-confirm">
+            I confirm that I own this film or have permission to submit it for non-exclusive streaming consideration, and that the screener link provided is safe, accurate, and belongs to this project.
+          </label>
+        </div>
+
+        <div class="submit-row">
+          <div class="submit-note">
+            After submission, Plueto TV may review the film, request additional assets, and follow up about a non-exclusive streaming agreement if it’s a fit.
+          </div>
+
+          <button type="submit">Submit Film</button>
+        </div>
+
+        <div class="small-note">
+          Tip: if you have a poster and trailer ready, your review usually goes faster because it’s easier to picture how the film will look on-platform.
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 </html>
