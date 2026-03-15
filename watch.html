@@ -6,8 +6,6 @@
   <title>Watch • Plueto TV</title>
   <script src="catalog.js"></script>
   <script src="my-list-utils.js"></script>
-  <link rel="stylesheet" href="navbar.css">
-  <script src="navbar.js" defer></script>
   <style>
     :root{
       --bg:#0d0d12;
@@ -216,7 +214,14 @@
   </style>
 </head>
 <body>
-  <div id="navbar-mount"></div>
+  <nav class="navbar">
+    <a class="brand" href="index.html">PLUETO TV</a>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="tv.html">TV Shows</a>
+    <a href="new.html">Recently Added</a>
+    <a href="my-list.html">My List</a>
+  </nav>
 
   <main class="page">
     <a class="back-link" href="javascript:history.back()">← Back</a>
@@ -312,8 +317,6 @@
         playerEl.src = item.preview || "";
       }
     }
-
-    loadNavbar("");
   </script>
 </body>
 </html>
