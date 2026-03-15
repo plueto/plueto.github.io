@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submit Film • Plueto TV</title>
+
+<style>
+:root{
+--bg:#0d0d12;
+--panel:#15151d;
+--text:#f4f4f5;
+--muted:#a7a7b3;
+--purple:#7a5cff;
+}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+margin:0;
+}
+
+.page{
+max-width:700px;
+margin:auto;
+padding:40px 28px;
+}
+
+h1{
+font-size:36px;
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-top:16px;
+margin-bottom:6px;
+color:#ddd;
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:none;
+background:#1b1b24;
+color:white;
+}
+
+button{
+margin-top:20px;
+padding:12px 20px;
+border:none;
+border-radius:999px;
+background:linear-gradient(135deg,var(--purple),#3aa8ff);
+color:white;
+font-weight:700;
+cursor:pointer;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<h1>Submit Your Film</h1>
+
+<form action="https://formspree.io/f/YOURID" method="POST">
+
+<label>Film Title</label> <input type="text" name="title" required>
+
+<label>Director</label> <input type="text" name="director">
+
+<label>Email</label> <input type="email" name="email" required>
+
+<label>Runtime</label> <input type="text" name="runtime">
+
+<label>Year</label> <input type="text" name="year">
+
+<label>Film Link (Vimeo / YouTube / Drive)</label> <input type="text" name="link" required>
+
+<label>Description</label>
+
+<textarea name="description"></textarea>
+
+<button type="submit">Submit Film</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
