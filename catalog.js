@@ -12,7 +12,7 @@ window.CATALOG = [
   country: "United States",
   genre: "Experimental Animation",
   description: "Two colors debate philosophy as they sail into the void.",
-  poster: "scripts/fetch-posters/bluenyellow placeholder.png",
+  poster: "scripts/bluenyellow-placeholder.png",
   video: "https://www.youtube.com/embed/OVs50d_Q2vc"
 },
 {
