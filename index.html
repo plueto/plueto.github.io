@@ -803,11 +803,9 @@
       const myListItems = allTitles.filter(item => myListIds.includes(item.id));
 
       const heroItem =
-        allTitles.find(item => item.id === "fantastic-planet__1973") ||
-        movies.find(item => /fantastic planet/i.test(item.title || "")) ||
-        movies[0] ||
-        allTitles[0];
-
+  allTitles.find(item => item.id === "the-attendant__2026") ||
+  movies[0] ||
+  allTitles[0];
       if (heroItem) {
         renderHero(heroItem, posters);
       }
