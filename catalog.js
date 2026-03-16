@@ -1,4 +1,36 @@
 window.CATALOG = [
+ {
+  id: "blue-and-yellow__2026",
+  title: "Blue and Yellow",
+  type: "movie",
+  year: 2026,
+  duration: "10 min",
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+  director: "Sull Devries",
+  country: "United States",
+  genre: "Experimental Animation",
+  description: "Two colors debate philosophy as they sail into the void.",
+  poster: "https://i.imgur.com/dF7rIjQ.jpeg",
+  video: "https://www.youtube.com/embed/OVs50d_Q2vc"
+},
+  {
+  id: "the-attendant__2026",
+  title: "The Attendant",
+  type: "movie",
+  year: 2026,
+  duration: "4 min",
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+  director: "Alex Seaton",
+  country: "New Zealand",
+  genre: "Animation",
+  description: "A historical drama imagining the events of the 1942 fire at the Seacliff Lunatic Asylum in New Zealand.",
+  poster: "https://i.imgur.com/EYhPHmu.png",
+  video: "https://www.youtube.com/embed/3LOsURZhkUg"
+},
   {
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
