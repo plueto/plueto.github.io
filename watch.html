@@ -86,7 +86,8 @@
       box-shadow:0 24px 60px rgba(0,0,0,.3);
     }
 
-    .player-shell video{
+    .player-shell video,
+    .player-shell iframe{
       width:100%;
       aspect-ratio:16/9;
       border:0;
@@ -125,6 +126,7 @@
     .description{
       color:var(--text);
       margin-bottom:18px;
+      line-height:1.6;
     }
 
     .actions{
@@ -228,7 +230,7 @@
 
     <div id="watch-app">
       <div class="watch-layout">
-        <div class="player-shell">
+        <div class="player-shell" id="player-shell">
           <video id="player" controls playsinline controlslist="nodownload"></video>
         </div>
 
@@ -263,13 +265,81 @@
     const titleEl = document.getElementById("watch-title");
     const metaEl = document.getElementById("watch-meta");
     const descEl = document.getElementById("watch-description");
+    const playerShellEl = document.getElementById("player-shell");
     const playerEl = document.getElementById("player");
     const myListBtn = document.getElementById("my-list-btn");
     const episodeWrap = document.getElementById("episode-wrap");
     const episodeSelect = document.getElementById("episode-select");
+    const extraEl = document.getElementById("watch-extra");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
 
     function formatEpisodeLabel(ep) {
       return `Season ${ep.season} • Episode ${ep.episode}`;
+    }
+
+    function refreshMyListButton() {
+      if (!myListBtn || !item) return;
+      myListBtn.textContent = getMyListButtonLabel(item.id);
+    }
+
+    function renderExtraInfo(entry) {
+      let extraHtml = "";
+
+      if (entry.director) {
+        extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
+      }
+
+      if (entry.country) {
+        extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
+      }
+
+      if (entry.runtime) {
+        extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(entry.runtime)} minutes</p>`;
+      }
+
+      if (entry.genre) {
+        extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
+      }
+
+      extraEl.innerHTML = extraHtml;
+    }
+
+    function renderEmbedPlayer(src, title) {
+      let embedSrc = src;
+
+      if (src.includes("youtu.be/")) {
+        const videoId = src.split("youtu.be/")[1].split("?")[0];
+        embedSrc = `https://www.youtube.com/embed/${videoId}`;
+      } else if (src.includes("youtube.com/watch")) {
+        const videoId = new URL(src).searchParams.get("v");
+        embedSrc = `https://www.youtube.com/embed/${videoId}`;
+      }
+
+      playerShellEl.innerHTML = `
+        <iframe
+          src="${escapeHtml(embedSrc)}"
+          title="${escapeHtml(title)}"
+          frameborder="0"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      `;
+    }
+
+    function renderVideoPlayer(src) {
+      playerShellEl.innerHTML = `
+        <video id="player" controls playsinline controlslist="nodownload">
+          <source src="${escapeHtml(src)}" type="video/mp4">
+        </video>
+      `;
     }
 
     if (!item) {
@@ -284,28 +354,7 @@
       document.title = `${item.title} • Plueto TV`;
       titleEl.textContent = item.title;
       descEl.textContent = item.description || "";
-      const extraEl = document.getElementById("watch-extra");
-
-let extraHtml = "";
-
-if (item.director) {
-  extraHtml += `<p class="meta"><strong>Director:</strong> ${item.director}</p>`;
-}
-
-if (item.country) {
-  extraHtml += `<p class="meta"><strong>Country:</strong> ${item.country}</p>`;
-}
-
-if (item.runtime) {
-  extraHtml += `<p class="meta"><strong>Runtime:</strong> ${item.runtime} minutes</p>`;
-}
-
-extraEl.innerHTML = extraHtml;
-
-      function refreshMyListButton() {
-        if (!myListBtn) return;
-        myListBtn.textContent = getMyListButtonLabel(item.id);
-      }
+      renderExtraInfo(item);
 
       refreshMyListButton();
 
@@ -319,49 +368,25 @@ extraEl.innerHTML = extraHtml;
         episodeWrap.style.display = "block";
 
         episodeSelect.innerHTML = item.episodes.map((ep, index) => `
-          <option value="${ep.src}" ${index === 0 ? "selected" : ""}>
+          <option value="${escapeHtml(ep.src)}" ${index === 0 ? "selected" : ""}>
             ${formatEpisodeLabel(ep)}
           </option>
         `).join("");
 
-        playerEl.src = item.episodes[0].src;
+        renderVideoPlayer(item.episodes[0].src);
 
         episodeSelect.addEventListener("change", () => {
-          playerEl.src = episodeSelect.value;
-          playerEl.play().catch(() => {});
+          renderVideoPlayer(episodeSelect.value);
         });
       } else {
         metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
         const src = item.video || item.preview || item.src || "";
 
-if (src.includes("youtube.com") || src.includes("youtu.be")) {
-
-  let videoId = "";
-
-  if (src.includes("youtu.be")) {
-    videoId = src.split("youtu.be/")[1].split("?")[0];
-  } else {
-    videoId = new URL(src).searchParams.get("v");
-  }
-
-  document.querySelector(".player-shell").innerHTML = `
-    <iframe
-      width="100%"
-      height="100%"
-      src="https://www.youtube.com/embed/${videoId}"
-      title="${item.title}"
-      frameborder="0"
-      allowfullscreen
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      style="aspect-ratio:16/9;"
-    ></iframe>
-  `;
-
-} else {
-
-  playerEl.src = src;
-
-}
+        if (src.includes("youtube.com/embed/") || src.includes("youtu.be/") || src.includes("youtube.com/watch")) {
+          renderEmbedPlayer(src, item.title);
+        } else {
+          renderVideoPlayer(src);
+        }
       }
     }
   </script>
