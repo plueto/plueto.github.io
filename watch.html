@@ -86,9 +86,18 @@
       box-shadow:0 24px 60px rgba(0,0,0,.3);
     }
 
-    .player-shell video{
+    .player-frame{
       width:100%;
       aspect-ratio:16/9;
+      background:#000;
+      display:block;
+      border:0;
+    }
+
+    .player-frame video,
+    .player-frame iframe{
+      width:100%;
+      height:100%;
       border:0;
       display:block;
       background:#000;
@@ -118,13 +127,21 @@
 
     .meta{
       color:var(--muted);
-      margin-bottom:16px;
+      margin-bottom:12px;
       font-size:.98rem;
+    }
+
+    .submeta{
+      color:var(--muted);
+      margin-bottom:12px;
+      font-size:.95rem;
+      line-height:1.55;
     }
 
     .description{
       color:var(--text);
       margin-bottom:18px;
+      line-height:1.65;
     }
 
     .actions{
@@ -192,6 +209,40 @@
       border-color:var(--purple);
     }
 
+    .detail-block{
+      margin-top:18px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+    }
+
+    .detail-title{
+      font-size:.82rem;
+      color:var(--muted);
+      margin-bottom:10px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:700;
+    }
+
+    .detail-list{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      color:var(--text);
+      font-size:.95rem;
+      line-height:1.55;
+    }
+
+    .credit-group{
+      margin-bottom:12px;
+    }
+
+    .credit-group strong{
+      display:block;
+      margin-bottom:4px;
+      color:#fff;
+    }
+
     .error-box{
       background:var(--panel);
       border:1px solid var(--border);
@@ -229,13 +280,16 @@
     <div id="watch-app">
       <div class="watch-layout">
         <div class="player-shell">
-          <video id="player" controls playsinline controlslist="nodownload"></video>
+          <div class="player-frame" id="player-frame">
+            <video id="player" controls playsinline controlslist="nodownload"></video>
+          </div>
         </div>
 
         <aside class="info-card">
-          <div class="eyebrow">Now Streaming</div>
+          <div class="eyebrow" id="watch-eyebrow">Now Streaming</div>
           <h1 id="watch-title">Loading…</h1>
           <p class="meta" id="watch-meta"></p>
+          <p class="submeta" id="watch-submeta"></p>
           <p class="description" id="watch-description"></p>
 
           <div class="actions">
@@ -246,6 +300,11 @@
           <div class="episode-wrap" id="episode-wrap" style="display:none;">
             <div class="episode-label">Episodes</div>
             <select id="episode-select"></select>
+          </div>
+
+          <div class="detail-block" id="credits-wrap" style="display:none;">
+            <div class="detail-title">Credits</div>
+            <div class="detail-list" id="credits-content"></div>
           </div>
         </aside>
       </div>
@@ -261,14 +320,140 @@
     const watchApp = document.getElementById("watch-app");
     const titleEl = document.getElementById("watch-title");
     const metaEl = document.getElementById("watch-meta");
+    const submetaEl = document.getElementById("watch-submeta");
     const descEl = document.getElementById("watch-description");
+    const playerFrameEl = document.getElementById("player-frame");
     const playerEl = document.getElementById("player");
     const myListBtn = document.getElementById("my-list-btn");
     const episodeWrap = document.getElementById("episode-wrap");
     const episodeSelect = document.getElementById("episode-select");
+    const creditsWrap = document.getElementById("credits-wrap");
+    const creditsContent = document.getElementById("credits-content");
+    const eyebrowEl = document.getElementById("watch-eyebrow");
+
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
 
     function formatEpisodeLabel(ep) {
       return `Season ${ep.season} • Episode ${ep.episode}`;
+    }
+
+    function isIndieItem(entry) {
+      if (!entry) return false;
+      const category = String(entry.category || "").toLowerCase();
+      const source = String(entry.source || "").toLowerCase();
+      const row = String(entry.row || "").toLowerCase();
+      return (
+        category === "indie" ||
+        category === "independent" ||
+        source === "submission" ||
+        row === "independent spotlight"
+      );
+    }
+
+    function getEmbedUrl(url) {
+      if (!url) return "";
+
+      const clean = String(url).trim();
+
+      if (clean.includes("youtube.com/embed/")) {
+        return clean;
+      }
+
+      if (clean.includes("youtu.be/")) {
+        const videoId = clean.split("youtu.be/")[1].split("?")[0];
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+
+      if (clean.includes("youtube.com/watch?v=")) {
+        const urlObj = new URL(clean);
+        const videoId = urlObj.searchParams.get("v");
+        return videoId ? `https://www.youtube.com/embed/${videoId}` : clean;
+      }
+
+      if (clean.includes("vimeo.com/")) {
+        const match = clean.match(/vimeo\.com\/(\d+)/);
+        if (match && match[1]) {
+          return `https://player.vimeo.com/video/${match[1]}`;
+        }
+      }
+
+      return clean;
+    }
+
+    function isEmbeddableVideo(url) {
+      if (!url) return false;
+      const lower = String(url).toLowerCase();
+      return (
+        lower.includes("youtube.com/embed/") ||
+        lower.includes("youtu.be/") ||
+        lower.includes("youtube.com/watch?v=") ||
+        lower.includes("vimeo.com/")
+      );
+    }
+
+    function renderVideoPlayer(url, title) {
+      playerFrameEl.innerHTML = `
+        <video id="player" controls playsinline controlslist="nodownload">
+          <source src="${escapeHtml(url)}" type="video/mp4">
+        </video>
+      `;
+    }
+
+    function renderEmbedPlayer(url, title) {
+      const embedUrl = getEmbedUrl(url);
+      playerFrameEl.innerHTML = `
+        <iframe
+          src="${escapeHtml(embedUrl)}"
+          title="${escapeHtml(title)}"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      `;
+    }
+
+    function renderCredits(entry) {
+      if (!entry.credits || typeof entry.credits !== "object") {
+        creditsWrap.style.display = "none";
+        creditsContent.innerHTML = "";
+        return;
+      }
+
+      const blocks = [];
+
+      if (Array.isArray(entry.credits.music) && entry.credits.music.length) {
+        blocks.push(`
+          <div class="credit-group">
+            <strong>Music</strong>
+            <div>${entry.credits.music.map(escapeHtml).join("<br>")}</div>
+          </div>
+        `);
+      }
+
+      if (Array.isArray(entry.credits.soundEffects) && entry.credits.soundEffects.length) {
+        blocks.push(`
+          <div class="credit-group">
+            <strong>Sound Effects</strong>
+            <div>${entry.credits.soundEffects.map(escapeHtml).join("<br>")}</div>
+          </div>
+        `);
+      }
+
+      if (!blocks.length) {
+        creditsWrap.style.display = "none";
+        creditsContent.innerHTML = "";
+        return;
+      }
+
+      creditsWrap.style.display = "block";
+      creditsContent.innerHTML = blocks.join("");
     }
 
     if (!item) {
@@ -297,24 +482,54 @@
       });
 
       if (item.type === "tv" && Array.isArray(item.episodes) && item.episodes.length) {
+        eyebrowEl.textContent = "Now Streaming";
         metaEl.textContent = `${item.year || "—"} • ${item.episodes.length} episodes • ${item.rating || "TV-G"}`;
+        submetaEl.textContent = item.genre || item.row || "";
         episodeWrap.style.display = "block";
 
         episodeSelect.innerHTML = item.episodes.map((ep, index) => `
-          <option value="${ep.src}" ${index === 0 ? "selected" : ""}>
+          <option value="${escapeHtml(ep.src)}" ${index === 0 ? "selected" : ""}>
             ${formatEpisodeLabel(ep)}
           </option>
         `).join("");
 
-        playerEl.src = item.episodes[0].src;
+        renderVideoPlayer(item.episodes[0].src, item.title);
 
         episodeSelect.addEventListener("change", () => {
-          playerEl.src = episodeSelect.value;
-          playerEl.play().catch(() => {});
+          renderVideoPlayer(episodeSelect.value, item.title);
         });
+
+        renderCredits(item);
       } else {
-        metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
-        playerEl.src = item.preview || "";
+        const durationText = item.duration || (item.runtime ? `${item.runtime} min` : "Full Movie");
+        const primaryMeta = [
+          item.year || "—",
+          durationText,
+          item.rating || "NR"
+        ].filter(Boolean).join(" • ");
+
+        metaEl.textContent = primaryMeta;
+
+        const submetaParts = [];
+        if (item.director) submetaParts.push(`Directed by ${item.director}`);
+        if (item.country) submetaParts.push(item.country);
+        if (item.genre) submetaParts.push(item.genre);
+        if (item.subgenre) submetaParts.push(item.subgenre);
+        if (item.vibe) submetaParts.push(item.vibe);
+
+        submetaEl.textContent = submetaParts.join(" • ");
+
+        eyebrowEl.textContent = isIndieItem(item) ? "Independent Spotlight" : "Now Streaming";
+
+        const videoSource = item.video || item.preview || item.src || "";
+
+        if (isEmbeddableVideo(videoSource)) {
+          renderEmbedPlayer(videoSource, item.title);
+        } else {
+          renderVideoPlayer(videoSource, item.title);
+        }
+
+        renderCredits(item);
       }
     }
   </script>
