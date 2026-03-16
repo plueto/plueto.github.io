@@ -5,57 +5,32 @@ window.CATALOG = [
   type: "movie",
   year: 2026,
   duration: "10 min",
-  runtime: 10,
   rating: "NR",
   row: "Independent Spotlight",
   category: "indie",
-  source: "submission",
   director: "Sull Devries",
   country: "United States",
   genre: "Experimental Animation",
-  subgenre: "Existential",
-  vibe: "Dark, Surreal, Psychological, Experimental, Absurd, Slow Cinema",
   description: "Two colors debate philosophy as they sail into the void.",
   poster: "https://i.imgur.com/dF7rIjQ.jpeg",
   video: "https://www.youtube.com/embed/OVs50d_Q2vc"
-}
+},
   {
   id: "the-attendant__2026",
   title: "The Attendant",
   type: "movie",
   year: 2026,
   duration: "4 min",
-  runtime: 4,
   rating: "NR",
   row: "Independent Spotlight",
   category: "indie",
-  source: "submission",
   director: "Alex Seaton",
   country: "New Zealand",
   genre: "Animation",
-  subgenre: "Historical",
-  vibe: "Dark, Atmospheric",
-  description: "The Seacliff Lunatic Asylum operated in Otago, New Zealand from 1884-1973. It was the largest building in the country at the time of its construction, built to house 500 patients and 50 staff members. On 8 December, 1942, at 9:45 pm, a fire was discovered in an adjoining wooden ward by a male attendant. “The Attendant” is a historical drama that imagines the events of the night of the fire at Seacliff.",
+  description: "A historical drama imagining the events of the 1942 fire at the Seacliff Lunatic Asylum in New Zealand.",
   poster: "https://i.imgur.com/EYhPHmu.png",
-  video: "https://www.youtube.com/embed/3LOsURZhkUg",
-  credits: {
-    music: ["purple-planet.com"],
-    soundEffects: [
-      "All Sounds (YouTube)",
-      "Department of Conservation",
-      "Dragon Studio (Pixabay)",
-      "Freesound_community (Pixabay)",
-      "hasin2004 (Pixabay)",
-      "imagne_impossible (Pixabay)",
-      "M_R_Fahrenheit (Pixabay)",
-      "mrstokes302 (Pixabay)",
-      "OxidVideos (Pixabay)",
-      "SoundReality (Pixabay)",
-      "spinopel (Pixabay)",
-      "u_vr5icvkppa (Pixabay)"
-    ]
-  }
-}
+  video: "https://www.youtube.com/embed/3LOsURZhkUg"
+},
   {
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
