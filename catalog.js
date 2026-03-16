@@ -15,12 +15,13 @@ window.CATALOG = [
   poster: "https://i.imgur.com/dF7rIjQ.jpeg",
   video: "https://www.youtube.com/embed/OVs50d_Q2vc"
 },
-  {
+ {
   id: "the-attendant__2026",
   title: "The Attendant",
   type: "movie",
   year: 2026,
   duration: "4 min",
+  runtime: 4,
   rating: "NR",
   row: "Independent Spotlight",
   category: "indie",
@@ -29,8 +30,25 @@ window.CATALOG = [
   genre: "Animation",
   description: "A historical drama imagining the events of the 1942 fire at the Seacliff Lunatic Asylum in New Zealand.",
   poster: "https://i.imgur.com/EYhPHmu.png",
-  video: "https://www.youtube.com/embed/3LOsURZhkUg"
-},
+  video: "https://www.youtube.com/embed/3LOsURZhkUg",
+  credits: {
+    music: ["purple-planet.com"],
+    soundEffects: [
+      "All Sounds (YouTube)",
+      "Department of Conservation",
+      "Dragon Studio (Pixabay)",
+      "Freesound_community (Pixabay)",
+      "hasin2004 (Pixabay)",
+      "imagne_impossible (Pixabay)",
+      "M_R_Fahrenheit (Pixabay)",
+      "mrstokes302 (Pixabay)",
+      "OxidVideos (Pixabay)",
+      "SoundReality (Pixabay)",
+      "spinopel (Pixabay)",
+      "u_vr5icvkppa (Pixabay)"
+    ]
+  }
+}
   {
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
