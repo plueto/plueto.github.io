@@ -237,6 +237,7 @@
           <h1 id="watch-title">Loading…</h1>
           <p class="meta" id="watch-meta"></p>
           <p class="description" id="watch-description"></p>
+          <div id="watch-extra"></div>
 
           <div class="actions">
             <button class="btn btn-primary" id="my-list-btn" type="button">+ My List</button>
@@ -314,7 +315,36 @@
         });
       } else {
         metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
-        playerEl.src = item.preview || "";
+        const src = item.preview || item.src || "";
+
+if (src.includes("youtube.com") || src.includes("youtu.be")) {
+
+  let videoId = "";
+
+  if (src.includes("youtu.be")) {
+    videoId = src.split("youtu.be/")[1].split("?")[0];
+  } else {
+    videoId = new URL(src).searchParams.get("v");
+  }
+
+  document.querySelector(".player-shell").innerHTML = `
+    <iframe
+      width="100%"
+      height="100%"
+      src="https://www.youtube.com/embed/${videoId}"
+      title="${item.title}"
+      frameborder="0"
+      allowfullscreen
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      style="aspect-ratio:16/9;"
+    ></iframe>
+  `;
+
+} else {
+
+  playerEl.src = src;
+
+}
       }
     }
   </script>
