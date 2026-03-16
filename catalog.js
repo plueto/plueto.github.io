@@ -15,7 +15,7 @@ window.CATALOG = [
   poster: "https://i.imgur.com/dF7rIjQ.jpeg",
   video: "https://www.youtube.com/embed/OVs50d_Q2vc"
 },
- {
+{
   id: "the-attendant__2026",
   title: "The Attendant",
   type: "movie",
@@ -48,8 +48,8 @@ window.CATALOG = [
       "u_vr5icvkppa (Pixabay)"
     ]
   }
-}
-  {
+},
+{
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
     "type": "movie",
