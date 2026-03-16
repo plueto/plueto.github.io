@@ -48,34 +48,33 @@ window.CATALOG = [
   description: "Two colors debate philosophy as they sail into the void.",
   poster: "blue-and-yellow-test.jpg",
   video: "https://www.youtube.com/embed/OVs50d_Q2vc"
-}
-];
+},
 {
-    "id": "neath_brooklyn_bridge",
-    "title": "'Neath Brooklyn Bridge",
-    "type": "movie",
-    "row": "Featured",
-    "year": 1942,
-    "duration": "1m",
-    "rating": "NR",
-    "description": "The East Side Kids protect a young girl from being framed for murder.",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "https://archive.org/download/neath_brooklyn_bridge/neath_the_brooklyn_bridge.mp4"
-  },
-  {
-    "id": "ACloseCallForBostonBlackie",
-    "title": "A Close Call for Boston Blackie",
-    "type": "movie",
-    "row": "Horror",
-    "year": 1946,
-    "duration": "60m",
-    "rating": "NR",
-    "description": "A Close Call for Boston Blackie (1946) is the tenth of fourteen Columbia Pictures crime films starring Chester Morris as Boston Blackie. Cast Chester Morris as Boston Blackie Lynn Merrick as Geraldine \"Gerry\" Peyton Richard Lane as Inspe...",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "https://archive.org/download/ACloseCallForBostonBlackie/ACloseCallForBostonBlackie.avi"
-  },
+  id: "neath_brooklyn_bridge",
+  title: "'Neath Brooklyn Bridge",
+  type: "movie",
+  row: "Featured",
+  year: 1942,
+  duration: "1m",
+  rating: "NR",
+  description: "The East Side Kids protect a young girl from being framed for murder.",
+  image: "",
+  fallbackImage: "",
+  preview: "https://archive.org/download/neath_brooklyn_bridge/neath_the_brooklyn_bridge.mp4"
+},
+{
+  id: "ACloseCallForBostonBlackie",
+  title: "A Close Call for Boston Blackie",
+  type: "movie",
+  row: "Horror",
+  year: 1946,
+  duration: "60m",
+  rating: "NR",
+  description: "A Close Call for Boston Blackie (1946) is the tenth of fourteen Columbia Pictures crime films starring Chester Morris as Boston Blackie. Cast Chester Morris as Boston Blackie Lynn Merrick as Geraldine \"Gerry\" Peyton Richard Lane as Inspe...",
+  image: "",
+  fallbackImage: "",
+  preview: "https://archive.org/download/ACloseCallForBostonBlackie/ACloseCallForBostonBlackie.avi"
+},
   {
     "id": "abe_lincoln_of_the_4th_ave",
     "title": "Abe Lincoln of the Ninth Avenue",
