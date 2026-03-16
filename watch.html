@@ -284,6 +284,23 @@
       document.title = `${item.title} • Plueto TV`;
       titleEl.textContent = item.title;
       descEl.textContent = item.description || "";
+      const extraEl = document.getElementById("watch-extra");
+
+let extraHtml = "";
+
+if (item.director) {
+  extraHtml += `<p class="meta"><strong>Director:</strong> ${item.director}</p>`;
+}
+
+if (item.country) {
+  extraHtml += `<p class="meta"><strong>Country:</strong> ${item.country}</p>`;
+}
+
+if (item.runtime) {
+  extraHtml += `<p class="meta"><strong>Runtime:</strong> ${item.runtime} minutes</p>`;
+}
+
+extraEl.innerHTML = extraHtml;
 
       function refreshMyListButton() {
         if (!myListBtn) return;
