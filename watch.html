@@ -291,27 +291,48 @@
     }
 
     function renderExtraInfo(entry) {
-      let extraHtml = "";
+  let extraHtml = "";
 
-      if (entry.director) {
-        extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
-      }
+  if (entry.director) {
+    extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
+  }
 
-      if (entry.country) {
-        extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
-      }
+  if (entry.country) {
+    extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
+  }
 
-      if (entry.runtime) {
-        extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(entry.runtime)} minutes</p>`;
-      }
+  if (entry.runtime) {
+    extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(entry.runtime)} minutes</p>`;
+  }
 
-      if (entry.genre) {
-        extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
-      }
+  if (entry.genre) {
+    extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
+  }
 
-      extraEl.innerHTML = extraHtml;
+  if (entry.credits) {
+
+    if (entry.credits.music) {
+      extraHtml += `
+        <div class="credits-block">
+          <p class="meta"><strong>Music</strong></p>
+          <p class="meta">${entry.credits.music.join("<br>")}</p>
+        </div>
+      `;
     }
 
+    if (entry.credits.soundEffects) {
+      extraHtml += `
+        <div class="credits-block">
+          <p class="meta"><strong>Sound Effects</strong></p>
+          <p class="meta">${entry.credits.soundEffects.join("<br>")}</p>
+        </div>
+      `;
+    }
+
+  }
+
+  extraEl.innerHTML = extraHtml;
+}
     function renderEmbedPlayer(src, title) {
       let embedSrc = src;
 
