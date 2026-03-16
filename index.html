@@ -299,28 +299,6 @@
       letter-spacing:.02em;
     }
 
-    .row-subtitle{
-      margin:-4px 0 14px;
-      color:var(--muted);
-      font-size:.96rem;
-      line-height:1.5;
-      max-width:700px;
-    }
-
-    .featured-row{
-      margin-top:6px;
-      margin-bottom:40px;
-    }
-
-    .featured-row .row-title{
-      font-size:1.55rem;
-      margin-bottom:8px;
-    }
-
-    .featured-row .row-track{
-      grid-auto-columns:minmax(180px,220px);
-    }
-
     .row-track{
       display:grid;
       grid-auto-flow:column;
@@ -363,23 +341,6 @@
       object-position:center;
       display:block;
       background:#111;
-    }
-
-    .indie-badge{
-      position:absolute;
-      top:10px;
-      left:10px;
-      z-index:2;
-      padding:5px 10px;
-      border-radius:999px;
-      background:rgba(8,8,12,.84);
-      border:1px solid rgba(255,255,255,.12);
-      color:#fff;
-      font-size:.68rem;
-      font-weight:800;
-      letter-spacing:.08em;
-      box-shadow:0 8px 20px rgba(0,0,0,.28);
-      pointer-events:none;
     }
 
     .poster-fallback{
@@ -452,9 +413,6 @@
       .row-track{
         grid-auto-columns:minmax(145px,160px);
       }
-      .featured-row .row-track{
-        grid-auto-columns:minmax(155px,180px);
-      }
       .navbar{
         padding-left:18px;
         padding-right:18px;
@@ -481,13 +439,13 @@
     </div>
 
     <div class="nav-right">
-      <a href="index.html" class="active">Home</a>
-      <a href="movies.html">Movies</a>
-      <a href="tv.html">TV Shows</a>
-      <a href="new.html">Recently Added</a>
-      <a href="my-list.html">My List</a>
-      <a href="filmmakers.html">For Filmmakers</a>
-    </div>
+  <a href="index.html" class="active">Home</a>
+  <a href="movies.html">Movies</a>
+  <a href="tv.html">TV Shows</a>
+  <a href="new.html">Recently Added</a>
+  <a href="my-list.html">My List</a>
+  <a href="filmmakers.html">For Filmmakers</a>
+</div>
   </div>
 
   <section class="hero" id="hero">
@@ -500,12 +458,6 @@
   </section>
 
   <main class="content">
-    <section class="row-section featured-row">
-      <div class="row-title">Independent Spotlight</div>
-      <div class="row-subtitle">A curated selection of films from independent filmmakers.</div>
-      <div class="row-track" id="indie-row"><div class="loading">Loading…</div></div>
-    </section>
-
     <section class="row-section">
       <div class="row-title">Plueto Presents</div>
       <div class="row-track" id="featured-row"><div class="loading">Loading…</div></div>
@@ -543,10 +495,6 @@
     }
 
     function getPosterForItem(item, posters) {
-      if (item.poster && typeof item.poster === "string" && item.poster.trim()) {
-        return item.poster;
-      }
-
       const tmdbPoster = posters[item.id];
       if (tmdbPoster && typeof tmdbPoster === "string" && tmdbPoster.trim()) {
         return tmdbPoster;
@@ -554,40 +502,16 @@
       return null;
     }
 
-    function isIndieItem(item) {
-      if (!item) return false;
-
-      const category = String(item.category || "").toLowerCase();
-      const source = String(item.source || "").toLowerCase();
-      const row = String(item.row || "").toLowerCase();
-
-      return (
-        category === "indie" ||
-        category === "independent" ||
-        source === "submission" ||
-        row === "independent spotlight"
-      );
-    }
-
-    function getItemMeta(item) {
-      const yearText = item.year ? item.year : "Unknown year";
-      const durationText = item.duration || (item.runtime ? `${item.runtime} min` : "Full Movie");
-      const ratingText = item.rating || "NR";
-      return { yearText, durationText, ratingText };
-    }
-
     function createCard(item, posters) {
-      const { yearText, durationText, ratingText } = getItemMeta(item);
+      const yearText = item.year ? item.year : "Unknown year";
       const safeTitle = escapeHtml(item.title);
-      const safeDuration = escapeHtml(durationText);
-      const safeRating = escapeHtml(ratingText);
+      const safeDuration = escapeHtml(item.duration || "Full Movie");
+      const safeRating = escapeHtml(item.rating || "NR");
       const poster = getPosterForItem(item, posters);
-      const isIndie = isIndieItem(item);
 
       return `
         <a class="card" href="watch.html?id=${encodeURIComponent(item.id)}">
           <div class="poster-wrap">
-            ${isIndie ? `<div class="indie-badge">INDIE</div>` : ""}
             ${
               poster
                 ? `<img
@@ -641,12 +565,10 @@
         item.row === "Sci-Fi" ? "SCI-FI SHOWCASE" :
         item.row === "Horror" ? "MIDNIGHT HORROR" :
         item.row === "Animation" ? "ANIMATION BLOCK" :
-        isIndieItem(item) ? "INDEPENDENT SPOTLIGHT" :
         labels[Math.floor(Math.random() * labels.length)];
 
       const heroPoster = getPosterForItem(item, posters);
       const myListLabel = escapeHtml(getMyListButtonLabel(item.id));
-      const { durationText, ratingText } = getItemMeta(item);
 
       document.getElementById("hero-bg").innerHTML = heroPoster
         ? `<img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">`
@@ -657,9 +579,9 @@
         <div class="hero-title">${escapeHtml(item.title)}</div>
         <div class="hero-meta">
           <span class="hero-pill">${escapeHtml(item.year || "—")}</span>
-          <span class="hero-pill">${escapeHtml(ratingText)}</span>
-          <span class="hero-pill">${escapeHtml(durationText)}</span>
-          <span class="hero-pill">${escapeHtml(item.row || (isIndieItem(item) ? "Independent Spotlight" : "Featured"))}</span>
+          <span class="hero-pill">${escapeHtml(item.rating || "NR")}</span>
+          <span class="hero-pill">${escapeHtml(item.duration || "Full Movie")}</span>
+          <span class="hero-pill">${escapeHtml(item.row || "Featured")}</span>
         </div>
         <div class="hero-desc">${escapeHtml(item.description || "")}</div>
         <div class="hero-actions">
@@ -813,13 +735,11 @@
 
       const allTitles = Array.isArray(window.CATALOG) ? window.CATALOG : [];
       const movies = allTitles.filter(isMovie);
-      const indieItems = allTitles.filter(isIndieItem);
 
       const myListIds = getMyList();
       const myListItems = allTitles.filter(item => myListIds.includes(item.id));
 
       const heroItem =
-        indieItems[0] ||
         allTitles.find(item => item.id === "fantastic-planet__1973") ||
         movies.find(item => /fantastic planet/i.test(item.title || "")) ||
         movies[0] ||
@@ -829,7 +749,6 @@
         renderHero(heroItem, posters);
       }
 
-      renderRow("indie-row", indieItems, posters);
       renderRow("featured-row", movies.slice(0, 8), posters);
       renderRow("scifi-row", movies.filter(item => item.row === "Sci-Fi"), posters);
       renderRow("horror-row", movies.filter(item => item.row === "Horror"), posters);
