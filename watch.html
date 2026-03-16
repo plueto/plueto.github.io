@@ -332,7 +332,7 @@ extraEl.innerHTML = extraHtml;
         });
       } else {
         metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
-        const src = item.preview || item.src || "";
+        const src = item.video || item.preview || item.src || "";
 
 if (src.includes("youtube.com") || src.includes("youtu.be")) {
 
