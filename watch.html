@@ -291,27 +291,44 @@
     }
 
     function renderExtraInfo(entry) {
-      let extraHtml = "";
+  let extraHtml = "";
 
-      if (entry.director) {
-        extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
-      }
+  if (entry.director) {
+    extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
+  }
 
-      if (entry.country) {
-        extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
-      }
+  if (entry.country) {
+    extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
+  }
 
-      if (entry.runtime) {
-        extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(entry.runtime)} minutes</p>`;
-      }
+  if (entry.runtime) {
+    extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(entry.runtime)} minutes</p>`;
+  }
 
-      if (entry.genre) {
-        extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
-      }
+  if (entry.genre) {
+    extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
+  }
 
-      extraEl.innerHTML = extraHtml;
-    }
+  if (entry.credits && entry.credits.music && entry.credits.music.length) {
+    extraHtml += `
+      <div class="meta" style="margin-top:18px;">
+        <strong>Music:</strong><br>
+        ${entry.credits.music.map(escapeHtml).join("<br>")}
+      </div>
+    `;
+  }
 
+  if (entry.credits && entry.credits.soundEffects && entry.credits.soundEffects.length) {
+    extraHtml += `
+      <div class="meta" style="margin-top:18px;">
+        <strong>Sound Effects:</strong><br>
+        ${entry.credits.soundEffects.map(escapeHtml).join("<br>")}
+      </div>
+    `;
+  }
+
+  extraEl.innerHTML = extraHtml;
+}
     function renderEmbedPlayer(src, title) {
       let embedSrc = src;
 
