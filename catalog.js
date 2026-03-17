@@ -49,6 +49,23 @@ window.CATALOG = [
     ]
   }
 },
+ {
+  id: "in-full__2025",
+  title: "In Full",
+  type: "movie",
+  year: 2025,
+  duration: "6 min",
+  runtime: 6,
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+  director: "Adán Borrego",
+  country: "Spain",
+  genre: "Short Film",
+  description: "A young barber is about to close when a customer walks in demanding to get his head shaved 'in full'. The barber reluctantly agrees, but soon realizes he has made a mistake when he discovers what his customer hides under his hair.",
+  poster: "posters/in-full.jpg",
+  video: "https://www.youtube.com/embed/xYy51T1EGIs"
+},
 {
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
