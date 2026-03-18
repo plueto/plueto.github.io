@@ -250,12 +250,19 @@
         .replaceAll("'", "&#39;");
     }
 
-    function createCard(item, posterUrl) {
+    function createCard(item, posterMapUrl) {
       const yearText = item.year ? item.year : "Unknown year";
       const typeText = item.type ? item.type : "Title";
-      const safeTitle = escapeHtml(item.title);
-      const safeId = escapeHtml(item.id);
-      const safeImage = escapeHtml(posterUrl || item.image || item.fallbackImage || "");
+      const safeTitle = escapeHtml(item.title || "Untitled");
+      const safeId = escapeHtml(item.id || "");
+      const chosenImage =
+        item.poster ||
+        posterMapUrl ||
+        item.image ||
+        item.fallbackImage ||
+        "";
+
+      const safeImage = escapeHtml(chosenImage);
       const safeDuration = escapeHtml(item.duration || "Runtime unavailable");
       const safeRating = escapeHtml(item.rating || "NR");
       const buttonLabel = escapeHtml(getMyListButtonLabel(item.id));
