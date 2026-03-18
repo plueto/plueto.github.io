@@ -128,14 +128,14 @@
 
     .hero{
       position:relative;
-      min-height:76vh;
+      min-height:82vh;
       overflow:hidden;
       display:flex;
       align-items:flex-end;
       background:
-        radial-gradient(circle at top right, rgba(58,168,255,.18), transparent 30%),
-        radial-gradient(circle at top left, rgba(122,92,255,.24), transparent 34%),
-        linear-gradient(to bottom, #12121a, #0d0d12 70%);
+        radial-gradient(circle at 80% 18%, rgba(58,168,255,.10), transparent 28%),
+        radial-gradient(circle at 18% 12%, rgba(122,92,255,.16), transparent 30%),
+        linear-gradient(to bottom, #090a0f 0%, #0d0d12 72%);
     }
 
     .hero-bg{
@@ -147,39 +147,36 @@
 
     .hero-poster{
       position:absolute;
-      right:-3%;
-      top:50%;
-      width:min(42vw,560px);
-      aspect-ratio:2/3;
+      inset:0;
+      width:100%;
+      height:100%;
       object-fit:cover;
-      object-position:center;
-      border-radius:26px;
-      transform:translateY(-50%) scale(1.04);
-      opacity:.24;
-      filter:saturate(1.1);
-      box-shadow:0 30px 100px rgba(0,0,0,.45);
-      animation:heroFloat 16s ease-in-out infinite alternate;
+      object-position:center 24%;
+      transform:scale(1.06);
+      opacity:.42;
+      filter:brightness(.82) contrast(1.12) saturate(1.08);
+      animation:heroFloat 18s ease-in-out infinite alternate;
     }
 
     @keyframes heroFloat{
-      from{transform:translateY(-50%) scale(1.04)}
-      to{transform:translateY(-48%) scale(1.08)}
+      from{transform:scale(1.06) translateX(0)}
+      to{transform:scale(1.1) translateX(-1.2%)}
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to right, rgba(13,13,18,.96) 0%, rgba(13,13,18,.8) 38%, rgba(13,13,18,.3) 70%, rgba(13,13,18,.55) 100%),
-        linear-gradient(to top, rgba(13,13,18,1) 0%, rgba(13,13,18,.2) 42%, rgba(13,13,18,.1) 100%);
+        linear-gradient(to right, rgba(7,8,12,.96) 0%, rgba(7,8,12,.78) 32%, rgba(7,8,12,.34) 58%, rgba(7,8,12,.58) 100%),
+        linear-gradient(to top, rgba(13,13,18,1) 0%, rgba(13,13,18,.38) 34%, rgba(13,13,18,.08) 100%);
       z-index:1;
     }
 
     .hero-content{
       position:relative;
       z-index:2;
-      max-width:760px;
-      padding:52px 32px 48px;
+      max-width:780px;
+      padding:64px 32px 58px;
     }
 
     .hero-kicker{
@@ -203,11 +200,13 @@
     }
 
     .hero-title{
-      font-size:clamp(2.5rem,6vw,5.4rem);
-      line-height:.95;
+      font-size:clamp(2.8rem,6vw,5.8rem);
+      line-height:.93;
       font-weight:900;
       margin-bottom:14px;
-      max-width:720px;
+      max-width:760px;
+      letter-spacing:-.03em;
+      text-shadow:0 14px 44px rgba(0,0,0,.48);
     }
 
     .hero-meta{
@@ -227,11 +226,12 @@
     }
 
     .hero-desc{
-      max-width:640px;
-      color:#d7d7dd;
-      line-height:1.6;
-      font-size:1rem;
-      margin-bottom:22px;
+      max-width:660px;
+      color:#e1e1e8;
+      line-height:1.65;
+      font-size:1.03rem;
+      margin-bottom:24px;
+      text-shadow:0 8px 28px rgba(0,0,0,.34);
     }
 
     .hero-actions{
@@ -272,14 +272,14 @@
       background:linear-gradient(
         110deg,
         transparent 0%,
-        rgba(122,92,255,0) 40%,
-        rgba(122,92,255,.18) 49%,
-        rgba(58,168,255,.16) 52%,
-        rgba(122,92,255,0) 60%,
+        rgba(122,92,255,0) 42%,
+        rgba(122,92,255,.08) 49%,
+        rgba(58,168,255,.07) 52%,
+        rgba(122,92,255,0) 58%,
         transparent 100%
       );
       transform:translateX(-120%);
-      animation:sweep 7.2s linear infinite;
+      animation:sweep 9s linear infinite;
     }
 
     @keyframes sweep{
@@ -434,11 +434,12 @@
 
     @media (max-width:800px){
       .content,.hero-content{padding-left:18px;padding-right:18px}
-      .hero{min-height:68vh}
+      .hero{min-height:72vh}
       .hero-poster{
-        width:62vw;
-        right:-12%;
-        opacity:.18;
+        width:100%;
+        height:100%;
+        opacity:.28;
+        object-position:center 18%;
       }
       .row-track{
         grid-auto-columns:minmax(145px,160px);
@@ -615,19 +616,12 @@
     }
 
     function renderHero(item, posters) {
-      const labels = [
-        "PLUETO PRESENTS",
-        "SCI-FI SHOWCASE",
-        "MIDNIGHT HORROR",
-        "ANIMATION BLOCK",
-        "FEATURE PRESENTATION"
-      ];
-
       const heroLabel =
+        isIndieItem(item) ? "INDEPENDENT SPOTLIGHT" :
         item.row === "Sci-Fi" ? "SCI-FI SHOWCASE" :
         item.row === "Horror" ? "MIDNIGHT HORROR" :
         item.row === "Animation" ? "ANIMATION BLOCK" :
-        labels[Math.floor(Math.random() * labels.length)];
+        "FEATURE PRESENTATION";
 
       const heroPoster = getPosterForItem(item, posters);
       const myListLabel = escapeHtml(getMyListButtonLabel(item.id));
@@ -803,9 +797,10 @@
       const myListItems = allTitles.filter(item => myListIds.includes(item.id));
 
       const heroItem =
-  allTitles.find(item => item.id === "the-attendant__2026") ||
-  movies[0] ||
-  allTitles[0];
+        allTitles.find(item => item.id === "the-attendant__2026") ||
+        movies[0] ||
+        allTitles[0];
+
       if (heroItem) {
         renderHero(heroItem, posters);
       }
