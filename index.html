@@ -133,8 +133,8 @@
       display:flex;
       align-items:flex-end;
       background:
-        radial-gradient(circle at 80% 18%, rgba(58,168,255,.10), transparent 28%),
-        radial-gradient(circle at 18% 12%, rgba(122,92,255,.16), transparent 30%),
+        radial-gradient(circle at 80% 18%, rgba(58,168,255,.09), transparent 28%),
+        radial-gradient(circle at 18% 12%, rgba(122,92,255,.14), transparent 30%),
         linear-gradient(to bottom, #090a0f 0%, #0d0d12 72%);
     }
 
@@ -145,6 +145,19 @@
       z-index:0;
     }
 
+    .hero-poster-blur{
+      position:absolute;
+      inset:-3%;
+      width:106%;
+      height:106%;
+      object-fit:cover;
+      object-position:center 24%;
+      transform:scale(1.12);
+      opacity:.28;
+      filter:blur(34px) brightness(.86) saturate(1.04);
+      animation:heroBlurFloat 24s ease-in-out infinite alternate;
+    }
+
     .hero-poster{
       position:absolute;
       inset:0;
@@ -153,8 +166,8 @@
       object-fit:cover;
       object-position:center 24%;
       transform:scale(1.06);
-      opacity:.42;
-      filter:brightness(.82) contrast(1.12) saturate(1.08);
+      opacity:.5;
+      filter:brightness(.92) contrast(1.12) saturate(1.04);
       animation:heroFloat 18s ease-in-out infinite alternate;
     }
 
@@ -163,12 +176,17 @@
       to{transform:scale(1.1) translateX(-1.2%)}
     }
 
+    @keyframes heroBlurFloat{
+      from{transform:scale(1.12) translateX(0)}
+      to{transform:scale(1.16) translateX(-1.6%)}
+    }
+
     .hero-overlay{
       position:absolute;
       inset:0;
       background:
-        linear-gradient(to right, rgba(7,8,12,.96) 0%, rgba(7,8,12,.78) 32%, rgba(7,8,12,.34) 58%, rgba(7,8,12,.58) 100%),
-        linear-gradient(to top, rgba(13,13,18,1) 0%, rgba(13,13,18,.38) 34%, rgba(13,13,18,.08) 100%);
+        linear-gradient(to right, rgba(7,8,12,.86) 0%, rgba(7,8,12,.68) 32%, rgba(7,8,12,.28) 58%, rgba(7,8,12,.55) 100%),
+        linear-gradient(to top, rgba(13,13,18,1) 0%, rgba(13,13,18,.35) 34%, rgba(13,13,18,.05) 100%);
       z-index:1;
     }
 
@@ -435,10 +453,16 @@
     @media (max-width:800px){
       .content,.hero-content{padding-left:18px;padding-right:18px}
       .hero{min-height:72vh}
+      .hero-poster-blur{
+        width:100%;
+        height:100%;
+        opacity:.18;
+        object-position:center 18%;
+      }
       .hero-poster{
         width:100%;
         height:100%;
-        opacity:.28;
+        opacity:.34;
         object-position:center 18%;
       }
       .row-track{
@@ -627,7 +651,10 @@
       const myListLabel = escapeHtml(getMyListButtonLabel(item.id));
 
       document.getElementById("hero-bg").innerHTML = heroPoster
-        ? `<img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">`
+        ? `
+          <img class="hero-poster-blur" src="${escapeHtml(heroPoster)}" alt="" aria-hidden="true">
+          <img class="hero-poster" src="${escapeHtml(heroPoster)}" alt="${escapeHtml(item.title)}">
+        `
         : "";
 
       document.getElementById("hero-content").innerHTML = `
