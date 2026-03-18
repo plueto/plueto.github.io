@@ -66,6 +66,30 @@ window.CATALOG = [
   poster: "posters/in-full.jpg",
   video: "https://www.youtube.com/embed/xYy51T1EGIs"
 },
+ {
+  title: "Reverberation",
+  type: "movie",
+  year: 2026,
+  runtime: "5 min",
+  genres: ["Horror"],
+  vibe: ["Dark", "Surreal", "Dreamlike", "Atmospheric", "Reality-Bending"],
+  description: "And there, a man faces his shadow.",
+  director: "JungGyu Park",
+  country: "South Korea",
+  poster: "https://i.imgur.com/ITTdcQq.jpeg",
+  video: "https://www.youtube.com/embed/KMH6Miy0KA4",
+  trailer: "",
+  credits: [
+    "Written and directed by JUNGGYU PARK",
+    "Starring EUNSEUNG KIM",
+    "Cinematography, Visual Effects, Editing by JUNGGYU PARK",
+    "Music by JAEJOON LEE",
+    "Location Management by BYUNGHOON PARK",
+    "Production Support by JAEEUN LEE"
+  ],
+  contact: "junggyuparkofficial@gmail.com",
+  source: "Submission"
+},
 {
     "id": "neath_brooklyn_bridge",
     "title": "'Neath Brooklyn Bridge",
