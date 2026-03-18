@@ -15,6 +15,7 @@
       --purple:#7a5cff;
       --blue:#3aa8ff;
       --red:#ff4b5c;
+      --border:rgba(255,255,255,.08);
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
@@ -68,7 +69,7 @@
 
     .sub{
       color:var(--muted);
-      margin-bottom:26px;
+      margin-bottom:22px;
       max-width:760px;
       line-height:1.5;
     }
@@ -91,6 +92,40 @@
       border-radius:999px;
       background:linear-gradient(135deg,var(--purple),var(--blue));
       box-shadow:0 0 14px rgba(122,92,255,.45);
+    }
+
+    .filter-bar{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-bottom:24px;
+    }
+
+    .filter-btn{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      padding:10px 14px;
+      border-radius:999px;
+      cursor:pointer;
+      font-weight:700;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+
+    .filter-btn:hover{
+      transform:translateY(-1px);
+      background:rgba(255,255,255,.08);
+    }
+
+    .filter-btn.active{
+      background:linear-gradient(135deg,var(--purple),var(--blue));
+      border-color:transparent;
+    }
+
+    .section-note{
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:20px;
     }
 
     .grid{
@@ -231,6 +266,9 @@
       Feature films in your catalog live here. Clean, simple, and easy to browse.
     </div>
 
+    <div class="filter-bar" id="genre-filters"></div>
+    <div class="section-note" id="movies-note"></div>
+
     <div class="grid" id="movies-grid">
       <div class="loading">Loading...</div>
     </div>
@@ -241,6 +279,10 @@
   </div>
 
   <script>
+    let allMovies = [];
+    let posterMap = {};
+    let activeGenre = "All";
+
     function escapeHtml(value) {
       return String(value ?? "")
         .replaceAll("&", "&amp;")
@@ -250,19 +292,40 @@
         .replaceAll("'", "&#39;");
     }
 
-    function createCard(item, posterMapUrl) {
-      const yearText = item.year ? item.year : "Unknown year";
-      const typeText = item.type ? item.type : "Title";
+    function normalizeGenre(item) {
+      if (item.genre && typeof item.genre === "string") {
+        if (item.genre === "Experimental Animation") return "Animation";
+        if (item.genre === "Short Film") return "Drama";
+        return item.genre;
+      }
+
+      if (Array.isArray(item.genres) && item.genres.length) {
+        return item.genres[0];
+      }
+
+      return "Uncategorized";
+    }
+
+    function getPosterUrl(item) {
+      return item.poster || posterMap[item.id] || item.image || item.fallbackImage || "";
+    }
+
+    function sortMovies(items) {
+      return [...items].sort((a, b) => {
+        const aIndie = a.category === "indie" ? 1 : 0;
+        const bIndie = b.category === "indie" ? 1 : 0;
+
+        if (aIndie !== bIndie) return bIndie - aIndie;
+        return (b.year || 0) - (a.year || 0);
+      });
+    }
+
+    function createCard(item) {
+      const yearText = item.year || "Unknown year";
+      const typeText = item.type || "Title";
       const safeTitle = escapeHtml(item.title || "Untitled");
       const safeId = escapeHtml(item.id || "");
-      const chosenImage =
-        item.poster ||
-        posterMapUrl ||
-        item.image ||
-        item.fallbackImage ||
-        "";
-
-      const safeImage = escapeHtml(chosenImage);
+      const safeImage = escapeHtml(getPosterUrl(item));
       const safeDuration = escapeHtml(item.duration || "Runtime unavailable");
       const safeRating = escapeHtml(item.rating || "NR");
       const buttonLabel = escapeHtml(getMyListButtonLabel(item.id));
@@ -312,32 +375,88 @@
       });
     }
 
+    function renderFilters(movies) {
+      const filterWrap = document.getElementById("genre-filters");
+
+      const genres = [...new Set(
+        movies.map(normalizeGenre).filter(Boolean)
+      )].sort((a, b) => a.localeCompare(b));
+
+      const allGenres = ["All", ...genres];
+
+      filterWrap.innerHTML = allGenres.map(genre => `
+        <button
+          class="filter-btn ${genre === activeGenre ? "active" : ""}"
+          type="button"
+          data-genre="${escapeHtml(genre)}"
+        >
+          ${escapeHtml(genre)}
+        </button>
+      `).join("");
+
+      filterWrap.querySelectorAll(".filter-btn").forEach(button => {
+        button.addEventListener("click", () => {
+          activeGenre = button.dataset.genre;
+          renderMovieGrid();
+          renderFilters(allMovies);
+        });
+      });
+    }
+
+    function renderMovieGrid() {
+      const grid = document.getElementById("movies-grid");
+      const empty = document.getElementById("movies-empty");
+      const note = document.getElementById("movies-note");
+
+      let filtered = sortMovies(allMovies);
+
+      if (activeGenre !== "All") {
+        filtered = filtered.filter(item => normalizeGenre(item) === activeGenre);
+      }
+
+      if (!filtered.length) {
+        grid.innerHTML = "";
+        empty.style.display = "block";
+        note.textContent = "";
+        return;
+      }
+
+      empty.style.display = "none";
+
+      const indieCount = filtered.filter(item => item.category === "indie").length;
+      const archiveCount = filtered.length - indieCount;
+
+      note.textContent =
+        activeGenre === "All"
+          ? `Independent submissions appear first, followed by archive titles. ${indieCount} indie • ${archiveCount} archive`
+          : `${filtered.length} title${filtered.length === 1 ? "" : "s"} in ${activeGenre}. Independent submissions still appear first.`;
+
+      grid.innerHTML = filtered.map(createCard).join("");
+      wireMyListButtons(grid);
+    }
+
     async function renderMovies() {
       const grid = document.getElementById("movies-grid");
       const empty = document.getElementById("movies-empty");
 
-      let posters = {};
       try {
         const res = await fetch("posters.json");
-        posters = await res.json();
+        posterMap = await res.json();
       } catch (err) {
         console.warn("Could not load posters.json", err);
       }
 
-      const movies = (Array.isArray(window.CATALOG) ? window.CATALOG : [])
-        .filter(item => item.type === "movie");
+      allMovies = (Array.isArray(window.CATALOG) ? window.CATALOG : [])
+        .filter(item => item.type === "movie" && item.id);
 
-      if (!movies.length) {
+      if (!allMovies.length) {
         grid.innerHTML = "";
         empty.style.display = "block";
         return;
       }
 
-      grid.innerHTML = movies
-        .map(item => createCard(item, posters[item.id] || null))
-        .join("");
-
-      wireMyListButtons(grid);
+      renderFilters(allMovies);
+      renderMovieGrid();
     }
 
     renderMovies();
