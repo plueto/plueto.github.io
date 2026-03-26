@@ -66,7 +66,7 @@ window.CATALOG = [
   poster: "posters/in-full.jpg",
   video: "https://www.youtube.com/embed/xYy51T1EGIs"
 },
- {
+{
   id: "reverberation__2026",
   title: "Reverberation",
   type: "movie",
@@ -91,23 +91,46 @@ window.CATALOG = [
     "Music by JAEJOON LEE",
     "Location Management by BYUNGHOON PARK",
     "Production Support by JAEEUN LEE"
-  ],
-  contact: "junggyuparkofficial@gmail.com",
-  source: "Submission"
+  ]
 },
 {
-    "id": "neath_brooklyn_bridge",
-    "title": "'Neath Brooklyn Bridge",
-    "type": "movie",
-    "row": "Featured",
-    "year": 1942,
-    "duration": "1m",
-    "rating": "NR",
-    "description": "The East Side Kids protect a young girl from being framed for murder.",
-    "image": "",
-    "fallbackImage": "",
-    "preview": "https://archive.org/download/neath_brooklyn_bridge/neath_the_brooklyn_bridge.mp4"
-  },
+  id: "mine__2025",
+  title: "Mine!",
+  type: "movie",
+  year: 2025,
+  duration: "9 min",
+  runtime: 9,
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+  director: "Louis Morton",
+  country: "United States",
+  genre: "Animation",
+  description: "Deep beneath the early 20th century Midwest, a group of coal miners uncover something far beyond what they expected.",
+  poster: "https://freight.cargo.site/w/1000/q/75/i/e00437dbf9c4f26454267adc774d6c56a2f563b1a38c58c665cdccf1bc0208e1/Mine2.png",
+  video: "https://player.vimeo.com/video/1172958229",
+  trailer: "",
+  vibe: ["Experimental", "Absurd"]
+},
+{
+  id: "neath_brooklyn_bridge",
+  title: "'Neath Brooklyn Bridge",
+  type: "movie",
+  row: "Featured",
+  year: 1942,
+  duration: "1 min",
+  runtime: 1,
+  rating: "NR",
+  category: "classic",
+  director: "",
+  country: "United States",
+  genre: "Crime / Drama",
+  description: "The East Side Kids protect a young girl from being framed for murder.",
+  poster: "",
+  video: "https://archive.org/download/neath_brooklyn_bridge/neath_the_brooklyn_bridge.mp4",
+  trailer: "",
+  vibe: []
+},
   {
     "id": "ACloseCallForBostonBlackie",
     "title": "A Close Call for Boston Blackie",
