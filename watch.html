@@ -4,255 +4,482 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Watch • Plueto TV</title>
-
   <script src="catalog.js"></script>
   <script src="my-list-utils.js"></script>
-
   <style>
-    body {
-      margin: 0;
-      background: #0d0d12;
-      color: #f4f4f5;
-      font-family: Arial, Helvetica, sans-serif;
+    :root{
+      --bg:#0d0d12;
+      --panel:#15151d;
+      --panel-2:#1c1c26;
+      --text:#f4f4f5;
+      --muted:#a7a7b3;
+      --purple:#7a5cff;
+      --blue:#3aa8ff;
+      --red:#ff4b5c;
+      --border:rgba(255,255,255,.08);
     }
 
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-family:Arial,Helvetica,sans-serif;
     }
 
-    h1 {
-      margin-bottom: 10px;
+    a{text-decoration:none;color:inherit}
+
+    .navbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      display:flex;
+      align-items:center;
+      gap:20px;
+      padding:16px 24px;
+      background:rgba(13,13,18,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--border);
     }
 
-    .meta {
-      color: #a7a7b3;
-      margin-bottom: 10px;
+    .brand{
+      font-weight:800;
+      letter-spacing:.08em;
+      color:#fff;
+      margin-right:8px;
+      flex-shrink:0;
     }
 
-    .player-shell {
-      width: 100%;
-      aspect-ratio: 16/9;
-      background: black;
-      margin-bottom: 20px;
+    .navbar a{
+      color:var(--muted);
+      font-size:.95rem;
+      transition:.2s ease;
+      flex-shrink:0;
     }
 
-    iframe, video {
-      width: 100%;
-      height: 100%;
+    .navbar a:hover,
+    .navbar a.active{
+      color:#fff;
     }
 
-    .btn {
-      padding: 10px 16px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
+    .page{
+      max-width:1280px;
+      margin:0 auto;
+      padding:22px 24px 48px;
     }
 
-    .btn-secondary {
-      background: #1c1c26;
-      color: white;
+    .back-link{
+      display:inline-block;
+      color:var(--muted);
+      margin-bottom:18px;
+      font-size:.95rem;
     }
 
-    .credits-block {
-      margin-top: 20px;
+    .back-link:hover{
+      color:#fff;
     }
 
-    .error-box {
-      text-align: center;
-      padding: 40px;
+    .watch-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1.7fr) minmax(320px,.9fr);
+      gap:24px;
+      align-items:start;
+    }
+
+    .player-shell{
+      background:#000;
+      border:1px solid var(--border);
+      border-radius:22px;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,.28);
+      aspect-ratio:16/9;
+    }
+
+    .player-shell iframe,
+    .player-shell video{
+      width:100%;
+      height:100%;
+      border:0;
+      display:block;
+      background:#000;
+    }
+
+    .info-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:22px;
+      padding:22px;
+      box-shadow:0 12px 30px rgba(0,0,0,.22);
+      position:sticky;
+      top:88px;
+    }
+
+    .eyebrow{
+      color:var(--purple);
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    h1{
+      font-size:2rem;
+      line-height:1.08;
+      margin-bottom:10px;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:.96rem;
+      line-height:1.6;
+      margin-bottom:10px;
+    }
+
+    .description{
+      color:#e5e7eb;
+      line-height:1.7;
+      margin:14px 0 0;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      border-radius:12px;
+      padding:12px 16px;
+      font-size:.95rem;
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .btn-primary{
+      background:linear-gradient(135deg,var(--purple),#5d3dff);
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 8px 18px rgba(122,92,255,.28);
+    }
+
+    .btn-secondary{
+      background:var(--panel-2);
+      color:#fff;
+      border:1px solid var(--border);
+    }
+
+    .btn-secondary:hover{
+      background:#232331;
+    }
+
+    .credits-block,
+    .episode-wrap{
+      margin-top:20px;
+      padding-top:18px;
+      border-top:1px solid var(--border);
+    }
+
+    .episode-label{
+      font-size:.86rem;
+      color:var(--muted);
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:700;
+    }
+
+    select{
+      width:100%;
+      background:#0f0f15;
+      color:#fff;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:12px;
+      padding:12px;
+      font-size:.96rem;
+      outline:none;
+    }
+
+    select:focus{
+      border-color:var(--purple);
+    }
+
+    .error-box{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:18px;
+      padding:22px;
+      color:var(--muted);
+    }
+
+    @media (max-width: 980px){
+      .watch-layout{
+        grid-template-columns:1fr;
+      }
+
+      .info-card{
+        position:static;
+      }
+
+      .navbar{
+        gap:14px;
+        overflow-x:auto;
+        white-space:nowrap;
+      }
     }
   </style>
 </head>
-
 <body>
+  <nav class="navbar">
+    <a class="brand" href="index.html">PLUETO TV</a>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="tv.html">TV Shows</a>
+    <a href="new.html">Recently Added</a>
+    <a href="my-list.html">My List</a>
+  </nav>
 
-<div class="container" id="watch-app">
+  <main class="page">
+    <a class="back-link" href="javascript:history.back()">← Back</a>
 
-  <h1 id="watch-title"></h1>
-  <div class="meta" id="watch-meta"></div>
+    <div id="watch-app">
+      <div class="watch-layout">
+        <div class="player-shell" id="player-shell">
+          <video id="player" controls playsinline controlslist="nodownload"></video>
+        </div>
 
-  <div class="player-shell" id="player-shell"></div>
+        <aside class="info-card">
+          <div class="eyebrow">Now Streaming</div>
+          <h1 id="watch-title">Loading…</h1>
+          <p class="meta" id="watch-meta"></p>
+          <p class="description" id="watch-description"></p>
+          <div id="watch-extra"></div>
 
-  <p id="watch-description"></p>
+          <div class="actions">
+            <button class="btn btn-primary" id="my-list-btn" type="button">+ My List</button>
+            <a class="btn btn-secondary" href="my-list.html">Open My List</a>
+          </div>
 
-  <button class="btn btn-secondary" id="my-list-btn">My List</button>
+          <div class="episode-wrap" id="episode-wrap" style="display:none;">
+            <div class="episode-label">Episodes</div>
+            <select id="episode-select"></select>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
 
-  <div id="watch-extra"></div>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    const catalog = Array.isArray(window.CATALOG) ? window.CATALOG : [];
+    const item = catalog.find(entry => entry.id === id);
 
-</div>
+    const watchApp = document.getElementById("watch-app");
+    const titleEl = document.getElementById("watch-title");
+    const metaEl = document.getElementById("watch-meta");
+    const descEl = document.getElementById("watch-description");
+    const playerShellEl = document.getElementById("player-shell");
+    const myListBtn = document.getElementById("my-list-btn");
+    const episodeWrap = document.getElementById("episode-wrap");
+    const episodeSelect = document.getElementById("episode-select");
+    const extraEl = document.getElementById("watch-extra");
 
-<script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+    }
 
-const catalog = Array.isArray(window.CATALOG) ? window.CATALOG : [];
-const item = catalog.find(entry => entry.id === id);
+    function formatEpisodeLabel(ep) {
+      return `Season ${ep.season} • Episode ${ep.episode}`;
+    }
 
-const titleEl = document.getElementById("watch-title");
-const metaEl = document.getElementById("watch-meta");
-const descEl = document.getElementById("watch-description");
-const playerShellEl = document.getElementById("player-shell");
-const extraEl = document.getElementById("watch-extra");
-const myListBtn = document.getElementById("my-list-btn");
+    function refreshMyListButton() {
+      if (!myListBtn || !item || typeof getMyListButtonLabel !== "function") return;
+      myListBtn.textContent = getMyListButtonLabel(item.id);
+    }
 
-function escapeHtml(value) {
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#39;");
-}
+    function renderExtraInfo(entry) {
+      let extraHtml = "";
 
-function isEmbedUrl(src) {
-  return (
-    src.includes("youtube.com") ||
-    src.includes("youtu.be") ||
-    src.includes("vimeo.com")
-  );
-}
+      if (entry.director) {
+        extraHtml += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
+      }
 
-function renderEmbedPlayer(src, title) {
-  let embedSrc = src;
+      if (entry.country) {
+        extraHtml += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
+      }
 
-  if (src.includes("youtu.be/")) {
-    const videoId = src.split("youtu.be/")[1].split("?")[0];
-    embedSrc = `https://www.youtube.com/embed/${videoId}`;
-  }
+      if (entry.runtime) {
+        const runtimeText =
+          typeof entry.runtime === "number"
+            ? `${entry.runtime} minutes`
+            : entry.runtime;
+        extraHtml += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(runtimeText)}</p>`;
+      }
 
-  if (src.includes("youtube.com/watch")) {
-    const videoId = new URL(src).searchParams.get("v");
-    embedSrc = `https://www.youtube.com/embed/${videoId}`;
-  }
+      if (entry.genre) {
+        extraHtml += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
+      }
 
-  if (src.includes("vimeo.com/") && !src.includes("player.vimeo.com")) {
-    const clean = src.split("?")[0];
-    const parts = clean.split("/");
-    const videoId = parts[parts.length - 1];
-    embedSrc = `https://player.vimeo.com/video/${videoId}`;
-  }
+      if (entry.credits) {
+        if (Array.isArray(entry.credits)) {
+          extraHtml += `
+            <div class="credits-block">
+              <p class="meta"><strong>Credits</strong></p>
+              <p class="meta">${entry.credits.map(escapeHtml).join("<br>")}</p>
+            </div>
+          `;
+        } else {
+          if (entry.credits.general) {
+            extraHtml += `
+              <div class="credits-block">
+                <p class="meta"><strong>Credits</strong></p>
+                <p class="meta">${entry.credits.general.map(escapeHtml).join("<br>")}</p>
+              </div>
+            `;
+          }
 
-  playerShellEl.innerHTML = `
-    <iframe
-      src="${escapeHtml(embedSrc)}"
-      frameborder="0"
-      allowfullscreen
-      allow="autoplay; fullscreen; picture-in-picture"
-      title="${escapeHtml(title)}"
-    ></iframe>
-  `;
-}
+          if (entry.credits.music) {
+            extraHtml += `
+              <div class="credits-block">
+                <p class="meta"><strong>Music</strong></p>
+                <p class="meta">${entry.credits.music.map(escapeHtml).join("<br>")}</p>
+              </div>
+            `;
+          }
 
-function renderVideoPlayer(src) {
-  playerShellEl.innerHTML = `
-    <video controls playsinline controlslist="nodownload">
-      <source src="${escapeHtml(src)}" type="video/mp4">
-    </video>
-  `;
-}
+          if (entry.credits.soundEffects) {
+            extraHtml += `
+              <div class="credits-block">
+                <p class="meta"><strong>Sound Effects</strong></p>
+                <p class="meta">${entry.credits.soundEffects.map(escapeHtml).join("<br>")}</p>
+              </div>
+            `;
+          }
+        }
+      }
 
-function renderExtraInfo(entry) {
-  let html = "";
+      extraEl.innerHTML = extraHtml;
+    }
 
-  if (entry.director) {
-    html += `<p class="meta"><strong>Director:</strong> ${escapeHtml(entry.director)}</p>`;
-  }
+    function isEmbedUrl(src) {
+      return (
+        src.includes("youtube.com/embed/") ||
+        src.includes("youtu.be/") ||
+        src.includes("youtube.com/watch") ||
+        src.includes("player.vimeo.com/video/") ||
+        src.includes("vimeo.com/")
+      );
+    }
 
-  if (entry.country) {
-    html += `<p class="meta"><strong>Country:</strong> ${escapeHtml(entry.country)}</p>`;
-  }
+    function renderEmbedPlayer(src, title) {
+      let embedSrc = src;
 
-  if (entry.runtime) {
-    const runtimeText = typeof entry.runtime === "number"
-      ? `${entry.runtime} minutes`
-      : entry.runtime;
+      if (src.includes("youtu.be/")) {
+        const videoId = src.split("youtu.be/")[1].split("?")[0];
+        embedSrc = `https://www.youtube.com/embed/${videoId}`;
+      } else if (src.includes("youtube.com/watch")) {
+        const videoId = new URL(src).searchParams.get("v");
+        embedSrc = `https://www.youtube.com/embed/${videoId}`;
+      } else if (src.includes("vimeo.com/") && !src.includes("player.vimeo.com/video/")) {
+        const clean = src.split("?")[0];
+        const parts = clean.split("/");
+        const videoId = parts[parts.length - 1];
+        embedSrc = `https://player.vimeo.com/video/${videoId}`;
+      }
 
-    html += `<p class="meta"><strong>Runtime:</strong> ${escapeHtml(runtimeText)}</p>`;
-  }
+      playerShellEl.innerHTML = `
+        <iframe
+          src="${escapeHtml(embedSrc)}"
+          title="${escapeHtml(title)}"
+          frameborder="0"
+          allowfullscreen
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        ></iframe>
+      `;
+    }
 
-  if (entry.genre) {
-    html += `<p class="meta"><strong>Genre:</strong> ${escapeHtml(entry.genre)}</p>`;
-  }
+    function renderVideoPlayer(src) {
+      playerShellEl.innerHTML = `
+        <video id="player" controls playsinline controlslist="nodownload">
+          <source src="${escapeHtml(src)}" type="video/mp4">
+        </video>
+      `;
+    }
 
-  if (entry.credits) {
-
-    if (Array.isArray(entry.credits)) {
-      html += `
-        <div class="credits-block">
-          <p class="meta"><strong>Credits</strong></p>
-          <p class="meta">${entry.credits.map(escapeHtml).join("<br>")}</p>
+    if (!item) {
+      watchApp.innerHTML = `
+        <div class="error-box">
+          <h2 style="margin-bottom:10px;color:#f4f4f5;">Title not found</h2>
+          <p style="margin-bottom:16px;">This item is missing from the catalog or the URL is invalid.</p>
+          <a class="btn btn-secondary" href="index.html">Return Home</a>
         </div>
       `;
     } else {
+      document.title = `${item.title} • Plueto TV`;
+      titleEl.textContent = item.title;
+      descEl.textContent = item.description || "";
+      renderExtraInfo(item);
 
-      if (entry.credits.general) {
-        html += `
-          <div class="credits-block">
-            <p class="meta"><strong>Credits</strong></p>
-            <p class="meta">${entry.credits.general.map(escapeHtml).join("<br>")}</p>
-          </div>
-        `;
+      refreshMyListButton();
+
+      if (myListBtn && typeof toggleMyList === "function") {
+        myListBtn.addEventListener("click", () => {
+          toggleMyList(item.id);
+          refreshMyListButton();
+        });
       }
 
-      if (entry.credits.music) {
-        html += `
-          <div class="credits-block">
-            <p class="meta"><strong>Music</strong></p>
-            <p class="meta">${entry.credits.music.map(escapeHtml).join("<br>")}</p>
-          </div>
-        `;
-      }
+      if (item.type === "tv" && Array.isArray(item.episodes) && item.episodes.length) {
+        metaEl.textContent = `${item.year || "—"} • ${item.episodes.length} episodes • ${item.rating || "TV-G"}`;
+        episodeWrap.style.display = "block";
 
-      if (entry.credits.soundEffects) {
-        html += `
-          <div class="credits-block">
-            <p class="meta"><strong>Sound Effects</strong></p>
-            <p class="meta">${entry.credits.soundEffects.map(escapeHtml).join("<br>")}</p>
-          </div>
-        `;
+        episodeSelect.innerHTML = item.episodes.map((ep, index) => `
+          <option value="${escapeHtml(ep.src)}" ${index === 0 ? "selected" : ""}>
+            ${formatEpisodeLabel(ep)}
+          </option>
+        `).join("");
+
+        const firstSrc = item.episodes[0].src || "";
+        if (isEmbedUrl(firstSrc)) {
+          renderEmbedPlayer(firstSrc, item.title);
+        } else {
+          renderVideoPlayer(firstSrc);
+        }
+
+        episodeSelect.addEventListener("change", () => {
+          const selectedSrc = episodeSelect.value || "";
+          if (isEmbedUrl(selectedSrc)) {
+            renderEmbedPlayer(selectedSrc, item.title);
+          } else {
+            renderVideoPlayer(selectedSrc);
+          }
+        });
+      } else {
+        metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
+        const src = item.video || item.preview || item.src || "";
+
+        if (isEmbedUrl(src)) {
+          renderEmbedPlayer(src, item.title);
+        } else {
+          renderVideoPlayer(src);
+        }
       }
     }
-  }
-
-  extraEl.innerHTML = html;
-}
-
-if (!item) {
-  document.getElementById("watch-app").innerHTML = `
-    <div class="error-box">
-      <h2>Title not found</h2>
-      <a href="index.html">Return Home</a>
-    </div>
-  `;
-} else {
-
-  document.title = item.title + " • Plueto TV";
-
-  titleEl.textContent = item.title;
-  descEl.textContent = item.description || "";
-
-  metaEl.textContent = `${item.year || "—"} • ${item.duration || "Full Movie"} • ${item.rating || "NR"}`;
-
-  renderExtraInfo(item);
-
-  const src = item.video || item.preview || item.src || "";
-
-  if (isEmbedUrl(src)) {
-    renderEmbedPlayer(src, item.title);
-  } else {
-    renderVideoPlayer(src);
-  }
-
-  if (myListBtn && typeof toggleMyList === "function") {
-    myListBtn.addEventListener("click", () => {
-      toggleMyList(item.id);
-    });
-  }
-}
-</script>
-
+  </script>
 </body>
 </html>
