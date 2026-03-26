@@ -67,6 +67,21 @@ window.CATALOG = [
   video: "https://www.youtube.com/embed/xYy51T1EGIs"
 },
  {
+  id: "mine__2025",
+  title: "Mine!",
+  year: 2025,
+  country: "United States",
+  runtime: "9 min",
+  genres: ["Animation"],
+  vibe: ["Experimental", "Absurd"],
+  description: "In the early 20th century Midwest, deep underground, a group of coal miners make an incredible and unexpected discovery.",
+  director: "Louis Morton",
+  poster: "https://freight.cargo.site/w/1000/q/75/i/e00437dbf9c4f26454267adc774d6c56a2f563b1a38c58c665cdccf1bc0208e1/Mine2.png",
+  embed: "https://player.vimeo.com/video/1172958229",
+  source: "vimeo",
+  featured: true
+}
+ {
   id: "reverberation__2026",
   title: "Reverberation",
   type: "movie",
