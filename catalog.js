@@ -112,6 +112,34 @@ window.CATALOG = [
   trailer: "",
   vibe: ["Experimental", "Absurd"]
 },
+ {
+  id: "natural-medicine-2026",
+  title: "Natural Medicine",
+  type: "movie",
+  year: 2026,
+  runtime: 19,
+  duration: "19 min",
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+
+  director: "Jack Vinson, Colton Morgan",
+  country: "USA",
+
+  genres: ["Comedy"],
+
+  description: "A proof-of-concept sketch comedy film where a filmmaker is confronted about a mysteriously abandoned project, leading into a series of satirical sketches and interludes. Blending absurdity with self-awareness, the film explores the human need to feel important through loosely connected vignettes.",
+
+  poster: "https://i.imgur.com/JrDg6Nn.jpeg",
+  video: "https://www.youtube.com/embed/fdB6tYzZhwY",
+
+  vibe: ["satirical", "absurd", "meta"],
+
+  credits: [
+    "Directed by Jack Vinson",
+    "Directed by Colton Morgan"
+  ]
+},
 {
   id: "neath_brooklyn_bridge",
   title: "'Neath Brooklyn Bridge",
