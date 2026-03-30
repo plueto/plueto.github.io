@@ -113,8 +113,8 @@ window.CATALOG = [
   vibe: ["Experimental", "Absurd"]
 },
  {
-  id: "natural-medicine-2026",
-  title: "Natural Medicine",
+  id: "as-seen-on-tv-2026",
+  title: "As Seen on TV",
   type: "movie",
   year: 2026,
   runtime: 19,
@@ -128,7 +128,7 @@ window.CATALOG = [
 
   genres: ["Comedy"],
 
-  description: "A proof-of-concept sketch comedy film where a filmmaker is confronted about a mysteriously abandoned project, leading into a series of satirical sketches and interludes. Blending absurdity with self-awareness, the film explores the human need to feel important through loosely connected vignettes.",
+  description: "A proof-of-concept sketch comedy film. Jack Vinson is recognized on the street and questioned about a film he and Colton Morgan were making—one that suddenly disappeared without explanation. As he tries to dodge the question, the truth unfolds, revealing the mock film itself.\n\nA series of sketches and interludes that satirize the world’s arbitrary need to feel important.",
 
   poster: "https://i.imgur.com/JrDg6Nn.jpeg",
   video: "https://www.youtube.com/embed/fdB6tYzZhwY",
