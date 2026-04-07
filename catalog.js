@@ -152,7 +152,7 @@ window.CATALOG = [
   director: "Len Exists",
   country: "United States",
   genre: "Comedy",
-  description: "A group of eccentric friends go to look for information after they start receiving many unwanted packages. Some stuff happens.",
+  description: "Directed by Len Exists. A group of eccentric friends go to look for information after they start receiving many unwanted packages. Some stuff happens.",
   poster: "https://cdn.imgchest.com/files/93744d95abf8.png",
   video: "https://www.youtube.com/embed/5UgPnxliZ58?si=2pn3wMeaUm5QlXAu"
 },
