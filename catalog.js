@@ -140,6 +140,22 @@ window.CATALOG = [
     "Directed by Colton Morgan"
   ]
 },
+ {
+  id: "purpleman__2024",
+  title: "PURPLEMAN: Some Stuff Happens",
+  type: "movie",
+  year: 2024,
+  duration: "49 min",
+  rating: "NR",
+  row: "Independent Spotlight",
+  category: "indie",
+  director: "Len Exists",
+  country: "United States",
+  genre: "Comedy",
+  description: "A group of eccentric friends go to look for information after they start receiving many unwanted packages. Some stuff happens.",
+  poster: "https://cdn.imgchest.com/files/93744d95abf8.png",
+  video: "https://www.youtube.com/embed/5UgPnxliZ58?si=2pn3wMeaUm5QlXAu"
+},
 {
   id: "neath_brooklyn_bridge",
   title: "'Neath Brooklyn Bridge",
